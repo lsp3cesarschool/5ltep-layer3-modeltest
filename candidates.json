@@ -1,6 +1,14 @@
 {
   "_comment": "Candidates of the model benchmark. 'entries' are curated; models found by bench/discover.py are added automatically (results/discovered.json). 'experiment': true entries are measured but never recommended (e.g. an older prompt version). Backends: ollama, llamacpp (official llama.cpp build), llamacpp-prism (PrismML fork, needed for the ternary/1-bit Bonsai formats).",
-  "production": {"backend": "ollama", "model": "qwen3:4b", "options": {"think": false}, "since": "2026-09-30", "previous": "gemma3:4b"},
+  "production": {
+    "backend": "ollama",
+    "model": "qwen3:4b",
+    "options": {
+      "think": false
+    },
+    "since": "2026-09-30",
+    "previous": "gemma3:4b"
+  },
   "selection": {
     "min_valid_rate": 0.95,
     "min_coverage": 0.9,
@@ -13,36 +21,214 @@
     "max_size_gb": 9.0,
     "min_size_gb": 1.0,
     "max_new_per_run": 6,
-    "families": ["gemma3", "gemma4", "gemma3n", "qwen3", "qwen3.5", "qwen3.8", "granite4", "granite4.2", "lfm2.5",
-                 "ministral-3", "phi4-mini", "llama3.2", "llama3.1", "smollm3", "olmo3", "deepseek-r1"],
-    "exclude_words": ["embed", "code", "coder", "vision", "vl", "ocr", "guard", "math", "audio", "cloud", "uncensored", "abliterated"]
+    "families": [
+      "gemma3",
+      "gemma4",
+      "gemma3n",
+      "qwen3",
+      "qwen3.5",
+      "qwen3.8",
+      "granite4",
+      "granite4.2",
+      "lfm2.5",
+      "ministral-3",
+      "phi4-mini",
+      "llama3.2",
+      "llama3.1",
+      "smollm3",
+      "olmo3",
+      "deepseek-r1"
+    ],
+    "exclude_words": [
+      "embed",
+      "code",
+      "coder",
+      "vision",
+      "vl",
+      "ocr",
+      "guard",
+      "math",
+      "audio",
+      "cloud",
+      "uncensored",
+      "abliterated"
+    ]
   },
   "entries": [
-    {"label": "gemma3:4b", "backend": "ollama", "model": "gemma3:4b"},
-    {"label": "qwen3.5:4b", "backend": "ollama", "model": "qwen3.5:4b", "options": {"think": false}},
-    {"label": "qwen3:4b", "backend": "ollama", "model": "qwen3:4b", "options": {"think": false}},
-    {"label": "granite4.2:3b", "backend": "ollama", "model": "granite4.2:3b"},
-    {"label": "ministral-3:3b", "backend": "ollama", "model": "ministral-3:3b"},
-    {"label": "phi4-mini:3.8b", "backend": "ollama", "model": "phi4-mini:3.8b"},
-    {"label": "llama3.2:3b", "backend": "ollama", "model": "llama3.2:3b"},
-    {"label": "lfm2.5:8b-a1b", "backend": "ollama", "model": "lfm2.5:8b-a1b-q4_K_M"},
-    {"label": "granite4:7b-a1b-h", "backend": "ollama", "model": "granite4:7b-a1b-h"},
-    {"label": "qwen3.5:9b", "backend": "ollama", "model": "qwen3.5:9b", "options": {"think": false}},
-    {"label": "gemma4:12b", "backend": "ollama", "model": "gemma4:12b", "options": {"think": false}},
-    {"label": "ministral-3:8b", "backend": "ollama", "model": "ministral-3:8b"},
-    {"label": "granite4.2:8b", "backend": "ollama", "model": "granite4.2:8b"},
-    {"label": "llama3.1:8b", "backend": "ollama", "model": "llama3.1:8b"},
-    {"label": "gemma3:4b (llama.cpp)", "backend": "llamacpp", "model": "gemma-3-4b-it-Q4_K_M",
-     "hf_repo": "ggml-org/gemma-3-4b-it-GGUF", "hf_file": "gemma-3-4b-it-Q4_K_M.gguf"},
-    {"label": "Ternary-Bonsai-8B (PQ2_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-8B-PQ2_0",
-     "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf", "hf_file": "Ternary-Bonsai-8B-PQ2_0.gguf",
-     "options": {"chat_template_kwargs": {"enable_thinking": false}}},
-    {"label": "Ternary-Bonsai-2-27B (PTQ1_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-2-27B-PTQ1_0",
-     "hf_repo": "prism-ml/Ternary-Bonsai-2-27B-gguf", "hf_file": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
-     "options": {"chat_template_kwargs": {"enable_thinking": false}}, "budget_minutes": 270,
-     "max_cases": 4, "seeds": [11], "timeout_s": 3600, "experiment": true,
-     "note": "on the 4-vCPU runner a single call took over 15 min in the first run; measured on a sample only"},
-    {"label": "gemma3:4b (prompt v1)", "backend": "ollama", "model": "gemma3:4b", "prompt_ref": "7da22b7",
-     "experiment": true}
+    {
+      "label": "gemma3:4b",
+      "backend": "ollama",
+      "model": "gemma3:4b"
+    },
+    {
+      "label": "qwen3.5:4b",
+      "backend": "ollama",
+      "model": "qwen3.5:4b",
+      "options": {
+        "think": false
+      }
+    },
+    {
+      "label": "qwen3:4b",
+      "backend": "ollama",
+      "model": "qwen3:4b",
+      "options": {
+        "think": false
+      }
+    },
+    {
+      "label": "granite4.2:3b",
+      "backend": "ollama",
+      "model": "granite4.2:3b"
+    },
+    {
+      "label": "ministral-3:3b",
+      "backend": "ollama",
+      "model": "ministral-3:3b"
+    },
+    {
+      "label": "phi4-mini:3.8b",
+      "backend": "ollama",
+      "model": "phi4-mini:3.8b"
+    },
+    {
+      "label": "llama3.2:3b",
+      "backend": "ollama",
+      "model": "llama3.2:3b"
+    },
+    {
+      "label": "lfm2.5:8b-a1b",
+      "backend": "ollama",
+      "model": "lfm2.5:8b-a1b-q4_K_M"
+    },
+    {
+      "label": "granite4:7b-a1b-h",
+      "backend": "ollama",
+      "model": "granite4:7b-a1b-h"
+    },
+    {
+      "label": "qwen3.5:9b",
+      "backend": "ollama",
+      "model": "qwen3.5:9b",
+      "options": {
+        "think": false
+      }
+    },
+    {
+      "label": "gemma4:12b",
+      "backend": "ollama",
+      "model": "gemma4:12b",
+      "options": {
+        "think": false
+      }
+    },
+    {
+      "label": "ministral-3:8b",
+      "backend": "ollama",
+      "model": "ministral-3:8b"
+    },
+    {
+      "label": "granite4.2:8b",
+      "backend": "ollama",
+      "model": "granite4.2:8b"
+    },
+    {
+      "label": "llama3.1:8b",
+      "backend": "ollama",
+      "model": "llama3.1:8b"
+    },
+    {
+      "label": "gemma3:4b (llama.cpp)",
+      "backend": "llamacpp",
+      "model": "gemma-3-4b-it-Q4_K_M",
+      "hf_repo": "ggml-org/gemma-3-4b-it-GGUF",
+      "hf_file": "gemma-3-4b-it-Q4_K_M.gguf"
+    },
+    {
+      "label": "qwen3:4b (llama.cpp)",
+      "backend": "llamacpp",
+      "model": "Qwen3-4B-Q4_K_M",
+      "hf_repo": "Qwen/Qwen3-4B-GGUF",
+      "hf_file": "Qwen3-4B-Q4_K_M.gguf",
+      "options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    {
+      "label": "Ternary-Bonsai-8B (PQ2_0)",
+      "backend": "llamacpp-prism",
+      "model": "Ternary-Bonsai-8B-PQ2_0",
+      "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf",
+      "hf_file": "Ternary-Bonsai-8B-PQ2_0.gguf",
+      "options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      }
+    },
+    {
+      "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
+      "backend": "llamacpp-prism",
+      "model": "Ternary-Bonsai-2-27B-PTQ1_0",
+      "hf_repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "hf_file": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+      "options": {
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
+      },
+      "budget_minutes": 270,
+      "max_cases": 4,
+      "seeds": [
+        11
+      ],
+      "timeout_s": 3600,
+      "experiment": true,
+      "note": "on the 4-vCPU runner a single call took over 15 min in the first run; measured on a sample only"
+    },
+    {
+      "label": "gemma3:4b (prompt v1)",
+      "backend": "ollama",
+      "model": "gemma3:4b",
+      "prompt_ref": "7da22b7",
+      "experiment": true
+    }
+  ],
+  "comparisons": [
+    {
+      "title": "gemma3:4b on Ollama vs llama.cpp",
+      "labels": [
+        "gemma3:4b",
+        "gemma3:4b (llama.cpp)"
+      ],
+      "note": "Same 4-bit Gemma 3 4B weights served by two engines, same prompt, seeds and temperature."
+    },
+    {
+      "title": "qwen3:4b on Ollama vs llama.cpp",
+      "labels": [
+        "qwen3:4b",
+        "qwen3:4b-q4_K_M",
+        "qwen3:4b (llama.cpp)"
+      ],
+      "note": "Qwen3 4B from the Ollama library (two tags) and the official Qwen GGUF on llama.cpp; thinking off in all. Tags can point to different builds (see the digests in results/leaderboard.json)."
+    },
+    {
+      "title": "8B at 4 bits vs 8B at ~2 bits (ternary)",
+      "labels": [
+        "qwen3:8b",
+        "Ternary-Bonsai-8B (PQ2_0)"
+      ],
+      "note": "A conventional 4-bit 8B model on Ollama and a ternary 8B (Bonsai) on the PrismML fork of llama.cpp."
+    },
+    {
+      "title": "27B compressed to fit the runner",
+      "labels": [
+        "Ternary-Bonsai-2-27B (PTQ1_0)"
+      ],
+      "unrunnable": "Qwen3.8-27B at 4 bits (qwen3.8:27b-q4_K_M, 18 GB)",
+      "note": "Ternary-Bonsai-2-27B (5.95 GB) is a ternary version of Qwen3.8-27B, whose 4-bit build does not fit in 16 GB of RAM. Measured on a sample only (4 cases, 1 seed): calls take many minutes on 4 vCPUs."
+    }
   ]
 }

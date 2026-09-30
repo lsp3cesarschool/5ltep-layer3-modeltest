@@ -11,6 +11,26 @@ whose right answers are known by construction.
 📌 **Current recommendation (machine-readable):**
 <https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json>
 
+## What the models are asked to do
+
+Layer 3 of the 5L-TEP (Five-Layer Trust Engineering Pyramid) watches monthly series built from open
+government data (e.g. the number of IBAMA infraction notices per month) and flags **anomalies**:
+months that depart from the usual pattern. A statistical ensemble finds them; an **LLM-as-a-Judge**
+then reads each anomaly with its context (the same month in previous years, known events such as new
+laws, signs in the records themselves) and says which of four causes explains it best:
+
+| Code | Category | Example | Why it matters |
+|---|---|---|---|
+| **PDC** | Policy-Driven Change | notices drop right after a new decree changes the sanctioning procedure | explained by a known event: document it, no correction needed |
+| **SP** | Seasonal Pattern | January has fewer notices almost every year (holidays, budget cycle) | expected behaviour: no action |
+| **DQE** | Data-Quality Event | a month with almost no records in an active series, or a burst of records without identifier | a **data problem**: always sent to a human steward, first in line for correction |
+| **GES** | Genuine Enforcement Shift | a gradual, lasting increase with no event, no seasonality and no data signs | a real change nobody has explained yet: worth investigating |
+
+The point of Layer 3 is to tell people **where to look first**: the anomalies that nothing explains,
+and above all those that look like data problems. A good judge must therefore apply these criteria
+consistently. That is what this benchmark measures, for every candidate model, on the free hardware
+the pipeline actually runs on.
+
 ## Leaderboard
 
 <!-- LEADERBOARD:START -->
@@ -50,10 +70,25 @@ whose right answers are known by construction.
 | – | Ternary-Bonsai-2-27B (PTQ1_0) | llamacpp-prism | | | | | | | not run yet |
 <!-- LEADERBOARD:END -->
 
+**How to read the table.** Each row is one candidate, run on all gold cases with three seeds.
+**#** is the rank by macro-F1. **Model** is the Ollama tag or the GGUF file tested; **Backend** is the
+inference engine (`ollama`, `llamacpp` for the official llama.cpp build, `llamacpp-prism` for the
+PrismML fork that runs the ternary Bonsai models). **macro-F1 [95% CI]** is the main score: for each
+case, the label chosen by the majority of the three runs is compared with the gold label, an F1 is
+computed per category (PDC, SP, DQE, GES) and the four are averaged, so every category weighs the same;
+the brackets give the 95% bootstrap confidence interval over cases (overlapping intervals mean the
+difference may be noise). **Acc.** is the plain share of cases labelled correctly. **Consist.** is the
+share of the three runs that agree with the majority (1.00 = always the same answer). **Valid** is the
+share of answers that are well-formed JSON with a known category. **Latency p50 / p90** is the median
+and 90th-percentile time of one call on the free runner, in seconds, and **Anomalies/h** the number of
+anomalies (three calls each) judged per hour at the mean latency. **Status** tells whether the
+candidate can be recommended (valid ≥ 95%, coverage ≥ 90% of the cases within the time budget, p90
+latency ≤ 150 s, not an experiment) or why not.
+
 ## Why a separate benchmark
 
-Layer 3 of the 5L-TEP classifies each statistical anomaly with an LLM-as-a-Judge (categories PDC,
-SP, DQE, GES). The model runs on the free GitHub Actions CPU runner, so it must be small, fast and
+Layer 3 classifies each statistical anomaly with an LLM-as-a-Judge (categories PDC, SP, DQE, GES,
+[above](#what-the-models-are-asked-to-do)). The model runs on the free GitHub Actions CPU runner, so it must be small, fast and
 reliable. New small models appear every month, and the answers of a 4B model depend a lot on the
 prompt (in production, one prompt revision moved 17 labels at once). Choosing the model by feel, or
 by general-purpose leaderboards, is not enough: it has to be measured **on this task, with this
@@ -90,11 +125,14 @@ evidence the judge receives (series, detector votes re-computed on the case's da
 | Category | Cases | How they are built |
 |---|---|---|
 | SP | real | anomalies whose calendar month deviated the same way in ≥ 8 of the previous 10 years; no event within 6 months; no data-quality signs |
-| PDC | synthetic | a quiet month gets a persistent ×2.5/×3 or ×0.4/×0.3 change, and the calendar gets a policy event in that month |
-| DQE | synthetic | a quiet month drops to 3% of its level (reporting failure), or is multiplied by 2.2 with 45% of records without identifier and 3× cancellations (duplicated batch); no event |
-| GES | synthetic | a gradual three-month ramp to ×2 or ×0.5 that persists; no event, no seasonality, no data-quality signs |
+| PDC | synthetic | a quiet month gets a persistent change (×2.5 to ×4, or ×0.4 to ×0.25), and the calendar gets a policy event in that month |
+| DQE | synthetic | a quiet month drops to 3% of its level (reporting failure), or is multiplied by 2.2 to 4 with 45% of records without identifier and 3× cancellations (duplicated batch); no event |
+| GES | synthetic | a gradual three-month ramp (to ×2 to ×3, or ×0.5 to ×0.33) that persists; no event, no seasonality, no data-quality signs |
 
-A synthetic case is kept only if the ensemble flags its month, as in production. The gold set
+Current set: 30 cases (7 SP, 8 PDC, 8 DQE, 7 GES). A synthetic case is kept only if the ensemble flags
+its month, as in production; stronger variants are tried only when no quiet month is flagged at the
+weaker one, and a category keeps fewer cases rather than repeating one (gradual ramps are rarely
+flagged, hence 7 GES). The gold set
 measures whether a model **applies the stated criteria to the evidence**; it does not measure world
 knowledge, and it is not a substitute for steward-reviewed real anomalies. Steward decisions from the
 main repositories can be added as further cases when there are enough of them.
@@ -114,27 +152,60 @@ A candidate is **eligible** with ≥ 95% valid answers, ≥ 90% coverage and p90
 The **recommended** model is the eligible, non-experimental candidate with the highest macro-F1 (ties:
 consistency, then speed). A **switch** from the production model is recommended only when the winner
 beats it by at least 0.05 macro-F1 and the paired bootstrap 95% CI of the difference is above zero.
+When that happens, the winner becomes the benchmark's new production reference (`production` in
+[`candidates.json`](candidates.json)), so later months compare candidates against the model the
+instances actually use.
 
 ## How the main repositories use it
 
-No tokens cross repositories. Each Layer 3 instance reads the public
-[`results/recommendation.json`](results/recommendation.json) on its own schedule
-(`python main.py check-model`, workflow *Model check*); when `switch_recommended` is true and the
-recommended model differs from its own `LLM_MODEL`, it opens an issue in its own repository. Changing
-the model remains a steward decision (repository variable `LLM_MODEL`), because every anomaly is then
-judged again.
+No tokens cross repositories: each Layer 3 instance reads the public
+[`results/recommendation.json`](results/recommendation.json). Its field **`use`** is the model approved
+for production (the previous one, until a switch is recommended).
+
+- **Automatic (default):** with `LLM_MODEL=auto`, every run of an instance starts by reading `use` and
+  judges with that model and its options (e.g. thinking off). The approval happens here, under the
+  statistical rule above.
+- **Pinned:** with `LLM_MODEL` set to a tag, the instance keeps that model; its monthly *Model check*
+  opens an issue when this benchmark recommends another one.
+
+In both cases, **earlier judgments are kept**: each one records the model and prompt version that
+produced it, and a new model only judges anomalies that are new or whose data changed. Re-judging the
+history with the current model is a separate, explicit choice (the `rejudge` input of the instance's
+Layer 3 workflow).
 
 ## Back-ends
 
 | Back-end | Used for |
 |---|---|
 | **Ollama** | production back-end; all library models |
-| **llama.cpp** (official Ubuntu x64 build) | the same GGUF as a production model, to compare engines (speed and answers) |
+| **llama.cpp** (official Ubuntu x64 build) | the same model as on Ollama, to compare engines (speed and answers): gemma3:4b and qwen3:4b |
 | **llama.cpp, PrismML fork** (built from source, cached) | ternary / 1-bit *Bonsai* models (e.g. [Ternary-Bonsai-2-27B](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf), a 27B model in 5.95 GB), whose formats are not in mainline llama.cpp or Ollama |
 
+The leaderboard ranks every candidate; the **"Same model, different back-ends or formats"** tables
+under it put side by side the candidates that differ only in engine or compression, as declared in
+`comparisons` in [`candidates.json`](candidates.json). First findings (30/09/2026): the same Gemma 3 4B
+weights scored 0.50 on Ollama and 0.40 on llama.cpp at the same speed, with overlapping intervals, so
+there is no reason to leave Ollama; the answers of the two engines differ even with the same seeds and
+temperature.
+
 Hyper-compressed large models answer a real question for this setting: at the same memory, is a 27B
-at ~1.75 bits/weight better than a 4B at 4 bits? On a CPU runner the price is speed (all 27B
-weights are read for every token), which the latency columns and the time budget make visible.
+at ~1.75 bits/weight better than a 4B at 4 bits? On a CPU runner the price is speed: every token reads
+all 27B weights. In the first run, Ternary-Bonsai-2-27B loaded on the 16 GB runner but no call finished
+within 15 minutes, so it is now measured on a small sample only, as an experiment.
+
+## Cost: free, but slow
+
+Everything here runs on GitHub's standard hosted runners of a **public** repository, which GitHub does
+not charge for: *"GitHub Actions usage is free for self-hosted runners and for public repositories that
+use standard GitHub-hosted runners"* ([About billing for GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions)),
+and *"Use of the standard GitHub-hosted runners is free and unlimited on public repositories"*, on a
+Linux runner with 4 CPUs and 16 GB of RAM ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)).
+The models run on those CPUs, with no GPU, so inference is slow: tens of seconds to minutes per call.
+The practical limits are those of the free plan: each job can run for up to 6 hours and up to 20 jobs
+run at once ([Actions limits](https://docs.github.com/en/actions/reference/limits)); hence the time
+budget per candidate, the sampling of very slow models and the parallel jobs. Installing Ollama or
+llama.cpp in the runner is ordinary use of the runner; the model weights are downloaded from their
+official sources at run time.
 
 ## Adding a candidate
 
@@ -151,5 +222,4 @@ Add an entry to [`candidates.json`](candidates.json):
 ## Licences
 
 Code: MIT. Models are downloaded at run time from their official sources and are not redistributed;
-each keeps its own licence. Ollama and llama.cpp are MIT; the Bonsai models are Apache-2.0. Public
-repositories run GitHub Actions on standard runners at no cost.
+each keeps its own licence. Ollama and llama.cpp are MIT; the Bonsai models are Apache-2.0.

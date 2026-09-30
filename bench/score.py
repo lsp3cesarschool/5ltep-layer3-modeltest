@@ -24,8 +24,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from bench.common import (LEADERBOARD_FILE, RECOMMENDATION_FILE, RESULTS_DIR, ROOT, RUNS_DIR,  # noqa: E402
-                          load_gold)
+from bench.common import (CANDIDATES_FILE, LEADERBOARD_FILE, RECOMMENDATION_FILE, RESULTS_DIR, ROOT,  # noqa: E402
+                          RUNS_DIR, load_gold)
 
 CATS = ["PDC", "SP", "DQE", "GES"]
 REPO = "lsp3cesarschool/5ltep-layer3-modeltest"
@@ -180,11 +180,15 @@ def main() -> None:
                 "consistency": r["consistency"], "valid_rate": r["valid_rate"],
                 "latency_p90_s": r["latency_p90_s"], "anomalies_per_hour": r["anomalies_per_hour"],
                 "tested_at": r["tested_at"]}
+    use = card(best) if switch else (card(current) or prod)
     rec = {
         "generated_at": now,
         "benchmark": f"https://github.com/{REPO}",
         "gold_cases": len(gold_cases), "gold_hash": plan["gold_hash"],
         "prompt_commit": plan["prompt_refs"].get("main", {}).get("commit"),
+        # "use" is what Layer 3 instances with LLM_MODEL=auto run: the production model,
+        # replaced only when a switch is recommended.
+        "use": use,
         "production": card(current) or prod,
         "recommended": card(best),
         "switch_recommended": switch,
@@ -192,11 +196,48 @@ def main() -> None:
         "reason": reason,
     }
     RECOMMENDATION_FILE.write_text(json.dumps(rec, indent=1), encoding="utf-8")
-    write_markdown(rows, scored, rec, len(gold_cases), now)
+    if switch:
+        adopt(best, now)
+    comparisons = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8")).get("comparisons", [])
+    write_markdown(rows, scored, rec, len(gold_cases), now, comparisons)
     print(reason)
 
 
-def write_markdown(rows, scored, rec, n_cases, now) -> None:
+def adopt(best: dict, now: str) -> None:
+    """A recommended switch becomes the new production reference of the benchmark itself,
+    so the next months compare candidates against the model instances actually use."""
+    cfg = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8"))
+    previous = cfg["production"].get("model")
+    if previous == best["model"] and cfg["production"].get("backend") == best["backend"]:
+        return
+    cfg["production"] = {"backend": best["backend"], "model": best["model"],
+                         "options": best["entry"].get("options", {}), "since": now[:10], "previous": previous}
+    CANDIDATES_FILE.write_text(json.dumps(cfg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def comparison_tables(scored: list[dict], comparisons: list[dict]) -> list[str]:
+    """One small table per group of candidates that differ only in back-end or format."""
+    by_label = {r["label"]: r for r in scored}
+    out = []
+    for g in comparisons:
+        rows = [by_label[label] for label in g["labels"] if label in by_label]
+        out += ["", f"**{g['title']}.** {g.get('note', '')}", "",
+                "| Candidate | Back-end | Model file / tag | macro-F1 [95% CI] | Consist. | Latency p50 / p90 (s) |",
+                "|---|---|---|---|---|---|"]
+        for label in g["labels"]:
+            r = by_label.get(label)
+            if r:
+                ci = r["macro_f1_ci95"] or ["–", "–"]
+                out.append(f"| {label} | {r['backend']} | `{r['model']}` | {r['macro_f1']:.2f} [{ci[0]}, {ci[1]}] | "
+                           f"{r['consistency']:.2f} | {r['latency_median_s']} / {r['latency_p90_s']} |")
+            else:
+                out.append(f"| {label} | | | not measured yet | | |")
+        if g.get("unrunnable"):
+            out.append(f"| {g['unrunnable']} | | | does not fit the free runner | | |")
+    return out
+
+
+def write_markdown(rows, scored, rec, n_cases, now, comparisons=()) -> None:
     lines = [f"*Updated {now[:16].replace('T', ' ')} UTC · {n_cases} gold cases · 3 seeds each · "
              f"production prompt at `{(rec.get('prompt_commit') or '')[:7]}`*", "",
              f"**Recommendation:** {rec['reason']}.", "",
@@ -210,6 +251,8 @@ def write_markdown(rows, scored, rec, n_cases, now) -> None:
     for r in rows:
         if "macro_f1" not in r:
             lines.append(f"| – | {r['label']} | {r['backend']} | | | | | | | {r['status']} |")
+    if comparisons:
+        lines += ["", "### Same model, different back-ends or formats"] + comparison_tables(scored, comparisons)
     table = "\n".join(lines)
     (RESULTS_DIR / "leaderboard.md").write_text(table + "\n", encoding="utf-8")
     readme = ROOT / "README.md"
