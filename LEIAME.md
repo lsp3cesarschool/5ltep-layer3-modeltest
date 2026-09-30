@@ -37,40 +37,41 @@ em que o pipeline de fato roda.
 ## Classificação
 
 <!-- LEADERBOARD:START -->
-*Atualizado em 2026-09-30 16:53 UTC · 30 casos do gabarito · 3 sementes cada · prompt de produção em `5a1e733`*
+*Atualizado em 2026-09-30 18:07 UTC · 30 casos do gabarito · 3 sementes cada · prompt de produção em `c9ccc85`*
 
-**Recomendação:** qwen3:4b supera gemma3:4b por +0,310 de macro-F1 (IC 95% pareado [0,089; 0,535]).
+**Recomendação:** o modelo de produção é o melhor candidato elegível.
 
 | # | Modelo | Motor | macro-F1 [IC 95%] | Acurácia | Consist. | Válidas | Latência p50 / p90 (s) | Anomalias/h | Situação |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Ternary-Bonsai-2-27B (PTQ1_0) | llamacpp-prism | **1,00** [1,0; 1,0] | 1,00 | 1,00 | 100% | 1739,5 / 2152,3 | 0,6 | não elegível: cobriu 13% dos casos no tempo disponível; latência p90 de 2152 s; experimento |
-| 2 | qwen3:4b | ollama | **0,81** [0,657; 0,933] | 0,83 | 0,86 | 99% | 35,8 / 91,3 | 23,7 | elegível |
-| 3 | ministral-3:3b | ollama | **0,69** [0,516; 0,84] | 0,70 | 0,83 | 98% | 42,5 / 57,1 | 27,4 | elegível |
-| 4 | granite4.2:8b | ollama | **0,62** [0,438; 0,755] | 0,57 | 0,79 | 42% | 101,9 / 190,8 | 9,9 | não elegível: respostas válidas 42%; latência p90 de 191 s |
-| 5 | qwen3.5:9b | ollama | **0,61** [0,432; 0,771] | 0,63 | 0,83 | 100% | 35,8 / 183,1 | 14,7 | não elegível: latência p90 de 183 s |
-| 6 | qwen3:8b | ollama | **0,59** [0,416; 0,753] | 0,63 | 0,88 | 100% | 33,3 / 140,9 | 17,9 | elegível |
-| 7 | ministral-3:8b | ollama | **0,57** [0,43; 0,665] | 0,63 | 0,90 | 100% | 47,9 / 164,0 | 14,5 | não elegível: latência p90 de 164 s |
-| 8 | granite4.2:3b | ollama | **0,56** [0,438; 0,656] | 0,63 | 0,72 | 76% | 52,9 / 87,0 | 23,8 | não elegível: respostas válidas 76% |
-| 9 | qwen3:4b-q4_K_M | ollama | **0,53** [0,369; 0,7] | 0,57 | 0,86 | 100% | 21,5 / 58,8 | 37,0 | elegível |
-| 10 | gemma3:4b | ollama | **0,50** [0,325; 0,66] | 0,53 | 0,84 | 99% | 22,2 / 63,4 | 35,2 | elegível |
-| 11 | qwen3.5:4b | ollama | **0,50** [0,356; 0,65] | 0,57 | 0,86 | 100% | 23,7 / 106,2 | 24,7 | elegível |
-| 12 | gemma3n:e2b | ollama | **0,48** [0,273; 0,642] | 0,47 | 0,74 | 100% | 11,8 / 42,1 | 57,3 | elegível |
-| 13 | phi4-mini:3.8b | ollama | **0,48** [0,318; 0,598] | 0,53 | 0,80 | 100% | 30,8 / 65,5 | 30,2 | elegível |
-| 14 | qwen3.5:2b-q4_K_M | ollama | **0,43** [0,276; 0,583] | 0,47 | 0,79 | 100% | 9,6 / 38,0 | 66,4 | elegível |
-| 15 | gemma3:4b (llama.cpp) | llamacpp | **0,40** [0,22; 0,565] | 0,43 | 0,83 | 100% | 22,6 / 78,8 | 30,4 | elegível |
-| 16 | qwen3:1.7b | ollama | **0,39** [0,235; 0,514] | 0,43 | 0,77 | 100% | 12,6 / 27,6 | 72,4 | elegível |
-| 17 | lfm2.5:8b-a1b | ollama | **0,39** [0,261; 0,503] | 0,47 | 0,78 | 100% | 4,8 / 19,3 | 131,5 | elegível |
-| 18 | gemma3:12b | ollama | **0,38** [0,312; 0,426] | 0,50 | 0,98 | 100% | 53,4 / 285,8 | 9,4 | não elegível: latência p90 de 286 s |
-| 19 | gemma3n:e4b | ollama | **0,36** [0,224; 0,485] | 0,43 | 0,86 | 100% | 22,3 / 118,4 | 22,7 | elegível |
-| 20 | qwen3.5:2b | ollama | **0,35** [0,174; 0,496] | 0,37 | 0,73 | 100% | 11,8 / 47,5 | 53,2 | elegível |
-| 21 | qwen3.5:0.8b | ollama | **0,34** [0,168; 0,487] | 0,40 | 0,68 | 100% | 5,4 / 20,4 | 120,6 | elegível |
-| 22 | Ternary-Bonsai-8B (PQ2_0) | llamacpp-prism | **0,34** [0,194; 0,459] | 0,40 | 0,77 | 100% | 36,7 / 122,2 | 19,4 | elegível |
-| 23 | gemma3:4b (prompt v1) | ollama | **0,29** [0,149; 0,375] | 0,40 | 0,92 | 100% | 25,6 / 43,4 | 41,2 | não elegível: experimento |
-| 24 | llama3.1:8b | ollama | **0,20** [0,083; 0,31] | 0,30 | 0,90 | 100% | 18,5 / 47,4 | 46,4 | elegível |
-| 25 | granite4:7b-a1b-h | ollama | **0,16** [0,061; 0,267] | 0,27 | 0,84 | 100% | 7,5 / 35,6 | 73,7 | elegível |
-| 26 | llama3.2:3b | ollama | **0,10** [0,047; 0,149] | 0,23 | 0,90 | 100% | 19,3 / 49,6 | 43,7 | elegível |
-| – | gemma4:12b | ollama | | | | | | | ainda não executado |
-| – | gemma4:e2b | ollama | | | | | | | ainda não executado |
+| 1 | Ternary-Bonsai-2-27B (PTQ1_0) | llamacpp-prism | **1,00** [1,0; 1,0] | 1,00 | 1,00 | 100% | 1975,7 / 2443,5 | 0,6 | não elegível: cobriu 13% dos casos no tempo disponível; latência p90 de 2444 s; experimento |
+| 2 | gemma4:12b | ollama | **0,89** [0,738; 1,0] | 0,90 | 0,99 | 100% | 57,4 / 204,0 | 11,6 | não elegível: latência p90 de 204 s |
+| 3 | qwen3:4b | ollama | **0,75** [0,595; 0,889] | 0,77 | 0,87 | 100% | 21,1 / 39,5 | 47,1 | elegível |
+| 4 | granite4.2:8b | ollama | **0,71** [0,531; 0,844] | 0,63 | 0,78 | 44% | 148,3 / 180,0 | 8,3 | não elegível: respostas válidas 44%; latência p90 de 180 s |
+| 5 | qwen3:4b (llama.cpp) | llamacpp | **0,69** [0,518; 0,827] | 0,70 | 0,84 | 100% | 34,0 / 50,4 | 31,7 | elegível |
+| 6 | qwen3.5:9b | ollama | **0,68** [0,496; 0,823] | 0,70 | 0,86 | 100% | 25,7 / 83,3 | 28,1 | elegível |
+| 7 | ministral-3:3b | ollama | **0,67** [0,497; 0,815] | 0,70 | 0,83 | 100% | 26,5 / 53,7 | 37,3 | elegível |
+| 8 | qwen3:8b | ollama | **0,59** [0,426; 0,744] | 0,63 | 0,88 | 100% | 39,1 / 141,2 | 17,0 | elegível |
+| 9 | ministral-3:8b | ollama | **0,57** [0,438; 0,661] | 0,63 | 0,90 | 100% | 61,1 / 169,9 | 13,0 | não elegível: latência p90 de 170 s |
+| 10 | gemma3n:e2b | ollama | **0,54** [0,349; 0,7] | 0,53 | 0,70 | 100% | 15,6 / 63,1 | 39,5 | elegível |
+| 11 | qwen3:4b-q4_K_M | ollama | **0,53** [0,357; 0,685] | 0,57 | 0,86 | 100% | 21,6 / 58,9 | 36,6 | elegível |
+| 12 | gemma3:4b | ollama | **0,52** [0,314; 0,689] | 0,53 | 0,84 | 100% | 24,9 / 92,0 | 26,2 | elegível |
+| 13 | qwen3.5:4b | ollama | **0,50** [0,356; 0,65] | 0,57 | 0,86 | 100% | 23,9 / 106,1 | 24,8 | elegível |
+| 14 | lfm2.5:8b-a1b | ollama | **0,49** [0,307; 0,66] | 0,50 | 0,73 | 100% | 9,0 / 39,2 | 66,2 | elegível |
+| 15 | granite4.2:3b | ollama | **0,49** [0,38; 0,604] | 0,57 | 0,77 | 73% | 43,5 / 64,4 | 26,5 | não elegível: respostas válidas 73% |
+| 16 | qwen3:1.7b | ollama | **0,44** [0,267; 0,556] | 0,47 | 0,76 | 100% | 14,7 / 37,7 | 56,0 | elegível |
+| 17 | qwen3.5:2b-q4_K_M | ollama | **0,43** [0,275; 0,592] | 0,47 | 0,79 | 100% | 9,2 / 37,6 | 67,5 | elegível |
+| 18 | gemma3:4b (llama.cpp) | llamacpp | **0,40** [0,217; 0,563] | 0,43 | 0,83 | 100% | 21,1 / 76,6 | 31,5 | elegível |
+| 19 | gemma3:12b | ollama | **0,38** [0,312; 0,427] | 0,50 | 0,98 | 100% | 61,6 / 283,9 | 9,0 | não elegível: latência p90 de 284 s |
+| 20 | qwen3.5:2b | ollama | **0,35** [0,181; 0,496] | 0,37 | 0,73 | 100% | 14,7 / 48,7 | 48,6 | elegível |
+| 21 | qwen3.5:0.8b | ollama | **0,34** [0,171; 0,477] | 0,40 | 0,68 | 100% | 5,4 / 21,9 | 115,0 | elegível |
+| 22 | Ternary-Bonsai-8B (PQ2_0) | llamacpp-prism | **0,34** [0,192; 0,458] | 0,40 | 0,77 | 100% | 38,9 / 122,1 | 19,0 | elegível |
+| 23 | phi4-mini:3.8b | ollama | **0,30** [0,16; 0,437] | 0,37 | 0,73 | 100% | 17,3 / 61,8 | 39,9 | elegível |
+| 24 | gemma3:4b (prompt v1) | ollama | **0,29** [0,159; 0,38] | 0,40 | 0,92 | 100% | 25,6 / 43,4 | 41,2 | não elegível: experimento |
+| 25 | gemma3n:e4b | ollama | **0,28** [0,146; 0,368] | 0,37 | 0,89 | 100% | 20,3 / 80,8 | 30,6 | elegível |
+| 26 | llama3.1:8b | ollama | **0,20** [0,076; 0,312] | 0,30 | 0,90 | 100% | 18,1 / 47,3 | 46,7 | elegível |
+| 27 | granite4:7b-a1b-h | ollama | **0,16** [0,061; 0,267] | 0,27 | 0,84 | 100% | 7,2 / 35,7 | 74,3 | elegível |
+| 28 | llama3.2:3b | ollama | **0,10** [0,047; 0,149] | 0,23 | 0,90 | 100% | 22,6 / 54,0 | 39,2 | elegível |
+| 29 | gemma4:e2b | ollama | **0,10** [0,045; 0,143] | 0,23 | 0,94 | 100% | 10,6 / 40,3 | 60,9 | elegível |
 
 ### Mesmo modelo, motores ou formatos diferentes
 
@@ -78,29 +79,29 @@ em que o pipeline de fato roda.
 
 | Candidato | Motor | Arquivo / tag do modelo | macro-F1 [IC 95%] | Consist. | Latência p50 / p90 (s) |
 |---|---|---|---|---|---|
-| gemma3:4b | ollama | `gemma3:4b` | 0,50 [0,325; 0,66] | 0,84 | 22,2 / 63,4 |
-| gemma3:4b (llama.cpp) | llamacpp | `gemma-3-4b-it-Q4_K_M` | 0,40 [0,22; 0,565] | 0,83 | 22,6 / 78,8 |
+| gemma3:4b | ollama | `gemma3:4b` | 0,52 [0,314; 0,689] | 0,84 | 24,9 / 92,0 |
+| gemma3:4b (llama.cpp) | llamacpp | `gemma-3-4b-it-Q4_K_M` | 0,40 [0,217; 0,563] | 0,83 | 21,1 / 76,6 |
 
 **qwen3:4b no Ollama × llama.cpp.** Qwen3 4B da biblioteca do Ollama (duas tags) e o GGUF oficial da Qwen no llama.cpp; raciocínio desligado em todos. As tags podem apontar para builds diferentes (ver os digests em results/leaderboard.json).
 
 | Candidato | Motor | Arquivo / tag do modelo | macro-F1 [IC 95%] | Consist. | Latência p50 / p90 (s) |
 |---|---|---|---|---|---|
-| qwen3:4b | ollama | `qwen3:4b` | 0,81 [0,657; 0,933] | 0,86 | 35,8 / 91,3 |
-| qwen3:4b-q4_K_M | ollama | `qwen3:4b-q4_K_M` | 0,53 [0,369; 0,7] | 0,86 | 21,5 / 58,8 |
-| qwen3:4b (llama.cpp) | | | ainda não medido | | |
+| qwen3:4b | ollama | `qwen3:4b` | 0,75 [0,595; 0,889] | 0,87 | 21,1 / 39,5 |
+| qwen3:4b-q4_K_M | ollama | `qwen3:4b-q4_K_M` | 0,53 [0,357; 0,685] | 0,86 | 21,6 / 58,9 |
+| qwen3:4b (llama.cpp) | llamacpp | `Qwen3-4B-Q4_K_M` | 0,69 [0,518; 0,827] | 0,84 | 34,0 / 50,4 |
 
 **8B a 4 bits × 8B a ~2 bits (ternário).** Um modelo 8B convencional de 4 bits no Ollama e um 8B ternário (Bonsai) no fork PrismML do llama.cpp.
 
 | Candidato | Motor | Arquivo / tag do modelo | macro-F1 [IC 95%] | Consist. | Latência p50 / p90 (s) |
 |---|---|---|---|---|---|
-| qwen3:8b | ollama | `qwen3:8b` | 0,59 [0,416; 0,753] | 0,88 | 33,3 / 140,9 |
-| Ternary-Bonsai-8B (PQ2_0) | llamacpp-prism | `Ternary-Bonsai-8B-PQ2_0` | 0,34 [0,194; 0,459] | 0,77 | 36,7 / 122,2 |
+| qwen3:8b | ollama | `qwen3:8b` | 0,59 [0,426; 0,744] | 0,88 | 39,1 / 141,2 |
+| Ternary-Bonsai-8B (PQ2_0) | llamacpp-prism | `Ternary-Bonsai-8B-PQ2_0` | 0,34 [0,192; 0,458] | 0,77 | 38,9 / 122,1 |
 
 **27B comprimido para caber no runner.** O Ternary-Bonsai-2-27B (5,95 GB) é uma versão ternária do Qwen3.8-27B, cuja versão de 4 bits não cabe em 16 GB de RAM. Medido só numa amostra (4 casos, 1 semente): as chamadas levam muitos minutos em 4 vCPUs.
 
 | Candidato | Motor | Arquivo / tag do modelo | macro-F1 [IC 95%] | Consist. | Latência p50 / p90 (s) |
 |---|---|---|---|---|---|
-| Ternary-Bonsai-2-27B (PTQ1_0) | llamacpp-prism | `Ternary-Bonsai-2-27B-PTQ1_0` | 1,00 [1,0; 1,0] | 1,00 | 1739,5 / 2152,3 |
+| Ternary-Bonsai-2-27B (PTQ1_0) | llamacpp-prism | `Ternary-Bonsai-2-27B-PTQ1_0` | 1,00 [1,0; 1,0] | 1,00 | 1975,7 / 2443,5 |
 | Qwen3.8-27B a 4 bits (qwen3.8:27b-q4_K_M, 18 GB) | | | não cabe no runner gratuito | | |
 <!-- LEADERBOARD:END -->
 
@@ -223,8 +224,17 @@ A classificação ordena todos os candidatos; as tabelas **"Mesmo modelo, motore
 diferentes"** abaixo dela colocam lado a lado os candidatos que diferem só no motor ou na compressão,
 como declarado em `comparisons` no [`candidates.json`](candidates.json). Primeiros achados
 (30/09/2026): os mesmos pesos do Gemma 3 4B marcaram 0,50 no Ollama e 0,40 no llama.cpp, com a mesma
-velocidade e intervalos sobrepostos, então não há motivo para deixar o Ollama; as respostas dos dois
-motores diferem mesmo com as mesmas sementes e temperatura.
+velocidade e intervalos sobrepostos, então não há motivo para deixar o Ollama.
+
+**Variação entre execuções.** As respostas não se repetem nem no mesmo motor: uma mudança no código de produção (não no
+texto do prompt) forçou uma segunda execução de todos os candidatos no mesmo dia e, com o mesmo digest
+do modelo, a mesma versão do
+Ollama (0.35.0) e as mesmas sementes, nenhuma resposta do `qwen3:4b` ou do `gemma3:4b` foi idêntica (0
+de 90 em cada), o rótulo majoritário coincidiu em apenas 23 e 22 dos 30 casos, e o macro-F1 foi de 0,81
+para 0,75 (`qwen3:4b`) e de 0,50 para 0,52 (`gemma3:4b`). O intervalo por *bootstrap* cobre a escolha
+dos casos, não essa variação; por isso, diferenças menores que cerca de 0,05–0,10 entre dois modelos, ou
+entre duas execuções, devem ser lidas como ruído. A regra de troca (margem ≥ 0,05 e intervalo pareado
+acima de zero) protege contra parte disso.
 
 Modelos grandes hipercomprimidos respondem a uma pergunta real neste cenário: com a mesma memória, um
 27B a ~1,75 bit/peso é melhor que um 4B a 4 bits? Num runner de CPU, o preço é a velocidade: cada token

@@ -139,5 +139,5 @@ jobs:
           git config user.email "5ltep-modeltest-bot@users.noreply.github.com"
           git add results/ README.md LEIAME.md candidates.json
           git diff --cached --quiet || git commit -m "chore(bench): results [$(date -u +%Y-%m-%dT%H:%M:%SZ)]"
-          git pull --rebase
+          git pull --rebase --autostash
           git push

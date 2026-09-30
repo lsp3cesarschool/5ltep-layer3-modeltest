@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-30T12:40:54+00:00",
+ "generated_at": "2026-09-30T18:07:49+00:00",
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "gold_cases": 30,
  "prompt_refs": {
   "main": {
-   "commit": "5a1e733f25e973259d21a6942169173d19cd2966",
-   "fingerprint": "daea1e957b399103829673512ca2b8989e2bcd5f996946a9e2921fd24d6b7edc"
+   "commit": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
+   "fingerprint": "a74bdbd1ece574f116df5bb3fca97800451c2fc3ebf22cd93544f2b89489361d"
   },
   "7da22b7": {
    "commit": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
@@ -25,9 +25,8 @@
    "backend": "ollama",
    "model": "gemma3:4b",
    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:43:23+00:00",
+   "tested_at": "2026-09-30T14:57:39+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
@@ -47,51 +46,52 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.501,
+   "macro_f1": 0.522,
    "macro_f1_ci95": [
-    0.325,
-    0.66
+    0.314,
+    0.689
    ],
    "accuracy": 0.533,
    "recall": {
-    "PDC": 0.625,
+    "PDC": 0.5,
     "SP": 1.0,
-    "DQE": 0.125,
+    "DQE": 0.25,
     "GES": 0.429
    },
    "consistency": 0.844,
    "unanimous_rate": 0.567,
-   "valid_rate": 0.989,
-   "latency_median_s": 22.2,
-   "latency_p90_s": 63.4,
-   "anomalies_per_hour": 35.2,
+   "valid_rate": 1.0,
+   "latency_median_s": 24.9,
+   "latency_p90_s": 92.0,
+   "anomalies_per_hour": 26.2,
    "confusion": {
     "PDC": {
-     "PDC": 5,
-     "SP": 3
+     "PDC": 4,
+     "SP": 3,
+     "GES": 1
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "GES": 4,
-     "SP": 3,
-     "DQE": 1
+     "GES": 2,
+     "SP": 4,
+     "DQE": 2
     },
     "GES": {
-     "GES": 3,
-     "SP": 4
+     "SP": 4,
+     "GES": 3
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3.5:4b",
    "backend": "ollama",
    "model": "qwen3.5:4b",
    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:04:49+00:00",
+   "tested_at": "2026-09-30T15:01:50+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
@@ -126,9 +126,9 @@
    "consistency": 0.856,
    "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 23.7,
-   "latency_p90_s": 106.2,
-   "anomalies_per_hour": 24.7,
+   "latency_median_s": 23.9,
+   "latency_p90_s": 106.1,
+   "anomalies_per_hour": 24.8,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -145,16 +145,16 @@
      "SP": 6,
      "GES": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3:4b",
    "backend": "ollama",
    "model": "qwen3:4b",
    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:09:05+00:00",
+   "tested_at": "2026-09-30T14:27:13+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
@@ -174,50 +174,51 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.811,
+   "macro_f1": 0.753,
    "macro_f1_ci95": [
-    0.657,
-    0.933
+    0.595,
+    0.889
    ],
-   "accuracy": 0.833,
+   "accuracy": 0.767,
    "recall": {
     "PDC": 1.0,
-    "SP": 1.0,
-    "DQE": 0.875,
+    "SP": 0.857,
+    "DQE": 0.75,
     "GES": 0.429
    },
-   "consistency": 0.856,
-   "unanimous_rate": 0.567,
-   "valid_rate": 0.989,
-   "latency_median_s": 35.8,
-   "latency_p90_s": 91.3,
-   "anomalies_per_hour": 23.7,
+   "consistency": 0.867,
+   "unanimous_rate": 0.6,
+   "valid_rate": 1.0,
+   "latency_median_s": 21.1,
+   "latency_p90_s": 39.5,
+   "anomalies_per_hour": 47.1,
    "confusion": {
     "PDC": {
      "PDC": 8
     },
     "SP": {
-     "SP": 7
+     "GES": 1,
+     "SP": 6
     },
     "DQE": {
-     "DQE": 7,
-     "GES": 1
+     "DQE": 6,
+     "GES": 2
     },
     "GES": {
+     "SP": 3,
      "GES": 3,
-     "DQE": 2,
-     "SP": 2
+     "DQE": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "granite4.2:3b",
    "backend": "ollama",
    "model": "granite4.2:3b",
    "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
-   "status": "not eligible: valid answers 76%",
    "eligible": false,
-   "tested_at": "2026-09-30T02:07:45+00:00",
+   "tested_at": "2026-09-30T14:57:00+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
@@ -237,24 +238,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.56,
+   "macro_f1": 0.492,
    "macro_f1_ci95": [
-    0.438,
-    0.656
+    0.38,
+    0.604
    ],
-   "accuracy": 0.633,
+   "accuracy": 0.567,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
     "DQE": 0.0,
-    "GES": 0.571
+    "GES": 0.286
    },
-   "consistency": 0.722,
-   "unanimous_rate": 0.433,
-   "valid_rate": 0.756,
-   "latency_median_s": 52.9,
-   "latency_p90_s": 87.0,
-   "anomalies_per_hour": 23.8,
+   "consistency": 0.767,
+   "unanimous_rate": 0.467,
+   "valid_rate": 0.733,
+   "latency_median_s": 43.5,
+   "latency_p90_s": 64.4,
+   "anomalies_per_hour": 26.5,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -263,24 +264,24 @@
      "SP": 7
     },
     "DQE": {
-     "INVALID": 1,
-     "SP": 4,
-     "GES": 3
+     "GES": 3,
+     "SP": 3,
+     "INVALID": 2
     },
     "GES": {
-     "GES": 4,
-     "SP": 3
+     "SP": 5,
+     "GES": 2
     }
-   }
+   },
+   "status": "not eligible: valid answers 73%"
   },
   {
    "label": "ministral-3:3b",
    "backend": "ollama",
    "model": "ministral-3:3b",
    "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:57:27+00:00",
+   "tested_at": "2026-09-30T14:38:04+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
@@ -300,51 +301,50 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.695,
+   "macro_f1": 0.669,
    "macro_f1_ci95": [
-    0.516,
-    0.84
+    0.497,
+    0.815
    ],
    "accuracy": 0.7,
    "recall": {
-    "PDC": 0.75,
+    "PDC": 1.0,
     "SP": 1.0,
-    "DQE": 0.375,
-    "GES": 0.714
+    "DQE": 0.25,
+    "GES": 0.571
    },
    "consistency": 0.833,
-   "unanimous_rate": 0.533,
-   "valid_rate": 0.978,
-   "latency_median_s": 42.5,
-   "latency_p90_s": 57.1,
-   "anomalies_per_hour": 27.4,
+   "unanimous_rate": 0.5,
+   "valid_rate": 1.0,
+   "latency_median_s": 26.5,
+   "latency_p90_s": 53.7,
+   "anomalies_per_hour": 37.3,
    "confusion": {
     "PDC": {
-     "PDC": 6,
-     "GES": 1,
-     "SP": 1
+     "PDC": 8
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "DQE": 3,
-     "GES": 5
+     "DQE": 2,
+     "GES": 5,
+     "SP": 1
     },
     "GES": {
-     "GES": 5,
-     "SP": 2
+     "SP": 3,
+     "GES": 4
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "phi4-mini:3.8b",
    "backend": "ollama",
    "model": "phi4-mini:3.8b",
    "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:52:07+00:00",
+   "tested_at": "2026-09-30T14:34:18+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
@@ -364,52 +364,52 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.479,
+   "macro_f1": 0.3,
    "macro_f1_ci95": [
-    0.318,
-    0.598
+    0.16,
+    0.437
    ],
-   "accuracy": 0.533,
+   "accuracy": 0.367,
    "recall": {
-    "PDC": 0.5,
+    "PDC": 0.125,
     "SP": 0.857,
     "DQE": 0.0,
-    "GES": 0.857
+    "GES": 0.571
    },
-   "consistency": 0.8,
-   "unanimous_rate": 0.433,
+   "consistency": 0.733,
+   "unanimous_rate": 0.3,
    "valid_rate": 1.0,
-   "latency_median_s": 30.8,
-   "latency_p90_s": 65.5,
-   "anomalies_per_hour": 30.2,
+   "latency_median_s": 17.3,
+   "latency_p90_s": 61.8,
+   "anomalies_per_hour": 39.9,
    "confusion": {
     "PDC": {
-     "GES": 3,
-     "PDC": 4,
-     "SP": 1
+     "GES": 6,
+     "DQE": 1,
+     "PDC": 1
     },
     "SP": {
      "SP": 6,
      "GES": 1
     },
     "DQE": {
-     "GES": 7,
-     "SP": 1
+     "SP": 3,
+     "GES": 5
     },
     "GES": {
-     "GES": 6,
-     "SP": 1
+     "GES": 4,
+     "SP": 3
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "llama3.2:3b",
    "backend": "ollama",
    "model": "llama3.2:3b",
    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:33:23+00:00",
+   "tested_at": "2026-09-30T14:35:04+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
@@ -444,9 +444,9 @@
    "consistency": 0.9,
    "unanimous_rate": 0.7,
    "valid_rate": 1.0,
-   "latency_median_s": 19.3,
-   "latency_p90_s": 49.6,
-   "anomalies_per_hour": 43.7,
+   "latency_median_s": 22.6,
+   "latency_p90_s": 54.0,
+   "anomalies_per_hour": 39.2,
    "confusion": {
     "PDC": {
      "SP": 7,
@@ -462,16 +462,16 @@
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "lfm2.5:8b-a1b",
    "backend": "ollama",
    "model": "lfm2.5:8b-a1b-q4_K_M",
    "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:06:05+00:00",
+   "tested_at": "2026-09-30T14:16:45+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
@@ -491,50 +491,51 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.389,
+   "macro_f1": 0.495,
    "macro_f1_ci95": [
-    0.261,
-    0.503
+    0.307,
+    0.66
    ],
-   "accuracy": 0.467,
+   "accuracy": 0.5,
    "recall": {
-    "PDC": 0.75,
-    "SP": 0.143,
-    "DQE": 0.0,
-    "GES": 1.0
+    "PDC": 0.625,
+    "SP": 0.429,
+    "DQE": 0.125,
+    "GES": 0.857
    },
-   "consistency": 0.778,
-   "unanimous_rate": 0.367,
+   "consistency": 0.733,
+   "unanimous_rate": 0.267,
    "valid_rate": 1.0,
-   "latency_median_s": 4.8,
-   "latency_p90_s": 19.3,
-   "anomalies_per_hour": 131.5,
+   "latency_median_s": 9.0,
+   "latency_p90_s": 39.2,
+   "anomalies_per_hour": 66.2,
    "confusion": {
     "PDC": {
-     "PDC": 6,
-     "GES": 2
+     "PDC": 5,
+     "GES": 3
     },
     "SP": {
-     "SP": 1,
-     "GES": 6
+     "SP": 3,
+     "GES": 4
     },
     "DQE": {
-     "GES": 5,
-     "SP": 3
+     "GES": 7,
+     "DQE": 1
     },
     "GES": {
-     "GES": 7
+     "GES": 6,
+     "SP": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "granite4:7b-a1b-h",
    "backend": "ollama",
    "model": "granite4:7b-a1b-h",
    "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:16:38+00:00",
+   "tested_at": "2026-09-30T14:13:34+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
@@ -569,9 +570,9 @@
    "consistency": 0.844,
    "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 7.5,
-   "latency_p90_s": 35.6,
-   "anomalies_per_hour": 73.7,
+   "latency_median_s": 7.2,
+   "latency_p90_s": 35.7,
+   "anomalies_per_hour": 74.3,
    "confusion": {
     "PDC": {
      "GES": 7,
@@ -587,16 +588,16 @@
     "GES": {
      "GES": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3.5:9b",
    "backend": "ollama",
    "model": "qwen3.5:9b",
    "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
-   "status": "not eligible: p90 latency 183s",
-   "eligible": false,
-   "tested_at": "2026-09-30T02:55:49+00:00",
+   "eligible": true,
+   "tested_at": "2026-09-30T14:53:08+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
@@ -616,56 +617,111 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.608,
+   "macro_f1": 0.677,
    "macro_f1_ci95": [
-    0.432,
-    0.771
+    0.496,
+    0.823
    ],
-   "accuracy": 0.633,
+   "accuracy": 0.7,
    "recall": {
-    "PDC": 0.875,
+    "PDC": 1.0,
     "SP": 1.0,
-    "DQE": 0.25,
+    "DQE": 0.375,
     "GES": 0.429
    },
-   "consistency": 0.833,
-   "unanimous_rate": 0.633,
+   "consistency": 0.856,
+   "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 35.8,
-   "latency_p90_s": 183.1,
-   "anomalies_per_hour": 14.7,
+   "latency_median_s": 25.7,
+   "latency_p90_s": 83.3,
+   "anomalies_per_hour": 28.1,
    "confusion": {
     "PDC": {
-     "PDC": 7,
-     "GES": 1
+     "PDC": 8
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "SP": 4,
-     "GES": 2,
-     "DQE": 2
+     "DQE": 3,
+     "SP": 2,
+     "GES": 3
     },
     "GES": {
      "GES": 3,
      "SP": 4
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "gemma4:12b",
    "backend": "ollama",
-   "status": "not run yet"
+   "model": "gemma4:12b",
+   "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+   "eligible": false,
+   "tested_at": "2026-09-30T16:24:25+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+    "size_bytes": 8021618941,
+    "details": {
+     "parent_model": "imatrix-20260927-12b/model-q4_K_M.gguf",
+     "format": "gguf",
+     "family": "gemma4",
+     "families": [
+      "gemma4"
+     ],
+     "parameter_size": "11.9B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 3840
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.888,
+   "macro_f1_ci95": [
+    0.738,
+    1.0
+   ],
+   "accuracy": 0.9,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 1.0,
+    "GES": 0.571
+   },
+   "consistency": 0.989,
+   "unanimous_rate": 0.967,
+   "valid_rate": 1.0,
+   "latency_median_s": 57.4,
+   "latency_p90_s": 204.0,
+   "anomalies_per_hour": 11.6,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "DQE": 8
+    },
+    "GES": {
+     "GES": 4,
+     "SP": 3
+    }
+   },
+   "status": "not eligible: p90 latency 204s"
   },
   {
    "label": "ministral-3:8b",
    "backend": "ollama",
    "model": "ministral-3:8b",
    "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
-   "status": "not eligible: p90 latency 164s",
    "eligible": false,
-   "tested_at": "2026-09-30T02:56:16+00:00",
+   "tested_at": "2026-09-30T16:08:25+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
@@ -687,8 +743,8 @@
    "cases_done": 30,
    "macro_f1": 0.566,
    "macro_f1_ci95": [
-    0.43,
-    0.665
+    0.438,
+    0.661
    ],
    "accuracy": 0.633,
    "recall": {
@@ -700,9 +756,9 @@
    "consistency": 0.9,
    "unanimous_rate": 0.767,
    "valid_rate": 1.0,
-   "latency_median_s": 47.9,
-   "latency_p90_s": 164.0,
-   "anomalies_per_hour": 14.5,
+   "latency_median_s": 61.1,
+   "latency_p90_s": 169.9,
+   "anomalies_per_hour": 13.0,
    "confusion": {
     "PDC": {
      "PDC": 7,
@@ -718,16 +774,16 @@
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "not eligible: p90 latency 170s"
   },
   {
    "label": "granite4.2:8b",
    "backend": "ollama",
    "model": "granite4.2:8b",
    "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
-   "status": "not eligible: valid answers 42%; p90 latency 191s",
    "eligible": false,
-   "tested_at": "2026-09-30T04:09:33+00:00",
+   "tested_at": "2026-09-30T17:52:24+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
@@ -747,24 +803,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.617,
+   "macro_f1": 0.714,
    "macro_f1_ci95": [
-    0.438,
-    0.755
+    0.531,
+    0.844
    ],
-   "accuracy": 0.567,
+   "accuracy": 0.633,
    "recall": {
     "PDC": 1.0,
     "SP": 0.857,
-    "DQE": 0.125,
-    "GES": 0.286
+    "DQE": 0.25,
+    "GES": 0.429
    },
-   "consistency": 0.789,
-   "unanimous_rate": 0.533,
-   "valid_rate": 0.422,
-   "latency_median_s": 101.9,
-   "latency_p90_s": 190.8,
-   "anomalies_per_hour": 9.9,
+   "consistency": 0.778,
+   "unanimous_rate": 0.633,
+   "valid_rate": 0.444,
+   "latency_median_s": 148.3,
+   "latency_p90_s": 180.0,
+   "anomalies_per_hour": 8.3,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -774,24 +830,24 @@
      "INVALID": 1
     },
     "DQE": {
-     "DQE": 1,
-     "INVALID": 7
+     "INVALID": 6,
+     "DQE": 2
     },
     "GES": {
-     "GES": 2,
+     "GES": 3,
      "INVALID": 3,
-     "SP": 2
+     "SP": 1
     }
-   }
+   },
+   "status": "not eligible: valid answers 44%; p90 latency 180s"
   },
   {
    "label": "llama3.1:8b",
    "backend": "ollama",
    "model": "llama3.1:8b",
    "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T01:56:52+00:00",
+   "tested_at": "2026-09-30T14:56:27+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
@@ -813,8 +869,8 @@
    "cases_done": 30,
    "macro_f1": 0.203,
    "macro_f1_ci95": [
-    0.083,
-    0.31
+    0.076,
+    0.312
    ],
    "accuracy": 0.3,
    "recall": {
@@ -826,9 +882,9 @@
    "consistency": 0.9,
    "unanimous_rate": 0.7,
    "valid_rate": 1.0,
-   "latency_median_s": 18.5,
-   "latency_p90_s": 47.4,
-   "anomalies_per_hour": 46.4,
+   "latency_median_s": 18.1,
+   "latency_p90_s": 47.3,
+   "anomalies_per_hour": 46.7,
    "confusion": {
     "PDC": {
      "SP": 6,
@@ -844,26 +900,26 @@
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "gemma3:4b (llama.cpp)",
    "backend": "llamacpp",
    "model": "gemma-3-4b-it-Q4_K_M",
    "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:33:34+00:00",
+   "tested_at": "2026-09-30T15:25:12+00:00",
    "server": {
-    "server_version": "b11269-cee37ffea",
+    "server_version": "b11284-25747b08e",
     "model_path": "/home/runner/models/model.gguf"
    },
    "coverage": 1.0,
    "cases_done": 30,
    "macro_f1": 0.402,
    "macro_f1_ci95": [
-    0.22,
-    0.565
+    0.217,
+    0.563
    ],
    "accuracy": 0.433,
    "recall": {
@@ -875,9 +931,9 @@
    "consistency": 0.833,
    "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 22.6,
-   "latency_p90_s": 78.8,
-   "anomalies_per_hour": 30.4,
+   "latency_median_s": 21.1,
+   "latency_p90_s": 76.6,
+   "anomalies_per_hour": 31.5,
    "confusion": {
     "PDC": {
      "PDC": 2,
@@ -895,16 +951,67 @@
      "SP": 4,
      "GES": 3
     }
-   }
+   },
+   "status": "eligible"
+  },
+  {
+   "label": "qwen3:4b (llama.cpp)",
+   "backend": "llamacpp",
+   "model": "Qwen3-4B-Q4_K_M",
+   "digest": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+   "eligible": true,
+   "tested_at": "2026-09-30T13:39:17+00:00",
+   "server": {
+    "server_version": "b11284-25747b08e",
+    "model_path": "/home/runner/models/model.gguf"
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.69,
+   "macro_f1_ci95": [
+    0.518,
+    0.827
+   ],
+   "accuracy": 0.7,
+   "recall": {
+    "PDC": 0.875,
+    "SP": 0.857,
+    "DQE": 0.25,
+    "GES": 0.857
+   },
+   "consistency": 0.844,
+   "unanimous_rate": 0.6,
+   "valid_rate": 1.0,
+   "latency_median_s": 34.0,
+   "latency_p90_s": 50.4,
+   "anomalies_per_hour": 31.7,
+   "confusion": {
+    "PDC": {
+     "PDC": 7,
+     "GES": 1
+    },
+    "SP": {
+     "SP": 6,
+     "GES": 1
+    },
+    "DQE": {
+     "GES": 6,
+     "DQE": 2
+    },
+    "GES": {
+     "GES": 6,
+     "SP": 1
+    }
+   },
+   "status": "eligible"
   },
   {
    "label": "Ternary-Bonsai-8B (PQ2_0)",
    "backend": "llamacpp-prism",
    "model": "Ternary-Bonsai-8B-PQ2_0",
    "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T12:08:45+00:00",
+   "tested_at": "2026-09-30T16:10:16+00:00",
    "server": {
     "server_version": "b1-88c4bc6",
     "model_path": "/home/runner/models/model.gguf"
@@ -913,8 +1020,8 @@
    "cases_done": 30,
    "macro_f1": 0.337,
    "macro_f1_ci95": [
-    0.194,
-    0.459
+    0.192,
+    0.458
    ],
    "accuracy": 0.4,
    "recall": {
@@ -926,9 +1033,9 @@
    "consistency": 0.767,
    "unanimous_rate": 0.3,
    "valid_rate": 1.0,
-   "latency_median_s": 36.7,
-   "latency_p90_s": 122.2,
-   "anomalies_per_hour": 19.4,
+   "latency_median_s": 38.9,
+   "latency_p90_s": 122.1,
+   "anomalies_per_hour": 19.0,
    "confusion": {
     "PDC": {
      "PDC": 4,
@@ -946,16 +1053,16 @@
      "SP": 6,
      "GES": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
    "backend": "llamacpp-prism",
    "model": "Ternary-Bonsai-2-27B-PTQ1_0",
    "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
-   "status": "not eligible: covered 13% of the cases in the time budget; p90 latency 2152s; experiment",
    "eligible": false,
-   "tested_at": "2026-09-30T12:40:31+00:00",
+   "tested_at": "2026-09-30T16:58:38+00:00",
    "server": {
     "server_version": "b1-88c4bc6",
     "model_path": "/home/runner/models/model.gguf"
@@ -977,8 +1084,8 @@
    "consistency": 1.0,
    "unanimous_rate": 1.0,
    "valid_rate": 1.0,
-   "latency_median_s": 1739.5,
-   "latency_p90_s": 2152.3,
+   "latency_median_s": 1975.7,
+   "latency_p90_s": 2443.5,
    "anomalies_per_hour": 0.6,
    "confusion": {
     "PDC": {
@@ -993,14 +1100,14 @@
     "GES": {
      "GES": 1
     }
-   }
+   },
+   "status": "not eligible: covered 13% of the cases in the time budget; p90 latency 2444s; experiment"
   },
   {
    "label": "gemma3:4b (prompt v1)",
    "backend": "ollama",
    "model": "gemma3:4b",
    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-   "status": "not eligible: experiment",
    "eligible": false,
    "tested_at": "2026-09-30T02:42:21+00:00",
    "server": {
@@ -1024,8 +1131,8 @@
    "cases_done": 30,
    "macro_f1": 0.288,
    "macro_f1_ci95": [
-    0.149,
-    0.375
+    0.159,
+    0.38
    ],
    "accuracy": 0.4,
    "recall": {
@@ -1055,16 +1162,16 @@
     "GES": {
      "DQE": 7
     }
-   }
+   },
+   "status": "not eligible: experiment"
   },
   {
    "label": "gemma3:12b",
    "backend": "ollama",
    "model": "gemma3:12b",
    "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
-   "status": "not eligible: p90 latency 286s",
    "eligible": false,
-   "tested_at": "2026-09-30T05:11:36+00:00",
+   "tested_at": "2026-09-30T17:59:40+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
@@ -1087,7 +1194,7 @@
    "macro_f1": 0.375,
    "macro_f1_ci95": [
     0.312,
-    0.426
+    0.427
    ],
    "accuracy": 0.5,
    "recall": {
@@ -1099,9 +1206,9 @@
    "consistency": 0.978,
    "unanimous_rate": 0.933,
    "valid_rate": 1.0,
-   "latency_median_s": 53.4,
-   "latency_p90_s": 285.8,
-   "anomalies_per_hour": 9.4,
+   "latency_median_s": 61.6,
+   "latency_p90_s": 283.9,
+   "anomalies_per_hour": 9.0,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -1116,21 +1223,76 @@
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "not eligible: p90 latency 284s"
   },
   {
    "label": "gemma4:e2b",
    "backend": "ollama",
-   "status": "not run yet"
+   "model": "gemma4:e2b",
+   "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+   "eligible": true,
+   "tested_at": "2026-09-30T15:24:30+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
+    "size_bytes": 4587156505,
+    "details": {
+     "parent_model": "gemma4-validation-20260929:e2b-imatrix-attention-q6-q8-draft2",
+     "format": "gguf",
+     "family": "gemma4",
+     "families": [
+      "gemma4"
+     ],
+     "parameter_size": "4.6B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 1536
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.095,
+   "macro_f1_ci95": [
+    0.045,
+    0.143
+   ],
+   "accuracy": 0.233,
+   "recall": {
+    "PDC": 0.0,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.0
+   },
+   "consistency": 0.944,
+   "unanimous_rate": 0.833,
+   "valid_rate": 1.0,
+   "latency_median_s": 10.6,
+   "latency_p90_s": 40.3,
+   "anomalies_per_hour": 60.9,
+   "confusion": {
+    "PDC": {
+     "SP": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 8
+    },
+    "GES": {
+     "SP": 7
+    }
+   },
+   "status": "eligible"
   },
   {
    "label": "gemma3n:e2b",
    "backend": "ollama",
    "model": "gemma3n:e2b",
    "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:37:28+00:00",
+   "tested_at": "2026-09-30T15:45:13+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
@@ -1150,52 +1312,53 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.481,
+   "macro_f1": 0.537,
    "macro_f1_ci95": [
-    0.273,
-    0.642
+    0.349,
+    0.7
    ],
-   "accuracy": 0.467,
+   "accuracy": 0.533,
    "recall": {
-    "PDC": 0.375,
-    "SP": 0.571,
+    "PDC": 0.625,
+    "SP": 0.429,
     "DQE": 0.25,
-    "GES": 0.714
+    "GES": 0.857
    },
-   "consistency": 0.744,
+   "consistency": 0.7,
    "unanimous_rate": 0.267,
    "valid_rate": 1.0,
-   "latency_median_s": 11.8,
-   "latency_p90_s": 42.1,
-   "anomalies_per_hour": 57.3,
+   "latency_median_s": 15.6,
+   "latency_p90_s": 63.1,
+   "anomalies_per_hour": 39.5,
    "confusion": {
     "PDC": {
-     "PDC": 3,
-     "GES": 5
+     "GES": 3,
+     "PDC": 5
     },
     "SP": {
-     "GES": 2,
-     "SP": 4,
-     "DQE": 1
+     "DQE": 1,
+     "SP": 3,
+     "GES": 3
     },
     "DQE": {
-     "GES": 6,
+     "GES": 5,
+     "SP": 1,
      "DQE": 2
     },
     "GES": {
-     "GES": 5,
-     "SP": 2
+     "GES": 6,
+     "DQE": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "gemma3n:e4b",
    "backend": "ollama",
    "model": "gemma3n:e4b",
    "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T03:28:17+00:00",
+   "tested_at": "2026-09-30T15:57:55+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
@@ -1215,49 +1378,49 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.361,
+   "macro_f1": 0.276,
    "macro_f1_ci95": [
-    0.224,
-    0.485
+    0.146,
+    0.368
    ],
-   "accuracy": 0.433,
+   "accuracy": 0.367,
    "recall": {
-    "PDC": 0.625,
+    "PDC": 0.5,
     "SP": 1.0,
-    "DQE": 0.125,
+    "DQE": 0.0,
     "GES": 0.0
    },
-   "consistency": 0.856,
-   "unanimous_rate": 0.567,
+   "consistency": 0.889,
+   "unanimous_rate": 0.7,
    "valid_rate": 1.0,
-   "latency_median_s": 22.3,
-   "latency_p90_s": 118.4,
-   "anomalies_per_hour": 22.7,
+   "latency_median_s": 20.3,
+   "latency_p90_s": 80.8,
+   "anomalies_per_hour": 30.6,
    "confusion": {
     "PDC": {
-     "PDC": 5,
-     "SP": 3
+     "SP": 4,
+     "PDC": 4
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
      "SP": 7,
-     "DQE": 1
+     "GES": 1
     },
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3:1.7b",
    "backend": "ollama",
    "model": "qwen3:1.7b",
    "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:35:11+00:00",
+   "tested_at": "2026-09-30T15:31:07+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
@@ -1277,51 +1440,52 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.391,
+   "macro_f1": 0.436,
    "macro_f1_ci95": [
-    0.235,
-    0.514
+    0.267,
+    0.556
    ],
-   "accuracy": 0.433,
+   "accuracy": 0.467,
    "recall": {
     "PDC": 0.5,
     "SP": 0.571,
     "DQE": 0.0,
-    "GES": 0.714
+    "GES": 0.857
    },
-   "consistency": 0.767,
-   "unanimous_rate": 0.3,
+   "consistency": 0.756,
+   "unanimous_rate": 0.333,
    "valid_rate": 1.0,
-   "latency_median_s": 12.6,
-   "latency_p90_s": 27.6,
-   "anomalies_per_hour": 72.4,
+   "latency_median_s": 14.7,
+   "latency_p90_s": 37.7,
+   "anomalies_per_hour": 56.0,
    "confusion": {
     "PDC": {
-     "GES": 4,
-     "PDC": 4
+     "PDC": 4,
+     "GES": 4
     },
     "SP": {
      "SP": 4,
-     "GES": 3
+     "DQE": 1,
+     "GES": 2
     },
     "DQE": {
-     "SP": 5,
-     "GES": 3
+     "SP": 1,
+     "GES": 7
     },
     "GES": {
-     "SP": 2,
-     "GES": 5
+     "GES": 6,
+     "SP": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3:4b-q4_K_M",
    "backend": "ollama",
    "model": "qwen3:4b-q4_K_M",
    "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T03:17:24+00:00",
+   "tested_at": "2026-09-30T15:52:19+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
@@ -1343,8 +1507,8 @@
    "cases_done": 30,
    "macro_f1": 0.532,
    "macro_f1_ci95": [
-    0.369,
-    0.7
+    0.357,
+    0.685
    ],
    "accuracy": 0.567,
    "recall": {
@@ -1356,9 +1520,9 @@
    "consistency": 0.856,
    "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 21.5,
-   "latency_p90_s": 58.8,
-   "anomalies_per_hour": 37.0,
+   "latency_median_s": 21.6,
+   "latency_p90_s": 58.9,
+   "anomalies_per_hour": 36.6,
    "confusion": {
     "PDC": {
      "PDC": 6,
@@ -1376,16 +1540,16 @@
      "DQE": 2,
      "GES": 1
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3:8b",
    "backend": "ollama",
    "model": "qwen3:8b",
    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T04:16:37+00:00",
+   "tested_at": "2026-09-30T17:13:04+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
@@ -1407,8 +1571,8 @@
    "cases_done": 30,
    "macro_f1": 0.593,
    "macro_f1_ci95": [
-    0.416,
-    0.753
+    0.426,
+    0.744
    ],
    "accuracy": 0.633,
    "recall": {
@@ -1420,9 +1584,9 @@
    "consistency": 0.878,
    "unanimous_rate": 0.667,
    "valid_rate": 1.0,
-   "latency_median_s": 33.3,
-   "latency_p90_s": 140.9,
-   "anomalies_per_hour": 17.9,
+   "latency_median_s": 39.1,
+   "latency_p90_s": 141.2,
+   "anomalies_per_hour": 17.0,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -1439,16 +1603,16 @@
      "SP": 5,
      "GES": 2
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3.5:0.8b",
    "backend": "ollama",
    "model": "qwen3.5:0.8b",
    "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T02:51:24+00:00",
+   "tested_at": "2026-09-30T15:41:58+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
@@ -1470,8 +1634,8 @@
    "cases_done": 30,
    "macro_f1": 0.341,
    "macro_f1_ci95": [
-    0.168,
-    0.487
+    0.171,
+    0.477
    ],
    "accuracy": 0.4,
    "recall": {
@@ -1484,8 +1648,8 @@
    "unanimous_rate": 0.333,
    "valid_rate": 1.0,
    "latency_median_s": 5.4,
-   "latency_p90_s": 20.4,
-   "anomalies_per_hour": 120.6,
+   "latency_p90_s": 21.9,
+   "anomalies_per_hour": 115.0,
    "confusion": {
     "PDC": {
      "PDC": 3,
@@ -1505,16 +1669,16 @@
     "GES": {
      "GES": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3.5:2b",
    "backend": "ollama",
    "model": "qwen3.5:2b",
    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T03:12:36+00:00",
+   "tested_at": "2026-09-30T16:10:46+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
@@ -1536,7 +1700,7 @@
    "cases_done": 30,
    "macro_f1": 0.352,
    "macro_f1_ci95": [
-    0.174,
+    0.181,
     0.496
    ],
    "accuracy": 0.367,
@@ -1549,9 +1713,9 @@
    "consistency": 0.733,
    "unanimous_rate": 0.333,
    "valid_rate": 1.0,
-   "latency_median_s": 11.8,
-   "latency_p90_s": 47.5,
-   "anomalies_per_hour": 53.2,
+   "latency_median_s": 14.7,
+   "latency_p90_s": 48.7,
+   "anomalies_per_hour": 48.6,
    "confusion": {
     "PDC": {
      "GES": 4,
@@ -1570,16 +1734,16 @@
     "GES": {
      "SP": 7
     }
-   }
+   },
+   "status": "eligible"
   },
   {
    "label": "qwen3.5:2b-q4_K_M",
    "backend": "ollama",
    "model": "qwen3.5:2b-q4_K_M",
    "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
-   "status": "eligible",
    "eligible": true,
-   "tested_at": "2026-09-30T03:10:39+00:00",
+   "tested_at": "2026-09-30T16:09:57+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
@@ -1601,8 +1765,8 @@
    "cases_done": 30,
    "macro_f1": 0.431,
    "macro_f1_ci95": [
-    0.276,
-    0.583
+    0.275,
+    0.592
    ],
    "accuracy": 0.467,
    "recall": {
@@ -1614,9 +1778,9 @@
    "consistency": 0.789,
    "unanimous_rate": 0.433,
    "valid_rate": 1.0,
-   "latency_median_s": 9.6,
-   "latency_p90_s": 38.0,
-   "anomalies_per_hour": 66.4,
+   "latency_median_s": 9.2,
+   "latency_p90_s": 37.6,
+   "anomalies_per_hour": 67.5,
    "confusion": {
     "PDC": {
      "PDC": 6,
@@ -1635,7 +1799,8 @@
      "SP": 6,
      "GES": 1
     }
-   }
+   },
+   "status": "eligible"
   }
  ],
  "unavailable": []

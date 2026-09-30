@@ -1,25 +1,46 @@
 {
- "generated_at": "2026-09-30T12:40:54+00:00",
+ "generated_at": "2026-09-30T18:07:49+00:00",
  "benchmark": "https://github.com/lsp3cesarschool/5ltep-layer3-modeltest",
  "gold_cases": 30,
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
- "prompt_commit": "5a1e733f25e973259d21a6942169173d19cd2966",
- "production": {
-  "label": "gemma3:4b",
+ "prompt_commit": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
+ "use": {
+  "label": "qwen3:4b",
   "backend": "ollama",
-  "model": "gemma3:4b",
-  "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-  "options": {},
-  "macro_f1": 0.501,
+  "model": "qwen3:4b",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "options": {
+   "think": false
+  },
+  "macro_f1": 0.753,
   "macro_f1_ci95": [
-   0.325,
-   0.66
+   0.595,
+   0.889
   ],
-  "consistency": 0.844,
-  "valid_rate": 0.989,
-  "latency_p90_s": 63.4,
-  "anomalies_per_hour": 35.2,
-  "tested_at": "2026-09-30T01:43:23+00:00"
+  "consistency": 0.867,
+  "valid_rate": 1.0,
+  "latency_p90_s": 39.5,
+  "anomalies_per_hour": 47.1,
+  "tested_at": "2026-09-30T14:27:13+00:00"
+ },
+ "production": {
+  "label": "qwen3:4b",
+  "backend": "ollama",
+  "model": "qwen3:4b",
+  "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "options": {
+   "think": false
+  },
+  "macro_f1": 0.753,
+  "macro_f1_ci95": [
+   0.595,
+   0.889
+  ],
+  "consistency": 0.867,
+  "valid_rate": 1.0,
+  "latency_p90_s": 39.5,
+  "anomalies_per_hour": 47.1,
+  "tested_at": "2026-09-30T14:27:13+00:00"
  },
  "recommended": {
   "label": "qwen3:4b",
@@ -29,24 +50,18 @@
   "options": {
    "think": false
   },
-  "macro_f1": 0.811,
+  "macro_f1": 0.753,
   "macro_f1_ci95": [
-   0.657,
-   0.933
+   0.595,
+   0.889
   ],
-  "consistency": 0.856,
-  "valid_rate": 0.989,
-  "latency_p90_s": 91.3,
-  "anomalies_per_hour": 23.7,
-  "tested_at": "2026-09-30T02:09:05+00:00"
+  "consistency": 0.867,
+  "valid_rate": 1.0,
+  "latency_p90_s": 39.5,
+  "anomalies_per_hour": 47.1,
+  "tested_at": "2026-09-30T14:27:13+00:00"
  },
- "switch_recommended": true,
- "comparison": {
-  "diff": 0.31,
-  "ci95": [
-   0.089,
-   0.535
-  ]
- },
- "reason": "qwen3:4b beats gemma3:4b by +0.310 macro-F1 (paired 95% CI [0.089, 0.535])"
+ "switch_recommended": false,
+ "comparison": null,
+ "reason": "the production model is the best eligible candidate"
 }
