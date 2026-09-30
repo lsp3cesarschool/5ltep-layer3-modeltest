@@ -1,6 +1,6 @@
 {
   "_comment": "Candidates of the model benchmark. 'entries' are curated; models found by bench/discover.py are added automatically (results/discovered.json). 'experiment': true entries are measured but never recommended (e.g. an older prompt version). Backends: ollama, llamacpp (official llama.cpp build), llamacpp-prism (PrismML fork, needed for the ternary/1-bit Bonsai formats).",
-  "production": {"backend": "ollama", "model": "gemma3:4b"},
+  "production": {"backend": "ollama", "model": "qwen3:4b", "options": {"think": false}, "since": "2026-09-30", "previous": "gemma3:4b"},
   "selection": {
     "min_valid_rate": 0.95,
     "min_coverage": 0.9,
