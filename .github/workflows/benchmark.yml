@@ -38,6 +38,8 @@ jobs:
       count: ${{ steps.plan.outputs.count }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}  # latest commit when the job starts, not the one at trigger time
       - uses: actions/checkout@v5
         with:
           repository: ${{ env.UPSTREAM_REPO }}
@@ -74,6 +76,8 @@ jobs:
     name: ${{ matrix.entry.label }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}  # latest commit when the job starts, not the one at trigger time
       - uses: actions/checkout@v5
         with:
           repository: ${{ env.UPSTREAM_REPO }}
@@ -111,6 +115,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}  # latest commit when the job starts, not the one at trigger time
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
