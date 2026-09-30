@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30T07:43:18+00:00",
+ "generated_at": "2026-09-30T12:40:54+00:00",
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "gold_cases": 30,
  "prompt_refs": {
@@ -656,63 +656,7 @@
   {
    "label": "gemma4:12b",
    "backend": "ollama",
-   "model": "gemma4:12b",
-   "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
-   "status": "not eligible: p90 latency 278s",
-   "eligible": false,
-   "tested_at": "2026-09-30T04:50:48+00:00",
-   "server": {
-    "server_version": "0.35.0",
-    "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
-    "size_bytes": 7556508396,
-    "details": {
-     "parent_model": "",
-     "format": "gguf",
-     "family": "gemma4",
-     "families": [
-      "gemma4"
-     ],
-     "parameter_size": "11.9B",
-     "quantization_level": "Q4_K_M",
-     "context_length": 262144,
-     "embedding_length": 3840
-    }
-   },
-   "coverage": 1.0,
-   "cases_done": 30,
-   "macro_f1": 0.888,
-   "macro_f1_ci95": [
-    0.738,
-    1.0
-   ],
-   "accuracy": 0.9,
-   "recall": {
-    "PDC": 1.0,
-    "SP": 1.0,
-    "DQE": 1.0,
-    "GES": 0.571
-   },
-   "consistency": 0.967,
-   "unanimous_rate": 0.9,
-   "valid_rate": 1.0,
-   "latency_median_s": 106.8,
-   "latency_p90_s": 278.1,
-   "anomalies_per_hour": 7.6,
-   "confusion": {
-    "PDC": {
-     "PDC": 8
-    },
-    "SP": {
-     "SP": 7
-    },
-    "DQE": {
-     "DQE": 8
-    },
-    "GES": {
-     "GES": 4,
-     "SP": 3
-    }
-   }
+   "status": "not run yet"
   },
   {
    "label": "ministral-3:8b",
@@ -743,8 +687,8 @@
    "cases_done": 30,
    "macro_f1": 0.566,
    "macro_f1_ci95": [
-    0.438,
-    0.661
+    0.43,
+    0.665
    ],
    "accuracy": 0.633,
    "recall": {
@@ -805,8 +749,8 @@
    "cases_done": 30,
    "macro_f1": 0.617,
    "macro_f1_ci95": [
-    0.446,
-    0.764
+    0.438,
+    0.755
    ],
    "accuracy": 0.567,
    "recall": {
@@ -869,8 +813,8 @@
    "cases_done": 30,
    "macro_f1": 0.203,
    "macro_f1_ci95": [
-    0.076,
-    0.312
+    0.083,
+    0.31
    ],
    "accuracy": 0.3,
    "recall": {
@@ -918,8 +862,8 @@
    "cases_done": 30,
    "macro_f1": 0.402,
    "macro_f1_ci95": [
-    0.217,
-    0.563
+    0.22,
+    0.565
    ],
    "accuracy": 0.433,
    "recall": {
@@ -954,14 +898,102 @@
    }
   },
   {
-   "label": "Ternary-Bonsai-8B (Q2_0)",
+   "label": "Ternary-Bonsai-8B (PQ2_0)",
    "backend": "llamacpp-prism",
-   "status": "not run yet"
+   "model": "Ternary-Bonsai-8B-PQ2_0",
+   "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T12:08:45+00:00",
+   "server": {
+    "server_version": "b1-88c4bc6",
+    "model_path": "/home/runner/models/model.gguf"
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.337,
+   "macro_f1_ci95": [
+    0.194,
+    0.459
+   ],
+   "accuracy": 0.4,
+   "recall": {
+    "PDC": 0.5,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.143
+   },
+   "consistency": 0.767,
+   "unanimous_rate": 0.3,
+   "valid_rate": 1.0,
+   "latency_median_s": 36.7,
+   "latency_p90_s": 122.2,
+   "anomalies_per_hour": 19.4,
+   "confusion": {
+    "PDC": {
+     "PDC": 4,
+     "GES": 3,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "GES": 3,
+     "SP": 5
+    },
+    "GES": {
+     "SP": 6,
+     "GES": 1
+    }
+   }
   },
   {
    "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
    "backend": "llamacpp-prism",
-   "status": "not run yet"
+   "model": "Ternary-Bonsai-2-27B-PTQ1_0",
+   "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
+   "status": "not eligible: covered 13% of the cases in the time budget; p90 latency 2152s; experiment",
+   "eligible": false,
+   "tested_at": "2026-09-30T12:40:31+00:00",
+   "server": {
+    "server_version": "b1-88c4bc6",
+    "model_path": "/home/runner/models/model.gguf"
+   },
+   "coverage": 0.133,
+   "cases_done": 4,
+   "macro_f1": 1.0,
+   "macro_f1_ci95": [
+    1.0,
+    1.0
+   ],
+   "accuracy": 1.0,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 1.0,
+    "GES": 1.0
+   },
+   "consistency": 1.0,
+   "unanimous_rate": 1.0,
+   "valid_rate": 1.0,
+   "latency_median_s": 1739.5,
+   "latency_p90_s": 2152.3,
+   "anomalies_per_hour": 0.6,
+   "confusion": {
+    "PDC": {
+     "PDC": 1
+    },
+    "SP": {
+     "SP": 1
+    },
+    "DQE": {
+     "DQE": 1
+    },
+    "GES": {
+     "GES": 1
+    }
+   }
   },
   {
    "label": "gemma3:4b (prompt v1)",
@@ -992,8 +1024,8 @@
    "cases_done": 30,
    "macro_f1": 0.288,
    "macro_f1_ci95": [
-    0.16,
-    0.382
+    0.149,
+    0.375
    ],
    "accuracy": 0.4,
    "recall": {
@@ -1054,8 +1086,8 @@
    "cases_done": 30,
    "macro_f1": 0.375,
    "macro_f1_ci95": [
-    0.308,
-    0.424
+    0.312,
+    0.426
    ],
    "accuracy": 0.5,
    "recall": {
@@ -1089,63 +1121,7 @@
   {
    "label": "gemma4:e2b",
    "backend": "ollama",
-   "model": "gemma4:e2b",
-   "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
-   "status": "eligible",
-   "eligible": true,
-   "tested_at": "2026-09-30T02:26:37+00:00",
-   "server": {
-    "server_version": "0.35.0",
-    "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
-    "size_bytes": 7162405886,
-    "details": {
-     "parent_model": "",
-     "format": "gguf",
-     "family": "gemma4",
-     "families": [
-      "gemma4"
-     ],
-     "parameter_size": "5.1B",
-     "quantization_level": "Q4_K_M",
-     "context_length": 131072,
-     "embedding_length": 1536
-    }
-   },
-   "coverage": 1.0,
-   "cases_done": 30,
-   "macro_f1": 0.302,
-   "macro_f1_ci95": [
-    0.194,
-    0.386
-   ],
-   "accuracy": 0.4,
-   "recall": {
-    "PDC": 0.625,
-    "SP": 1.0,
-    "DQE": 0.0,
-    "GES": 0.0
-   },
-   "consistency": 0.956,
-   "unanimous_rate": 0.867,
-   "valid_rate": 1.0,
-   "latency_median_s": 13.0,
-   "latency_p90_s": 28.6,
-   "anomalies_per_hour": 68.8,
-   "confusion": {
-    "PDC": {
-     "SP": 3,
-     "PDC": 5
-    },
-    "SP": {
-     "SP": 7
-    },
-    "DQE": {
-     "SP": 8
-    },
-    "GES": {
-     "SP": 7
-    }
-   }
+   "status": "not run yet"
   },
   {
    "label": "gemma3n:e2b",
@@ -1176,8 +1152,8 @@
    "cases_done": 30,
    "macro_f1": 0.481,
    "macro_f1_ci95": [
-    0.271,
-    0.647
+    0.273,
+    0.642
    ],
    "accuracy": 0.467,
    "recall": {
@@ -1241,8 +1217,8 @@
    "cases_done": 30,
    "macro_f1": 0.361,
    "macro_f1_ci95": [
-    0.216,
-    0.49
+    0.224,
+    0.485
    ],
    "accuracy": 0.433,
    "recall": {
@@ -1303,7 +1279,7 @@
    "cases_done": 30,
    "macro_f1": 0.391,
    "macro_f1_ci95": [
-    0.23,
+    0.235,
     0.514
    ],
    "accuracy": 0.433,
@@ -1367,8 +1343,8 @@
    "cases_done": 30,
    "macro_f1": 0.532,
    "macro_f1_ci95": [
-    0.363,
-    0.685
+    0.369,
+    0.7
    ],
    "accuracy": 0.567,
    "recall": {
@@ -1431,8 +1407,8 @@
    "cases_done": 30,
    "macro_f1": 0.593,
    "macro_f1_ci95": [
-    0.429,
-    0.744
+    0.416,
+    0.753
    ],
    "accuracy": 0.633,
    "recall": {
@@ -1494,8 +1470,8 @@
    "cases_done": 30,
    "macro_f1": 0.341,
    "macro_f1_ci95": [
-    0.175,
-    0.478
+    0.168,
+    0.487
    ],
    "accuracy": 0.4,
    "recall": {
@@ -1561,7 +1537,7 @@
    "macro_f1": 0.352,
    "macro_f1_ci95": [
     0.174,
-    0.49
+    0.496
    ],
    "accuracy": 0.367,
    "recall": {
@@ -1625,8 +1601,8 @@
    "cases_done": 30,
    "macro_f1": 0.431,
    "macro_f1_ci95": [
-    0.274,
-    0.582
+    0.276,
+    0.583
    ],
    "accuracy": 0.467,
    "recall": {

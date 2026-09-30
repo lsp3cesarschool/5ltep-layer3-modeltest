@@ -157,9 +157,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+   "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
    "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
-   "key": "a0ea5f209f73efd5",
+   "key": "083d2878ee72f334",
    "slug": "gemma4_12b"
   },
   {
@@ -213,11 +213,11 @@
    "slug": "gemma3_4b_llama.cpp"
   },
   {
-   "label": "Ternary-Bonsai-8B (Q2_0)",
+   "label": "Ternary-Bonsai-8B (PQ2_0)",
    "backend": "llamacpp-prism",
-   "model": "Ternary-Bonsai-8B-Q2_0",
+   "model": "Ternary-Bonsai-8B-PQ2_0",
    "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf",
-   "hf_file": "Ternary-Bonsai-8B-Q2_0.gguf",
+   "hf_file": "Ternary-Bonsai-8B-PQ2_0.gguf",
    "options": {
     "chat_template_kwargs": {
      "enable_thinking": false
@@ -225,10 +225,10 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "digest": "3c8d70470a5d97e5a2b9410ddd899cb740116591462626c60cb2fead6448f60b",
+   "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
    "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
-   "key": "60e5af471fabb7ad",
-   "slug": "Ternary-Bonsai-8B_Q2_0"
+   "key": "3d0642f550e35e7d",
+   "slug": "Ternary-Bonsai-8B_PQ2_0"
   },
   {
    "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
@@ -241,12 +241,18 @@
      "enable_thinking": false
     }
    },
-   "budget_minutes": 320,
+   "budget_minutes": 270,
+   "max_cases": 4,
+   "seeds": [
+    11
+   ],
+   "timeout_s": 3600,
+   "experiment": true,
+   "note": "on the 4-vCPU runner a single call took over 15 min in the first run; measured on a sample only",
    "prompt_ref": "main",
-   "experiment": false,
    "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
    "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
-   "key": "1bfd7507779ce990",
+   "key": "1f5d6018118db66c",
    "slug": "Ternary-Bonsai-2-27B_PTQ1_0"
   },
   {
@@ -281,7 +287,7 @@
    "backend": "ollama",
    "model": "gemma4:e2b",
    "size_gb": 7.16,
-   "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+   "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
    "source": "discovered",
    "discovered_at": "2026-09-29T22:30:14+00:00",
    "options": {
@@ -290,7 +296,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
-   "key": "a4254471d7a489d6",
+   "key": "86b747ebb41648cc",
    "slug": "gemma4_e2b"
   },
   {
