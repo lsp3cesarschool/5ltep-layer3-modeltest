@@ -134,8 +134,9 @@ its month, as in production; stronger variants are tried only when no quiet mont
 weaker one, and a category keeps fewer cases rather than repeating one (gradual ramps are rarely
 flagged, hence 7 GES). The gold set
 measures whether a model **applies the stated criteria to the evidence**; it does not measure world
-knowledge, and it is not a substitute for steward-reviewed real anomalies. Steward decisions from the
-main repositories can be added as further cases when there are enough of them.
+knowledge, and it is not a substitute for steward-reviewed real anomalies. If stewards record
+decisions in the main repositories, those decisions can be added as further cases, real ones, from
+more than one portal.
 
 ## Metrics and recommendation
 
