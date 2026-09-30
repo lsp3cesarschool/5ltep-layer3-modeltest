@@ -2,6 +2,7 @@
 
 import json
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -87,3 +88,35 @@ def test_discovery_keeps_plain_size_tags():
     tags = ["4b", "12b", "e4b", "8b-a1b-q4_K_M", "4b-it-fp16", "4b-it-q8_0", "latest", "12b-mlx", "cloud", "4b-coder"]
     assert set(discover.candidate_tags(tags, ["code", "coder", "cloud"])) == {"12b", "4b", "8b-a1b-q4_K_M", "e4b"}
     assert discover.candidate_tags(["latest", "fp16"], []) == ["latest"]
+
+
+def test_status_and_numbers_in_both_languages():
+    row = {"macro_f1": 0.5, "_reasons": [("valid", 0.42), ("latency", 191.3), ("experiment", None)]}
+    assert score.status_text(row, "en") == "not eligible: valid answers 42%; p90 latency 191s; experiment"
+    assert score.status_text(row, "pt") == "não elegível: respostas válidas 42%; latência p90 de 191 s; experimento"
+    assert score.status_text({"label": "x"}, "pt") == "ainda não executado"
+    assert score.interval([0.657, 0.933], "pt") == "[0,657; 0,933]"
+    assert score.interval([0.657, 0.933], "en") == "[0.657, 0.933]"
+
+
+def test_readme_and_leiame_stay_parallel():
+    """LEIAME.md is the full Portuguese version of README.md: same sections, same code blocks,
+    both with the leaderboard markers that score.py fills, and each links to the other."""
+    def structure(text):
+        headings, fences, in_code = [], 0, False
+        for line in text.splitlines():
+            if line.startswith("```"):
+                fences, in_code = fences + 1, not in_code
+            elif not in_code and line.startswith("#"):
+                headings.append(len(line) - len(line.lstrip("#")))
+        return headings, fences
+
+    def outside_markers(text):
+        return re.sub(r"<!-- LEADERBOARD:START -->.*?<!-- LEADERBOARD:END -->", "", text, flags=re.S)
+
+    readme = (common.ROOT / "README.md").read_text(encoding="utf-8")
+    leiame = (common.ROOT / "LEIAME.md").read_text(encoding="utf-8")
+    assert structure(outside_markers(readme)) == structure(outside_markers(leiame))
+    for text in (readme, leiame):
+        assert "<!-- LEADERBOARD:START -->" in text and "<!-- LEADERBOARD:END -->" in text
+    assert "(LEIAME.md)" in readme and "(README.md)" in leiame

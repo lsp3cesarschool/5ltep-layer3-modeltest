@@ -1,5 +1,7 @@
 # 5LTEP-L3 · Model benchmark
 
+**English** · [Português](LEIAME.md)
+
 **Which local LLM should judge the anomalies of [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3)?**
 A monthly, reproducible benchmark of small open models on the production prompt, with a gold set
 whose right answers are known by construction.
@@ -113,7 +115,8 @@ discover ──► plan ──► run (one job per candidate, in parallel) ─�
    (`src/judge.py` of 5ltep-layer3, checked out at the planned commit), then sent with the
    production seeds (11, 22, 33) and temperature (0.7) and the same JSON schema. Each candidate has a
    time budget (5 h by default); a run that does not finish is kept, marked partial.
-4. **Score** (`bench/score.py`): metrics, eligibility, recommendation, this README's table.
+4. **Score** (`bench/score.py`): metrics, eligibility, recommendation, the table of this README and
+   of its Portuguese version, `LEIAME.md`.
 
 ## Gold set
 
@@ -218,7 +221,8 @@ Add an entry to [`candidates.json`](candidates.json):
 ```
 
 `"experiment": true` measures a candidate without making it eligible (e.g. an older prompt version via
-`"prompt_ref"`). Run *Actions → Model benchmark → Run workflow*, optionally with `only`.
+`"prompt_ref"`). For comparison groups, `title_pt`, `note_pt` and `unrunnable_pt` give the text of
+LEIAME.md. Run *Actions → Model benchmark → Run workflow*, optionally with `only`.
 
 ## Licences
 

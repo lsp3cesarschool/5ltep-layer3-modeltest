@@ -203,7 +203,9 @@
         "gemma3:4b",
         "gemma3:4b (llama.cpp)"
       ],
-      "note": "Same 4-bit Gemma 3 4B weights served by two engines, same prompt, seeds and temperature."
+      "note": "Same 4-bit Gemma 3 4B weights served by two engines, same prompt, seeds and temperature.",
+      "title_pt": "gemma3:4b no Ollama × llama.cpp",
+      "note_pt": "Os mesmos pesos de 4 bits do Gemma 3 4B servidos por dois motores, com o mesmo prompt, sementes e temperatura."
     },
     {
       "title": "qwen3:4b on Ollama vs llama.cpp",
@@ -212,7 +214,9 @@
         "qwen3:4b-q4_K_M",
         "qwen3:4b (llama.cpp)"
       ],
-      "note": "Qwen3 4B from the Ollama library (two tags) and the official Qwen GGUF on llama.cpp; thinking off in all. Tags can point to different builds (see the digests in results/leaderboard.json)."
+      "note": "Qwen3 4B from the Ollama library (two tags) and the official Qwen GGUF on llama.cpp; thinking off in all. Tags can point to different builds (see the digests in results/leaderboard.json).",
+      "title_pt": "qwen3:4b no Ollama × llama.cpp",
+      "note_pt": "Qwen3 4B da biblioteca do Ollama (duas tags) e o GGUF oficial da Qwen no llama.cpp; raciocínio desligado em todos. As tags podem apontar para builds diferentes (ver os digests em results/leaderboard.json)."
     },
     {
       "title": "8B at 4 bits vs 8B at ~2 bits (ternary)",
@@ -220,7 +224,9 @@
         "qwen3:8b",
         "Ternary-Bonsai-8B (PQ2_0)"
       ],
-      "note": "A conventional 4-bit 8B model on Ollama and a ternary 8B (Bonsai) on the PrismML fork of llama.cpp."
+      "note": "A conventional 4-bit 8B model on Ollama and a ternary 8B (Bonsai) on the PrismML fork of llama.cpp.",
+      "title_pt": "8B a 4 bits × 8B a ~2 bits (ternário)",
+      "note_pt": "Um modelo 8B convencional de 4 bits no Ollama e um 8B ternário (Bonsai) no fork PrismML do llama.cpp."
     },
     {
       "title": "27B compressed to fit the runner",
@@ -228,7 +234,10 @@
         "Ternary-Bonsai-2-27B (PTQ1_0)"
       ],
       "unrunnable": "Qwen3.8-27B at 4 bits (qwen3.8:27b-q4_K_M, 18 GB)",
-      "note": "Ternary-Bonsai-2-27B (5.95 GB) is a ternary version of Qwen3.8-27B, whose 4-bit build does not fit in 16 GB of RAM. Measured on a sample only (4 cases, 1 seed): calls take many minutes on 4 vCPUs."
+      "note": "Ternary-Bonsai-2-27B (5.95 GB) is a ternary version of Qwen3.8-27B, whose 4-bit build does not fit in 16 GB of RAM. Measured on a sample only (4 cases, 1 seed): calls take many minutes on 4 vCPUs.",
+      "title_pt": "27B comprimido para caber no runner",
+      "note_pt": "O Ternary-Bonsai-2-27B (5,95 GB) é uma versão ternária do Qwen3.8-27B, cuja versão de 4 bits não cabe em 16 GB de RAM. Medido só numa amostra (4 casos, 1 semente): as chamadas levam muitos minutos em 4 vCPUs.",
+      "unrunnable_pt": "Qwen3.8-27B a 4 bits (qwen3.8:27b-q4_K_M, 18 GB)"
     }
   ]
 }

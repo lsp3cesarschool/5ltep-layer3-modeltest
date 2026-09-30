@@ -1,4 +1,4 @@
-"""Score every current candidate, pick a recommendation, update the README.
+"""Score every current candidate, pick a recommendation, update README.md and LEIAME.md.
 
 Metrics per candidate (majority label of the three seeds per case):
   macro-F1 over the four categories (primary), with a bootstrap 95% CI over cases;
@@ -29,6 +29,65 @@ from bench.common import (CANDIDATES_FILE, LEADERBOARD_FILE, RECOMMENDATION_FILE
 
 CATS = ["PDC", "SP", "DQE", "GES"]
 REPO = "lsp3cesarschool/5ltep-layer3-modeltest"
+
+# The leaderboard is written into README.md (English) and LEIAME.md (Portuguese).
+DOCS = {"en": "README.md", "pt": "LEIAME.md"}
+TEXT = {
+    "en": {
+        "updated": "*Updated {when} UTC · {n} gold cases · 3 seeds each · production prompt at `{commit}`*",
+        "recommendation": "**Recommendation:** {reason}.",
+        "header": "| # | Model | Backend | macro-F1 [95% CI] | Acc. | Consist. | Valid | Latency p50 / p90 (s) | Anomalies/h | Status |",
+        "comparisons": "### Same model, different back-ends or formats",
+        "cmp_header": "| Candidate | Back-end | Model file / tag | macro-F1 [95% CI] | Consist. | Latency p50 / p90 (s) |",
+        "not_measured": "not measured yet", "unrunnable": "does not fit the free runner",
+        "not_run": "not run yet", "eligible": "eligible", "not_eligible": "not eligible: ",
+        "valid": "valid answers {:.0%}", "coverage": "covered {:.0%} of the cases in the time budget",
+        "latency": "p90 latency {:.0f}s", "experiment": "experiment",
+        "no_eligible": "no eligible candidate yet",
+        "prod_is_best": "the production model is the best eligible candidate",
+        "prod_no_result": "the production model has no result yet",
+        "beats": "{best} beats {current} by {diff} macro-F1 (paired 95% CI {ci})",
+        "not_enough": "; not enough to recommend a switch",
+    },
+    "pt": {
+        "updated": "*Atualizado em {when} UTC · {n} casos do gabarito · 3 sementes cada · prompt de produção em `{commit}`*",
+        "recommendation": "**Recomendação:** {reason}.",
+        "header": "| # | Modelo | Motor | macro-F1 [IC 95%] | Acurácia | Consist. | Válidas | Latência p50 / p90 (s) | Anomalias/h | Situação |",
+        "comparisons": "### Mesmo modelo, motores ou formatos diferentes",
+        "cmp_header": "| Candidato | Motor | Arquivo / tag do modelo | macro-F1 [IC 95%] | Consist. | Latência p50 / p90 (s) |",
+        "not_measured": "ainda não medido", "unrunnable": "não cabe no runner gratuito",
+        "not_run": "ainda não executado", "eligible": "elegível", "not_eligible": "não elegível: ",
+        "valid": "respostas válidas {:.0%}", "coverage": "cobriu {:.0%} dos casos no tempo disponível",
+        "latency": "latência p90 de {:.0f} s", "experiment": "experimento",
+        "no_eligible": "nenhum candidato elegível ainda",
+        "prod_is_best": "o modelo de produção é o melhor candidato elegível",
+        "prod_no_result": "o modelo de produção ainda não tem resultado",
+        "beats": "{best} supera {current} por {diff} de macro-F1 (IC 95% pareado {ci})",
+        "not_enough": "; não é suficiente para recomendar a troca",
+    },
+}
+
+
+def num(x, lang: str, spec: str = "") -> str:
+    """A number in the document's convention (decimal comma in Portuguese)."""
+    s = format(x, spec) if spec else str(x)
+    return s.replace(".", ",") if lang == "pt" else s
+
+
+def interval(ci, lang: str) -> str:
+    ci = ci or ["–", "–"]
+    return f"[{num(ci[0], lang)}; {num(ci[1], lang)}]" if lang == "pt" else f"[{ci[0]}, {ci[1]}]"
+
+
+def status_text(r: dict, lang: str) -> str:
+    t = TEXT[lang]
+    if "macro_f1" not in r:
+        return t["not_run"]
+    reasons = r.get("_reasons", [])
+    if not reasons:
+        return t["eligible"]
+    parts = [t[code] if value is None else num(t[code].format(value), lang) for code, value in reasons]
+    return t["not_eligible"] + "; ".join(parts)
 
 
 def majority(runs: list[dict]) -> str:
@@ -128,17 +187,18 @@ def main() -> None:
         m = metrics(r, sel["bootstrap_resamples"], rng)
         reasons = []
         if m["valid_rate"] < sel["min_valid_rate"]:
-            reasons.append(f"valid answers {m['valid_rate']:.0%}")
+            reasons.append(("valid", m["valid_rate"]))
         if m["coverage"] < sel["min_coverage"]:
-            reasons.append(f"covered {m['coverage']:.0%} of the cases in the time budget")
+            reasons.append(("coverage", m["coverage"]))
         if m["latency_p90_s"] is not None and m["latency_p90_s"] > sel["max_p90_latency_s"]:
-            reasons.append(f"p90 latency {m['latency_p90_s']:.0f}s")
+            reasons.append(("latency", m["latency_p90_s"]))
         if e.get("experiment"):
-            reasons.append("experiment")
-        rows.append({"label": e["label"], "backend": e["backend"], "model": e["model"], "digest": e["digest"],
-                     "status": "eligible" if not reasons else "not eligible: " + "; ".join(reasons),
-                     "eligible": not reasons, "tested_at": r["ended_at"], "server": r.get("server", {}),
-                     "entry": e, **m})
+            reasons.append(("experiment", None))
+        row = {"label": e["label"], "backend": e["backend"], "model": e["model"], "digest": e["digest"],
+               "eligible": not reasons, "_reasons": reasons, "tested_at": r["ended_at"],
+               "server": r.get("server", {}), "entry": e, **m}
+        row["status"] = status_text(row, "en")
+        rows.append(row)
 
     scored = [r for r in rows if "macro_f1" in r]
     scored.sort(key=lambda r: (-r["macro_f1"], -r["consistency"], r["latency_median_s"] or 1e9))
@@ -147,21 +207,23 @@ def main() -> None:
                     and not r["entry"].get("experiment")), None)
     eligible = [r for r in scored if r["eligible"]]
     best = eligible[0] if eligible else None
-    switch, reason = False, "no eligible candidate yet"
+    switch, reasons = False, {lang: TEXT[lang]["no_eligible"] for lang in TEXT}
     comparison = None
     if best and current:
         if best is current:
-            reason = "the production model is the best eligible candidate"
+            reasons = {lang: TEXT[lang]["prod_is_best"] for lang in TEXT}
         else:
             comparison = paired_diff(best, current, gold, sel["bootstrap_resamples"], rng)
             margin_ok = comparison["diff"] is not None and comparison["diff"] >= sel["switch_margin_macro_f1"]
             ci_ok = comparison.get("ci95") and comparison["ci95"][0] > 0
             switch = bool(margin_ok and ci_ok)
-            reason = (f"{best['label']} beats {current['label']} by {comparison['diff']:+.3f} macro-F1 "
-                      f"(paired 95% CI {comparison['ci95']})" +
-                      ("" if switch else "; not enough to recommend a switch"))
+            reasons = {lang: TEXT[lang]["beats"].format(best=best["label"], current=current["label"],
+                                                       diff=num(comparison["diff"], lang, "+.3f"),
+                                                       ci=interval(comparison["ci95"], lang)) +
+                       ("" if switch else TEXT[lang]["not_enough"]) for lang in TEXT}
     elif best:
-        reason = "the production model has no result yet"
+        reasons = {lang: TEXT[lang]["prod_no_result"] for lang in TEXT}
+    reason = reasons["en"]
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     public = [{k: v for k, v in r.items() if not k.startswith("_") and k != "entry"} for r in rows]
@@ -199,7 +261,7 @@ def main() -> None:
     if switch:
         adopt(best, now)
     comparisons = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8")).get("comparisons", [])
-    write_markdown(rows, scored, rec, len(gold_cases), now, comparisons)
+    write_markdown(rows, scored, rec, len(gold_cases), now, comparisons, reasons)
     print(reason)
 
 
@@ -215,51 +277,65 @@ def adopt(best: dict, now: str) -> None:
     CANDIDATES_FILE.write_text(json.dumps(cfg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def comparison_tables(scored: list[dict], comparisons: list[dict]) -> list[str]:
-    """One small table per group of candidates that differ only in back-end or format."""
+def comparison_tables(scored: list[dict], comparisons: list[dict], lang: str = "en") -> list[str]:
+    """One small table per group of candidates that differ only in back-end or format.
+    Groups may carry `title_pt` / `note_pt` / `unrunnable_pt` for the Portuguese document."""
+    t = TEXT[lang]
     by_label = {r["label"]: r for r in scored}
     out = []
     for g in comparisons:
-        rows = [by_label[label] for label in g["labels"] if label in by_label]
-        out += ["", f"**{g['title']}.** {g.get('note', '')}", "",
-                "| Candidate | Back-end | Model file / tag | macro-F1 [95% CI] | Consist. | Latency p50 / p90 (s) |",
-                "|---|---|---|---|---|---|"]
+        title = g.get(f"title_{lang}", g["title"]) if lang != "en" else g["title"]
+        note = g.get(f"note_{lang}", g.get("note", "")) if lang != "en" else g.get("note", "")
+        out += ["", f"**{title}.** {note}", "", t["cmp_header"], "|---|---|---|---|---|---|"]
         for label in g["labels"]:
             r = by_label.get(label)
             if r:
-                ci = r["macro_f1_ci95"] or ["–", "–"]
-                out.append(f"| {label} | {r['backend']} | `{r['model']}` | {r['macro_f1']:.2f} [{ci[0]}, {ci[1]}] | "
-                           f"{r['consistency']:.2f} | {r['latency_median_s']} / {r['latency_p90_s']} |")
+                out.append(f"| {label} | {r['backend']} | `{r['model']}` | {num(r['macro_f1'], lang, '.2f')} "
+                           f"{interval(r['macro_f1_ci95'], lang)} | {num(r['consistency'], lang, '.2f')} | "
+                           f"{num(r['latency_median_s'], lang)} / {num(r['latency_p90_s'], lang)} |")
             else:
-                out.append(f"| {label} | | | not measured yet | | |")
+                out.append(f"| {label} | | | {t['not_measured']} | | |")
         if g.get("unrunnable"):
-            out.append(f"| {g['unrunnable']} | | | does not fit the free runner | | |")
+            model = g.get(f"unrunnable_{lang}", g["unrunnable"]) if lang != "en" else g["unrunnable"]
+            out.append(f"| {model} | | | {t['unrunnable']} | | |")
     return out
 
 
-def write_markdown(rows, scored, rec, n_cases, now, comparisons=()) -> None:
-    lines = [f"*Updated {now[:16].replace('T', ' ')} UTC · {n_cases} gold cases · 3 seeds each · "
-             f"production prompt at `{(rec.get('prompt_commit') or '')[:7]}`*", "",
-             f"**Recommendation:** {rec['reason']}.", "",
-             "| # | Model | Backend | macro-F1 [95% CI] | Acc. | Consist. | Valid | Latency p50 / p90 (s) | Anomalies/h | Status |",
-             "|---|---|---|---|---|---|---|---|---|---|"]
+def leaderboard(rows, scored, rec, n_cases, now, comparisons, reason: str, lang: str) -> str:
+    t = TEXT[lang]
+    lines = [t["updated"].format(when=now[:16].replace("T", " "), n=n_cases,
+                                 commit=(rec.get("prompt_commit") or "")[:7]), "",
+             t["recommendation"].format(reason=reason), "",
+             t["header"], "|---|---|---|---|---|---|---|---|---|---|"]
     for i, r in enumerate(scored, 1):
-        ci = r["macro_f1_ci95"] or ["–", "–"]
-        lines.append(f"| {i} | {r['label']} | {r['backend']} | **{r['macro_f1']:.2f}** [{ci[0]}, {ci[1]}] | "
-                     f"{r['accuracy']:.2f} | {r['consistency']:.2f} | {r['valid_rate']:.0%} | "
-                     f"{r['latency_median_s']} / {r['latency_p90_s']} | {r['anomalies_per_hour']} | {r['status']} |")
+        lines.append(f"| {i} | {r['label']} | {r['backend']} | **{num(r['macro_f1'], lang, '.2f')}** "
+                     f"{interval(r['macro_f1_ci95'], lang)} | {num(r['accuracy'], lang, '.2f')} | "
+                     f"{num(r['consistency'], lang, '.2f')} | {r['valid_rate']:.0%} | "
+                     f"{num(r['latency_median_s'], lang)} / {num(r['latency_p90_s'], lang)} | "
+                     f"{num(r['anomalies_per_hour'], lang)} | {status_text(r, lang)} |")
     for r in rows:
         if "macro_f1" not in r:
-            lines.append(f"| – | {r['label']} | {r['backend']} | | | | | | | {r['status']} |")
+            lines.append(f"| – | {r['label']} | {r['backend']} | | | | | | | {status_text(r, lang)} |")
     if comparisons:
-        lines += ["", "### Same model, different back-ends or formats"] + comparison_tables(scored, comparisons)
-    table = "\n".join(lines)
-    (RESULTS_DIR / "leaderboard.md").write_text(table + "\n", encoding="utf-8")
-    readme = ROOT / "README.md"
-    text = readme.read_text(encoding="utf-8")
-    new = re.sub(r"(<!-- LEADERBOARD:START -->)(.*?)(<!-- LEADERBOARD:END -->)",
-                 lambda m: f"{m.group(1)}\n{table}\n{m.group(3)}", text, flags=re.S)
-    readme.write_text(new, encoding="utf-8")
+        lines += ["", t["comparisons"]] + comparison_tables(scored, comparisons, lang)
+    return "\n".join(lines)
+
+
+def write_markdown(rows, scored, rec, n_cases, now, comparisons=(), reasons=None) -> None:
+    """Fill the leaderboard markers of README.md and LEIAME.md (each in its language);
+    results/leaderboard.md keeps the English table."""
+    reasons = reasons or {"en": rec["reason"]}
+    for lang, name in DOCS.items():
+        doc = ROOT / name
+        if not doc.exists():
+            continue
+        table = leaderboard(rows, scored, rec, n_cases, now, comparisons, reasons.get(lang, rec["reason"]), lang)
+        if lang == "en":
+            (RESULTS_DIR / "leaderboard.md").write_text(table + "\n", encoding="utf-8")
+        text = doc.read_text(encoding="utf-8")
+        new = re.sub(r"(<!-- LEADERBOARD:START -->)(.*?)(<!-- LEADERBOARD:END -->)",
+                     lambda m: f"{m.group(1)}\n{table}\n{m.group(3)}", text, flags=re.S)
+        doc.write_text(new, encoding="utf-8")
 
 
 if __name__ == "__main__":
