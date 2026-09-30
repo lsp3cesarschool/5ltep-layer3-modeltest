@@ -34,12 +34,14 @@
     {"label": "llama3.1:8b", "backend": "ollama", "model": "llama3.1:8b"},
     {"label": "gemma3:4b (llama.cpp)", "backend": "llamacpp", "model": "gemma-3-4b-it-Q4_K_M",
      "hf_repo": "ggml-org/gemma-3-4b-it-GGUF", "hf_file": "gemma-3-4b-it-Q4_K_M.gguf"},
-    {"label": "Ternary-Bonsai-8B (Q2_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-8B-Q2_0",
-     "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf", "hf_file": "Ternary-Bonsai-8B-Q2_0.gguf",
+    {"label": "Ternary-Bonsai-8B (PQ2_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-8B-PQ2_0",
+     "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf", "hf_file": "Ternary-Bonsai-8B-PQ2_0.gguf",
      "options": {"chat_template_kwargs": {"enable_thinking": false}}},
     {"label": "Ternary-Bonsai-2-27B (PTQ1_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-2-27B-PTQ1_0",
      "hf_repo": "prism-ml/Ternary-Bonsai-2-27B-gguf", "hf_file": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
-     "options": {"chat_template_kwargs": {"enable_thinking": false}}, "budget_minutes": 320},
+     "options": {"chat_template_kwargs": {"enable_thinking": false}}, "budget_minutes": 270,
+     "max_cases": 4, "seeds": [11], "timeout_s": 3600, "experiment": true,
+     "note": "on the 4-vCPU runner a single call took over 15 min in the first run; measured on a sample only"},
     {"label": "gemma3:4b (prompt v1)", "backend": "ollama", "model": "gemma3:4b", "prompt_ref": "7da22b7",
      "experiment": true}
   ]

@@ -98,6 +98,9 @@ def entry_key(entry: dict, prompt_fp: str, g_hash: str) -> str:
     """Cache key: a result is reused only for the same model build, prompt code and gold set."""
     raw = "|".join([entry["backend"], entry["model"], entry.get("digest") or "", prompt_fp, g_hash,
                     json.dumps(entry.get("options", {}), sort_keys=True)])
+    sampling = {k: entry[k] for k in ("max_cases", "seeds") if entry.get(k)}
+    if sampling:  # only when present, so full runs keep their keys
+        raw += "|" + json.dumps(sampling, sort_keys=True)
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 

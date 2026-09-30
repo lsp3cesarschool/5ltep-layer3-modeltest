@@ -33,11 +33,41 @@ def main(argv=None) -> None:
 
     judge, profile_mod = import_upstream()
     gold = load_gold()
-    cases = gold["cases"][: args.limit] if args.limit else gold["cases"]
+    # Very slow candidates can be measured on a sample: "max_cases" spreads it over the
+    # categories (round robin), "seeds" limits the runs per case, "timeout_s" per call.
+    limit = args.limit or entry.get("max_cases")
+    cases = gold["cases"]
+    if limit:
+        by_cat = {}
+        for c in cases:
+            by_cat.setdefault(c["gold"], []).append(c)
+        ordered = [c for group in zip(*by_cat.values()) for c in group]
+        cases = ordered[:limit]
+    seeds = entry.get("seeds") or SEEDS
     client = clients.make(entry)
+    if entry.get("timeout_s"):
+        client.timeout = entry["timeout_s"]
     started = datetime.now(timezone.utc)
     deadline = time.monotonic() + budget * 60
     answers, stopped = [], None
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    path = RUNS_DIR / f"{slug(entry['label'])}__{entry['key']}.json"
+
+    def save(final: bool) -> None:
+        """Written after every case, so a job killed by the runner's time limit keeps its progress."""
+        out = {
+            "entry": entry, "key": entry["key"], "label": entry["label"],
+            "upstream_ref": upstream_ref(), "gold_hash": gold_hash(),
+            "cases_total": len(gold["cases"]), "cases_done": len(answers),
+            "sampled": bool(limit), "seeds": seeds,
+            "stopped": stopped if final else "in progress (job ended before the run finished)",
+            "server": client.info(),
+            "started_at": started.isoformat(timespec="seconds"),
+            "ended_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "answers": answers,
+        }
+        path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+
     # Interleave seeds per case so a partial run still covers whole cases.
     for case in cases:
         if time.monotonic() > deadline:
@@ -45,7 +75,7 @@ def main(argv=None) -> None:
             break
         system, prompt, schema, categories = render(case, judge, profile_mod)
         runs = []
-        for seed in SEEDS:
+        for seed in seeds:
             try:
                 text, secs, tokens = client.generate(system, prompt, seed, schema, TEMPERATURE, NUM_PREDICT, NUM_CTX)
                 parsed = parse_answer(text, categories)
@@ -57,24 +87,9 @@ def main(argv=None) -> None:
         answers.append({"case": case["id"], "gold": case["gold"], "runs": runs})
         print(f"{case['id']:32s} gold={case['gold']:3s} -> {'/'.join(r['category'] for r in runs)} "
               f"({', '.join(str(r['latency_s']) for r in runs)} s)", flush=True)
+        save(final=False)
 
-    out = {
-        "entry": entry,
-        "key": entry["key"],
-        "label": entry["label"],
-        "upstream_ref": upstream_ref(),
-        "gold_hash": gold_hash(),
-        "cases_total": len(gold["cases"]),
-        "cases_done": len(answers),
-        "stopped": stopped,
-        "server": client.info(),
-        "started_at": started.isoformat(timespec="seconds"),
-        "ended_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "answers": answers,
-    }
-    RUNS_DIR.mkdir(parents=True, exist_ok=True)
-    path = RUNS_DIR / f"{slug(entry['label'])}__{entry['key']}.json"
-    path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    save(final=True)
     print(f"{len(answers)}/{len(gold['cases'])} cases; saved {path}")
 
 

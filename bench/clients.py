@@ -11,6 +11,7 @@ class Ollama:
 
     def __init__(self, model: str, url: str = "http://127.0.0.1:11434", options: dict | None = None):
         self.model, self.url, self.extra = model, url.rstrip("/"), dict(options or {})
+        self.timeout = 900
 
     def generate(self, system, prompt, seed, schema, temperature, num_predict, num_ctx):
         payload = {"model": self.model, "system": system, "prompt": prompt, "stream": False, "format": schema,
@@ -19,10 +20,10 @@ class Ollama:
         if "think" in self.extra:  # thinking models: off, for speed and a comparable answer format
             payload["think"] = self.extra["think"]
         t0 = time.monotonic()
-        resp = requests.post(f"{self.url}/api/generate", json=payload, timeout=900)
+        resp = requests.post(f"{self.url}/api/generate", json=payload, timeout=self.timeout)
         if resp.status_code == 400 and "think" in payload and "think" in resp.text.lower():
             payload.pop("think")  # model without a thinking mode
-            resp = requests.post(f"{self.url}/api/generate", json=payload, timeout=900)
+            resp = requests.post(f"{self.url}/api/generate", json=payload, timeout=self.timeout)
         resp.raise_for_status()
         data = resp.json()
         return data.get("response", ""), time.monotonic() - t0, data.get("eval_count")
@@ -46,6 +47,7 @@ class LlamaCpp:
 
     def __init__(self, model: str, url: str = "http://127.0.0.1:8080", options: dict | None = None):
         self.model, self.url, self.extra = model, url.rstrip("/"), dict(options or {})
+        self.timeout = 900
 
     def generate(self, system, prompt, seed, schema, temperature, num_predict, num_ctx):
         payload = {
@@ -57,7 +59,7 @@ class LlamaCpp:
         if "chat_template_kwargs" in self.extra:  # e.g. {"enable_thinking": false}
             payload["chat_template_kwargs"] = self.extra["chat_template_kwargs"]
         t0 = time.monotonic()
-        resp = requests.post(f"{self.url}/v1/chat/completions", json=payload, timeout=900)
+        resp = requests.post(f"{self.url}/v1/chat/completions", json=payload, timeout=self.timeout)
         resp.raise_for_status()
         data = resp.json()
         tokens = (data.get("usage") or {}).get("completion_tokens")
