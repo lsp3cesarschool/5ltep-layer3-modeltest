@@ -1,0 +1,942 @@
+{
+ "entry": {
+  "label": "gemma3:4b (prompt v1)",
+  "backend": "ollama",
+  "model": "gemma3:4b",
+  "prompt_ref": "7da22b7",
+  "experiment": true,
+  "options": {},
+  "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+  "prompt_sha": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
+  "key": "1441d22a03553bf4",
+  "slug": "gemma3_4b_prompt_v1"
+ },
+ "key": "1441d22a03553bf4",
+ "label": "gemma3:4b (prompt v1)",
+ "upstream_ref": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "cases_total": 30,
+ "cases_done": 30,
+ "stopped": null,
+ "server": {
+  "server_version": "0.35.0",
+  "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+  "size_bytes": 3338801804,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma3",
+   "families": [
+    "gemma3"
+   ],
+   "parameter_size": "4.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 2560
+  }
+ },
+ "started_at": "2026-09-30T01:58:38+00:00",
+ "ended_at": "2026-09-30T02:42:21+00:00",
+ "answers": [
+  {
+   "case": "SP-fine_total_brl-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The fine total for January 2014 (39.7M) is an extremely low value compared to the median of the previous 12 months (258.3M), representing an 85% reduction. Furthermore, the ratio of January fine to the 12-month median is only 0.16, significantly below the typical seasonal ratio of 0.53. The number of notices in January 2014 (471) is also considerably lower than the median. While there were no identified policy changes, the sudden drop in fine values, coupled with a lower notice volume, strongly suggests a data quality event, likely a backlog or correction in the data. The fact that the other series (notices) were also flagged in the same month further supports this conclusion.",
+     "seed": 11,
+     "latency_s": 50.28,
+     "tokens": 190
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total for January 2014 is significantly lower than the median of the previous 12 months (-85%). The typical ratio for January is 0.53, but in 2014 it's only 0.08. The number of notices is also lower than average. There are no immediate policy changes or system migrations indicated. The data quality event explanation is the most likely, as the sudden drop in fines could be due to a change in reporting procedures or a backlog in processing notices. The other months show no similar anomalies.",
+     "seed": 22,
+     "latency_s": 19.59,
+     "tokens": 139
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2014-01 is characterized by a significantly lower fine total (39.7M) compared to the median of the previous 12 months (258.3M), representing an 85% reduction. The typical ratio for January is 0.53, which is far below this value. There are no immediate policy changes or known events to explain this. The volume of notices is also unusually low for January. This suggests a data quality issue, likely related to reporting or data processing, rather than a genuine enforcement shift or seasonal pattern. The fact that the zscore and MAD also flagged this month supports this conclusion.",
+     "seed": 33,
+     "latency_s": 22.3,
+     "tokens": 159
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2014-01 is characterized by a massive drop in notices (66% below the median) and a significant decrease in fine revenue. This is unusual given that the surrounding months show relatively consistent levels and a stable trend. The related series, fine_total_brl, also shows a substantial decrease, suggesting a coordinated change. The detection methods (zscore, MAD, iforest) all flagged the anomaly, reinforcing the observation. Given the lack of a policy event and the data quality indicators, a data quality issue is the most plausible explanation.",
+     "seed": 11,
+     "latency_s": 38.06,
+     "tokens": 140
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2014-01 is characterized by a dramatic drop in the number of notices (66% below the median) and a corresponding decrease in fine revenue. While other series also show changes, the magnitude of the reduction in notices is unusual. The data quality event category seems the most plausible explanation, considering the sudden and significant drop in the number of notices, coupled with the fact that no policy change or seasonal pattern is evident. The fact that the fine_total_brl also decreased suggests a systemic issue rather than a purely enforcement-driven shift.",
+     "seed": 22,
+     "latency_s": 19.41,
+     "tokens": 139
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2014-01 is characterized by a massive drop in notices (66% below the median) and a significant decrease in fine revenue. This is unusual given the other series also showed a reduction in the same month. The ensemble score of 0.56 is moderate, and the Page-Hinkley test found no sustained level shift. The data quality event category seems most likely, potentially linked to a system migration or data correction affecting the reporting of notices in January 2014. The fact that the fine total also decreased suggests a systematic problem rather than a seasonal fluctuation.",
+     "seed": 33,
+     "latency_s": 20.76,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2017-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2017-01 is characterized by a significantly lower number of notices compared to the median of the previous 12 months (67% reduction). The typical ratio for January is 0.67, and this month's value is far below this. There are no other series flagged in the same month, and no sustained level shift was detected. Given the data, a data quality event (DQE) is the most plausible explanation, likely stemming from a system issue or backlog affecting notice generation in January 2017.",
+     "seed": 11,
+     "latency_s": 37.82,
+     "tokens": 138
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2017-01 is characterized by a dramatically reduced notice volume (-67% compared to the 12-month median). This reduction is unusual given the typical seasonal pattern and doesn't align with any immediate policy changes or other flagged series. The only other relevant information is the number of cancelled notices and records without identifiers, which are relatively stable. The data quality event explanation seems most likely, specifically a potential backlog or system issue affecting notice generation in January 2017.",
+     "seed": 22,
+     "latency_s": 17.86,
+     "tokens": 127
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2017-01 is characterized by a significantly lower number of notices compared to the median of the previous 12 months (67% reduction). This is not a typical seasonal pattern, as the ratio to the median is close to the average. The z-score and MAD detectors also flagged this month. Furthermore, there’s no evidence of a policy change or a system issue (no sustained level shift, no other series flagged, and no known events). The high number of cancelled notices in subsequent months suggests a possible backlog or correction, but this doesn’t fully explain the initial drop.",
+     "seed": 33,
+     "latency_s": 21.11,
+     "tokens": 149
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in January 2021 is marked by a significantly lower fine total (21.0M) compared to the median of the previous 12 months (170.9M), representing an 88% drop. This is much more extreme than typical seasonal fluctuations (ratio of 0.53). The number of notices is also lower than usual. The only other series flagged in the same month is ‘no_id’, which is not an explanation. There were no policy changes or system migration events within the last six months. Therefore, a data quality issue (DQE) is the most likely explanation, potentially due to a reporting problem or a backlog in processing.",
+     "seed": 11,
+     "latency_s": 43.15,
+     "tokens": 165
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total in January 2021 is significantly lower than the 12-month median (-88%), and the ratio to the median is unusually low (0.53). While the number of notices is also lower, it doesn't fully explain the drop in fine total. There's no evidence of a policy change or seasonal pattern. The data quality event (DQE) category is the most likely, given the sudden, unexplained drop in fines, coupled with the low number of notices. The fact that other series were flagged in the same month supports this conclusion.",
+     "seed": 22,
+     "latency_s": 20.0,
+     "tokens": 142
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2021-01 is characterized by a significantly lower fine total (21.0M) compared to the median of the previous 12 months (170.9M), representing an 88% reduction. The ratio to the 12-month median is unusually low (0.53), far below the typical seasonal effect (0.53). While there are some changes in notices and no_id, they don't provide a clear explanation. The low value is not mirrored in other months, and there are no system migration events reported. Given the magnitude of the deviation and the low ratio, a data quality event (DQE) is the most plausible explanation.",
+     "seed": 33,
+     "latency_s": 24.25,
+     "tokens": 171
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2021-01 is characterized by a significantly lower number of notices (288) compared to the median of the previous 12 months (768), representing a -63% deviation. While the fine total is also lower, the primary driver of the anomaly appears to be the drastic reduction in the number of notices. The related fine_total_brl series also shows a decrease. The fact that no Page-Hinkley test detected a sustained level shift suggests this isn't a gradual change. Given the lack of external events and the substantial drop in notices, a data quality issue is the most plausible explanation, potentially related to a system change or reporting error impacting notice generation.",
+     "seed": 11,
+     "latency_s": 42.07,
+     "tokens": 171
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2021-01 is characterized by a drastically reduced number of notices (288) compared to the median of -63% across the previous 12 months. The fine total also decreased significantly. While the fine total is reduced, there isn't a clear seasonal pattern, as the ratio to the median is far from the typical 0.67. The sudden drop coupled with a decrease in the fine total suggests a data quality issue. The fact that other series (fine_total_brl) also show a reduction in the same month strengthens this suspicion.",
+     "seed": 22,
+     "latency_s": 20.41,
+     "tokens": 146
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2021-01 is characterized by a significantly lower number of notices (288) compared to the median of the previous 12 months (768), representing a -63% deviation. This is compounded by a substantial reduction in fine revenue (21.0M vs. a typical range). While there are no immediate policy changes or known events, the sudden drop warrants investigation. The concurrent drop in fine revenue suggests a potential data quality issue, likely related to the reporting of infraction notices or the calculation of fines. The small number of cancellations and missing identifiers further supports this hypothesis.",
+     "seed": 33,
+     "latency_s": 21.02,
+     "tokens": 150
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in January 2024 is characterized by a significantly lower fine total (43.4M) compared to the median of the previous 12 months (385.8M), representing an 89% reduction. The typical ratio for January is 0.53, but this month's ratio is much lower. The number of notices is also substantially lower. While there are no immediate policy changes or events, the large drop in fines combined with a decrease in notices suggests a potential data quality issue. The high number of records with no identifier (no_id) in January (17) and February (10) further supports this hypothesis, as a system migration or data correction could explain the sudden drop in fines and notices.\n\n",
+     "seed": 11,
+     "latency_s": 46.65,
+     "tokens": 191
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in January 2024 is characterized by a significantly lower fine total (43.4M) compared to the median of the previous 12 months (385.8M), representing an 89% reduction. The typical ratio for January is 0.53, which is not substantially different from the observed value. The number of notices is also considerably lower. There is no sustained level shift detected by the Page-Hinkley test. Furthermore, the data quality indicators (zscore, mad, iforest) all flagged this month. The small number of cancelled notices and records without an identifier suggests a potential data quality issue such as a reporting failure or a backlog in processing, rather than a systematic change in enforcement (GES) or a policy shift (PDC). Given the overall reduction in values and the high number of anomalies detected, the most likely explanation is a DQE event. ",
+     "seed": 22,
+     "latency_s": 30.02,
+     "tokens": 219
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in January 2024 is characterized by a significantly lower fine total (43.4M) compared to the median of the previous 12 months (385.8M, -89%). The typical ratio for January is 0.53, but this month's ratio is much lower. Additionally, the number of notices is substantially reduced (454 vs. 1036 in 2023-01). The data quality indicators (zscore, mad, iforest) all flagged this anomaly, and the relatively low number of cancelled notices and records without identifiers suggests a potential data issue rather than a genuine enforcement shift. The other series, ‘notices’, also showed a drop in volume. While there's no sustained level shift, the drastic change in fine total warrants investigation.",
+     "seed": 33,
+     "latency_s": 28.35,
+     "tokens": 204
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2024-01 is characterized by a significant drop in the number of notices (67% below the median) and a corresponding decrease in fine total. The fact that fine_total_brl also decreased in the same month supports this. The low number of cancellations and no_id records suggests no systematic issue with data processing. Given the sudden drop and lack of a policy event, a data quality event (DQE) is the most likely explanation, potentially related to a system change or backlog. The other series flagged in the same month lends further support to this hypothesis.",
+     "seed": 11,
+     "latency_s": 38.68,
+     "tokens": 145
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2024-01 is characterized by a drastic reduction in the number of notices (67% below the median) and a corresponding drop in fine total. The 'no_id' count also decreased. This, combined with the zscore and MAD detection, suggests a data quality issue. The simultaneous flagging of 'fine_total_brl' further supports this, as it indicates a systemic problem affecting the data rather than a genuine enforcement shift. The values are significantly lower than previous months, and the number of cancelled notices is also reduced, suggesting a potential data correction or system migration impacting the volume of notices recorded.",
+     "seed": 22,
+     "latency_s": 21.32,
+     "tokens": 153
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2024-01 is characterized by a significant drop in the number of notices (67% below the median) and a corresponding decrease in fine revenue. The other series, `fine_total_brl`, also shows a substantial reduction. While a policy change could be considered, there's no reported event in the past six months to support this. The data quality indicators (zscore, MAD) and ensemble score suggest a genuine shift, likely reflecting a data-quality issue or a change in enforcement practices. The relatively low number of cancelled notices and missing identifiers in January 2024 doesn’t strongly support a policy change or a shift in enforcement, but rather points to a data quality issue.",
+     "seed": 33,
+     "latency_s": 24.04,
+     "tokens": 173
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2018-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-06 is driven by a significant increase in the number of infraction notices (165% above the 12-month median), accompanied by a substantial increase in the fine total (also +165%). The Page-Hinkley test confirms a sustained level shift within two months. The key event is the implementation of a new federal decree in June 2018, which directly impacts the administrative procedures for infraction notices. This suggests a policy-driven change (PDC) rather than a seasonal pattern (SP) or a data quality issue (DQE), as the change aligns with a specific policy implementation. The detectors mad and iforest also flagged the anomaly, supporting this interpretation.",
+     "seed": 11,
+     "latency_s": 45.49,
+     "tokens": 181
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2018-06 is driven by a significant increase in the number of notices (165% above the 12-month median). While a seasonal pattern (SP) is possible, the ratio of 1.01 is close to the baseline, and the increase is far beyond what a typical seasonal fluctuation would produce. The Page-Hinkley test confirms a sustained level shift. Furthermore, a new federal decree was implemented in June 2018, which could have prompted a change in enforcement procedures and increased the number of notices issued. Given the combination of a sudden spike, a level shift, and a relevant policy change, the most likely explanation is PDC – Policy-Driven Change.",
+     "seed": 22,
+     "latency_s": 25.11,
+     "tokens": 179
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-06 is driven by a massive increase in the number of infraction notices (165% above the 12-month median). This spike is coinciding with the implementation of a new federal decree, as indicated by the event log. While a seasonal pattern is not strongly supported by the historical data, the sudden increase in volume following the policy change makes a data quality issue (DQE) the most likely explanation. The Page-Hinkley test confirming a sustained level shift further strengthens this suspicion. The other detectors (mad, iforest) also flagged the anomaly, supporting the assessment. The large number of cancelled notices in 2018-06 (580) might be a contributing factor, but the underlying cause is likely the policy change and its immediate impact on the data collection process.",
+     "seed": 33,
+     "latency_s": 28.74,
+     "tokens": 203
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in April 2018 is characterized by a massive increase in fine_total_brl (435% above the 12-month median) coupled with a significant increase in the number of notices issued (3635). The Page-Hinkley test confirms a sustained level shift. The key evidence is the new law enacted in April 2018, which changed the rules and minimum values of environmental fines. This policy-driven change directly explains the sudden spike in fine values. The high number of cancelled notices also indicates a possible data correction or backlog, reinforcing the DQE category.",
+     "seed": 11,
+     "latency_s": 43.34,
+     "tokens": 158
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-04 is characterized by a massive spike in fine total brl (1,065.7M) compared to the median of the previous 12 months (199.1M), a 435% increase. The Page-Hinkley test detected a sustained level shift within 2 months. Furthermore, the number of notices increased dramatically in April 2018. The key event is the implementation of a new law in April 2018, which directly impacts environmental fines. This strongly suggests a policy-driven change (PDC) rather than a data quality issue or seasonality. The ensemble score of 0.49 further reinforces this inference.",
+     "seed": 22,
+     "latency_s": 25.88,
+     "tokens": 181
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-04 is characterized by a massive spike in fine total (1,065.7M) compared to the median of the previous 12 months (199.1M), a 435% increase. This is further amplified by a significant increase in the number of notices (3,635) and a high number of cancelled notices (1138). The Page-Hinkley test identified a sustained level shift within 2 months. While a new law change was announced in April 2018, its timing aligns with the anomaly. The sudden increase in fines and notices, coupled with the policy change, strongly suggests a Policy-Driven Change (PDC) explanation. ",
+     "seed": 33,
+     "latency_s": 26.86,
+     "tokens": 187
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2015-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2015-06 is driven by a significant drop in notices (61% below the median) and a substantial shift in the fine total. The Page-Hinkley test confirms a sustained level shift.  The triggering event, an agency restructuring, occurred in the same month, suggesting a change in enforcement priorities rather than a seasonal pattern or data quality issue. The zscore, MAD, and forest detectors all agree on this anomaly.",
+     "seed": 11,
+     "latency_s": 34.84,
+     "tokens": 115
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2015-06 is driven by a substantial drop in notices (61% below the median) and a corresponding decrease in fine revenue. The Page-Hinkley test confirms a sustained level shift. While an agency restructuring occurred in June 2015, this is a PDC explanation. The data quality analysis points to a potential data quality issue, specifically a backlog or change in reporting procedures. The zscore, mad, iforest and ensemble indicators support this assessment.",
+     "seed": 22,
+     "latency_s": 17.46,
+     "tokens": 125
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2015-06 is driven by a significant drop in the number of infraction notices (61% below the median) and a substantial decrease in fine revenue. The Page-Hinkley test confirms a sustained level shift.  The detected change aligns with a known agency restructuring that occurred in June 2015, influencing enforcement priorities. The zscore, MAD, and forest detectors all agree on the anomaly. There are no other series flagged in the same month.",
+     "seed": 33,
+     "latency_s": 17.17,
+     "tokens": 123
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2002-04 is characterized by a significantly lower fine total (8.7M) compared to the median of the previous 12 months (47.9M), representing an 82% drop. This is a substantial deviation. The ratio to the trailing 12-month median is also far below the typical 1.06. The data shows no sustained level shift. The detection methods (zscore, MAD) concur. The only known event is a new normative instruction changes which conducts are sanctioned with infraction notices in April 2002, coinciding with the anomaly. This suggests a policy-driven change in enforcement, rather than a seasonal or data quality issue.",
+     "seed": 11,
+     "latency_s": 43.45,
+     "tokens": 170
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total for April 2002 is dramatically lower than the median of the previous 12 months (8.7M vs. 47.9M), representing an 82% reduction. The ratio to the trailing 12-month median is significantly below 1.06. While there were no systematic shifts detected by Page-Hinkley, the anomaly is directly linked to a new normative instruction change in April 2002. The other series, notices, also show a decrease in this month. This suggests a data quality event – a change in enforcement or a new regulation impacting fine issuance – is the most likely explanation.",
+     "seed": 22,
+     "latency_s": 22.55,
+     "tokens": 159
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2002-04 is characterized by a significantly lower fine total (8.7M) compared to the median of the previous 12 months (47.9M), representing an 82% reduction. This is unusual given the other series show no deviation. The detector scores (zscore, MAD, ensemble) support the anomaly. The timing coincides with a policy change (new normative instruction) announced in April 2002. While there's no sustained level shift, the sudden drop in fines is more likely a data quality issue.",
+     "seed": 33,
+     "latency_s": 20.24,
+     "tokens": 142
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2001-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-06 is driven by a massive spike in infraction notices (5,080) compared to the median of 1,902 from the previous 12 months (+167%). This is further supported by a sustained level shift detected by the Page-Hinkley test and a z-score, MAD, and forest detector agreement. The timing aligns with the implementation of a new federal decree in June 2001, suggesting a policy-driven change (PDC) is the most plausible explanation. While other series show increases, the magnitude of this spike is exceptional.",
+     "seed": 11,
+     "latency_s": 41.07,
+     "tokens": 151
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-06 is driven by a substantial increase in the number of infraction notices (over 167% above the 12-month median) coupled with a significant increase in fine revenue. The Page-Hinkley test confirms a sustained level shift. A new federal decree was enacted in June 2001, which changed the administrative procedure for issuing and recording infraction notices. This policy change likely prompted a surge in notices as the IBAMA implemented the new process. The other series flagged in the same month were not affected, strengthening the case for a policy-driven event.",
+     "seed": 22,
+     "latency_s": 20.95,
+     "tokens": 148
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-06 is driven by a massive increase in the number of infraction notices (5,080) compared to the median of 1,902 over the preceding 12 months (+167%). This is compounded by a sustained level shift detected by the Page-Hinkley test. Furthermore, a new federal decree was implemented in June 2001, which likely impacted the administrative procedures and increased the volume of notices. The increased volume and level shift strongly suggest a data quality event (DQE) related to the changes in the administrative procedure. The zscore, MAD and iforest detectors all agree, and the ensemble score further supports this.",
+     "seed": 33,
+     "latency_s": 23.53,
+     "tokens": 166
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-05",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2018-05 is characterized by a massive increase in fine total (817% above the 12-month median) accompanied by a significant increase in the number of notices issued. A Page-Hinkley test detected a sustained level shift within 2 months. The most salient factor is the timing coinciding with the implementation of a new law changing the rules and minimum values of environmental fines. This suggests a policy-driven change (PDC) rather than a seasonal pattern (SP) or a data quality issue (DQE). The increased number of notices also strengthens the policy explanation.",
+     "seed": 11,
+     "latency_s": 42.64,
+     "tokens": 156
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2018-05 is driven by a massive increase in fines (817% above the 12-month median) alongside a significant surge in the number of notices issued (4125, compared to 1411 in 2017-05). The Page-Hinkley test confirms a sustained level shift within 2 months, indicating a change in the baseline. The timing coincides with the introduction of a new law (2018-05) that altered environmental fine rules and minimum values. This suggests a policy-driven change (PDC) rather than a seasonal pattern (SP) or data quality issue (DQE) given the broader context. The ensemble score (0.57) supports this assessment.",
+     "seed": 22,
+     "latency_s": 26.78,
+     "tokens": 191
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-05 is characterized by a massive increase in fines (817% above the median) and a significant surge in the number of notices (4125, compared to 1411 in 2017-05). The Page-Hinkley test confirmed a sustained level shift within two months. Furthermore, a new law change was implemented in May 2018, directly impacting environmental fines. The unusually high volume coupled with the policy change strongly suggests a data-quality event (DQE), likely related to the implementation of the new legislation and a resulting backlog or misinterpretation of the new rules leading to increased enforcement and reporting.",
+     "seed": 33,
+     "latency_s": 24.49,
+     "tokens": 174
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2004-12",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2004-12 is characterized by a massive drop in notices (67% below the median) and a significant decrease in fine total. The Page-Hinkley test confirms a sustained level shift within two months. The only relevant event is an agency restructuring in the same month, which could explain a change in enforcement priorities. The data quality explanation (DQE) is the most plausible, given the sudden drop in notices coinciding with a change in agency operations. The other indicators (seasonal, policy) do not fully explain the anomaly.",
+     "seed": 11,
+     "latency_s": 38.01,
+     "tokens": 137
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2004-12 is driven by a substantial drop in notices compared to the 12-month median (-67%), coupled with a Page-Hinkley test indicating a sustained level shift. While there’s a known agency restructuring in December 2004, this is unlikely to cause such a large, sudden reduction in notices. The data quality explanation (DQE) seems most plausible, given the detected level shift and the lack of other triggering events. The low volume in 2004-12 is not consistent with seasonal patterns or a policy change.",
+     "seed": 22,
+     "latency_s": 20.72,
+     "tokens": 147
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2004-12 is driven by a significant drop in the number of infraction notices compared to the median of the previous 12 months (-67%). This is further supported by the Page-Hinkley test indicating a sustained level shift. The detection algorithms (zscore, MAD, iforest) also flagged this month. The only relevant event is an agency restructuring in December 2004, which suggests a shift in enforcement priorities, potentially explaining the reduced volume. The dataset doesn't point to a data quality event or seasonal pattern.",
+     "seed": 33,
+     "latency_s": 19.48,
+     "tokens": 139
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total for June 2002 (9.6M BRL) is a dramatic drop compared to the median of the previous 12 months (46.6M BRL, -79%). The Page-Hinkley test indicated a sustained level shift within 2 months, and the volume of notices in June 2002 (939) is significantly lower than the average. The anomaly coincides with a new normative instruction change which conducts are sanctioned with infraction notices. This suggests a data quality event, likely a change in enforcement policies or a reporting issue, rather than a seasonal pattern or a genuine enforcement shift. The zscore and MAD detectors also support this.",
+     "seed": 11,
+     "latency_s": 42.38,
+     "tokens": 165
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2002-06 is characterized by a significant drop in fine total brl (79% below the median) and a substantial decrease in the number of notices (82% below the median). The Page-Hinkley test identified a sustained level shift within 2 months. While there’s a small change in the number of cancelled notices, the core issue is a dramatic reduction in the fine total. The identified event is a new normative instruction changes which conducts are sanctioned with infraction notices, suggesting a shift in enforcement practices. The data quality event is the most plausible explanation, specifically related to a change in how fines were calculated or applied in 2002-06, potentially driven by the policy change indicated by the event.",
+     "seed": 22,
+     "latency_s": 25.12,
+     "tokens": 179
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The fine total for June 2002 is a massive outlier, representing a 79% drop compared to the median of the previous 12 months. The Page-Hinkley test confirmed a sustained level shift within the two months prior. Additionally, the notice count in June 2002 is significantly lower than the previous months. This, combined with the new normative instruction changes in June 2002, strongly suggests a data quality event (DQE) – likely a backlog or issue with reporting that caused a sharp drop in fines. The other series flagged (notices) support this interpretation.",
+     "seed": 33,
+     "latency_s": 20.58,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2022-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2022-05 is characterized by a massive increase in the number of notices (169% above the 12-month median) accompanied by a large increase in fine totals and a significant increase in the number of records lacking identifiers. The Page-Hinkley test confirms a sustained level shift within two months. There are no other series flagged in the same month, and no known policy changes or events within the timeframe. This suggests a data quality issue, likely a backlog or retroactive correction that impacted the data collection and reporting processes in May 2022, creating a burst of records.",
+     "seed": 11,
+     "latency_s": 39.57,
+     "tokens": 150
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2022-05 is characterized by a dramatically increased number of notices (169% above the 12-month median) alongside a substantial increase in fine revenue. The Page-Hinkley test indicates a sustained level shift. While there are no other series flagged in the same month, the magnitude of the increase and the shift detected strongly suggest a data quality issue, likely related to a backlog or retroactive correction, as indicated by the high number of cancelled notices and records without identifiers in 2022-05. The zscore and MAD also support this interpretation.",
+     "seed": 22,
+     "latency_s": 20.27,
+     "tokens": 146
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2022-05 is characterized by a massive increase in the number of infraction notices (169% above the 12-month median). The Page-Hinkley test confirms a sustained level shift within the two months preceding this peak. Furthermore, a high number of records with no identifier (977) occurred in this month, alongside a large number of cancellations (167). This suggests a data quality issue, potentially related to system changes or backlog correction, causing a surge in notices followed by an increase in records without identifiers. The Z-score and MAD also support this conclusion.",
+     "seed": 33,
+     "latency_s": 20.57,
+     "tokens": 150
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in May 2018 is characterized by a massive increase in fine total (572% above the 12-month median). This is significantly higher than typical values and the ratio to the prior 12 months is very high. The number of cancelled notices and records without an identifier also increased considerably in May 2018. While there’s no immediate policy change or seasonal pattern evident, the magnitude of the increase suggests a data quality issue. The high number of cancelled notices and records without an identifier could indicate a system migration or backlog affecting the reporting of infractions, explaining the sudden spike in fines. The other series flagged in the same month were not relevant, and the Page-Hinkley test didn't find a sustained level shift.",
+     "seed": 11,
+     "latency_s": 45.77,
+     "tokens": 188
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-05 is characterized by a massive increase in fine_total_brl (572% above the 12-month median). This is significantly higher than typical seasonal patterns, as indicated by the ratio of calendar month 5 to the trailing 12-month median (1.14). While there are no other series flagged in the same month, the sheer magnitude of the increase and the z-score and MAD detections suggest a data quality issue. The large number of cancelled notices (1193) in May 2018, combined with a substantial increase in records without an identifier (1361), points towards a potential system migration or retroactive correction leading to data inconsistencies and an inflated fine total. The Page-Hinkley test did not find a sustained level shift, strengthening the data quality explanation.",
+     "seed": 22,
+     "latency_s": 28.97,
+     "tokens": 210
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-05 is characterized by a massive increase in fine total (572% above the 12-month median). The typical seasonal ratio is 1.14, indicating a moderate seasonal effect. However, the magnitude of the increase is far beyond what's typical for calendar month 5. Furthermore, there's a significant increase in the number of notices (3025 vs 1411 in 2017-05) and a substantial increase in records with no identifier (1361 vs 0 in 2017-05). This suggests a data quality issue rather than a seasonal or policy change. The sudden jump in volume, combined with the increase in records without identifiers, points to a potential system migration or backlog issue. The zscore and MAD detectors also flagged this anomaly, reinforcing the data quality concern.",
+     "seed": 33,
+     "latency_s": 30.51,
+     "tokens": 218
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2004-12",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2004-12 is marked by a dramatic drop in notices compared to the median of the previous 12 months (-97%). The ensemble score and multiple detectors confirm the anomaly. A sustained level shift was found within two months. The fine_total_brl series also shows a significant decrease. Considering the lack of policy changes and seasonal patterns, a data quality issue is the most plausible explanation, likely related to a reporting failure or system migration causing a drop in recorded notices. The Page-Hinkley test supports this.",
+     "seed": 11,
+     "latency_s": 37.83,
+     "tokens": 136
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2004-12 is highly unusual given the extremely low number of notices (72) compared to the median of -97% and the other months. The Page-Hinkley test confirmed a sustained level shift. The fact that the fine total is also significantly lower further supports a data quality issue. Furthermore, the other series (fine_total_brl) was also flagged in the same month. This suggests a problem with the data collection or processing, likely a backlog or system issue, rather than a genuine enforcement shift or seasonal pattern.",
+     "seed": 22,
+     "latency_s": 19.36,
+     "tokens": 140
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2004-12 is highly unusual given the extremely low value (72 notices) compared to the median of -97%. The Page-Hinkley test confirms a sustained level shift. The fine_total_brl series also shows a significant drop in this month, supporting the anomaly. Furthermore, the data quality indicators (cancelled and no_id) show no issues. This suggests a data quality event, likely a reporting failure or backlog, is the most likely explanation.",
+     "seed": 33,
+     "latency_s": 17.22,
+     "tokens": 126
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2002-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2002-04 is extremely unusual given the context. The fine total is drastically higher than the median of the previous 12 months (over 100x) and the typical seasonal ratio. The notices series also shows a significant increase in volume in the same month. While there's no specific policy change or known event, the sudden spike in fines suggests a data quality issue. Specifically, the lack of any prior similar events and the outlier nature of the data point towards a reporting error, system migration, or backlog affecting this specific month's records. The high volume of cancelled notices in subsequent months further supports this interpretation.",
+     "seed": 11,
+     "latency_s": 41.03,
+     "tokens": 157
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2002-04 is characterized by an exceptionally high fine total (655,059) compared to the median of the previous 12 months (47.9M), representing a 99% reduction. Furthermore, the number of notices is significantly lower than usual. This suggests a data quality issue rather than a genuine enforcement shift or seasonal pattern. The high value appears abrupt, and the low number of notices is unusual. The 4 out of 4 detectors flagging the anomaly and the ensemble score of 0.91 reinforce this conclusion. The data quality event category is the most appropriate.",
+     "seed": 22,
+     "latency_s": 21.3,
+     "tokens": 154
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2002-04 is characterized by an extremely high fine total (655,059) compared to the median of the previous 12 months (47.9M), representing a 99% difference. The typical seasonal ratio is 1.06, indicating no significant seasonal pattern. Furthermore, the other series (notices, cancelled, no_id) show no unusual behavior. The data quality event category is the most likely explanation – a sudden burst of high-value fines with no apparent underlying cause suggests a data quality issue, potentially a backlog or a system error.",
+     "seed": 33,
+     "latency_s": 21.06,
+     "tokens": 151
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2001-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-06 is characterized by a massive increase in notices (135% above the median) with a corresponding increase in fines. While there are no immediately obvious policy changes or seasonal patterns, the high cancellation rate (110) and a significant increase in records without an identifier (2012) suggest a data quality issue. The sudden jump in volume, combined with the data quality indicators, points towards a potential system migration or data correction process that impacted the reporting of infractions in 2001-06.",
+     "seed": 11,
+     "latency_s": 38.03,
+     "tokens": 138
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-06 is characterized by a massive increase in notices (over 135% above the 12-month median), accompanied by a significant increase in fine total. While there are no other series flagged in the same month, the sharp spike suggests a data quality issue. The increase in cancelled notices (110) and no_id records (2012) alongside the large increase in notices could indicate a system migration or data correction process, potentially impacting the reported volume. The data quality event (DQE) category is therefore the most plausible explanation.",
+     "seed": 22,
+     "latency_s": 20.25,
+     "tokens": 146
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-06 is characterized by a massive increase in the number of infraction notices (135% above the 12-month median). While there's no immediate seasonal pattern or known policy change, the large volume and the significant number of records with missing identifiers (2012) suggest a data quality issue. The fact that no other series were flagged in the same month further supports this conclusion. The Page-Hinkley test showed no sustained shift, ruling out a simple level change.",
+     "seed": 33,
+     "latency_s": 18.25,
+     "tokens": 131
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The fine total in April 2018 (1,278.8M) is significantly higher than the median of the previous 12 months (199.1M) – a 542% increase. While the ratio to the trailing 12-month median is 1.06, this is unusually high. Furthermore, the number of notices in April 2018 (4,362) is dramatically higher than the median (1,014) and represents a massive increase. This surge in notices, combined with the exceptionally high fine value, suggests a data quality issue, likely related to a backlog or a correction in the data. The high number of records with no identifier (1963) in April 2018 further supports this. The detectors (zscore, mad) also flagged the anomaly, reinforcing this conclusion. There are no policy changes or seasonal patterns that can explain this.",
+     "seed": 11,
+     "latency_s": 52.03,
+     "tokens": 229
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2018-04 is characterized by a massive spike in fine total brl (1,278.8M) compared to the median of the previous 12 months (199.1M), representing a 542% increase. The number of notices also increased significantly. While there’s no immediate policy change or known event, the sudden, large increase in fines combined with a high volume of notices suggests a data quality issue. The high number of records with ‘no_id’ (1963) in April 2018, alongside a large increase in cancelled notices (1370), indicates a potential system migration or correction process that likely resulted in a flood of unprocessed or incorrectly identified notices. The zscore and mad detectors confirm an outlier. This is more likely a data quality event than a genuine enforcement shift or seasonal pattern.",
+     "seed": 22,
+     "latency_s": 30.1,
+     "tokens": 214
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-04 is characterized by a massive spike in fine_total_brl (+542% compared to the 12-month median). While notices also increased significantly, the increase in notices (4362) is substantially greater than the increase in fines (1278.8M). The data shows a large number of newly created records (1963) and a large number of records cancelled (1370) within the same month. This suggests a data quality issue, likely a retroactive correction or a system migration that introduced a large number of new records, many of which were subsequently cancelled. The high number of cancelled records is more relevant than the increased notices, and the overall spike in fines is likely a result of the data correction. Therefore, DQE is the most plausible category.",
+     "seed": 33,
+     "latency_s": 28.82,
+     "tokens": 206
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2025-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2025-04 is highly unusual given the median of 1,088 notices for that month across the previous 12 months, which is a 97% reduction. Furthermore, the number of notices is significantly lower than other months, and the fine total is also unusually low. The values for the other series, fine_total_brl, also show a significant drop in the same month. There are no known policy changes or system events to explain this. The fact that all anomaly detectors flagged this month suggests a data issue is the most plausible explanation. The absence of cancelled notices or records without identifiers in April 2025 further supports this conclusion.",
+     "seed": 11,
+     "latency_s": 42.58,
+     "tokens": 166
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in April 2025 (37 notices) is significantly lower than the median of the previous 12 months (1,088), representing a massive drop. The ratio to the trailing 12-month median is 1.01, indicating no seasonal effect. The fact that no cancelled or missing identifiers occurred in April 2025 further strengthens the suspicion of a data quality issue. The concurrent increase in the fine_total_brl series suggests this anomaly is not a genuine enforcement shift, but rather a problem with the data itself. The high confidence of the ensemble detectors (4/4, 0.91) reinforces this conclusion.",
+     "seed": 22,
+     "latency_s": 23.36,
+     "tokens": 163
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in April 2025 is highly unusual given the extremely low notice volume compared to the median of the previous 12 months (-97%). The median value is 1,088. The seasonal pattern is also not apparent, with a typical ratio of 1.01. There are no known policy changes or data quality issues. The fact that there are no cancelled notices or records without identifiers in April 2025 further strengthens the case for a data quality problem. The associated increase in fine_total_brl also suggests a potential issue with data collection or reporting.",
+     "seed": 33,
+     "latency_s": 20.83,
+     "tokens": 146
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2025-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in June 2025 (fine_total_brl = 12.7M) is significantly below the median of the previous 12 months (389.9M, -97%). The typical seasonal ratio for June is 1.17. Comparing to the same month in other years, the values are consistently higher. Furthermore, the number of notices in June 2025 is exceptionally low (35), and there are no records without an identifier. The detectors (zscore, mad, iforest, lstm_ed) all flagged this anomaly. This suggests a data quality issue, most likely a backlog or reporting failure, leading to a reduced volume of notices in June 2025.  The lack of a policy event or genuine enforcement shift supports this conclusion.",
+     "seed": 11,
+     "latency_s": 48.51,
+     "tokens": 201
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in June 2025 (fine_total_brl = 12.7M) is significantly below the median of the previous 12 months (389.9M, -97%). The typical seasonal ratio for June is 1.17, but in 2025 it's much lower. Examining the surrounding months, we see a surge in notices and fines in the months leading up to June, with a notable drop in June itself (35 notices and 12.7M). There are no known policy changes or system events. The low value in June is unusual given the overall trend, suggesting a data quality issue. The fact that no records in June had an identifier also contributes to the suspicion.",
+     "seed": 22,
+     "latency_s": 26.32,
+     "tokens": 188
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in June 2025 (fine_total_brl = 12.7M) is significantly below the median of the previous 12 months (389.9M, -97%). The typical seasonal ratio for June is 1.17.  Looking at the surrounding months, there is no clear seasonal pattern. The number of notices in June 2025 (35) is unusually low, and there are no recorded cancellations or missing identifiers. The ensemble score of 0.76, with 4 detectors flagging the anomaly, strongly suggests a data quality issue. The low fine total compared to the median and typical seasonal ratio indicates a problem with the data collection or reporting process, rather than a genuine change in enforcement. ",
+     "seed": 33,
+     "latency_s": 26.92,
+     "tokens": 191
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2015-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2015-03 is characterized by a significantly elevated notice volume (+141% compared to the 12-month median) and a substantial increase in fine revenue. The Page-Hinkley test identified a sustained level shift within the two months preceding and following March 2015. The high number of cancelled notices and records without identifiers in March 2015 suggests a potential data quality issue, possibly related to system changes or a backlog in processing. There are no other series flagged in the same month, ruling out a seasonal pattern. The evidence points to a DQE (Data-Quality Event) explanation.",
+     "seed": 11,
+     "latency_s": 40.63,
+     "tokens": 157
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2015-03 is characterized by a dramatically increased number of notices (3,202) compared to the median of the previous 12 months (1,330), representing a 141% increase. This is further supported by a sustained level shift detected by the Page-Hinkley test within 2 months. While there are no other series flagged in the same month, the magnitude of the increase and the statistical tests strongly suggest a data quality issue, specifically a backlog or a reporting problem. The high number of cancelled notices and records without identifiers in subsequent months (2015-04 onwards) further supports a DQE explanation.",
+     "seed": 22,
+     "latency_s": 23.14,
+     "tokens": 165
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2015-03 is characterized by a significantly elevated notice volume (+141% compared to the 12-month median) and a substantial increase in fine revenue. The Page-Hinkley test confirms a sustained level shift. While there are no other series flagged in the same month, the magnitude of the increase, combined with the statistical tests, strongly suggests a data quality issue. Specifically, the sudden spike in notices coupled with a large increase in fines, suggests a potential issue with retroactive corrections or a system migration that introduced an outlier.",
+     "seed": 33,
+     "latency_s": 19.29,
+     "tokens": 138
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-03 is characterized by a massive increase in fine totals (712.6M) compared to the median of the previous 12 months (226.7M, +214%). The Page-Hinkley test confirmed a sustained level shift within the two months preceding this spike. While the ratio of calendar month 3 to the trailing 12-month median is high (1.49), it's not unusually high compared to other years. There are no other series flagged in the same month. The magnitude of the increase suggests a data quality issue rather than a genuine enforcement shift or seasonal pattern. Given the high z-score and MAD, a data quality event (DQE) seems the most likely explanation, possibly related to a system change or backlog correction.",
+     "seed": 11,
+     "latency_s": 48.03,
+     "tokens": 201
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-03 is marked by a dramatic increase in fine_total_brl (712.6M) compared to the median of the previous 12 months (226.7M), representing a 214% increase. The Page-Hinkley test confirms a sustained level shift within 2 months. While there are no other series flagged in the same month, the magnitude of the increase and the shift detection suggest a data quality issue rather than a genuine enforcement shift or seasonal pattern. The unusually high value in March 2018, combined with the Page-Hinkley test, strongly points to a data quality event, likely related to reporting changes or data corrections. The unusually high value also contrasts with the values of the previous months, especially considering the trend of values across the same month in other years.",
+     "seed": 22,
+     "latency_s": 29.2,
+     "tokens": 209
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-03 is characterized by a massive increase in fine totals (214% above the 12-month median) and a significant increase in the number of notices (approximately 160% increase). The Page-Hinkley test confirms a sustained level shift within the two months prior. While there are no other series flagged in the same month, the magnitude of the increase, combined with the shift test and the unusual ratio to the trailing 12-month median, strongly suggests a data quality issue. Specifically, it's likely a backlog or correction of previously under-reported fines, rather than a genuine enforcement shift or policy change. The large increase in cancelled notices in subsequent months also supports this hypothesis.",
+     "seed": 33,
+     "latency_s": 25.86,
+     "tokens": 185
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-02 is characterized by a massive drop in notices (67% below the median) and a sustained level shift detected by the Page-Hinkley test. While there are no other series flagged concurrently, the data suggests a potential data quality issue. The sudden drop in notices is not consistent with a seasonal pattern (typical ratio of 0.84) or a policy change. The high number of cancelled notices and records without an identifier in the same month further supports a data quality event, likely related to a system migration or backlog affecting reporting accuracy. Confidence: 0.85",
+     "seed": 11,
+     "latency_s": 40.15,
+     "tokens": 151
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-02 is characterized by a 67% drop in notices compared to the 12-month median. This is a significant deviation from the typical seasonal pattern (0.84 ratio). Furthermore, a sustained level shift was detected within 2 months using the Page-Hinkley test, and the zscore and MAD detectors also flagged the anomaly. The absence of any other series being flagged in the same month strengthens the suspicion of a data quality issue. The small number of cancelled notices and records without identifiers doesn't provide sufficient evidence to suggest a policy or enforcement change.",
+     "seed": 22,
+     "latency_s": 20.89,
+     "tokens": 148
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-02 is characterized by a massive drop in notices (67% below the 12-month median). This is not a typical seasonal pattern (ratio of 0.84). The Page-Hinkley test indicated a sustained level shift within 2 months. Furthermore, there are no other series flagged in the same month. The data quality event category is most appropriate, suggesting a likely data issue such as a backlog, system error, or a retroactive correction causing a sudden drop in notices.",
+     "seed": 33,
+     "latency_s": 18.67,
+     "tokens": 133
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2015-01",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total in January 2015 (26.5M) is significantly below the 12-month median (240.7M, -89%). This is exacerbated by a Page-Hinkley test indicating a sustained level shift within two months. The volume of notices is also lower than typical, and the number of cancelled notices is relatively low. Given the lack of external events and the strong statistical indicators (zscore, MAD, iforest), a data quality issue is the most likely explanation. Specifically, a backlog or a system change may have impacted reporting in January 2015.",
+     "seed": 11,
+     "latency_s": 39.84,
+     "tokens": 151
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2015-01 is characterized by a significant drop in fine total brl compared to the 12-month median (-89%), with a zscore and mad detectors flagging it. The Page-Hinkley test confirmed a sustained level shift within two months. Examining the surrounding months, the fine total is significantly lower than typical, and there's no obvious seasonal pattern. The limited context of the other series (notices, cancelled, no_id) doesn't reveal any immediate cause. While there's a slight increase in notices, the fine total is the primary driver of the anomaly. Given the data quality indicators, a data quality event (DQE) is the most likely explanation, particularly considering the sustained level shift detected.",
+     "seed": 22,
+     "latency_s": 25.29,
+     "tokens": 180
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The fine total for January 2015 is significantly lower than the 12-month median (-89%). This is supported by a Page-Hinkley test indicating a sustained level shift within two months. Furthermore, the number of notices is noticeably lower than typical. The anomaly is also confirmed by three out of four anomaly detectors. There is no evidence of a policy change or seasonal pattern. A data quality event (DQE) is the most likely explanation given the sudden shift and lack of external factors.",
+     "seed": 33,
+     "latency_s": 17.86,
+     "tokens": 127
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-07",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in 2001-07 is characterized by a massive increase in notices (204% above the 12-month median) accompanied by a significant rise in fine totals. The Page-Hinkley test identified a sustained level shift. While there are no other series flagged in the same month, the high volume and fine amounts, combined with the level shift, strongly suggest a data quality issue, likely a backlog or retroactive correction that inflated the numbers in July 2001. The high number of cancelled notices in subsequent months supports this, though it doesn't directly explain the initial spike.",
+     "seed": 11,
+     "latency_s": 39.67,
+     "tokens": 149
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-07 is characterized by an extremely high notice volume (+204% compared to the median) and a substantial increase in fine revenue. The Page-Hinkley test confirms a sustained level shift. While there are no other series flagged in the same month, the magnitude of the change and the sustained shift suggest a data quality issue rather than a seasonal pattern or policy change. The large number of cancelled notices (150) in July 2001 might be a contributing factor, possibly related to a system update or correction.",
+     "seed": 22,
+     "latency_s": 19.75,
+     "tokens": 140
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2001-07 is characterized by a massive increase in the number of notices (204% above the 12-month median) accompanied by a significant increase in fine values. The Page-Hinkley test indicates a sustained level shift. While there are no other series flagged in the same month, the data reveals a substantial jump in notices, suggesting a data quality issue rather than a seasonal pattern or policy change. The high cancellation rate in subsequent months (2002) further supports a data quality event.",
+     "seed": 33,
+     "latency_s": 18.92,
+     "tokens": 135
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-05",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2018-05 is characterized by a massive increase in fine totals (315% above the 12-month median), detected by multiple anomaly detectors (zscore, MAD, ensemble). The Page-Hinkley test confirms a sustained level shift. While there are no other series flagged in the same month, the extreme value compared to the historical median, combined with the statistical signals, strongly suggests a data quality issue rather than a genuine enforcement shift or seasonal pattern. The data quality event could be due to a backlog in processing, a system error, or a retroactive correction. The high number of cancelled notices in May 2018 (537) further supports this hypothesis.",
+     "seed": 11,
+     "latency_s": 45.08,
+     "tokens": 178
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2018-05 is marked by a dramatically increased fine total (315% above the 12-month median). This is not consistent with a seasonal pattern (typical ratio of 1.14) or a change in enforcement intensity (GES). The Page-Hinkley test detected a sustained level shift within 2 months, suggesting a systematic change. Moreover, the volume of notices also increased significantly. Given the lack of other flagged series and the strong level shift, a data quality event (DQE) – likely a backlog or retroactive correction – is the most plausible explanation. The sudden jump in fines without a corresponding event or other series deviation strongly suggests an issue within the data itself.",
+     "seed": 22,
+     "latency_s": 25.26,
+     "tokens": 179
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is characterized by a dramatically increased fine total (315% above the median) in May 2018. The Page-Hinkley test confirms a sustained level shift within 2 months, further supporting this. There's no seasonality as the same calendar month doesn't consistently deviate in the same direction across years, and no other series are flagged in the same month. The sudden jump in fines, combined with the level shift detection, strongly suggests a data-quality event like a backlog, retroactive correction, or a system migration that caused an unusually large number of notices to be issued in May 2018. The high number of cancelled notices in May 2018 (537) also lends credence to this explanation.",
+     "seed": 33,
+     "latency_s": 26.41,
+     "tokens": 186
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2005-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in 2005-02 is marked by a significant drop in the number of notices (64% below the 12-month median). The Page-Hinkley test confirms a sustained level shift within two months. Furthermore, the z-score and MAD detectors flagged the anomaly. There are no other series flagged in the same month, and no known policy or seasonal changes. The data quality explanation (DQE) is most plausible given the sudden drop in notices and the confirmed level shift, likely reflecting a data quality issue such as a system migration or backlog.",
+     "seed": 11,
+     "latency_s": 38.84,
+     "tokens": 142
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.85,
+     "reasoning": "The anomaly in February 2005 is characterized by a significant drop in the number of notices (-64% compared to the median) and a substantial shift downwards (zscore, mad). The Page-Hinkley test confirms a sustained level shift. There are no other series flagged in the same month, and no policy changes or external events are identified. The data quality explanation (DQE) is the most likely, potentially due to a backlog or correction in reporting, given the sudden drop and the confirmed shift.",
+     "seed": 22,
+     "latency_s": 18.14,
+     "tokens": 128
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in February 2005 is characterized by a significant drop in the number of notices (64% below the median) and a corresponding decrease in fine revenue. The Page-Hinkley test indicated a sustained level shift. While there are no other series flagged in the same month, the magnitude of the drop and the shift detection strongly suggest a data quality issue, likely related to reporting failures or a backlog in processing notices. The fact that the month's value is substantially below the expected seasonal pattern lends credence to this explanation.",
+     "seed": 33,
+     "latency_s": 18.5,
+     "tokens": 131
+    }
+   ]
+  }
+ ]
+}

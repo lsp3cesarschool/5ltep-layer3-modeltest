@@ -1,0 +1,947 @@
+{
+ "entry": {
+  "label": "qwen3:1.7b",
+  "backend": "ollama",
+  "model": "qwen3:1.7b",
+  "size_gb": 1.36,
+  "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+  "source": "discovered",
+  "discovered_at": "2026-09-29T22:30:22+00:00",
+  "options": {
+   "think": false
+  },
+  "prompt_ref": "main",
+  "experiment": false,
+  "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+  "key": "6b86d03d06fa9ce0",
+  "slug": "qwen3_1.7b"
+ },
+ "key": "6b86d03d06fa9ce0",
+ "label": "qwen3:1.7b",
+ "upstream_ref": "5a1e733f25e973259d21a6942169173d19cd2966",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "cases_total": 30,
+ "cases_done": 30,
+ "stopped": null,
+ "server": {
+  "server_version": "0.35.0",
+  "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+  "size_bytes": 1359293444,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen3",
+   "families": [
+    "qwen3"
+   ],
+   "parameter_size": "2.0B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 40960,
+   "embedding_length": 2048
+  }
+ },
+ "started_at": "2026-09-30T02:10:18+00:00",
+ "ended_at": "2026-09-30T02:35:11+00:00",
+ "answers": [
+  {
+   "case": "SP-fine_total_brl-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2014 shows a sharp drop in fines compared to the previous year's January (258.3M vs 39.7M). The same calendar month was flagged in previous years (1989-01, 1999-01, 2020-01, 2021-01, 2024-01), indicating a recurring pattern. The Page-Hinkley test found no sustained level shift, and the anomaly is not due to data-quality issues (no burst of cancelled notices or missing identifiers). The anomaly aligns with a genuine enforcement shift, as the same month was flagged in previous years, suggesting a consistent pattern. The ratio of the anomaly to the median of previous years is 0.15, which is below 1, indicating a significant deviation but not necessarily a data-quality event.",
+     "seed": 11,
+     "latency_s": 35.28,
+     "tokens": 214
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2014 is seasonal. The same calendar month (2014-01) deviated significantly below the median of previous years (2013-01: 0.62, 2012-01: 0.29, etc.), and this deviation was flagged in multiple years (1989-01, 1999-01, 2020-01, 2021-01, 2024-01). The data shows a consistent pattern of lower fines in January across multiple years, suggesting a seasonal enforcement cycle. The anomaly is not due to a data-quality issue, as there is no indication of missing identifiers, duplicate records, or implausible values. The anomaly is therefore classified as SP (Seasonal Pattern).",
+     "seed": 22,
+     "latency_s": 13.56,
+     "tokens": 206
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2014 is flagged as seasonal, as the same calendar month (2014-01) deviated significantly below the median of previous years (2013-01: 0.62, 2012-01: 0.29, etc.), and this deviation was also observed in previous years (1989-01, 1999-01, 2020-01, 2021-01, 2024-01). The Page-Hinkley test did not find a sustained level shift, and the anomaly is consistent across multiple years, suggesting a seasonal pattern. The data shows a consistent decline in fines for the same month, which aligns with the seasonal pattern.",
+     "seed": 33,
+     "latency_s": 12.91,
+     "tokens": 197
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2014 shows a significant drop in the number of infraction notices (from 1,384 in the previous year to 471), which is consistent with a seasonal pattern. The same calendar month was flagged as anomalous in multiple years (e.g., 1983, 1996, 2009, 2012, 2017, 2019, 2021, 2024), indicating a recurring trend. The ratio of the anomaly (471/1384) is 0.34, which is below the typical ratio of 0.44-0.60 for January in previous years. No policy-driven changes are indicated, and there is no evidence of data-quality issues like duplicate records or system migration. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 30.41,
+     "tokens": 219
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2014 is flagged as anomalous due to a significant drop in the number of infraction notices compared to the previous year. The same calendar month (2014-01) showed a consistent decline in notices across multiple years (e.g., 2013-01: 695 vs. 2014-01: 471), indicating a seasonal pattern. The ratio of the anomaly to the median of the previous 12 months is 0.34, which is significantly below 1, suggesting a large deviation. The month was also flagged in previous years, and no event was identified within six months. This supports a seasonal pattern rather than a data-quality event. The anomaly is consistent across multiple years, further supporting the seasonal explanation.",
+     "seed": 22,
+     "latency_s": 13.2,
+     "tokens": 195
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2014 is identified as seasonal. The same calendar month (2014-01) showed a significant deviation from the median of previous years (1,384 vs. 471), and the same month was flagged as anomalous in multiple years (1983-01, 1989-01, etc.). Seasonality check shows a consistent downward trend (ratio < 1) in the same month over the past 10 years. The anomaly is not due to data-quality issues (e.g., missing identifiers, incorrect values, or system changes), and there are no known events within 6 months. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 12.04,
+     "tokens": 178
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2017-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2017 shows a significant drop in the number of infraction notices (from 1,550 to 505) compared to the previous year's January (1,550). This drop aligns with the historical pattern of the same calendar month (2016-01: 1,550, 2017-01: 505) and was flagged in multiple years (1983-01, 1989-01, 1996-01, 1999-01, 2003-01, 2009-01, 2010-01, 2012-01, 2014-01, 2019-01, 2021-01, 2024-01). The anomaly is consistent with a seasonal pattern, as the same month historically shows a similar downward trend. The data shows no signs of data-quality issues like duplicates or missing identifiers, and the Page-Hinkley test did not find a sustained level shift. Therefore, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 35.03,
+     "tokens": 291
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2017 is seasonal. The same calendar month (2017-01) showed a significant decline compared to the previous 12 months, with a ratio of 0.33 (down 67%). This decline was consistent across multiple years (1983-01, 1989-01, 1996-01, etc.), indicating a recurring pattern. The Page-Hinkley test did not find a sustained level shift, but the anomaly persisted across multiple years, suggesting a seasonal pattern. The data shows a consistent decline in notices for the same month, which aligns with the seasonal pattern.",
+     "seed": 22,
+     "latency_s": 11.04,
+     "tokens": 167
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2017 is seasonal. The same calendar month (2017-01) showed a significant drop in notices (from 1,550 to 505) compared to the previous years, with a ratio of 0.33, which is below the typical ratio of 0.48–0.60 for January. The month was flagged in multiple years (1983–2024-01), indicating a recurring pattern. The data shows no signs of data quality issues, and the anomaly is consistent across multiple years, suggesting a seasonal pattern.",
+     "seed": 33,
+     "latency_s": 10.27,
+     "tokens": 156
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2021 shows a sharp drop in fines (from 170.9M to 21.0M) compared to the previous year's January (170.9M). This suggests a significant deviation, but the same calendar month was flagged in previous years (1989-01, 1999-01, 2014-01, 2020-01, 2024-01), indicating a recurring pattern. The Page-Hinkley test failed to find a sustained level shift, and the anomaly is not due to data-quality issues like missing identifiers or incorrect values. The anomaly is consistent across multiple years, suggesting a seasonal pattern.",
+     "seed": 11,
+     "latency_s": 26.41,
+     "tokens": 182
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2021 shows a sharp decrease in fine_total_brl (from 170.9M to 21.0M) compared to the previous year's January (170.9M). The same calendar month (2021-01) was flagged as anomalous in 1989, 1999, 2014, 2020, and 2024, indicating a recurring pattern. The ratio of 2021-01 to the median of previous years is 0.12, significantly lower than the typical 0.25–0.42 seen in other years. This suggests a genuine enforcement shift, not a seasonal pattern. The anomaly is not due to data-quality issues (no burst of cancelled notices or missing identifiers). The Page-Hinkley test did not find a sustained level shift, and no known events explain the timing and direction of the anomaly.",
+     "seed": 22,
+     "latency_s": 15.22,
+     "tokens": 232
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2021 shows a sharp decline in fines (from 170.9M to 21.0M) compared to the previous year's January (170.9M). This decline is consistent across multiple years (1989-01, 1999-01, 2014-01, 2020-01), suggesting a seasonal pattern. The same calendar month was flagged as anomalous in other years, and the ratio of the anomaly to the median of its previous 12 months is significantly lower (0.12 vs. 0.25 in 2020-01). Additionally, the anomaly is not explained by data-quality issues like duplicate records or system changes. The Page-Hinkley test found no sustained level shift, and no known events explain the anomaly. Thus, the anomaly is best explained by a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 15.07,
+     "tokens": 225
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2021 is identified as seasonal. The same calendar month (2021-01) showed a significant deviation from the median of previous years (2020-01: 768 vs. 288, a 63% drop). This deviation occurred in 10 out of 10 years, and the month was flagged as anomalous in multiple years (e.g., 1983-01, 1996-01, 2003-01, etc.). The Page-Hinkley test found no sustained level shift, and the anomaly is consistent across multiple years, suggesting a seasonal pattern. The data quality is not compromised, and no policy-driven events are listed. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 28.69,
+     "tokens": 199
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2021 shows a significant drop in infraction notices (288 vs. 768 in the previous year) and a consistent pattern across multiple years (1983-01 to 2024-01). The same calendar month was flagged as anomalous in multiple years, suggesting a recurring pattern. The data shows no known events within 6 months, and the anomaly is not due to data quality issues (e.g., duplicate records or system migration). The anomaly is best explained by a genuine enforcement shift, as the deviation is consistent across years and not due to a data-quality event.",
+     "seed": 22,
+     "latency_s": 10.35,
+     "tokens": 158
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2021 shows a significant drop in the number of infraction notices compared to the previous years' January (median 768 vs. 288). This drop occurred in the same calendar month across multiple years (1983-01, 1989-01, etc.), suggesting a recurring pattern. The Page-Hinkley test found no sustained level shift, and the anomaly was flagged by multiple detectors. Since the same month was flagged multiple times and the deviation is consistent across years, the anomaly is best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 9.46,
+     "tokens": 147
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2024 shows a significant drop in fines (43.4M vs. 385.8M in the previous year), which aligns with the historical pattern of the same calendar month in the previous years (0.11 ratio). The same month was flagged in multiple years, suggesting a recurring pattern. The data shows a large decrease in notices and fines, but no system migration or reporting failure is indicated. The anomaly is consistent with a genuine enforcement shift, as the drop is not explained by seasonal patterns or policy-driven changes. The Page-Hinkley test did not find a sustained level shift, and no known events are present.",
+     "seed": 11,
+     "latency_s": 25.63,
+     "tokens": 163
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2024 is likely due to a genuine enforcement shift. The fine_total_brl value of 43.4M is significantly lower than the median of the previous 12 months (385.8M), and the same calendar month (2024-01) was flagged as anomalous in multiple years (1989-01, 1999-01, 2014-01, 2020-01, 2021-01). The data shows a sustained level shift within 2 months, but no events are listed. Additionally, the number of notices in 2024-01 is much lower than in other months, suggesting a possible data-quality event. However, the anomaly does not align with a data-quality event due to the large deviation. The most plausible explanation is a genuine shift in enforcement intensity.",
+     "seed": 22,
+     "latency_s": 14.57,
+     "tokens": 222
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2024 is likely due to seasonal patterns. The same calendar month (2023-01) had a significantly lower fine total (0.11 ratio) compared to the median of previous years, and this pattern was consistent across 9 out of 10 years. The month was also flagged in previous years, indicating a recurring trend. The data shows a sustained level shift within 2 months, but no events are listed. The anomaly is therefore best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 8.44,
+     "tokens": 132
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2024 shows a significant drop in the number of infraction notices compared to the previous year's January (1,368 vs 454). The ratio of the anomaly to the median of the previous 12 months is 0.33, indicating a large decrease. This deviation is consistent across multiple years (1983-01 to 2021-01), suggesting a seasonal pattern. The same calendar month was flagged as anomalous in previous years, and the Page-Hinkley test did not find a sustained level shift. Additionally, the number of cancelled notices and records without identifiers did not show a clear trend, indicating potential data-quality issues. However, the deviation is consistent with a seasonal pattern rather than a data-quality event.",
+     "seed": 11,
+     "latency_s": 28.22,
+     "tokens": 190
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2024 is likely due to seasonal pattern. The same calendar month (2023-01) had a consistent decline in notices (from 1,368 to 454) compared to the previous years, with a ratio of 0.33. This decline was also flagged in multiple years (1983-01, 1989-01, etc.), indicating a recurring pattern. The data shows a sustained level shift within 2 months, but no event is listed. The anomaly is consistent with seasonal behavior, suggesting a genuine enforcement shift rather than a data-quality issue.",
+     "seed": 22,
+     "latency_s": 10.54,
+     "tokens": 161
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2024 is likely due to a genuine enforcement shift. The same calendar month (2024-01) showed a significant decline in infraction notices compared to the previous year's median of 1,368, indicating a sharp drop. This decline was also observed in previous years (e.g., 1983-01, 1996-01, 2010-01, 2012-01, 2014-01, 2017-01, 2019-01, 2021-01), suggesting a recurring pattern. Additionally, the Page-Hinkley test found a sustained level shift within 2 months, which supports the idea of a genuine enforcement shift rather than a temporary anomaly. The data shows a consistent decline in infraction notices, which is not explained by seasonal patterns or data-quality issues.",
+     "seed": 33,
+     "latency_s": 15.12,
+     "tokens": 229
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2018-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in June 2018 shows a significant increase in infraction notices (3,468 vs. median of 1,310) and a ratio of 2.65, which is substantially higher than the previous years' ratio of 1.02. The same calendar month (June) showed a consistent deviation in the same direction (above 1) in 5 out of 10 years. Additionally, the Page-Hinkley test found a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data quality issues, as there are no signs of reporting failure or duplication. The event in June 2018, a new federal decree, explains the change in enforcement patterns. Thus, the anomaly is best explained by a genuine enforcement shift (GES).",
+     "seed": 11,
+     "latency_s": 27.95,
+     "tokens": 202
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in June 2018 is explained by the introduction of a new federal decree that changed the administrative procedure for issuing and recording infraction notices. This policy change led to a significant increase in the number of notices issued in June 2018. The ratio of notices in June 2018 to the median of the previous 12 months was 2.65, which is significantly higher than the usual ratio of 1.02. The same calendar month (June) was flagged as anomalous in other years, and the Page-Hinkley test confirmed a sustained level shift within 2 months. This aligns with a policy-driven change in enforcement procedures. The anomaly is not due to data quality issues, as there is no indication of reporting failures, system migration, or retroactive corrections.",
+     "seed": 22,
+     "latency_s": 12.84,
+     "tokens": 196
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2018 is explained by the policy change that affected the administrative procedure for issuing infraction notices. The same calendar month (June) showed a significant increase in notices compared to the previous years, and the anomaly was flagged by the system. The Page-Hinkley test confirmed a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to seasonal patterns, data-quality issues, or other external factors. Thus, the most appropriate category is GES (Genuine Enforcement Shift).",
+     "seed": 33,
+     "latency_s": 8.82,
+     "tokens": 137
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2018 is attributed to a policy-driven change (New law changes the rules and minimum values of environmental fines). The same calendar month (2018-04) showed a sustained level shift in fines compared to previous years, and the anomaly was flagged by the ensemble system. The data shows a significant increase in fines, which aligns with the policy change. The anomaly is not due to seasonal patterns, data quality issues, or other external factors. The confidence is high.",
+     "seed": 11,
+     "latency_s": 23.37,
+     "tokens": 130
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2018 is explained by a policy-driven change (New law changes the rules and minimum values of environmental fines) that led to a sudden and significant increase in fines. The same calendar month (2018-04) was flagged as anomalous in 1992-04, suggesting a recurring pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months, and the fine_total_brl value (1,065.7M) is significantly higher than the median of the previous 12 months (199.1M). The anomaly is not due to data quality issues, as there is no indication of reporting failure or duplicate records. The anomaly aligns with a policy change, making it a PDC event.",
+     "seed": 22,
+     "latency_s": 12.47,
+     "tokens": 191
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2018 is explained by a policy-driven change (New law changes the rules and minimum values of environmental fines). The same calendar month (2018-04) was flagged in 1992-04, suggesting a recurring pattern. The fine_total_brl value of 1,065.7M is significantly higher than the median of the previous 12 months (199.1M), and the ratio of 5.35 indicates a strong deviation. The Page-Hinkley test confirms a sustained level shift within 2 months, consistent with a policy change. The anomaly is not due to data quality issues, as there is no evidence of reporting failures, duplication, or retroactive corrections.",
+     "seed": 33,
+     "latency_s": 12.07,
+     "tokens": 184
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2015-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in June 2015 is identified as seasonal. The same calendar month (June) had a consistent downward trend in the previous 10 years (ratio < 1), and the anomaly was flagged by multiple detectors. Additionally, a Page-Hinkley test found a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data-quality issues, as the deviation is large but not unexpected given the seasonal pattern. The anomaly is best explained by a genuine enforcement shift.",
+     "seed": 11,
+     "latency_s": 22.46,
+     "tokens": 133
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2015 shows a significant drop from the median of 1,444 notices in the previous year (2014-06) to 560. The same calendar month (June) had a consistent downward trend in the previous 10 years, with a ratio of 0.39. The Page-Hinkley test confirmed a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data-quality issues (e.g., missing identifiers, duplicate records) and does not align with seasonal patterns. The event (agency restructuring) explains the timing and direction of the anomaly, making it a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 10.83,
+     "tokens": 171
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2015 shows a significant drop in infraction notices (from 1,444 to 560) compared to the median of the previous 12 months. The same calendar month (June) had a consistent downward trend in previous years (2014-06: 1.01, 2013-06: 1.14, etc.), indicating a seasonal pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months, supporting the seasonal explanation. The anomaly was flagged by multiple detectors, and no other year had the same month flagged. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 10.86,
+     "tokens": 170
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2002 is analyzed by comparing the fine_total_brl value (8.7M) to the median of the previous 12 months (47.9M), showing a significant drop. The same calendar month (April) had a consistent deviation below 1 in four of the previous ten years, indicating a seasonal pattern. The anomaly was also flagged in 1992-04, suggesting a recurring pattern. The data shows no evidence of data-quality issues like missing identifiers or inconsistent values. The anomaly aligns with a genuine enforcement shift, as the fine total decreased significantly compared to the previous years. Thus, the anomaly is best explained by a genuine enforcement shift (GES).",
+     "seed": 11,
+     "latency_s": 25.68,
+     "tokens": 173
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2002 shows a sharp decrease in fine_total_brl from 47.9M (median) to 8.7M, which is an 82% drop. The same calendar month (April) showed similar declines in previous years (1992-04: 6.66, 1996-04: 6.66), indicating a seasonal pattern. The anomaly was flagged by multiple detectors, and the Page-Hinkley test found a sustained level shift within 2 months, suggesting a genuine shift rather than a data-quality event. The large deviation is consistent with a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 10.88,
+     "tokens": 163
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2002 shows a significant drop in fines (8.7M) compared to the median of 47.9M in the previous year. The same calendar month (April) showed similar patterns in previous years, with a ratio of 0.18, indicating a clear deviation. The anomaly was flagged by the ensemble system, and the Page-Hinkley test found a sustained level shift within 2 months. The context shows that the number of notices dropped significantly, suggesting a possible data-quality event. However, the anomaly is consistent across multiple years, indicating a genuine shift in enforcement intensity rather than a data-quality issue. Thus, the anomaly is classified as GES.",
+     "seed": 33,
+     "latency_s": 11.1,
+     "tokens": 169
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2001-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2001 shows a significant increase in infraction notices (5,080 vs. median of 1,902) and a large ratio (2.67). The same calendar month (June) showed similar deviations in the previous years (e.g., 2000-06: 6.00, 1999-06: 1.04). The Page-Hinkley test found a sustained level shift within 2 months, indicating a policy-driven change. The anomaly is not due to data quality issues, as the deviation is large but not inconsistent with the flagged month. The anomaly is best explained by a policy-driven change in enforcement procedures.",
+     "seed": 11,
+     "latency_s": 26.09,
+     "tokens": 177
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.8,
+     "reasoning": "The anomaly occurs in June 2001, which is marked by a significant increase in the number of infraction notices (5,080 vs. the median of 1,902). The same month in previous years (1996-06: 6.00, 1997-06: 0.78, 1998-06: 0.98, 1999-06: 1.04, 2000-06: 0.79) shows a consistent upward trend. The Page-Hinkley test confirms a sustained level shift within 2 months, suggesting a policy-driven change. The anomaly is not due to data quality issues, as there is no indication of reporting failure or system migration. Therefore, the anomaly is best explained by a policy-driven change.",
+     "seed": 22,
+     "latency_s": 13.79,
+     "tokens": 213
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly occurs in June 2001, which is the same calendar month as the policy change mentioned. The ratio of notices in June 2001 to the median of the previous 12 months is 2.67, indicating a significant increase. The same month showed a consistent upward trend in previous years, and the anomaly was flagged by multiple detectors. The Page-Hinkley test confirmed a sustained level shift within 2 months, suggesting a policy-driven change. The anomaly is not due to data quality issues, as the deviation is large but not inconsistent with the policy change. Thus, the anomaly is best explained by PDC.",
+     "seed": 33,
+     "latency_s": 10.11,
+     "tokens": 159
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-05",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 shows a drastic increase in fines (from 217.4M to 1,993.7M, a 817% increase) compared to the previous year's May (2017-05: 245.0M). This deviation is significant but not unprecedented, as the same calendar month (May) was flagged in 1983-05 and showed a similar pattern. The Page-Hinkley test confirms a sustained level shift within 2 months, indicating a real change in enforcement. The anomaly is not due to data quality issues (no burst of cancelled notices, no missing identifiers), and the fine total is plausible. The anomaly is best explained by a genuine enforcement shift due to a policy change in 2018.",
+     "seed": 11,
+     "latency_s": 27.85,
+     "tokens": 197
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 is explained by a policy-driven change. The same calendar month (2018-05) showed a significant deviation from the median fine total in previous years, and the anomaly was flagged by the ensemble system. The context shows a large increase in fines, which aligns with the new law that changed environmental fines rules. The anomaly is not due to data quality issues, as there are no signs of reporting failure or duplication. The Page-Hinkley test confirms a sustained level shift within 2 months, indicating a real enforcement change. Thus, the anomaly is best classified as PDC.",
+     "seed": 22,
+     "latency_s": 10.13,
+     "tokens": 155
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 is explained by a policy-driven change. The same calendar month (May) in previous years showed a consistent deviation above 1, indicating a seasonal pattern. However, the anomaly is specifically tied to a new law in May 2018 that changed environmental fines' rules and minimum values. This policy change explains the sharp increase in fines, which was flagged by the ensemble system. The anomaly is not due to data quality issues, as the records are valid and consistent. The Page-Hinkley test confirmed a sustained level shift within 2 months, supporting the policy-driven explanation.",
+     "seed": 33,
+     "latency_s": 9.84,
+     "tokens": 152
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2004-12",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in December 2004 is highly likely to be seasonal. The same calendar month (December) showed a consistent deviation below the median in previous years (2003-2004), and it was flagged as anomalous in 1987-1988. The Page-Hinkley test confirmed a sustained level shift within 2 months, and the data shows a significant drop in notices (from 1,785 to 716) in the same month. This aligns with seasonal patterns in enforcement activities, suggesting a genuine shift in enforcement intensity.",
+     "seed": 11,
+     "latency_s": 23.63,
+     "tokens": 150
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in December 2004 is likely due to a policy-driven change. The same calendar month (December) was flagged as anomalous in previous years (1987-1988), and the agency underwent restructuring in 2004, which explains the sharp drop in infraction notices. The Page-Hinkley test confirms a sustained level shift within 2 months, and the data shows a large deviation from the median. The anomaly is not due to data quality issues, as the records are valid and consistent. Thus, the anomaly is best explained by a policy-driven change.",
+     "seed": 22,
+     "latency_s": 9.5,
+     "tokens": 150
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in December 2004 is likely due to a policy-driven change. The same calendar month (December) was flagged as anomalous in 1987-12, 1988-12, and the value (716) is significantly lower than the median of the previous 12 months (2168). The Page-Hinkley test confirms a sustained level shift within 2 months, suggesting a real change in enforcement priorities. The anomaly is not due to data quality issues, as the records are complete and consistent. Therefore, the most appropriate category is PDC.",
+     "seed": 33,
+     "latency_s": 9.76,
+     "tokens": 154
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2002 shows a sharp drop in fines (from 46.6M to 9.6M) compared to the median of previous years. The same calendar month (June) was flagged as anomalous in 1986 and 2008, suggesting a recurring pattern. The Page-Hinkley test found a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data quality issues, as the deviation is large but consistent across years. The anomaly is best explained by a genuine enforcement shift, not a policy-driven change or seasonal pattern.",
+     "seed": 11,
+     "latency_s": 24.06,
+     "tokens": 157
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2002 shows a significant drop in fine_total_brl from 46.6M to 9.6M, which is far below the median of previous years. The same month was flagged in 1986 and 2008, suggesting a recurring pattern. The Page-Hinkley test found a sustained level shift within 2 months, indicating a genuine shift in enforcement intensity. The anomaly is not due to data-quality issues, as the deviation is large but consistent across years. The anomaly is best explained by a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 9.15,
+     "tokens": 145
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2002 shows a significant drop in fines (9.6M vs. 46.6M median) compared to the previous years. The same month was flagged as anomalous in 1986 and 2008, suggesting a recurring pattern. The Page-Hinkley test confirms a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data-quality issues, as the deviation is large but not unusual in the context of the dataset. The anomaly is best explained by a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 9.31,
+     "tokens": 147
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2022-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2022 is identified as seasonal. The same calendar month (May) showed a ratio of 2.69 compared to the median of the previous 12 months, which was 807. This is significantly higher than the previous years (e.g., 2021-05: 0.96, 2020-05: 0.88, 2019-05: 1.51). The month was flagged in 2006-05, and a Page-Hinkley test found a sustained level shift within 2 months. The anomaly aligns with a seasonal pattern, as the same month historically shows a strong increase in infraction notices. The data shows a consistent trend of higher values in May, supporting the seasonal explanation.",
+     "seed": 11,
+     "latency_s": 27.08,
+     "tokens": 202
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2022 shows a significant increase in the number of infraction notices (2,171 vs. median of 807) and a large fine value (679.2M BRL). The same calendar month (May) showed a consistent upward trend in the previous 10 years, with a ratio of 2.69. The anomaly was flagged by multiple detectors, including z-score and mad, and confirmed by a Page-Hinkley test. The anomaly is consistent across multiple years and does not align with known events. The data shows a sustained level shift within 2 months, suggesting a genuine shift in enforcement patterns.",
+     "seed": 22,
+     "latency_s": 10.34,
+     "tokens": 164
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in May 2022 shows a significant increase in infraction notices (2,171 vs. median of 807) and a large fine value (679.2M BRL). The same calendar month (May) had a consistent upward trend across the previous 10 years (2013-2021), with a ratio of 2.69. The anomaly was flagged by multiple detectors, including z-score and mad, and a Page-Hinkley test confirmed a sustained level shift. The anomaly is consistent with seasonal patterns, as May is typically a high enforcement month in Brazil. The data shows no evidence of data-quality issues, and the anomaly is not explained by policy-driven changes or data duplication. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 12.26,
+     "tokens": 194
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 is confirmed to be seasonal. The same calendar month (2018-05) showed a ratio of 6.72 to the median of previous years, which is significantly higher than the usual 1.08–1.23 observed in other years. This large deviation aligns with the pattern seen in other years (e.g., 2017-05, 2016-05, 2015-05), and the anomaly was flagged by multiple detectors. The data shows a consistent pattern across multiple years, suggesting a seasonal trend. No policy-driven events are listed, and there is no evidence of data-quality issues. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 26.4,
+     "tokens": 186
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in May 2018 shows a significant deviation from the median fine_total_brl of 217.4M in the previous year. The same calendar month (2018-05) had a ratio of 6.72, which is much higher than the median ratio of 1.08 in the previous years. This suggests a possible seasonal pattern. Additionally, the month was flagged in 1983-05 and had a high ensemble score. The data shows a large number of cancelled notices (1193) and a record with no identifier (1361), indicating potential data-quality issues. However, the anomaly is not due to a data-quality event, as the data appears to be consistent with the overall trend. The anomaly is best explained by a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 12.7,
+     "tokens": 198
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in May 2018 shows a significant deviation from the median fine total of 217.4M in the previous year. The same calendar month (2018-05) showed a ratio of 6.72, above 1, and was flagged in 1983-05. The series shows a large number of cancelled notices (1193) and no_id records (1361), indicating a data-quality issue. However, the anomaly is not due to a data-quality event but rather a genuine enforcement shift. The anomaly is consistent across multiple years and is not explained by seasonal patterns or policy-driven changes.",
+     "seed": 33,
+     "latency_s": 10.45,
+     "tokens": 165
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2004-12",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in December 2004 is explained by seasonal pattern. The same calendar month (December) showed a significant drop in notices compared to the previous years, with a ratio of 0.03 (down 97%) and was flagged in previous years. The Page-Hinkley test confirmed a sustained level shift within 2 months, and the same month was flagged in 1987-12 and 1988-12. Seasonal patterns often show consistent deviations in the same direction across multiple years, which aligns with the evidence here. The anomaly is not due to data-quality issues, as the deviation is large but still consistent with a known seasonal pattern.",
+     "seed": 11,
+     "latency_s": 24.86,
+     "tokens": 169
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in December 2004 is likely due to seasonality. The same calendar month (December) had a consistent deviation below the median in previous years (e.g., 2003-12: 1.04, 2002-12: 0.57, 2001-12: 1.35). The anomaly occurred in 1987-12, 1988-12, and was flagged by multiple detectors. Additionally, a Page-Hinkley test found a sustained level shift within 2 months. The data shows a consistent pattern of lower values in December across multiple years, suggesting a seasonal trend. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 22,
+     "latency_s": 11.66,
+     "tokens": 185
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in December 2004 is likely due to seasonal patterns. The same calendar month (December) showed a significant drop in notices compared to the previous years, with a ratio of 0.03, which is below the typical seasonal ratio of 1.04. The month was also flagged in previous years (1987-12, 1988-12), and a Page-Hinkley test found a sustained level shift within 2 months. This suggests a genuine enforcement shift, not a data-quality issue. The anomaly is consistent with a seasonal pattern, but the data-quality category is not applicable here because the deviation is due to a real change in enforcement intensity.",
+     "seed": 33,
+     "latency_s": 10.67,
+     "tokens": 171
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2002-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2002 is confirmed to be seasonal. The same calendar month (April) in previous years (2000-2001) showed a consistent deviation below the median (ratio < 1) in the same direction. The anomaly was flagged by multiple detectors, and the Page-Hinkley test failed to find a sustained level shift. The drop in fines is consistent with a seasonal pattern, as the same month was flagged in 1992-04. The data quality is intact, and no data problems are indicated. The anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 23.49,
+     "tokens": 151
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2002 shows a significant drop in fines (from 47.9M to 655K) compared to the median of the previous 12 months. The same calendar month (April) had a consistent downward trend in previous years (1992-04: 6.66, 1997-04: 0.58, 1996-04: 6.66), indicating a seasonal pattern. The anomaly was flagged by multiple detectors, and the Page-Hinkley test found no sustained level shift. The data shows a consistent deviation in the same direction across multiple years, suggesting a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 10.81,
+     "tokens": 172
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2002 shows a significant deviation from the median fine total of 47.9M in the previous years. The same calendar month (April) had a ratio of 0.01, which is below 1, indicating a sharp decline. This pattern was consistent across 4 out of 10 years, suggesting a seasonal pattern. The anomaly was flagged by multiple detectors, and the Page-Hinkley test failed to find a sustained level shift. Since the deviation is large but consistent with seasonal trends, the anomaly is best explained by seasonal pattern.",
+     "seed": 33,
+     "latency_s": 9.16,
+     "tokens": 145
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2001-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly occurs in June 2001, a month with a ratio of 2.35 (significantly higher than the median of previous years). The same month showed a consistent deviation in the same direction (above 1) in 4 out of 10 years. The anomaly was flagged by multiple detectors, and there is no indication of a data-quality issue (e.g., missing identifiers, cancelled records). The anomaly is consistent across multiple years, suggesting a seasonal pattern. The anomaly is not due to a data-quality event, as there is no evidence of missing identifiers or cancelled records. Therefore, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 23.93,
+     "tokens": 159
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2001 shows a significant increase in the number of infraction notices (4,470 vs. median of 1,902) and a ratio of 2.35, which is above 1. The same calendar month (June) had a consistent deviation in the same direction (above 1) in 4 out of 10 years. The anomaly was flagged by multiple detectors, and no other year had the same month flagged. The Page-Hinkley test found a sustained level shift within 2 months, but no event was identified. The data shows a clear seasonal pattern, with a strong increase in notices in June, which is consistent with the historical data. Thus, the anomaly is due to seasonal pattern.",
+     "seed": 22,
+     "latency_s": 11.51,
+     "tokens": 183
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly occurs in calendar month 6 of 2001, which had a ratio of 2.35 (significantly higher than the median of previous years). The same month showed a consistent upward trend across 4 out of 10 years, suggesting a seasonal pattern. The anomaly was flagged by multiple detectors, and no events were recorded within 6 months. The data shows a sustained level shift within 2 months, but the Page-Hinkley test did not confirm it. The anomaly aligns with a seasonal pattern, as the same month had a consistent upward trend in previous years.",
+     "seed": 33,
+     "latency_s": 9.25,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2018 is characterized by a significant increase in fines (1,278.8M vs. median of 199.1M) and a high number of cancelled notices (1,370). The same calendar month (2018-04) showed a sustained level shift in the previous years (2017-04: 1.41, 2016-04: 1.41, 2015-04: 1.06, 2014-04: 1.14, 2013-04: 1.76). The anomaly is consistent across multiple years and was flagged by multiple detectors. The lack of a known event and the presence of a sustained level shift suggest a genuine enforcement shift, not a data-quality issue. The anomaly is not due to seasonal patterns, as the same month showed a consistent upward trend in previous years.",
+     "seed": 11,
+     "latency_s": 29.84,
+     "tokens": 236
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2018 shows a significantly higher fine total (1,278.8M) compared to the median of the previous 12 months (199.1M), with a ratio of 6.42. This deviation is consistent across five of the previous ten years (2017-04) and was also flagged in 1992-04. The same calendar month (2017-04) had a sustained level shift within two months, indicating a possible data-quality event. The high number of notices (4,362) and the presence of a large number of cancelled notices (1,370) suggest a potential data-quality event, such as a backlog or reporting failure. However, the anomaly is not due to a known event, and the deviation is large enough to be flagged. The anomaly is best explained by a genuine shift in enforcement intensity, not due to seasonal patterns or policy-driven changes.",
+     "seed": 22,
+     "latency_s": 14.9,
+     "tokens": 231
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2018 shows a significantly higher fine total (1,278.8M) compared to the median of the previous 12 months (199.1M), indicating a sharp increase. The same calendar month (April) showed a consistent upward trend in previous years (2012-2017), and it was flagged as anomalous in 1992-04. The Page-Hinkley test found no sustained level shift, and the data shows a large number of notices (4,362) in the anomaly month, which is unusual given the context of the series. The anomaly is consistent with a genuine enforcement shift, as it aligns with the observed trend in previous years and was flagged by multiple detectors. The anomaly is not due to data quality issues, as the data appears to be complete and consistent.",
+     "seed": 33,
+     "latency_s": 13.44,
+     "tokens": 208
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2025-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in April 2025 is examined for seasonality. The same calendar month (April) showed a significant deviation in the previous 10 years (2015–2024), with a ratio of 0.03, indicating a sharp drop. The anomaly is consistent across multiple years and matches the pattern observed in other years. The data shows a sharp decline in infraction notices, which aligns with the seasonal pattern of reduced enforcement. The anomaly is not due to data quality issues, as there is no evidence of missing identifiers, duplicate records, or system changes. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 24.66,
+     "tokens": 159
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2025 shows a sharp decrease in the number of infraction notices (from 37 to 65 in the previous month) compared to the median of the previous 12 months (1,088). The same calendar month (April) showed a consistent deviation below the median in 4 out of 10 years, and it was flagged by multiple detectors. The trend suggests a possible data-quality event, but the anomaly is not due to a data problem in the same month (no_id = 0). The anomaly is consistent across years and aligns with a genuine shift in enforcement patterns. The anomaly is not due to seasonal patterns, as the decrease is not recurring annually. The lack of a known event and the sustained level shift in the data supports a genuine shift in enforcement.",
+     "seed": 22,
+     "latency_s": 12.37,
+     "tokens": 194
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in April 2025 shows a significant drop in the number of infraction notices (from 37 to 630 in 2024) and a sharp decrease in fine_total_brl. The same calendar month (April) had a consistent deviation below the median in previous years (2023-2024), indicating a seasonal pattern. The anomaly was flagged by multiple detectors, and the Page-Hinkley test failed to find a sustained level shift. Since the deviation is large but consistent with seasonal trends, the anomaly is best classified as seasonal.",
+     "seed": 33,
+     "latency_s": 9.24,
+     "tokens": 147
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2025-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in June 2025 is characterized by a sudden drop in fines (from 395.2M in 2024 to 12.7M in 2025) and a near-zero cancellation rate. The same month (June) was flagged as anomalous in previous years, and the ratio of the anomaly to the median of the previous 12 months is significantly lower (0.03 vs. 0.89 in 2024-06). Additionally, the same calendar month showed consistent deviation in the same direction across 3 out of 10 years. These patterns strongly suggest a genuine enforcement shift, not due to seasonal trends or data-quality issues. The anomaly is not explained by known events or data problems, indicating a real change in enforcement intensity.",
+     "seed": 11,
+     "latency_s": 27.3,
+     "tokens": 196
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in June 2025 is seasonal, as the same calendar month (June) showed a large drop in fine_total_brl compared to the previous years (2024-06: 308.1M vs. 12.7M). The ratio of June 2025 to the median of previous years is 0.03, which is significantly below the usual 1. The same June month was flagged in 1986, 2008, and 2024, indicating a recurring pattern. Additionally, the number of notices in June 2025 is drastically lower (35 vs. 892 in 2024), suggesting a data-quality event, but the anomaly is not due to a data problem but rather a genuine shift in enforcement intensity. The Page-Hinkley test found no sustained level shift, and the anomaly is consistent across multiple years.",
+     "seed": 22,
+     "latency_s": 14.44,
+     "tokens": 224
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.76,
+     "reasoning": "The anomaly in June 2025 is flagged as an anomalous month in the time series. The same calendar month (June) showed a significant drop in fine_total_brl compared to the previous years, with a ratio of 0.03, which is much lower than the median of 389.9M. This suggests a possible data-quality event, such as a reporting failure or a retroactive correction. The anomaly is consistent across multiple years, and the same month was flagged in 1986 and 2008. Additionally, the number of notices in June 2025 is extremely low (35), which is not typical for that month. This indicates a possible data-quality event, such as a cancellation or a system migration. The anomaly is not due to a genuine enforcement shift, as there is no evidence of a real change in enforcement intensity. Therefore, the most appropriate category is DQE.",
+     "seed": 33,
+     "latency_s": 14.28,
+     "tokens": 221
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2015-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in March 2015 shows a significant increase in infraction notices (from 1,330 to 3,202) compared to the previous year's March (1,330). The same calendar month (2015-03) was flagged as anomalous in previous years (1981-03, 1989-03), indicating a recurring pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months. The anomaly is consistent with a genuine enforcement shift, as the increase is not explained by seasonal patterns or data-quality issues. The anomaly is not due to a data-quality event, as there are no signs of reporting failure or duplication.",
+     "seed": 11,
+     "latency_s": 25.74,
+     "tokens": 178
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in March 2015 shows a significant increase in the number of infraction notices (from 1,330 to 3,202) compared to the previous year's March (1,330). This deviation is consistent across multiple years (2005–2014), suggesting a seasonal pattern. The same month was flagged as anomalous in previous years, and the Page-Hinkley test confirmed a sustained level shift. The data shows no apparent data-quality issues, and there are no known events within the timeframe. The anomaly is best explained by a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 9.52,
+     "tokens": 152
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in March 2015 shows a significant increase in infraction notices (from 1,330 to 3,202) compared to the median of the previous 12 months. The same calendar month (March) showed a consistent deviation above 1 in six of the previous ten years, and it was flagged as anomalous in 1981-03 and 1989-03. A Page-Hinkley test confirmed a sustained level shift within two months. The data shows no indication of data quality issues, such as missing identifiers or implausible values. The anomaly is consistent across multiple years and aligns with a recurring enforcement pattern. Therefore, the anomaly is best explained by seasonal patterns.",
+     "seed": 33,
+     "latency_s": 11.25,
+     "tokens": 179
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in March 2018 is marked by a significantly higher fine_total_brl (712.6M) compared to the median of the previous 12 months (226.7M), which is a large deviation. However, the same calendar month (March) showed a consistent deviation in the same direction (above 1) in 7 out of 10 years, indicating a potential seasonal pattern. Additionally, the same month was flagged as anomalous in 1981-03, 1986-03, and 1988-03, suggesting a recurring pattern. The Page-Hinkley test found a sustained level shift within 2 months, further supporting a seasonal explanation. While the anomaly is large, the consistent deviation in the same direction across multiple years and the historical flagging of the same month point to a seasonal pattern rather than a data-quality issue.",
+     "seed": 11,
+     "latency_s": 29.04,
+     "tokens": 218
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in March 2018 shows a significant increase in fine_total_brl (712.6M) compared to the median of the previous 12 months (226.7M), with a ratio of 3.14. This deviation is consistent across multiple years (1981-03, 1986-03, 1988-03) and is flagged by multiple detectors. The Page-Hinkley test confirms a sustained level shift within 2 months. The anomaly does not align with seasonal patterns, as the same month had a consistent deviation in the same direction across previous years. No known events are present within the relevant timeframe. Thus, the anomaly is best explained as a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 11.88,
+     "tokens": 185
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in March 2018 shows a significant increase in fines (712.6M) compared to the median of the previous 12 months (226.7M), indicating a strong deviation. The same calendar month (2018-03) was flagged in previous years (1981-03, 1986-03, 1988-03) and showed a consistent pattern of deviation (ratio >1). The Page-Hinkley test found a sustained level shift within 2 months, suggesting a real change in enforcement intensity. The anomaly is not due to data-quality issues (no burst of cancelled notices, no missing identifiers, no implausible values). Therefore, the anomaly is best explained by a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 12.31,
+     "tokens": 191
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in February 2001 shows a significant drop in the number of infraction notices (from 2,248 in 2000-02 to 687 in 2001-02), which is much smaller than the typical seasonal decline (from 0.79 to 0.33). The same calendar month was flagged in previous years (1989-02, 1993-02, 1996-02), indicating a recurring pattern. The Page-Hinkley test confirms a sustained level shift within 2 months, suggesting a genuine shift in enforcement intensity. The anomaly does not align with a data-quality event (no duplicate records, no system migration), and there are no known events within 6 months. Thus, the anomaly is best explained by a genuine enforcement shift (GES).",
+     "seed": 11,
+     "latency_s": 27.34,
+     "tokens": 211
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in February 2001 is likely due to seasonality. The same calendar month (February) had a consistent downward trend in the previous 10 years (0.33 ratio), and it was flagged as anomalous in previous years (1989-02, 1993-02, 1996-02). The Page-Hinkley test confirmed a sustained level shift within 2 months, indicating a pattern. The low value (687) is below the median of the previous 12 months, suggesting a significant deviation. Since the deviation is consistent across multiple years, it is most likely a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 10.44,
+     "tokens": 166
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in February 2001 is likely due to a genuine enforcement shift. The same calendar month (February) showed a significant drop in notices compared to the previous years, with a ratio of 0.33 (67% lower). This deviation is consistent across multiple years, suggesting a pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months, indicating a real change in enforcement intensity. No known events were reported within six months, and there are no records of cancellations or missing identifiers. Thus, the anomaly is best explained by a genuine shift in enforcement.",
+     "seed": 33,
+     "latency_s": 9.29,
+     "tokens": 148
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2015-01",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2015 shows a sharp drop in fine_total_brl from 240.7M (median of previous years) to 26.5M, which is an 89% decrease. This deviation is consistent with the same calendar month in previous years (e.g., 2014-01: 0.15, 2013-01: 0.62, 2012-01: 0.29). The same month was flagged as anomalous in multiple years, indicating a recurring pattern. The Page-Hinkley test found a sustained level shift within 2 months, suggesting a genuine enforcement shift. The anomaly is not due to data-quality issues, as there is no evidence of reporting failure or duplication. Therefore, the anomaly is best explained by a genuine enforcement shift.",
+     "seed": 11,
+     "latency_s": 27.6,
+     "tokens": 208
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in January 2015 is flagged as seasonal due to the same calendar month deviating below 1 in 9 out of 10 years, and the same month was previously flagged as anomalous in 1989, 1999, 2014, 2020, 2021, and 2024. The Page-Hinkley test confirms a sustained level shift within 2 months, and the fine_total_brl value of 26.5M is significantly lower than the median of the previous 12 months (240.7M). The anomaly is consistent across multiple years, indicating a recurring pattern, not a data-quality issue. The anomaly is likely due to a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 11.99,
+     "tokens": 188
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in January 2015 is likely due to seasonal patterns. The same calendar month (2015-01) showed a significant drop in fines compared to the previous 12 months, with a ratio of 0.11, which is below the median ratio of 0.15 in 2014-01. This pattern was consistent across 9 out of 10 years, and the same month was flagged as anomalous in other years. The Page-Hinkley test confirmed a sustained level shift within 2 months, suggesting a seasonal pattern. The data shows a consistent trend of lower fines in January, which aligns with seasonal enforcement cycles. Therefore, the anomaly is due to seasonal patterns.",
+     "seed": 33,
+     "latency_s": 11.38,
+     "tokens": 179
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-07",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in July 2001 shows a significantly higher number of infraction notices (6,260) compared to the median of the previous 12 months (2,062), with a ratio of 3.04. This deviation is consistent across four of the previous ten years (1996-07 to 2000-07), indicating a seasonal pattern. The same calendar month (July) was flagged as anomalous in 1989-07, and a Page-Hinkley test found a sustained level shift within 2 months. The data shows no known events within six months, and the anomaly is not due to data quality issues. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 25.7,
+     "tokens": 183
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in July 2001 shows a significant increase in infraction notices (from 2,062 to 6,260, a 204% increase) compared to the median of the previous 12 months. The same calendar month (July) showed a consistent deviation in the same direction (above 1) in 4 out of 10 years, and it was flagged as anomalous in 1989-07. The Page-Hinkley test found a sustained level shift within 2 months, indicating a real change in enforcement intensity. The anomaly is not due to data-quality issues, as the deviation is large but not necessarily a data problem. The pattern aligns with a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 11.39,
+     "tokens": 181
+    },
+    {
+     "category": "GES",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in July 2001 shows a significant increase in the number of infraction notices (from 2,062 to 6,260, a 204% increase) compared to the median of the previous 12 months. The same calendar month (July) showed a consistent deviation in the same direction over 4 out of 10 years, and it was flagged as anomalous in 1989-07. A Page-Hinkley test found a sustained level shift within 2 months, indicating a possible data-quality event. The anomaly does not align with known events or data-quality issues, and the deviation is large but not necessarily due to a data-quality issue. Thus, the anomaly is best explained by a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 11.75,
+     "tokens": 187
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-05",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 is seasonally driven. The same calendar month (2018-05) showed a significantly higher ratio (4.15) compared to the median of the previous 12 months, and this pattern was consistent across 6 out of 10 years. Additionally, the same month was flagged as anomalous in 1983-05, indicating a recurring pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months, supporting the seasonal explanation. No data-quality issues are present, and no events are known within the timeframe. Thus, the anomaly is best explained by seasonal pattern.",
+     "seed": 11,
+     "latency_s": 24.94,
+     "tokens": 163
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 shows a significant deviation from the median fine_total_brl of 217.4M in the previous years. The ratio of 902.0M to 217.4M is 4.15, which is above 1, indicating a strong deviation. Additionally, the same calendar month (May) was flagged as anomalous in 1983 and showed a sustained level shift in the Page-Hinkley test. The data shows a large increase in fines, which could be due to a genuine enforcement shift. The lack of known events and the absence of cancellations or missing identifiers support this conclusion.",
+     "seed": 22,
+     "latency_s": 10.4,
+     "tokens": 165
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in May 2018 shows a significant deviation from the median fine total of 217.4M in the previous year. The same calendar month (May) showed a sustained level shift in the previous 10 years, with a ratio above 1. The data shows a large increase in fines (902.0M vs. 217.4M), and the month was flagged by the ensemble system. The lack of known events and the presence of a sustained level shift suggest a genuine enforcement shift. The anomaly is not due to a data-quality issue, as the deviation is large but still consistent with a real change in enforcement.",
+     "seed": 33,
+     "latency_s": 10.38,
+     "tokens": 163
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2005-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in February 2005 is marked by a significant drop in the number of infraction notices (from 2,168 to 783) compared to the previous years. The same calendar month (February) showed a consistent decline in the ratio of notices to the median of its previous years (0.36 vs. 1.07, 0.40, etc.). This pattern was also observed in previous years (1989-02, 1993-02, 1996-02), indicating a seasonal pattern. The Page-Hinkley test confirmed a sustained level shift within 2 months, supporting the seasonal explanation. No data-quality issues are evident, and no events are reported within the relevant timeframe.",
+     "seed": 11,
+     "latency_s": 25.87,
+     "tokens": 189
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "The anomaly in February 2005 shows a significant drop from the median of 2,168 to 783, which is a 64% decrease. The same calendar month (February) showed similar declines in previous years (e.g., 2004-02: 2,168, 2003-02: 2,168). The anomaly was flagged by multiple detectors, including zscore and mad, and confirmed by a Page-Hinkley test. The month was also flagged in previous years (1989-02, 1993-02, 1996-02), suggesting a recurring pattern. The data shows no identifiable events, and the anomaly is consistent across multiple years, indicating a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 12.37,
+     "tokens": 197
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly in February 2005 shows a significant drop in the number of infraction notices (783) compared to the median of 2,168 in the previous year. The same calendar month (2005-02) had a ratio of 0.36, below 1, and was flagged in previous years (1989-02, 1993-02, 1996-02). The Page-Hinkley test confirmed a sustained level shift within 2 months. Additionally, the same month had no cancelled or no_id records, suggesting a data-quality issue. However, the anomaly aligns with a genuine enforcement shift, as the drop is consistent across multiple years and not explained by seasonal patterns or data-quality events. Thus, the anomaly is classified as GES.",
+     "seed": 33,
+     "latency_s": 12.81,
+     "tokens": 202
+    }
+   ]
+  }
+ ]
+}

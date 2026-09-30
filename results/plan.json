@@ -1,0 +1,430 @@
+{
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "prompt_refs": {
+  "main": {
+   "commit": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "fingerprint": "daea1e957b399103829673512ca2b8989e2bcd5f996946a9e2921fd24d6b7edc"
+  },
+  "7da22b7": {
+   "commit": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
+   "fingerprint": "418cdcf65d3adbced83f391e50b9776e0c3b5f3bb6fd260b940de1b50645fe2d"
+  }
+ },
+ "production": {
+  "backend": "ollama",
+  "model": "gemma3:4b"
+ },
+ "selection": {
+  "min_valid_rate": 0.95,
+  "min_coverage": 0.9,
+  "max_p90_latency_s": 150,
+  "switch_margin_macro_f1": 0.05,
+  "bootstrap_resamples": 2000
+ },
+ "entries": [
+  {
+   "label": "gemma3:4b",
+   "backend": "ollama",
+   "model": "gemma3:4b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "6a4aef7f48e932ac",
+   "slug": "gemma3_4b"
+  },
+  {
+   "label": "qwen3.5:4b",
+   "backend": "ollama",
+   "model": "qwen3.5:4b",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "f3235a74e43fd564",
+   "slug": "qwen3.5_4b"
+  },
+  {
+   "label": "qwen3:4b",
+   "backend": "ollama",
+   "model": "qwen3:4b",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "8d968877e590704f",
+   "slug": "qwen3_4b"
+  },
+  {
+   "label": "granite4.2:3b",
+   "backend": "ollama",
+   "model": "granite4.2:3b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "79ecdd1b6601519b",
+   "slug": "granite4.2_3b"
+  },
+  {
+   "label": "ministral-3:3b",
+   "backend": "ollama",
+   "model": "ministral-3:3b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "b4e5df66a2dff91d",
+   "slug": "ministral-3_3b"
+  },
+  {
+   "label": "phi4-mini:3.8b",
+   "backend": "ollama",
+   "model": "phi4-mini:3.8b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "463b0e3b98d9f9aa",
+   "slug": "phi4-mini_3.8b"
+  },
+  {
+   "label": "llama3.2:3b",
+   "backend": "ollama",
+   "model": "llama3.2:3b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "520aaf304e7dc135",
+   "slug": "llama3.2_3b"
+  },
+  {
+   "label": "lfm2.5:8b-a1b",
+   "backend": "ollama",
+   "model": "lfm2.5:8b-a1b-q4_K_M",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "14024c33d692db84",
+   "slug": "lfm2.5_8b-a1b"
+  },
+  {
+   "label": "granite4:7b-a1b-h",
+   "backend": "ollama",
+   "model": "granite4:7b-a1b-h",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "b5b928e235ca04e9",
+   "slug": "granite4_7b-a1b-h"
+  },
+  {
+   "label": "qwen3.5:9b",
+   "backend": "ollama",
+   "model": "qwen3.5:9b",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "c62f540c208cdb1a",
+   "slug": "qwen3.5_9b"
+  },
+  {
+   "label": "gemma4:12b",
+   "backend": "ollama",
+   "model": "gemma4:12b",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "a0ea5f209f73efd5",
+   "slug": "gemma4_12b"
+  },
+  {
+   "label": "ministral-3:8b",
+   "backend": "ollama",
+   "model": "ministral-3:8b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "12e5ed96cfdf2d40",
+   "slug": "ministral-3_8b"
+  },
+  {
+   "label": "granite4.2:8b",
+   "backend": "ollama",
+   "model": "granite4.2:8b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "146a9179978a25ba",
+   "slug": "granite4.2_8b"
+  },
+  {
+   "label": "llama3.1:8b",
+   "backend": "ollama",
+   "model": "llama3.1:8b",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "26b523df68b32043",
+   "slug": "llama3.1_8b"
+  },
+  {
+   "label": "gemma3:4b (llama.cpp)",
+   "backend": "llamacpp",
+   "model": "gemma-3-4b-it-Q4_K_M",
+   "hf_repo": "ggml-org/gemma-3-4b-it-GGUF",
+   "hf_file": "gemma-3-4b-it-Q4_K_M.gguf",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "315909cd8a44ceb4",
+   "slug": "gemma3_4b_llama.cpp"
+  },
+  {
+   "label": "Ternary-Bonsai-8B (Q2_0)",
+   "backend": "llamacpp-prism",
+   "model": "Ternary-Bonsai-8B-Q2_0",
+   "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf",
+   "hf_file": "Ternary-Bonsai-8B-Q2_0.gguf",
+   "options": {
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "3c8d70470a5d97e5a2b9410ddd899cb740116591462626c60cb2fead6448f60b",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "60e5af471fabb7ad",
+   "slug": "Ternary-Bonsai-8B_Q2_0"
+  },
+  {
+   "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
+   "backend": "llamacpp-prism",
+   "model": "Ternary-Bonsai-2-27B-PTQ1_0",
+   "hf_repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "hf_file": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+   "options": {
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "budget_minutes": 320,
+   "prompt_ref": "main",
+   "experiment": false,
+   "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "1bfd7507779ce990",
+   "slug": "Ternary-Bonsai-2-27B_PTQ1_0"
+  },
+  {
+   "label": "gemma3:4b (prompt v1)",
+   "backend": "ollama",
+   "model": "gemma3:4b",
+   "prompt_ref": "7da22b7",
+   "experiment": true,
+   "options": {},
+   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "prompt_sha": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
+   "key": "1441d22a03553bf4",
+   "slug": "gemma3_4b_prompt_v1"
+  },
+  {
+   "label": "gemma3:12b",
+   "backend": "ollama",
+   "model": "gemma3:12b",
+   "size_gb": 8.15,
+   "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:07+00:00",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "bd54add6840c2c45",
+   "slug": "gemma3_12b"
+  },
+  {
+   "label": "gemma4:e2b",
+   "backend": "ollama",
+   "model": "gemma4:e2b",
+   "size_gb": 7.16,
+   "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:14+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "a4254471d7a489d6",
+   "slug": "gemma4_e2b"
+  },
+  {
+   "label": "gemma3n:e2b",
+   "backend": "ollama",
+   "model": "gemma3n:e2b",
+   "size_gb": 5.62,
+   "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:16+00:00",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "b6ded6518ab07507",
+   "slug": "gemma3n_e2b"
+  },
+  {
+   "label": "gemma3n:e4b",
+   "backend": "ollama",
+   "model": "gemma3n:e4b",
+   "size_gb": 7.55,
+   "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:17+00:00",
+   "prompt_ref": "main",
+   "options": {},
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "9662192523af0ef5",
+   "slug": "gemma3n_e4b"
+  },
+  {
+   "label": "qwen3:1.7b",
+   "backend": "ollama",
+   "model": "qwen3:1.7b",
+   "size_gb": 1.36,
+   "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:22+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "6b86d03d06fa9ce0",
+   "slug": "qwen3_1.7b"
+  },
+  {
+   "label": "qwen3:4b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3:4b-q4_K_M",
+   "size_gb": 2.62,
+   "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:34+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "18f0135af25cf64f",
+   "slug": "qwen3_4b-q4_K_M"
+  },
+  {
+   "label": "qwen3:8b",
+   "backend": "ollama",
+   "model": "qwen3:8b",
+   "size_gb": 5.23,
+   "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:32+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "545f0ead7afbac96",
+   "slug": "qwen3_8b"
+  },
+  {
+   "label": "qwen3.5:0.8b",
+   "backend": "ollama",
+   "model": "qwen3.5:0.8b",
+   "size_gb": 1.04,
+   "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:33+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "0c74d364ec377a15",
+   "slug": "qwen3.5_0.8b"
+  },
+  {
+   "label": "qwen3.5:2b",
+   "backend": "ollama",
+   "model": "qwen3.5:2b",
+   "size_gb": 2.74,
+   "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:34+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "6349733ecaeb91c4",
+   "slug": "qwen3.5_2b"
+  },
+  {
+   "label": "qwen3.5:2b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3.5:2b-q4_K_M",
+   "size_gb": 1.95,
+   "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:34+00:00",
+   "options": {
+    "think": false
+   },
+   "prompt_ref": "main",
+   "experiment": false,
+   "prompt_sha": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "key": "e446b7786f6ed98e",
+   "slug": "qwen3.5_2b-q4_K_M"
+  }
+ ],
+ "unavailable": []
+}

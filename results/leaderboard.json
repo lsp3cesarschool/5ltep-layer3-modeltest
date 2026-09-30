@@ -1,0 +1,1666 @@
+{
+ "generated_at": "2026-09-30T07:43:18+00:00",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "gold_cases": 30,
+ "prompt_refs": {
+  "main": {
+   "commit": "5a1e733f25e973259d21a6942169173d19cd2966",
+   "fingerprint": "daea1e957b399103829673512ca2b8989e2bcd5f996946a9e2921fd24d6b7edc"
+  },
+  "7da22b7": {
+   "commit": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
+   "fingerprint": "418cdcf65d3adbced83f391e50b9776e0c3b5f3bb6fd260b940de1b50645fe2d"
+  }
+ },
+ "selection": {
+  "min_valid_rate": 0.95,
+  "min_coverage": 0.9,
+  "max_p90_latency_s": 150,
+  "switch_margin_macro_f1": 0.05,
+  "bootstrap_resamples": 2000
+ },
+ "rows": [
+  {
+   "label": "gemma3:4b",
+   "backend": "ollama",
+   "model": "gemma3:4b",
+   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:43:23+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+    "size_bytes": 3338801804,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma3",
+     "families": [
+      "gemma3"
+     ],
+     "parameter_size": "4.3B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.501,
+   "macro_f1_ci95": [
+    0.325,
+    0.66
+   ],
+   "accuracy": 0.533,
+   "recall": {
+    "PDC": 0.625,
+    "SP": 1.0,
+    "DQE": 0.125,
+    "GES": 0.429
+   },
+   "consistency": 0.844,
+   "unanimous_rate": 0.567,
+   "valid_rate": 0.989,
+   "latency_median_s": 22.2,
+   "latency_p90_s": 63.4,
+   "anomalies_per_hour": 35.2,
+   "confusion": {
+    "PDC": {
+     "PDC": 5,
+     "SP": 3
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "GES": 4,
+     "SP": 3,
+     "DQE": 1
+    },
+    "GES": {
+     "GES": 3,
+     "SP": 4
+    }
+   }
+  },
+  {
+   "label": "qwen3.5:4b",
+   "backend": "ollama",
+   "model": "qwen3.5:4b",
+   "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:04:49+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "size_bytes": 3389983735,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen35",
+     "families": [
+      "qwen35"
+     ],
+     "parameter_size": "4.7B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.496,
+   "macro_f1_ci95": [
+    0.356,
+    0.65
+   ],
+   "accuracy": 0.567,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 0.125,
+    "GES": 0.143
+   },
+   "consistency": 0.856,
+   "unanimous_rate": 0.567,
+   "valid_rate": 1.0,
+   "latency_median_s": 23.7,
+   "latency_p90_s": 106.2,
+   "anomalies_per_hour": 24.7,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "GES": 2,
+     "SP": 5,
+     "DQE": 1
+    },
+    "GES": {
+     "SP": 6,
+     "GES": 1
+    }
+   }
+  },
+  {
+   "label": "qwen3:4b",
+   "backend": "ollama",
+   "model": "qwen3:4b",
+   "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:09:05+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "size_bytes": 2497293931,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen3",
+     "families": [
+      "qwen3"
+     ],
+     "parameter_size": "4.0B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.811,
+   "macro_f1_ci95": [
+    0.657,
+    0.933
+   ],
+   "accuracy": 0.833,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 0.875,
+    "GES": 0.429
+   },
+   "consistency": 0.856,
+   "unanimous_rate": 0.567,
+   "valid_rate": 0.989,
+   "latency_median_s": 35.8,
+   "latency_p90_s": 91.3,
+   "anomalies_per_hour": 23.7,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "DQE": 7,
+     "GES": 1
+    },
+    "GES": {
+     "GES": 3,
+     "DQE": 2,
+     "SP": 2
+    }
+   }
+  },
+  {
+   "label": "granite4.2:3b",
+   "backend": "ollama",
+   "model": "granite4.2:3b",
+   "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
+   "status": "not eligible: valid answers 76%",
+   "eligible": false,
+   "tested_at": "2026-09-30T02:07:45+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
+    "size_bytes": 2244023965,
+    "details": {
+     "parent_model": "/Users/runner/.ollama/models/blobs/sha256-20e436143017578687f7f848225cc6c6038126c84149192229c7dff6e4e0f427",
+     "format": "gguf",
+     "family": "granite",
+     "families": [
+      "granite"
+     ],
+     "parameter_size": "3.7B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.56,
+   "macro_f1_ci95": [
+    0.438,
+    0.656
+   ],
+   "accuracy": 0.633,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.571
+   },
+   "consistency": 0.722,
+   "unanimous_rate": 0.433,
+   "valid_rate": 0.756,
+   "latency_median_s": 52.9,
+   "latency_p90_s": 87.0,
+   "anomalies_per_hour": 23.8,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "INVALID": 1,
+     "SP": 4,
+     "GES": 3
+    },
+    "GES": {
+     "GES": 4,
+     "SP": 3
+    }
+   }
+  },
+  {
+   "label": "ministral-3:3b",
+   "backend": "ollama",
+   "model": "ministral-3:3b",
+   "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:57:27+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
+    "size_bytes": 2953840808,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "mistral3",
+     "families": [
+      "mistral3"
+     ],
+     "parameter_size": "3.8B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 3072
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.695,
+   "macro_f1_ci95": [
+    0.516,
+    0.84
+   ],
+   "accuracy": 0.7,
+   "recall": {
+    "PDC": 0.75,
+    "SP": 1.0,
+    "DQE": 0.375,
+    "GES": 0.714
+   },
+   "consistency": 0.833,
+   "unanimous_rate": 0.533,
+   "valid_rate": 0.978,
+   "latency_median_s": 42.5,
+   "latency_p90_s": 57.1,
+   "anomalies_per_hour": 27.4,
+   "confusion": {
+    "PDC": {
+     "PDC": 6,
+     "GES": 1,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "DQE": 3,
+     "GES": 5
+    },
+    "GES": {
+     "GES": 5,
+     "SP": 2
+    }
+   }
+  },
+  {
+   "label": "phi4-mini:3.8b",
+   "backend": "ollama",
+   "model": "phi4-mini:3.8b",
+   "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:52:07+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
+    "size_bytes": 2491876774,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "phi3",
+     "families": [
+      "phi3"
+     ],
+     "parameter_size": "3.8B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 3072
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.479,
+   "macro_f1_ci95": [
+    0.318,
+    0.598
+   ],
+   "accuracy": 0.533,
+   "recall": {
+    "PDC": 0.5,
+    "SP": 0.857,
+    "DQE": 0.0,
+    "GES": 0.857
+   },
+   "consistency": 0.8,
+   "unanimous_rate": 0.433,
+   "valid_rate": 1.0,
+   "latency_median_s": 30.8,
+   "latency_p90_s": 65.5,
+   "anomalies_per_hour": 30.2,
+   "confusion": {
+    "PDC": {
+     "GES": 3,
+     "PDC": 4,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 6,
+     "GES": 1
+    },
+    "DQE": {
+     "GES": 7,
+     "SP": 1
+    },
+    "GES": {
+     "GES": 6,
+     "SP": 1
+    }
+   }
+  },
+  {
+   "label": "llama3.2:3b",
+   "backend": "ollama",
+   "model": "llama3.2:3b",
+   "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:33:23+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "size_bytes": 2019393189,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "llama",
+     "families": [
+      "llama"
+     ],
+     "parameter_size": "3.2B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 3072
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.1,
+   "macro_f1_ci95": [
+    0.047,
+    0.149
+   ],
+   "accuracy": 0.233,
+   "recall": {
+    "PDC": 0.0,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.0
+   },
+   "consistency": 0.9,
+   "unanimous_rate": 0.7,
+   "valid_rate": 1.0,
+   "latency_median_s": 19.3,
+   "latency_p90_s": 49.6,
+   "anomalies_per_hour": 43.7,
+   "confusion": {
+    "PDC": {
+     "SP": 7,
+     "GES": 1
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 7,
+     "GES": 1
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "lfm2.5:8b-a1b",
+   "backend": "ollama",
+   "model": "lfm2.5:8b-a1b-q4_K_M",
+   "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:06:05+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
+    "size_bytes": 5156075525,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "lfm2moe",
+     "families": [
+      "lfm2moe"
+     ],
+     "parameter_size": "8.5B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 128000,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.389,
+   "macro_f1_ci95": [
+    0.261,
+    0.503
+   ],
+   "accuracy": 0.467,
+   "recall": {
+    "PDC": 0.75,
+    "SP": 0.143,
+    "DQE": 0.0,
+    "GES": 1.0
+   },
+   "consistency": 0.778,
+   "unanimous_rate": 0.367,
+   "valid_rate": 1.0,
+   "latency_median_s": 4.8,
+   "latency_p90_s": 19.3,
+   "anomalies_per_hour": 131.5,
+   "confusion": {
+    "PDC": {
+     "PDC": 6,
+     "GES": 2
+    },
+    "SP": {
+     "SP": 1,
+     "GES": 6
+    },
+    "DQE": {
+     "GES": 5,
+     "SP": 3
+    },
+    "GES": {
+     "GES": 7
+    }
+   }
+  },
+  {
+   "label": "granite4:7b-a1b-h",
+   "backend": "ollama",
+   "model": "granite4:7b-a1b-h",
+   "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:16:38+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
+    "size_bytes": 4230995221,
+    "details": {
+     "parent_model": "/Users/runner/.ollama/models/blobs/sha256-491ba81786c46a345a5da9a60cdb9f9a3056960c8411dd857153c194b1f91313",
+     "format": "gguf",
+     "family": "granitehybrid",
+     "families": [
+      "granitehybrid"
+     ],
+     "parameter_size": "6.9B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 1048576,
+     "embedding_length": 1536
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.156,
+   "macro_f1_ci95": [
+    0.061,
+    0.267
+   ],
+   "accuracy": 0.267,
+   "recall": {
+    "PDC": 0.0,
+    "SP": 0.143,
+    "DQE": 0.0,
+    "GES": 1.0
+   },
+   "consistency": 0.844,
+   "unanimous_rate": 0.567,
+   "valid_rate": 1.0,
+   "latency_median_s": 7.5,
+   "latency_p90_s": 35.6,
+   "anomalies_per_hour": 73.7,
+   "confusion": {
+    "PDC": {
+     "GES": 7,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 1,
+     "GES": 6
+    },
+    "DQE": {
+     "GES": 8
+    },
+    "GES": {
+     "GES": 7
+    }
+   }
+  },
+  {
+   "label": "qwen3.5:9b",
+   "backend": "ollama",
+   "model": "qwen3.5:9b",
+   "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+   "status": "not eligible: p90 latency 183s",
+   "eligible": false,
+   "tested_at": "2026-09-30T02:55:49+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "size_bytes": 6594474711,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen35",
+     "families": [
+      "qwen35"
+     ],
+     "parameter_size": "9.7B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 4096
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.608,
+   "macro_f1_ci95": [
+    0.432,
+    0.771
+   ],
+   "accuracy": 0.633,
+   "recall": {
+    "PDC": 0.875,
+    "SP": 1.0,
+    "DQE": 0.25,
+    "GES": 0.429
+   },
+   "consistency": 0.833,
+   "unanimous_rate": 0.633,
+   "valid_rate": 1.0,
+   "latency_median_s": 35.8,
+   "latency_p90_s": 183.1,
+   "anomalies_per_hour": 14.7,
+   "confusion": {
+    "PDC": {
+     "PDC": 7,
+     "GES": 1
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 4,
+     "GES": 2,
+     "DQE": 2
+    },
+    "GES": {
+     "GES": 3,
+     "SP": 4
+    }
+   }
+  },
+  {
+   "label": "gemma4:12b",
+   "backend": "ollama",
+   "model": "gemma4:12b",
+   "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+   "status": "not eligible: p90 latency 278s",
+   "eligible": false,
+   "tested_at": "2026-09-30T04:50:48+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+    "size_bytes": 7556508396,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma4",
+     "families": [
+      "gemma4"
+     ],
+     "parameter_size": "11.9B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 3840
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.888,
+   "macro_f1_ci95": [
+    0.738,
+    1.0
+   ],
+   "accuracy": 0.9,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 1.0,
+    "GES": 0.571
+   },
+   "consistency": 0.967,
+   "unanimous_rate": 0.9,
+   "valid_rate": 1.0,
+   "latency_median_s": 106.8,
+   "latency_p90_s": 278.1,
+   "anomalies_per_hour": 7.6,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "DQE": 8
+    },
+    "GES": {
+     "GES": 4,
+     "SP": 3
+    }
+   }
+  },
+  {
+   "label": "ministral-3:8b",
+   "backend": "ollama",
+   "model": "ministral-3:8b",
+   "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
+   "status": "not eligible: p90 latency 164s",
+   "eligible": false,
+   "tested_at": "2026-09-30T02:56:16+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
+    "size_bytes": 6022236616,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "mistral3",
+     "families": [
+      "mistral3"
+     ],
+     "parameter_size": "8.9B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 4096
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.566,
+   "macro_f1_ci95": [
+    0.438,
+    0.661
+   ],
+   "accuracy": 0.633,
+   "recall": {
+    "PDC": 0.875,
+    "SP": 1.0,
+    "DQE": 0.625,
+    "GES": 0.0
+   },
+   "consistency": 0.9,
+   "unanimous_rate": 0.767,
+   "valid_rate": 1.0,
+   "latency_median_s": 47.9,
+   "latency_p90_s": 164.0,
+   "anomalies_per_hour": 14.5,
+   "confusion": {
+    "PDC": {
+     "PDC": 7,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 3,
+     "DQE": 5
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "granite4.2:8b",
+   "backend": "ollama",
+   "model": "granite4.2:8b",
+   "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
+   "status": "not eligible: valid answers 42%; p90 latency 191s",
+   "eligible": false,
+   "tested_at": "2026-09-30T04:09:33+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
+    "size_bytes": 5347929757,
+    "details": {
+     "parent_model": "/Users/runner/.ollama/models/blobs/sha256-16a9369d0805f80b7377d25d87f937a90c05dc04ad79173a52001e42c9aab311",
+     "format": "gguf",
+     "family": "granite",
+     "families": [
+      "granite"
+     ],
+     "parameter_size": "8.8B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 4096
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.617,
+   "macro_f1_ci95": [
+    0.446,
+    0.764
+   ],
+   "accuracy": 0.567,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 0.857,
+    "DQE": 0.125,
+    "GES": 0.286
+   },
+   "consistency": 0.789,
+   "unanimous_rate": 0.533,
+   "valid_rate": 0.422,
+   "latency_median_s": 101.9,
+   "latency_p90_s": 190.8,
+   "anomalies_per_hour": 9.9,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 6,
+     "INVALID": 1
+    },
+    "DQE": {
+     "DQE": 1,
+     "INVALID": 7
+    },
+    "GES": {
+     "GES": 2,
+     "INVALID": 3,
+     "SP": 2
+    }
+   }
+  },
+  {
+   "label": "llama3.1:8b",
+   "backend": "ollama",
+   "model": "llama3.1:8b",
+   "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T01:56:52+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+    "size_bytes": 4920753328,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "llama",
+     "families": [
+      "llama"
+     ],
+     "parameter_size": "8.0B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 4096
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.203,
+   "macro_f1_ci95": [
+    0.076,
+    0.312
+   ],
+   "accuracy": 0.3,
+   "recall": {
+    "PDC": 0.25,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.0
+   },
+   "consistency": 0.9,
+   "unanimous_rate": 0.7,
+   "valid_rate": 1.0,
+   "latency_median_s": 18.5,
+   "latency_p90_s": 47.4,
+   "anomalies_per_hour": 46.4,
+   "confusion": {
+    "PDC": {
+     "SP": 6,
+     "PDC": 2
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 7,
+     "GES": 1
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "gemma3:4b (llama.cpp)",
+   "backend": "llamacpp",
+   "model": "gemma-3-4b-it-Q4_K_M",
+   "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:33:34+00:00",
+   "server": {
+    "server_version": "b11269-cee37ffea",
+    "model_path": "/home/runner/models/model.gguf"
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.402,
+   "macro_f1_ci95": [
+    0.217,
+    0.563
+   ],
+   "accuracy": 0.433,
+   "recall": {
+    "PDC": 0.25,
+    "SP": 1.0,
+    "DQE": 0.125,
+    "GES": 0.429
+   },
+   "consistency": 0.833,
+   "unanimous_rate": 0.567,
+   "valid_rate": 1.0,
+   "latency_median_s": 22.6,
+   "latency_p90_s": 78.8,
+   "anomalies_per_hour": 30.4,
+   "confusion": {
+    "PDC": {
+     "PDC": 2,
+     "GES": 4,
+     "SP": 2
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "GES": 7,
+     "DQE": 1
+    },
+    "GES": {
+     "SP": 4,
+     "GES": 3
+    }
+   }
+  },
+  {
+   "label": "Ternary-Bonsai-8B (Q2_0)",
+   "backend": "llamacpp-prism",
+   "status": "not run yet"
+  },
+  {
+   "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
+   "backend": "llamacpp-prism",
+   "status": "not run yet"
+  },
+  {
+   "label": "gemma3:4b (prompt v1)",
+   "backend": "ollama",
+   "model": "gemma3:4b",
+   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "status": "not eligible: experiment",
+   "eligible": false,
+   "tested_at": "2026-09-30T02:42:21+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+    "size_bytes": 3338801804,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma3",
+     "families": [
+      "gemma3"
+     ],
+     "parameter_size": "4.3B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.288,
+   "macro_f1_ci95": [
+    0.16,
+    0.382
+   ],
+   "accuracy": 0.4,
+   "recall": {
+    "PDC": 0.5,
+    "SP": 0.0,
+    "DQE": 1.0,
+    "GES": 0.0
+   },
+   "consistency": 0.922,
+   "unanimous_rate": 0.8,
+   "valid_rate": 1.0,
+   "latency_median_s": 25.6,
+   "latency_p90_s": 43.4,
+   "anomalies_per_hour": 41.2,
+   "confusion": {
+    "PDC": {
+     "PDC": 4,
+     "GES": 1,
+     "DQE": 3
+    },
+    "SP": {
+     "DQE": 7
+    },
+    "DQE": {
+     "DQE": 8
+    },
+    "GES": {
+     "DQE": 7
+    }
+   }
+  },
+  {
+   "label": "gemma3:12b",
+   "backend": "ollama",
+   "model": "gemma3:12b",
+   "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+   "status": "not eligible: p90 latency 286s",
+   "eligible": false,
+   "tested_at": "2026-09-30T05:11:36+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+    "size_bytes": 8149190253,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma3",
+     "families": [
+      "gemma3"
+     ],
+     "parameter_size": "12.2B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 3840
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.375,
+   "macro_f1_ci95": [
+    0.308,
+    0.424
+   ],
+   "accuracy": 0.5,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.0
+   },
+   "consistency": 0.978,
+   "unanimous_rate": 0.933,
+   "valid_rate": 1.0,
+   "latency_median_s": 53.4,
+   "latency_p90_s": 285.8,
+   "anomalies_per_hour": 9.4,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 7,
+     "GES": 1
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "gemma4:e2b",
+   "backend": "ollama",
+   "model": "gemma4:e2b",
+   "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:26:37+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+    "size_bytes": 7162405886,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma4",
+     "families": [
+      "gemma4"
+     ],
+     "parameter_size": "5.1B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 131072,
+     "embedding_length": 1536
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.302,
+   "macro_f1_ci95": [
+    0.194,
+    0.386
+   ],
+   "accuracy": 0.4,
+   "recall": {
+    "PDC": 0.625,
+    "SP": 1.0,
+    "DQE": 0.0,
+    "GES": 0.0
+   },
+   "consistency": 0.956,
+   "unanimous_rate": 0.867,
+   "valid_rate": 1.0,
+   "latency_median_s": 13.0,
+   "latency_p90_s": 28.6,
+   "anomalies_per_hour": 68.8,
+   "confusion": {
+    "PDC": {
+     "SP": 3,
+     "PDC": 5
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 8
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "gemma3n:e2b",
+   "backend": "ollama",
+   "model": "gemma3n:e2b",
+   "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:37:28+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
+    "size_bytes": 5621616562,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma3n",
+     "families": [
+      "gemma3n"
+     ],
+     "parameter_size": "4.5B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 32768,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.481,
+   "macro_f1_ci95": [
+    0.271,
+    0.647
+   ],
+   "accuracy": 0.467,
+   "recall": {
+    "PDC": 0.375,
+    "SP": 0.571,
+    "DQE": 0.25,
+    "GES": 0.714
+   },
+   "consistency": 0.744,
+   "unanimous_rate": 0.267,
+   "valid_rate": 1.0,
+   "latency_median_s": 11.8,
+   "latency_p90_s": 42.1,
+   "anomalies_per_hour": 57.3,
+   "confusion": {
+    "PDC": {
+     "PDC": 3,
+     "GES": 5
+    },
+    "SP": {
+     "GES": 2,
+     "SP": 4,
+     "DQE": 1
+    },
+    "DQE": {
+     "GES": 6,
+     "DQE": 2
+    },
+    "GES": {
+     "GES": 5,
+     "SP": 2
+    }
+   }
+  },
+  {
+   "label": "gemma3n:e4b",
+   "backend": "ollama",
+   "model": "gemma3n:e4b",
+   "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T03:28:17+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+    "size_bytes": 7547589116,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "gemma3n",
+     "families": [
+      "gemma3n"
+     ],
+     "parameter_size": "6.9B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 32768,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.361,
+   "macro_f1_ci95": [
+    0.216,
+    0.49
+   ],
+   "accuracy": 0.433,
+   "recall": {
+    "PDC": 0.625,
+    "SP": 1.0,
+    "DQE": 0.125,
+    "GES": 0.0
+   },
+   "consistency": 0.856,
+   "unanimous_rate": 0.567,
+   "valid_rate": 1.0,
+   "latency_median_s": 22.3,
+   "latency_p90_s": 118.4,
+   "anomalies_per_hour": 22.7,
+   "confusion": {
+    "PDC": {
+     "PDC": 5,
+     "SP": 3
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 7,
+     "DQE": 1
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "qwen3:1.7b",
+   "backend": "ollama",
+   "model": "qwen3:1.7b",
+   "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:35:11+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+    "size_bytes": 1359293444,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen3",
+     "families": [
+      "qwen3"
+     ],
+     "parameter_size": "2.0B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 40960,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.391,
+   "macro_f1_ci95": [
+    0.23,
+    0.514
+   ],
+   "accuracy": 0.433,
+   "recall": {
+    "PDC": 0.5,
+    "SP": 0.571,
+    "DQE": 0.0,
+    "GES": 0.714
+   },
+   "consistency": 0.767,
+   "unanimous_rate": 0.3,
+   "valid_rate": 1.0,
+   "latency_median_s": 12.6,
+   "latency_p90_s": 27.6,
+   "anomalies_per_hour": 72.4,
+   "confusion": {
+    "PDC": {
+     "GES": 4,
+     "PDC": 4
+    },
+    "SP": {
+     "SP": 4,
+     "GES": 3
+    },
+    "DQE": {
+     "SP": 5,
+     "GES": 3
+    },
+    "GES": {
+     "SP": 2,
+     "GES": 5
+    }
+   }
+  },
+  {
+   "label": "qwen3:4b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3:4b-q4_K_M",
+   "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T03:17:24+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+    "size_bytes": 2620788260,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen3",
+     "families": [
+      "qwen3"
+     ],
+     "parameter_size": "4.0B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 40960,
+     "embedding_length": 2560
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.532,
+   "macro_f1_ci95": [
+    0.363,
+    0.685
+   ],
+   "accuracy": 0.567,
+   "recall": {
+    "PDC": 0.75,
+    "SP": 1.0,
+    "DQE": 0.375,
+    "GES": 0.143
+   },
+   "consistency": 0.856,
+   "unanimous_rate": 0.567,
+   "valid_rate": 1.0,
+   "latency_median_s": 21.5,
+   "latency_p90_s": 58.8,
+   "anomalies_per_hour": 37.0,
+   "confusion": {
+    "PDC": {
+     "PDC": 6,
+     "GES": 2
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 5,
+     "DQE": 3
+    },
+    "GES": {
+     "SP": 4,
+     "DQE": 2,
+     "GES": 1
+    }
+   }
+  },
+  {
+   "label": "qwen3:8b",
+   "backend": "ollama",
+   "model": "qwen3:8b",
+   "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T04:16:37+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "size_bytes": 5225388164,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen3",
+     "families": [
+      "qwen3"
+     ],
+     "parameter_size": "8.2B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 40960,
+     "embedding_length": 4096
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.593,
+   "macro_f1_ci95": [
+    0.429,
+    0.744
+   ],
+   "accuracy": 0.633,
+   "recall": {
+    "PDC": 1.0,
+    "SP": 1.0,
+    "DQE": 0.25,
+    "GES": 0.286
+   },
+   "consistency": 0.878,
+   "unanimous_rate": 0.667,
+   "valid_rate": 1.0,
+   "latency_median_s": 33.3,
+   "latency_p90_s": 140.9,
+   "anomalies_per_hour": 17.9,
+   "confusion": {
+    "PDC": {
+     "PDC": 8
+    },
+    "SP": {
+     "SP": 7
+    },
+    "DQE": {
+     "SP": 4,
+     "GES": 2,
+     "DQE": 2
+    },
+    "GES": {
+     "SP": 5,
+     "GES": 2
+    }
+   }
+  },
+  {
+   "label": "qwen3.5:0.8b",
+   "backend": "ollama",
+   "model": "qwen3.5:0.8b",
+   "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T02:51:24+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+    "size_bytes": 1036046583,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen35",
+     "families": [
+      "qwen35"
+     ],
+     "parameter_size": "873.44M",
+     "quantization_level": "Q8_0",
+     "context_length": 262144,
+     "embedding_length": 1024
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.341,
+   "macro_f1_ci95": [
+    0.175,
+    0.478
+   ],
+   "accuracy": 0.4,
+   "recall": {
+    "PDC": 0.375,
+    "SP": 0.286,
+    "DQE": 0.0,
+    "GES": 1.0
+   },
+   "consistency": 0.678,
+   "unanimous_rate": 0.333,
+   "valid_rate": 1.0,
+   "latency_median_s": 5.4,
+   "latency_p90_s": 20.4,
+   "anomalies_per_hour": 120.6,
+   "confusion": {
+    "PDC": {
+     "PDC": 3,
+     "GES": 4,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 2,
+     "DQE": 1,
+     "GES": 3,
+     "PDC": 1
+    },
+    "DQE": {
+     "GES": 7,
+     "SP": 1
+    },
+    "GES": {
+     "GES": 7
+    }
+   }
+  },
+  {
+   "label": "qwen3.5:2b",
+   "backend": "ollama",
+   "model": "qwen3.5:2b",
+   "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T03:12:36+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "size_bytes": 2741192820,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen35",
+     "families": [
+      "qwen35"
+     ],
+     "parameter_size": "2.3B",
+     "quantization_level": "Q8_0",
+     "context_length": 262144,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.352,
+   "macro_f1_ci95": [
+    0.174,
+    0.49
+   ],
+   "accuracy": 0.367,
+   "recall": {
+    "PDC": 0.375,
+    "SP": 0.857,
+    "DQE": 0.25,
+    "GES": 0.0
+   },
+   "consistency": 0.733,
+   "unanimous_rate": 0.333,
+   "valid_rate": 1.0,
+   "latency_median_s": 11.8,
+   "latency_p90_s": 47.5,
+   "anomalies_per_hour": 53.2,
+   "confusion": {
+    "PDC": {
+     "GES": 4,
+     "PDC": 3,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 6,
+     "GES": 1
+    },
+    "DQE": {
+     "SP": 5,
+     "DQE": 2,
+     "GES": 1
+    },
+    "GES": {
+     "SP": 7
+    }
+   }
+  },
+  {
+   "label": "qwen3.5:2b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3.5:2b-q4_K_M",
+   "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
+   "status": "eligible",
+   "eligible": true,
+   "tested_at": "2026-09-30T03:10:39+00:00",
+   "server": {
+    "server_version": "0.35.0",
+    "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
+    "size_bytes": 1945323638,
+    "details": {
+     "parent_model": "",
+     "format": "gguf",
+     "family": "qwen35",
+     "families": [
+      "qwen35"
+     ],
+     "parameter_size": "2.3B",
+     "quantization_level": "Q4_K_M",
+     "context_length": 262144,
+     "embedding_length": 2048
+    }
+   },
+   "coverage": 1.0,
+   "cases_done": 30,
+   "macro_f1": 0.431,
+   "macro_f1_ci95": [
+    0.274,
+    0.582
+   ],
+   "accuracy": 0.467,
+   "recall": {
+    "PDC": 0.75,
+    "SP": 0.857,
+    "DQE": 0.125,
+    "GES": 0.143
+   },
+   "consistency": 0.789,
+   "unanimous_rate": 0.433,
+   "valid_rate": 1.0,
+   "latency_median_s": 9.6,
+   "latency_p90_s": 38.0,
+   "anomalies_per_hour": 66.4,
+   "confusion": {
+    "PDC": {
+     "PDC": 6,
+     "GES": 1,
+     "SP": 1
+    },
+    "SP": {
+     "SP": 6,
+     "GES": 1
+    },
+    "DQE": {
+     "SP": 7,
+     "DQE": 1
+    },
+    "GES": {
+     "SP": 6,
+     "GES": 1
+    }
+   }
+  }
+ ],
+ "unavailable": []
+}

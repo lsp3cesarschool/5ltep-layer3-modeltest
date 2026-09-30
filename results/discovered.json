@@ -62,6 +62,78 @@
    "options": {
     "think": false
    }
+  },
+  {
+   "label": "qwen3:8b",
+   "backend": "ollama",
+   "model": "qwen3:8b",
+   "size_gb": 5.23,
+   "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:32+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3.5:0.8b",
+   "backend": "ollama",
+   "model": "qwen3.5:0.8b",
+   "size_gb": 1.04,
+   "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:33+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3.5:2b",
+   "backend": "ollama",
+   "model": "qwen3.5:2b",
+   "size_gb": 2.74,
+   "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:34+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3.5:2b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3.5:2b-q4_K_M",
+   "size_gb": 1.95,
+   "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:34+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3.5:4b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3.5:4b-q4_K_M",
+   "size_gb": 3.39,
+   "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:35+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3.5:9b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3.5:9b-q4_K_M",
+   "size_gb": 6.59,
+   "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+   "source": "discovered",
+   "discovered_at": "2026-09-30T00:50:35+00:00",
+   "options": {
+    "think": false
+   }
   }
  ]
 }
