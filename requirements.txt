@@ -1,0 +1,6 @@
+# The benchmark renders the production prompt (upstream src/judge.py) and calls
+# the model servers; the detectors (PyTorch) are only needed to rebuild the gold set.
+pandas>=2.1
+numpy>=1.26
+requests>=2.31
+pytest>=7.4

@@ -1,0 +1,67 @@
+{
+ "entries": [
+  {
+   "label": "gemma3:12b",
+   "backend": "ollama",
+   "model": "gemma3:12b",
+   "size_gb": 8.15,
+   "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:07+00:00"
+  },
+  {
+   "label": "gemma4:e2b",
+   "backend": "ollama",
+   "model": "gemma4:e2b",
+   "size_gb": 7.16,
+   "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:14+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "gemma3n:e2b",
+   "backend": "ollama",
+   "model": "gemma3n:e2b",
+   "size_gb": 5.62,
+   "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:16+00:00"
+  },
+  {
+   "label": "gemma3n:e4b",
+   "backend": "ollama",
+   "model": "gemma3n:e4b",
+   "size_gb": 7.55,
+   "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:17+00:00"
+  },
+  {
+   "label": "qwen3:1.7b",
+   "backend": "ollama",
+   "model": "qwen3:1.7b",
+   "size_gb": 1.36,
+   "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:22+00:00",
+   "options": {
+    "think": false
+   }
+  },
+  {
+   "label": "qwen3:4b-q4_K_M",
+   "backend": "ollama",
+   "model": "qwen3:4b-q4_K_M",
+   "size_gb": 2.62,
+   "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
+   "source": "discovered",
+   "discovered_at": "2026-09-29T22:30:34+00:00",
+   "options": {
+    "think": false
+   }
+  }
+ ]
+}

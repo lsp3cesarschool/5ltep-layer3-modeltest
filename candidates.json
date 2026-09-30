@@ -1,0 +1,46 @@
+{
+  "_comment": "Candidates of the model benchmark. 'entries' are curated; models found by bench/discover.py are added automatically (results/discovered.json). 'experiment': true entries are measured but never recommended (e.g. an older prompt version). Backends: ollama, llamacpp (official llama.cpp build), llamacpp-prism (PrismML fork, needed for the ternary/1-bit Bonsai formats).",
+  "production": {"backend": "ollama", "model": "gemma3:4b"},
+  "selection": {
+    "min_valid_rate": 0.95,
+    "min_coverage": 0.9,
+    "max_p90_latency_s": 150,
+    "switch_margin_macro_f1": 0.05,
+    "bootstrap_resamples": 2000
+  },
+  "discovery": {
+    "enabled": true,
+    "max_size_gb": 9.0,
+    "min_size_gb": 1.0,
+    "max_new_per_run": 6,
+    "families": ["gemma3", "gemma4", "gemma3n", "qwen3", "qwen3.5", "qwen3.8", "granite4", "granite4.2", "lfm2.5",
+                 "ministral-3", "phi4-mini", "llama3.2", "llama3.1", "smollm3", "olmo3", "deepseek-r1"],
+    "exclude_words": ["embed", "code", "coder", "vision", "vl", "ocr", "guard", "math", "audio", "cloud", "uncensored", "abliterated"]
+  },
+  "entries": [
+    {"label": "gemma3:4b", "backend": "ollama", "model": "gemma3:4b"},
+    {"label": "qwen3.5:4b", "backend": "ollama", "model": "qwen3.5:4b", "options": {"think": false}},
+    {"label": "qwen3:4b", "backend": "ollama", "model": "qwen3:4b", "options": {"think": false}},
+    {"label": "granite4.2:3b", "backend": "ollama", "model": "granite4.2:3b"},
+    {"label": "ministral-3:3b", "backend": "ollama", "model": "ministral-3:3b"},
+    {"label": "phi4-mini:3.8b", "backend": "ollama", "model": "phi4-mini:3.8b"},
+    {"label": "llama3.2:3b", "backend": "ollama", "model": "llama3.2:3b"},
+    {"label": "lfm2.5:8b-a1b", "backend": "ollama", "model": "lfm2.5:8b-a1b-q4_K_M"},
+    {"label": "granite4:7b-a1b-h", "backend": "ollama", "model": "granite4:7b-a1b-h"},
+    {"label": "qwen3.5:9b", "backend": "ollama", "model": "qwen3.5:9b", "options": {"think": false}},
+    {"label": "gemma4:12b", "backend": "ollama", "model": "gemma4:12b", "options": {"think": false}},
+    {"label": "ministral-3:8b", "backend": "ollama", "model": "ministral-3:8b"},
+    {"label": "granite4.2:8b", "backend": "ollama", "model": "granite4.2:8b"},
+    {"label": "llama3.1:8b", "backend": "ollama", "model": "llama3.1:8b"},
+    {"label": "gemma3:4b (llama.cpp)", "backend": "llamacpp", "model": "gemma-3-4b-it-Q4_K_M",
+     "hf_repo": "ggml-org/gemma-3-4b-it-GGUF", "hf_file": "gemma-3-4b-it-Q4_K_M.gguf"},
+    {"label": "Ternary-Bonsai-8B (Q2_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-8B-Q2_0",
+     "hf_repo": "prism-ml/Ternary-Bonsai-8B-gguf", "hf_file": "Ternary-Bonsai-8B-Q2_0.gguf",
+     "options": {"chat_template_kwargs": {"enable_thinking": false}}},
+    {"label": "Ternary-Bonsai-2-27B (PTQ1_0)", "backend": "llamacpp-prism", "model": "Ternary-Bonsai-2-27B-PTQ1_0",
+     "hf_repo": "prism-ml/Ternary-Bonsai-2-27B-gguf", "hf_file": "Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+     "options": {"chat_template_kwargs": {"enable_thinking": false}}, "budget_minutes": 320},
+    {"label": "gemma3:4b (prompt v1)", "backend": "ollama", "model": "gemma3:4b", "prompt_ref": "7da22b7",
+     "experiment": true}
+  ]
+}

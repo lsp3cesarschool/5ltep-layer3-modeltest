@@ -1,0 +1,17 @@
+name: Set up Ollama
+description: Install Ollama, start the server and pull one model (no cache - 10 GB per repository would not hold all candidates).
+inputs:
+  model:
+    description: Ollama model to pull
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        curl -fsSL https://ollama.com/install.sh | sh
+        sudo systemctl stop ollama 2>/dev/null || true
+        nohup ollama serve > /tmp/ollama.log 2>&1 &
+        for i in $(seq 1 60); do curl -sf http://127.0.0.1:11434/api/version && break; sleep 2; done
+        ollama --version
+        ollama pull "${{ inputs.model }}"

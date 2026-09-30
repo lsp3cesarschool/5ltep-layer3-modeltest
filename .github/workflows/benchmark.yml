@@ -1,0 +1,137 @@
+name: Model benchmark
+
+# Monthly (day 20, before the production runs of day 5): discover new models,
+# test what changed, publish the leaderboard and results/recommendation.json.
+on:
+  schedule:
+    - cron: '0 4 20 * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Run every candidate again'
+        type: boolean
+        default: false
+      only:
+        description: 'Comma-separated labels to (re)run; empty = what changed'
+        required: false
+        default: ''
+      discover:
+        description: 'Look for new models in the Ollama library'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: benchmark
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: lsp3cesarschool/5ltep-layer3
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          repository: ${{ env.UPSTREAM_REPO }}
+          path: upstream
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Discover new models
+        if: ${{ inputs.discover != false }}
+        run: python bench/discover.py || echo "::warning::discovery failed; curated candidates only"
+      - name: Plan
+        id: plan
+        run: python bench/plan.py ${{ inputs.force && '--force' || '' }} --only "${{ inputs.only }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: |
+            results/plan.json
+            results/discovered.json
+
+  run:
+    needs: plan
+    if: ${{ needs.plan.outputs.count > 0 }}
+    runs-on: ubuntu-latest   # public repository: 4 vCPU / 16 GB, no minute quota
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        entry: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: ${{ matrix.entry.label }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          repository: ${{ env.UPSTREAM_REPO }}
+          path: upstream
+          ref: ${{ matrix.entry.prompt_sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - name: Ollama
+        if: ${{ matrix.entry.backend == 'ollama' }}
+        uses: ./.github/actions/setup-ollama
+        with:
+          model: ${{ matrix.entry.model }}
+      - name: llama.cpp
+        if: ${{ matrix.entry.backend != 'ollama' }}
+        uses: ./.github/actions/setup-llamacpp
+        with:
+          variant: ${{ matrix.entry.backend == 'llamacpp-prism' && 'prism' || 'official' }}
+          hf_repo: ${{ matrix.entry.hf_repo }}
+          hf_file: ${{ matrix.entry.hf_file }}
+      - name: Run the gold set
+        run: python bench/run.py --entry '${{ toJSON(matrix.entry) }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: run-${{ matrix.entry.slug }}
+          path: results/runs/
+          if-no-files-found: ignore
+
+  score:
+    needs: [plan, run]
+    if: ${{ always() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: results/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: run-*
+          path: results/runs/
+          merge-multiple: true
+      - name: Score
+        run: python bench/score.py
+      - name: Commit
+        run: |
+          git config user.name "5L-TEP Model Benchmark Bot"
+          git config user.email "5ltep-modeltest-bot@users.noreply.github.com"
+          git add results/ README.md
+          git diff --cached --quiet || git commit -m "chore(bench): results [$(date -u +%Y-%m-%dT%H:%M:%SZ)]"
+          git pull --rebase
+          git push

@@ -1,0 +1,79 @@
+name: Set up llama.cpp
+description: >-
+  Start llama-server (OpenAI-compatible API on port 8080) with one GGUF file.
+  variant=official uses the latest ggml-org build for Ubuntu x64 (CPU);
+  variant=prism builds the PrismML fork, needed for the ternary / 1-bit Bonsai formats.
+inputs:
+  variant:
+    description: official or prism
+    required: true
+  hf_repo:
+    description: Hugging Face repository of the GGUF
+    required: true
+  hf_file:
+    description: GGUF file name
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Official build
+      if: inputs.variant == 'official'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        tag=$(gh release list -R ggml-org/llama.cpp --limit 20 --json tagName --jq '[.[] | select(.tagName|startswith("b"))][0].tagName')
+        echo "llama.cpp $tag"
+        mkdir -p ~/llamacpp && cd ~/llamacpp
+        gh release download "$tag" -R ggml-org/llama.cpp --pattern "llama-$tag-bin-ubuntu-x64.tar.gz"
+        tar xzf "llama-$tag-bin-ubuntu-x64.tar.gz"
+        server=$(find ~/llamacpp -type f -name llama-server | head -1)
+        echo "SERVER=$server" >> "$GITHUB_ENV"
+        echo "SERVER_LIB=$(dirname "$server")" >> "$GITHUB_ENV"
+
+    - name: PrismML fork - resolve commit
+      if: inputs.variant == 'prism'
+      id: prism
+      shell: bash
+      run: echo "sha=$(git ls-remote https://github.com/PrismML-Eng/llama.cpp refs/heads/prism | cut -f1)" >> "$GITHUB_OUTPUT"
+
+    - name: PrismML fork - cache build
+      if: inputs.variant == 'prism'
+      id: cache
+      uses: actions/cache@v4
+      with:
+        path: ~/prism-llamacpp/build/bin
+        key: prism-llamacpp-${{ steps.prism.outputs.sha }}
+
+    - name: PrismML fork - build (CPU)
+      if: inputs.variant == 'prism' && steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        rm -rf ~/prism-llamacpp
+        git clone --depth 1 --branch prism https://github.com/PrismML-Eng/llama.cpp ~/prism-llamacpp
+        cd ~/prism-llamacpp
+        cmake -B build -DGGML_NATIVE=OFF -DGGML_AVX2=ON -DLLAMA_CURL=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release
+        cmake --build build --config Release -j 4 --target llama-server
+
+    - name: PrismML fork - server path
+      if: inputs.variant == 'prism'
+      shell: bash
+      run: |
+        echo "SERVER=$HOME/prism-llamacpp/build/bin/llama-server" >> "$GITHUB_ENV"
+        echo "SERVER_LIB=$HOME/prism-llamacpp/build/bin" >> "$GITHUB_ENV"
+
+    - name: Download the model and start the server
+      shell: bash
+      run: |
+        mkdir -p ~/models
+        curl -fL --retry 3 -o ~/models/model.gguf "https://huggingface.co/${{ inputs.hf_repo }}/resolve/main/${{ inputs.hf_file }}"
+        ls -la ~/models
+        export LD_LIBRARY_PATH="$SERVER_LIB:${LD_LIBRARY_PATH:-}"
+        "$SERVER" --version || true
+        nohup "$SERVER" -m ~/models/model.gguf --host 127.0.0.1 --port 8080 -c 8192 -t 4 --jinja \
+          > /tmp/llama-server.log 2>&1 &
+        for i in $(seq 1 300); do
+          curl -sf http://127.0.0.1:8080/health && break
+          sleep 2
+        done
+        curl -sf http://127.0.0.1:8080/health || { tail -50 /tmp/llama-server.log; exit 1; }

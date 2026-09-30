@@ -1,0 +1,23 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['results/**', 'README.md']
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/checkout@v5
+        with:
+          repository: lsp3cesarschool/5ltep-layer3
+          path: upstream
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: pytest tests/ -v --tb=short
