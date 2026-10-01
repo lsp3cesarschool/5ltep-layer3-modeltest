@@ -1,0 +1,951 @@
+{
+ "entry": {
+  "label": "qwen3.5:9b",
+  "backend": "ollama",
+  "model": "qwen3.5:9b",
+  "options": {
+   "think": false
+  },
+  "prompt_ref": "main",
+  "experiment": false,
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "first_seen": "2026-10-01T13:57:49+00:00",
+  "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+  "key": "15c89ba3bd153d62",
+  "slug": "qwen3.5_9b"
+ },
+ "key": "15c89ba3bd153d62",
+ "label": "qwen3.5:9b",
+ "upstream_ref": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "cases_total": 30,
+ "cases_done": 30,
+ "sampled": false,
+ "seeds": [
+  11,
+  22,
+  33
+ ],
+ "stopped": null,
+ "server": {
+  "server_version": "0.35.0",
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "size_bytes": 6594474711,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "9.7B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 4096
+  }
+ },
+ "started_at": "2026-10-01T13:59:17+00:00",
+ "ended_at": "2026-10-01T15:33:50+00:00",
+ "answers": [
+  {
+   "case": "SP-fine_total_brl-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The January month consistently shows low values (ratio < 1) across nearly all historical years and was explicitly flagged as anomalous in multiple other years (e.g., 1989, 1999, 2020-2024). This recurring directional deviation indicates a stable seasonal pattern rather than a policy shift or data error. The anomaly is also observed in the 'notices' series, confirming it affects volume, not just monetary conversion. No events explain this timing, and there are no signs of reporting failures like missing IDs or mass cancellations in January 2014.",
+     "seed": 11,
+     "latency_s": 93.45,
+     "tokens": 155
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is strong: January consistently shows a low ratio (below 1) across 9 of 10 prior years and was flagged anomalous in multiple other Januaries (e.g., 2020-01). This indicates a recurring annual enforcement cycle rather than an anomaly. Second, no policy-driven events occurred within six months to explain the timing or direction. Third, data-quality signs are absent: the drop in notices and fines is accompanied by zero cancelled records and zero missing identifiers, unlike typical DQE bursts. Finally, the Page-Hinkley test found no sustained level shift, ruling out a genuine structural break. Since the deviation aligns with historical January behavior, it is best classified as seasonal.",
+     "seed": 22,
+     "latency_s": 45.93,
+     "tokens": 178
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Seasonality is the primary driver here. Historical data shows January consistently underperforms relative to its own 12-month median (ratios <1 in 9 of 10 prior years). The current year's deviation (0.15) follows this established downward trend rather than representing an outlier shift. Additionally, January has been flagged as anomalous in multiple other years (e.g., 2020, 2024), confirming a recurring annual cycle. No policy events or data-quality issues (like cancellations or missing IDs) explain the timing or direction, and no sustained level shift was detected by Page-Hinkley. Thus, this is a seasonal pattern.",
+     "seed": 33,
+     "latency_s": 42.52,
+     "tokens": 166
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "The January 2014 anomaly (value 471 vs median 1,384) shows a ratio of 0.34. Historical data reveals that 9 of the previous 10 Januarys deviated in the exact same direction (below 1), with ratios ranging from 0.36 to 0.82. Furthermore, January was explicitly flagged as anomalous in multiple other years (e.g., 2009, 2010, 2012, 2019, 2021, 2024). This consistent, recurring directional deviation across different time periods and specific flags confirms a stable seasonal pattern rather than a genuine shift or data error. No policy events explain this timing.",
+     "seed": 11,
+     "latency_s": 97.55,
+     "tokens": 191
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly shows a sharp drop in January 2014 compared to the previous year's median. However, historical data reveals that January typically exhibits low activity (ratios between 0.36 and 0.85), with 9 out of 10 prior years showing values below the median. Furthermore, this specific month has been flagged as anomalous in multiple other years (e.g., 1983, 2009, 2017, 2021). The consistency of the deviation direction and the repeated flagging across different years indicate a recurring annual cycle rather than a one-off event or data error. Therefore, this is best explained as a seasonal pattern.",
+     "seed": 22,
+     "latency_s": 44.31,
+     "tokens": 173
+    },
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "First, we check for seasonality. January consistently shows lower enforcement relative to the annual median (ratios between 0.36 and 1.00) across nearly all available years. This month is flagged as anomalous in multiple other years, indicating a recurring pattern rather than an outlier event. Second, no specific policy events or legislation explain this timing. Third, data quality indicators are absent; there are zero cancelled notices and zero records without identifiers in January 2014, despite high cancellation counts in subsequent months. The fine total also dropped proportionally with notice volume. Since the deviation aligns with historical behavior for this specific calendar month and lacks alternative explanations, it represents a seasonal pattern.",
+     "seed": 33,
+     "latency_s": 43.33,
+     "tokens": 169
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2017-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "The anomalous month 2017-01 shows a value of 505, significantly below the recent median of 1,550. However, historical analysis reveals this specific calendar month consistently deviated in the same direction (low values) for all 10 preceding years (ratios ranging from 0.34 to 0.82). Furthermore, January has been flagged as anomalous in multiple other years across different decades (e.g., 1983, 1989, 1996, etc.). Data quality indicators are normal (no cancellations or missing IDs), and no policy events explain the timing. Since the deviation is a recurring annual pattern rather than an isolated event or data error, it constitutes a seasonal pattern.",
+     "seed": 11,
+     "latency_s": 98.19,
+     "tokens": 191
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): January consistently shows a dip across the entire history, with ratios below 1 in all 10 observed years. The same calendar month was flagged as anomalous in 12 other distinct years, indicating a strong recurring pattern rather than an isolated error. Step 2 (Events): No policy events or mandates explain this specific timing. Step 3 (Records): Data quality indicators (cancelled/no_id) are low and consistent with the series baseline, ruling out reporting failures. Step 4 (Conclusion): Since the deviation aligns perfectly with historical seasonal behavior for January, this is a genuine seasonal pattern.",
+     "seed": 22,
+     "latency_s": 39.99,
+     "tokens": 157
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, we check for seasonality. January consistently shows a low ratio (below 1) across all previous years (e.g., 2010-2019), and this specific month was flagged as anomalous in multiple prior years. This indicates a strong recurring pattern rather than an isolated error or event. Second, we check for policy-driven events; no relevant legislation or restructuring occurred within the +/-6 month window to explain a sudden drop. Third, we inspect data quality; while the count dropped, there are no signs of reporting failures like record duplication, missing identifiers in this specific burst, or implausible zero values elsewhere in the series. The sustained level shift test was negative. Therefore, since the deviation aligns perfectly with historical seasonal behavior and lacks external causal factors or data errors, it is best classified as a Seasonal Pattern.",
+     "seed": 33,
+     "latency_s": 49.83,
+     "tokens": 198
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Step 1: Seasonality check shows January is a historically low month (ratio < 1) in 9 of 10 prior years, and this specific month was flagged as anomalous in previous years (e.g., 2020-01, 2014-01). Step 2: No policy events explain the timing. Step 3: Data quality indicators (cancelled/no_id) are low and consistent with other months; the anomaly is driven by volume, not data errors. The sustained drop contradicts a system failure. Therefore, this is a recurring seasonal pattern.",
+     "seed": 11,
+     "latency_s": 84.1,
+     "tokens": 150
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The January month consistently shows values below the median in 9 out of 10 prior years (ratios typically <0.3). This same calendar month has been flagged as anomalous in multiple other years (e.g., 1989, 1999, 2014, 2020, 2024), confirming a recurring pattern rather than a sudden event or systemic failure. Although the 2021 deviation is large (-88%), the direction aligns perfectly with historical seasonality. No policy events, system migrations, or data errors (like bursts of cancellations) explain this specific timing. Therefore, the anomaly reflects a genuine seasonal enforcement cycle.",
+     "seed": 22,
+     "latency_s": 44.34,
+     "tokens": 175
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality: January typically shows a ratio below 1 (9 of 10 prior years), and Jan was flagged anomalous in multiple past years (1989, 1999, 2014, etc.), indicating this month is naturally low. Second, events: no policy changes or restructuring occurred around early 2021 to explain a drop solely in fine totals while notices remained active. Third, data quality: the series contains 'cancelled' and 'no_id' records; however, the anomaly is driven by the inherent seasonal low rather than a reporting failure like a system migration or massive duplication/cancellation burst specific to this month (cancellations are 11, which is low but consistent with the low notice count of 288). The deviation is large primarily because January is structurally lower. Thus, it fits Seasonal Pattern.",
+     "seed": 33,
+     "latency_s": 53.63,
+     "tokens": 211
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 1.0,
+     "reasoning": "The calendar month of January consistently shows lower counts compared to the rest of the year (ratios < 0.6 across all available years). The specific anomaly in 2021-01 follows this established pattern perfectly, appearing as an outlier relative to its own recent median but not deviating from the historical seasonal trend for January. Furthermore, this exact month has been flagged as anomalous in nearly every year since 1983 and in multiple intervening years. The Page-Hinkley test found no sustained shift, ruling out a structural break. Since the deviation aligns with a recurring annual cycle confirmed by long-term history and repeated flagging of the same calendar month, this is clearly a seasonal pattern.",
+     "seed": 11,
+     "latency_s": 92.34,
+     "tokens": 173
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomalous month (2021-01) shows a ratio of 0.37, consistent with the previous decade where January ratios ranged from 0.29 to 0.60. All 10 recent years deviated in the same direction (below average). Historical data confirms January was flagged as anomalous in multiple prior years (e.g., 2019-01, 2017-01). There are no reported policy changes or system migrations around this date. The low values in other months of 2021 follow the same seasonal dip pattern seen historically. This indicates a recurring annual cycle rather than a data error or genuine shift.",
+     "seed": 22,
+     "latency_s": 44.51,
+     "tokens": 174
+    },
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "First, check seasonality: January historically deviates below the median in all 10 prior years (ratios ranging from 0.29 to 0.60). The current ratio is 0.37, consistent with this long-standing pattern. Furthermore, January has been flagged as anomalous in multiple other years (e.g., 2019, 2014, 2012), confirming a recurring cycle rather than an isolated incident. Second, check events: no policy changes or restructuring occurred within the +/-6 month window to explain the timing. Third, check data quality: while notice volume dropped, cancellation and missing ID counts remained low and typical for January (11 and 10 respectively), indicating no reporting failure or system backlog. Since the deviation aligns perfectly with historical seasonal behavior and lacks an external policy trigger, it is a Seasonal Pattern.",
+     "seed": 33,
+     "latency_s": 54.24,
+     "tokens": 210
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, check seasonality: Jan historically has ratios below 1 in 9/10 prior years and was flagged anomalous in multiple past years (e.g., 2020-01, 2021-01), indicating a recurring low-enforcement pattern. Second, check events: no legislative or political events explain the timing. Third, check records: while notice volume dropped sharply, there are no signs of reporting failures like massive cancellations, missing IDs, or system migration artifacts; the drop aligns with historical seasonality rather than a data error. Fourth, conclusion: the deviation follows a consistent annual cycle.",
+     "seed": 11,
+     "latency_s": 88.89,
+     "tokens": 160
+    },
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "Seasonality check shows January historically deviates downward (ratio < 1) in 9 of 10 years and was flagged anomalous in five prior years (e.g., 2014, 2020, 2021). The anomaly persists across multiple years for the same calendar month. No listed events explain this timing or direction. Data quality indicators (cancelled/no_id) show no sudden burst or systemic failure in Jan 2024 compared to adjacent months; the drop aligns with the long-term seasonal pattern rather than a reporting error. Thus, the deviation is best explained as a recurring annual cycle.",
+     "seed": 22,
+     "latency_s": 40.68,
+     "tokens": 160
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly in 2024-01 is best explained by Seasonal Pattern (SP). First, January typically shows low enforcement activity relative to the annual median; historical ratios for Jan range from 0.12 to 1.10, with nine of ten years falling below 1.0. Second, this specific month has been flagged as anomalous in multiple prior years (e.g., 1989, 1999, 2014, 2020, 2021), confirming a recurring deviation direction rather than a one-off event. Third, no policy events or system migrations occurred around this time to explain the drop. Finally, while the value is low, it aligns with the established seasonal dip, and the volume of notices (454) remains consistent with the lower end of historical January activity.",
+     "seed": 33,
+     "latency_s": 51.98,
+     "tokens": 207
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The deviation in January 2024 follows a consistent historical pattern where this calendar month typically shows lower activity (ratios below 1.0 in 9 of the last 10 prior years). Historical data confirms that January anomalies were flagged in previous decades (e.g., 1983, 1996, 2017), indicating a recurring annual cycle rather than a unique event or systemic failure. The lack of known events, policy changes, or data quality indicators (like mass cancellations) further supports that this is a predictable seasonal dip.",
+     "seed": 11,
+     "latency_s": 86.49,
+     "tokens": 147
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly shows a sharp drop in January 2024, yet historical data reveals this calendar month consistently exhibits low activity (ratios below 1) in 9 out of 10 prior years and was flagged as anomalous in multiple other years. The Page-Hinkley test found no sustained level shift, indicating the drop reverted to normal levels in February 2024 rather than representing a permanent enforcement reduction or data break. No policy events explain this specific timing. Therefore, the deviation follows a recurring annual cycle.",
+     "seed": 22,
+     "latency_s": 34.17,
+     "tokens": 134
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): January has historically shown low enforcement levels, with ratios below 1 in 9 of 10 prior years and being flagged as anomalous in multiple past years. This consistent direction matches the 2024 dip. Step 2 (Events): No new policy events explain the timing. Step 3 (Records): The series shows no burst of cancellations or lack of identifiers; values are plausible given historical norms. Since the deviation aligns perfectly with a long-standing seasonal pattern rather than a data error or sudden shift, it is classified as Seasonal Pattern.",
+     "seed": 33,
+     "latency_s": 37.36,
+     "tokens": 147
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2018-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is not confirmed; although Month 6 sometimes exceeds the median (5/10 years), it does not consistently deviate in the same direction, nor was this month flagged as anomalous in other years. Second, a known policy event occurred exactly in June 2018: a new federal decree altering administrative procedures for issuing and recording notices. This plausibly explains both the timing and the sharp increase in recorded notices, fitting the PDC category. Third, data quality issues are absent; there is no burst of cancelled records or missing identifiers surrounding the spike. Finally, the Page-Hinkley test confirms a sustained level shift coinciding with the policy change. Therefore, the anomaly is best explained by a policy-driven change.",
+     "seed": 11,
+     "latency_s": 92.97,
+     "tokens": 182
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is ruled out because June was not flagged anomalous in other years. Second, a known event occurred exactly in June 2018: a new federal decree changing administrative procedures for issuing notices. This policy change plausibly explains the timing and the direction of the spike (an increase in recorded notices due to procedural changes). Third, data quality issues are absent; there are no bursts of cancelled notices or records without identifiers in this month. The sustained level shift is explained by the event rather than a system migration. Therefore, the anomaly is driven by policy.",
+     "seed": 22,
+     "latency_s": 36.82,
+     "tokens": 144
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is a significant spike in June 2018. Seasonality checks show June usually aligns with the previous year's median (ratios between 0.92 and 1.14), though 2018-06 deviated sharply upward without historical precedent for such magnitude. No other months were flagged as anomalous, ruling out a standard seasonal pattern. Data quality indicators (cancelled/no_id) are consistent with surrounding months, indicating no reporting failure or system glitch. A specific policy event occurred in June 2018: a new federal decree changed administrative procedures for issuing notices. This timing and nature directly explain the sustained level shift and the procedural change rather than a random fluctuation or enforcement intensity shift.",
+     "seed": 33,
+     "latency_s": 45.79,
+     "tokens": 178
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.95,
+     "reasoning": "The month shows a massive spike in both notices and fine totals. While April has shown high variance historically (ratios ranging from 0.48 to 1.76), this specific month deviated strongly in the upward direction alongside a known policy event: a new law changing fine rules and minimum values enacted in April 2018. The simultaneous surge in notice count and total fines aligns with stricter enforcement or higher penalties mandated by this legislation. There are no signs of data quality issues like cancellations or missing IDs that would explain the volume, nor is this consistent enough across years to be purely seasonal. Therefore, the anomaly is best explained as a genuine enforcement shift driven by the specific policy change.",
+     "seed": 11,
+     "latency_s": 96.41,
+     "tokens": 173
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is ruled out because April typically shows mixed variance across previous years (deviating high in only 5 of 10 cases), and while it was flagged once in 1992, the current spike is an outlier rather than a recurring pattern. Second, no data-quality indicators are present; although notice counts jumped to 3,635, there were zero records without identifiers and zero cancelled notices compared to historical averages, ruling out reporting failures or backlogs. Third, a specific policy event occurred exactly in April 2018: a new law changed fine rules and minimum values. This event plausibly explains both the timing and the massive magnitude of the increase. Therefore, the anomaly is driven by policy.",
+     "seed": 22,
+     "latency_s": 47.42,
+     "tokens": 178
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Seasonality is ruled out because April's high value in 2018 contrasts with lower ratios (e.g., 0.70) in several prior years, and it was not flagged as anomalous in every year of the historical record. There are no data quality indicators: while 'cancelled' notices spike significantly in April 2018 (1,138), this is an expected outcome of enforcement actions rather than a reporting failure like duplication or system migration; the fine value itself is non-zero and plausible given the notice count. The only listed event is a specific policy change on April 1, 2018, introducing new rules and minimum fines. This legislation plausibly explains both the direction (increase) and timing of the anomaly. Therefore, this is a genuine enforcement shift driven by policy.",
+     "seed": 33,
+     "latency_s": 51.36,
+     "tokens": 196
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2015-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is not the cause because the deviation direction is inconsistent; June was below average in only 5 of 10 prior years, and no other year flagged this specific month. Second, a known policy event occurred exactly in June 2015: agency restructuring that moved inspection teams and changed enforcement priorities. This plausibly explains both the timing and the sharp drop in notices. Third, data quality indicators are absent; there were zero cancelled notices and zero records without identifiers for this month, ruling out reporting failures or backlogs. Therefore, the anomaly is best explained by a policy-driven change rather than a genuine shift or seasonal pattern.",
+     "seed": 11,
+     "latency_s": 87.58,
+     "tokens": 162
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is unlikely because June was not flagged anomalous in other years. Second, a specific policy event occurred: an agency restructuring in June 2015 that moved inspection teams and changed enforcement priorities. This plausibly explains the sustained drop from ~1,600 notices to 560. Third, there are no signs of data quality issues like cancellations or missing IDs. Fourth, the Page-Hinkley test confirms a level shift coinciding with the event. Therefore, the anomaly is driven by policy.",
+     "seed": 22,
+     "latency_s": 35.9,
+     "tokens": 140
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is a severe drop in June 2015. Seasonality check shows June typically deviates below the median (ratio <1) in 5 of the previous 10 years, indicating normal variability rather than an anomaly. However, a specific policy event occurred exactly in June 2015: agency restructuring that moved inspection teams and changed enforcement priorities. This event plausibly explains both the timing and the direction of the drop (fewer active inspectors or shifted focus). Other months in 2015 also show lower counts consistent with this shift, but no other series were flagged, ruling out a systemic data failure. Since a listed policy event directly explains the deviation, it is not a genuine unexplained shift nor seasonal.",
+     "seed": 33,
+     "latency_s": 46.02,
+     "tokens": 179
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check shows April typically has mixed results (above and below median). While the direction in 2002 matches some past low years, it is not a consistent annual pattern as required for SP. Second, an explicit policy event occurred: a new normative instruction changed sanctioning conduct exactly in April 2002. This plausibly explains both the timing and the sharp drop in fines (fewer notices issued due to revised criteria). Third, no data quality signs are present: notice counts dropped moderately without cancellation spikes or missing IDs; values remain plausible. Since a listed policy event fully accounts for the anomaly, it is classified as Policy-Driven Change.",
+     "seed": 11,
+     "latency_s": 90.13,
+     "tokens": 167
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): April typically shows high variance (e.g., 2001-04 ratio 1.41, 2000-04 ratio 2.15). While April sometimes dips (e.g., 1998-04: 0.87, 1996-04: 0.58), a sustained drop to 0.18 is extreme compared to previous years. The fact that it was flagged anomalous only in 2002 and 1992 suggests this specific magnitude is not a standard seasonal pattern.\n\nStep 2 (Events): A new normative instruction changed sanctioned conduct exactly in 2002-04. This policy change plausibly explains the timing and the sharp reduction in fines/records, likely due to reclassification or exclusion of previously penalized activities.\n\nStep 3 (Records): There are no signs of data failure like bursts of cancellations, missing IDs, or implausible zero values unrelated to policy.\n\nConclusion: The anomaly is explained by a specific policy event rather than seasonality or data error.",
+     "seed": 22,
+     "latency_s": 68.95,
+     "tokens": 270
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.92,
+     "reasoning": "Seasonality check shows Month 4 often deviates (below median) in 4 of 10 prior years and was flagged anomalous in 1992, suggesting a recurring pattern. However, the current anomaly is severe (-82%) and coincides exactly with a known policy event: new normative instructions changing sanctionable conducts on 2002-04. This policy change explains both the timing and the direction of the drop. While seasonality exists, the specific magnitude is driven by a legislative mandate altering enforcement scope/intensity, fitting Policy-Driven Change better than Seasonal Pattern alone.",
+     "seed": 33,
+     "latency_s": 38.63,
+     "tokens": 151
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2001-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is unlikely: while month 6 showed a ratio >1 in only 4 of 10 prior years and was never flagged anomalous before, indicating no consistent annual cycle. Second, an event exists: a new federal decree in June 2001 changed administrative procedures for issuing notices. This policy directly explains the timing and direction (increase) of the spike. Third, data quality signs are absent: there were zero cancelled records or missing IDs around this peak, and the subsequent months remained high rather than reverting immediately, suggesting a real process change rather than a reporting error like duplication or backlog. Therefore, the anomaly is best explained by the policy-driven procedural change.",
+     "seed": 11,
+     "latency_s": 91.49,
+     "tokens": 170
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is not confirmed as the primary cause. Although some previous June values were high (1996, 1995), most were low or near average; only 4 of 10 prior years showed a deviation in the same upward direction, and no other year flagged this specific month as anomalous. Thus, it is not a stable seasonal pattern.\n\nSecond, a policy event occurred exactly in June 2001: a new federal decree changed administrative procedures for issuing notices. This plausibly explains both the timing (exact month) and direction (increase) of the anomaly. The Page-Hinkley test confirms a sustained level shift consistent with this procedural change.\n\nFinally, data-quality indicators (cancelled notices or missing IDs) are absent in June 2001. Since a specific policy event explains the deviation better than seasonality or random noise, the anomaly is best classified as Policy-Driven Change.",
+     "seed": 22,
+     "latency_s": 56.62,
+     "tokens": 222
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): June 2001 is high, but historical ratios show June was not consistently anomalous; only 4 of 10 prior years exceeded the median, and no other year flagged this month as an anomaly. Step 2 (Events): A specific federal decree changed administrative procedures for issuing notices exactly in June 2001. This policy change plausibly explains a sustained increase in recorded notices immediately following implementation. Step 3 (Records): The anomaly persists without data quality indicators like cancellations, missing IDs, or implausible values; adjacent months also show elevated levels consistent with a process change. Therefore, the deviation is driven by a known policy shift rather than seasonality or data errors.",
+     "seed": 33,
+     "latency_s": 44.91,
+     "tokens": 176
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-05",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check: Month 5 deviations are mixed (above 1 in 6/10 years), but not consistently high enough to define a strict seasonal pattern for this magnitude. Next, events: A new law changing minimum fine values was implemented exactly in May 2018. This policy directly explains the spike in both notice counts and total fine values. The shift persists as expected with a regulatory change. Finally, records show no signs of data failure (no bursts of cancellations or missing IDs). Thus, the anomaly is driven by policy.",
+     "seed": 11,
+     "latency_s": 88.45,
+     "tokens": 144
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is checked: May usually shows moderate variation (ratios 0.39\u20132.20), not a consistent high spike like 2018-05. Second, an event occurred in 2018-05 itself: a new law changing fine rules and minimum values. This directly explains both the sharp rise in notice count (4,125 vs ~1,300) and the massive fine total. Third, no data-quality signs are present: zero cancelled or no_id records for that month, unlike others with cancellations. Since a listed policy event plausibly explains the timing and direction, this fits PDC rather than SP, DQE, or GES.",
+     "seed": 22,
+     "latency_s": 45.13,
+     "tokens": 177
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "The anomaly shows a sustained level shift in fine values. While seasonality exists (Month 5 often high), the 2018 spike is extreme. Crucially, a known policy event occurred in May 2018: a new law changing minimum fine rules and values. This specific legislative change directly explains the timing and magnitude of the increase. The concurrent rise in notice counts supports genuine enforcement intensity driven by this policy. Therefore, the deviation is explained by the listed policy event rather than general seasonality, data errors, or an unexplained shift.",
+     "seed": 33,
+     "latency_s": 35.79,
+     "tokens": 140
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2004-12",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check: December ratios from previous years vary (0.57 to 1.35), indicating no consistent seasonal pattern causing a drop in this specific month. The anomaly also persisted into early 2005, ruling out a one-off seasonal effect. Second, events: A known policy event occurred in December 2004 involving agency restructuring and a change in enforcement priorities. This plausibly explains the timing (immediate) and direction (reduced intensity due to resource reallocation or new focus). Third, records data quality check shows no signs of duplication, backlog, or system migration errors; values are plausible. Therefore, the anomaly is best explained by a policy-driven change.",
+     "seed": 11,
+     "latency_s": 92.66,
+     "tokens": 175
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is checked: December usually shows a ratio below 1.0 (below average) in most years, but the direction is inconsistent (some above, some below), so it is not a stable seasonal pattern. Second, a specific policy event occurred in December 2004: agency restructuring that moved inspection teams and changed priorities. This explains both the timing and the sharp drop in notices. Third, data quality checks show no cancellations or missing IDs around this point, ruling out reporting failures. Finally, the Page-Hinkley test confirms a sustained level shift consistent with the policy change. Since the event plausibly explains the anomaly, it is classified as PDC.",
+     "seed": 22,
+     "latency_s": 43.3,
+     "tokens": 167
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): Month 12 usually deviates below the median in 6 of 10 prior years. However, it was flagged anomalous in 1987 and 1988 too, suggesting this specific large drop is not merely a recurring seasonal cycle but an outlier event.\nStep 2 (Events): A known policy event occurred exactly in 2004-12: agency restructuring moving inspection teams and changing enforcement priorities. This plausibly explains a sudden, sustained reduction in issuance volume without data artifacts.\nStep 3 (Records): No signs of data failure exist (zero cancelled notices, no missing IDs, plausible fine totals).\nConclusion: The drop aligns with the specific policy-driven restructuring event.",
+     "seed": 33,
+     "latency_s": 47.04,
+     "tokens": 183
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check shows June typically fluctuates but was flagged anomalous in 1986 and 2008, suggesting some recurring pattern. However, the 2002-06 drop to 0.21 ratio is extreme compared to recent years (e.g., 2001-06: 0.78). Second, a known policy event occurred exactly in June 2002: new normative instructions changed sanctioning conducts. This plausibly explains both the timing and direction of the drop. Third, data quality checks show no signs of reporting failures (no bursts of cancelled notices or missing IDs) around this month; other series like 'notices' were also flagged, indicating a systemic change rather than a data artifact. Therefore, the anomaly is best explained by policy-driven changes.",
+     "seed": 11,
+     "latency_s": 100.21,
+     "tokens": 203
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is not the cause. While June often shows a deficit, it was flagged anomalous in 1986 and 2008 (both below median), but the direction and magnitude vary significantly across years; a single year's deviation does not constitute a stable seasonal pattern here. Second, an event exists: new normative instructions changed sanctioned conducts exactly in June 2002. This explains the timing and the sharp drop in both notice counts (939 vs ~2500) and fine values. The Page-Hinkley test confirms a sustained level shift coinciding with this policy change. Third, data quality issues are absent: there is no burst of cancellations or records without identifiers in June 2002 compared to neighbors. Since the anomaly aligns perfectly with a specific legislative enforcement change and shows no evidence of reporting failure or random seasonality, it represents a genuine policy-driven shift.",
+     "seed": 22,
+     "latency_s": 55.85,
+     "tokens": 217
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Seasonality check shows mixed direction (below 1 in 5 years, above in others), so it is not a seasonal pattern. No data-quality signs (no cancellations or missing IDs) explain the drop, and values are plausible. A known policy event occurred exactly in June 2002: a new normative instruction changed sanctioning conducts. This plausibly explains both the timing and the magnitude of the reduction in notices and fines. Therefore, the anomaly is driven by policy change.",
+     "seed": 33,
+     "latency_s": 32.7,
+     "tokens": 127
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2022-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.75,
+     "reasoning": "Step 1: Seasonality check shows May deviates >1 in 6 of the last 10 years and was flagged anomalous in 2006, indicating a recurring pattern rather than a unique event. Step 2: No specific policy events or legislation changes are listed for this period to explain the spike. Step 3: Data quality checks reveal no system migration, cancellation bursts, or zero-value issues; however, the 'no_id' count (977) is high but consistent with the volume increase. The Page-Hinkley test confirms a sustained shift, and other series show no correlation. Since seasonality explains the direction but not the magnitude of this specific 2022 spike compared to historical May averages, and no policy event exists, it represents a genuine enforcement intensification.",
+     "seed": 11,
+     "latency_s": 97.35,
+     "tokens": 191
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.92,
+     "reasoning": "First, seasonality is evaluated: May typically shows moderate variance (ratios 0.79\u20131.51), but historical data confirms this month has been flagged as anomalous in other years (e.g., 2006-05), suggesting a recurring pattern rather than a unique event. Second, no listed policy events or legislation changes explain the timing. Third, data quality checks reveal severe anomalies in May 2022: 977 records lack an identifier (no_id) and 167 were cancelled shortly after issuance, alongside a massive spike in total fine value relative to neighbors. This burst of invalid/uncancelled-then-cancelled records indicates a reporting failure or system backlog processing issue before cleanup. Finally, the Page-Hinkley test confirms a sustained shift, but the presence of numerous no_id entries and immediate cancellations points to a data integrity event rather than genuine enforcement.",
+     "seed": 22,
+     "latency_s": 56.34,
+     "tokens": 219
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "Seasonality check: May usually deviates slightly above or below median (ratios mostly near 1.0), not consistently high like 2022-05. No policy events listed for mid-2022. Data quality checks show a massive spike in 'no_id' records (977 vs typical ~30\u201340) and elevated cancellations (167). This pattern\u2014a burst of notices lacking identifiers accompanied by high cancellation rates\u2014is a classic sign of a data ingestion or reporting failure, not genuine enforcement or seasonality. The sustained Page-Hinkley shift likely reflects this systemic data error persisting in the series.",
+     "seed": 33,
+     "latency_s": 41.71,
+     "tokens": 164
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check: Month 5 is not consistently anomalous; it was flagged in only 6 of the prior 10 years and once in 1983, so a recurring annual cycle is unlikely. Second, events: No legislative changes or agency restructuring occurred within +/-6 months to explain such a massive jump. Third, records data quality check: The anomaly shows an extreme spike in both notice count (3,025 vs ~1,300) and fine total. Crucially, the 'no_id' (records without identifier) count jumps from 0 or 1 to 1,361, while 'cancelled' notices also rise significantly (1,193). This pattern\u2014a sudden influx of unidentifiable records resulting in a massive value outlier that likely represents a reporting failure or system glitch where valid notices were not properly flagged with identifiers before being processed\u2014strongly indicates a data-quality event rather than genuine enforcement.",
+     "seed": 11,
+     "latency_s": 106.75,
+     "tokens": 227
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality is not the cause: while May shows occasional high ratios historically (e.g., 2.20 in 2009), the direction of deviation is inconsistent across years (some below 1.0). Second, no policy events explain this spike. Third, data quality indicators are present but insufficient for DQE: although there are 1,361 records without an identifier (no_id) and 1,193 cancelled notices in 2018-05, the series shows sustained high values in adjacent months (March/April 2018) with no system migration or reporting failure noted. The ensemble score is marginal (0.51). Since the Page-Hinkley test found no sustained shift and the anomaly persists without a clear data error event or policy trigger, this represents a genuine change in enforcement intensity.",
+     "seed": 22,
+     "latency_s": 53.91,
+     "tokens": 209
+    },
+    {
+     "category": "SP",
+     "confidence": 0.92,
+     "reasoning": "Seasonality check shows Month 5 historically varies widely (ratios 0.39 to 2.20). It was flagged anomalous in six of the ten prior years and specifically in 1983-05, indicating a recurring pattern rather than a one-off event. No policy events or system migrations are listed to explain the direction. While 2018-05 shows high 'no_id' records (1361), this is accompanied by a sustained spike in both notice count and fine value relative to neighbors. Given the strong historical recurrence of May anomalies, the deviation aligns with a recurring seasonal pattern rather than a genuine shift or data error.",
+     "seed": 33,
+     "latency_s": 42.6,
+     "tokens": 166
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2004-12",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Step 1: Seasonality check shows December has consistently low ratios in 6 of 10 prior years, and this specific month was flagged as anomalous in 1987-12 and 1988-12. This recurrence indicates a seasonal pattern rather than an anomaly. Step 2: No specific policy events explain the timing or direction; currency reform only affects fine values, not notice counts. Step 3: Data quality indicators (cancelled, no_id) are zero for this month, ruling out reporting failures or system migrations causing the count drop. The low value aligns with the historical seasonal baseline. Therefore, the deviation is a recurring annual cycle.",
+     "seed": 11,
+     "latency_s": 90.46,
+     "tokens": 165
+    },
+    {
+     "category": "SP",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality: Dec 2004's ratio is 0.03, but prior Dec ratios vary widely (1.04, 0.57, etc.). It was flagged anomalous in 6/10 prior years and specifically in 1987-12 & 1988-12, suggesting a recurring pattern rather than a one-off. However, the magnitude of drop (72 vs ~2,000) is extreme. Second, check events: No policy or restructuring events are listed. Third, check data quality: There are no cancelled notices or missing IDs in Dec 2004; the drop isn't due to record deletion. A system failure causing missed entry could explain a zero-like value, but the fine_total_brl series also dropped drastically (to 4M), implying actual low activity or a systematic reporting break affecting both counts and fines simultaneously. Given the lack of specific DQE indicators like 'no_id' or 'cancelled', and the absence of an event, this points to a genuine enforcement shift or unexplained real reduction. However, since it occurred in Dec across many years (even if direction varied), and the drop aligns with fine_total_brl, it might be seasonal behavior (holidays) that sometimes results in near-zero counts. But the instruction says: 'if the same calendar month was flagged in other years too... the anomaly is seasonal.' It was flagged in 1987-12 and 1988-12 as well. Thus, SP is correct.",
+     "seed": 22,
+     "latency_s": 91.29,
+     "tokens": 354
+    },
+    {
+     "category": "GES",
+     "confidence": 0.75,
+     "reasoning": "First, seasonality is checked: while December often deviates below the median in roughly half of historical years (6 of 10), it was flagged as anomalous in 1987 and 1988, suggesting a recurring but inconsistent pattern. Second, no policy-driven events are listed to explain this specific drop. Third, data quality checks show zero cancelled or missing-ID records, ruling out reporting failures; the fine_total_brl also dropped proportionally, implying real notices, not just bad data. However, the deviation is extreme (-97%) and isolated. Since historical seasonality does not consistently predict such a drastic collapse in December (only ~60% of years show a dip), and no external event explains it, this represents a genuine, unexplained shift in enforcement intensity for that specific month.",
+     "seed": 33,
+     "latency_s": 50.21,
+     "tokens": 196
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2002-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "Step 1: Seasonality check shows Month 4 usually has high variance (ratios range from 0.42 to 16.57). While it deviated downward in half the previous years, this month's absolute value is implausibly low relative to neighbors and historical medians, not just a seasonal dip. Step 2: No policy events explain a near-zero fine total (655k vs ~48M median) alongside valid notice counts (88). Currency reform explanations are ruled out by the specific magnitude drop. Step 3: Data quality signs are absent; notices exist and no_id/cancelled are zero, but the value is an outlier spike downward. This suggests a reporting failure or system issue causing missing fine data for valid cases, fitting DQE criteria of implausible values in an active series.",
+     "seed": 11,
+     "latency_s": 99.6,
+     "tokens": 202
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality: April often shows high variance (e.g., 1992-04, 1996-04), and four of the last ten years had ratios below 1. However, 2002-04 is anomalous in a different direction (extreme low notices). Second, events: no policy or political event explains this specific timing. Third, data quality: The record shows only 88 notices compared to ~2,000\u20133,000 in adjacent months, yet the fine total is 655k BRL. This implies an average fine of ~7,439 BRL per notice, whereas typical fines are likely in the range of tens or hundreds of thousands of Reais (based on other months where totals reach millions with similar notice counts). Such an implausible unit value suggests a reporting failure, data entry error, or system issue generating near-zero volume with inflated totals. The abrupt step with no external event confirms a DQE.",
+     "seed": 22,
+     "latency_s": 62.87,
+     "tokens": 242
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is a fine total of 655k BRL with only 88 notices, whereas the median value is ~48M BRL. This represents an implausible drop in value despite some activity. Such abrupt steps persisting without listed events often indicate data issues (e.g., system migration or reporting failure) rather than policy or genuine enforcement shifts. Seasonality does not explain this magnitude of deviation in value, and no relevant policy events occurred.",
+     "seed": 33,
+     "latency_s": 31.19,
+     "tokens": 121
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2001-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality: June ratios across ten years are mixed (four above 1, others below), and no other year flagged this month as anomalous, ruling out SP. Second, events: no listed policy or political change explains a sudden 2x spike in notices without prior trend. Third, data quality: the record contains an identifier ('2012') but zero cancellations or missing IDs; the fine total is plausible relative to adjacent months, so this is not DQE. Finally, the sustained level shift test was negative, and no external event exists. Thus, a genuine enforcement intensification in June 2001 remains unexplained by policy, seasonality, or errors.",
+     "seed": 11,
+     "latency_s": 90.5,
+     "tokens": 171
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality is inconsistent: June ratios vary widely across years (e.g., 1996 vs. others), and the month was not flagged as anomalous in other years, ruling out SP. Second, no listed events explain a sudden doubling of notices; fine totals are plausible relative to surrounding months, so currency reform is irrelevant. Third, data quality signs are absent: only 20 records lacked IDs (consistent with historical noise) and cancellations are low. The sustained Page-Hinkley test was negative, but the ensemble flagged it. Since no policy or seasonal cause exists and data issues are minor/normal, this represents a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 41.81,
+     "tokens": 164
+    },
+    {
+     "category": "GES",
+     "confidence": 0.92,
+     "reasoning": "Step 1: Seasonality. June (month 6) ratios in prior years are mixed (values like 6.00, 1.50 vs <1.0). It did not deviate in the same direction consistently, nor was it flagged as anomalous in other years. Step 2: Events. No listed events explain a sudden doubling of notices in June 2001. Step 3: Records. The anomaly is isolated to June 2001; surrounding months show stable counts and no spikes in cancelled records or missing IDs that would indicate a reporting failure or system migration. The magnitude represents a real spike, not an implausible value like zero. Step 4: Conclusion. With seasonality inconsistent, no policy event, and no data quality indicators, this is a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 49.5,
+     "tokens": 195
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.65,
+     "reasoning": "First, seasonality: April historically shows variable ratios (some years >1, some <1), but the same month was flagged anomalous in 1992-04 and multiple times in recent years with high deviations, indicating a recurring pattern. Second, events: no policy changes or mandates occurred within +/-6 months. Third, data quality: while 2018-04 shows high cancelled notices (1370) and missing IDs (1963), the sheer volume of issued notices (4,362 vs ~1,000 median) combined with sustained high fine totals suggests these are not just reporting errors like system migration or duplication, but a real enforcement spike. The Page-Hinkley test found no sustained level shift elsewhere, ruling out a generic data break. Since the deviation aligns with historical seasonal flags and lacks an external policy event, it is best explained as a genuine enforcement shift.",
+     "seed": 11,
+     "latency_s": 105.36,
+     "tokens": 221
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality is checked: April usually shows mixed ratios (high in 2015-2016, low in 2017). While some years deviate high, the direction is not consistently upward, and only one prior year was flagged. Thus, it is likely not seasonal.\n\nSecond, policy-driven events: no known legislative or restructuring events occurred within +/-6 months to explain this specific spike.\n\nThird, data quality: The records show a massive surge in notices (4,362 vs ~1,000) and fines. Crucially, there are 1,963 'no_id' records (records without identifiers) and 1,370 cancelled notices appearing simultaneously. This indicates a reporting failure or system issue where many notices were issued but not properly identified, likely later flagged for cancellation. The presence of thousands of non-identified records alongside cancellations strongly points to a data-quality event.",
+     "seed": 22,
+     "latency_s": 58.32,
+     "tokens": 225
+    },
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): April ratios in prior years were mixed (5 above median, 5 below), and while 1992-04 was flagged, the pattern is not consistent enough for a seasonal explanation given the high variability. Step 2 (Events): No specific legislative or political events occurred within +/-6 months to explain the shift. Step 3 (Records): The anomaly correlates with a massive spike in 'notices' (4,362 vs ~1,000-2,000 typical) and an extreme number of 'no_id' records (1,963). Typically, 'no_id' indicates reporting failures or system migrations where data is ingested without unique identifiers. The simultaneous surge in notices and the specific anomaly type (records lacking identifiers) strongly points to a data collection or ingestion error rather than genuine enforcement. Step 4: This fits DQE.",
+     "seed": 33,
+     "latency_s": 55.31,
+     "tokens": 215
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2025-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality: April typically shows lower relative counts (ratio <1) in 4 of 10 prior years and was flagged anomalous in 1996-04; however, the 2025 drop is extreme (37 vs ~1088 median), far exceeding historical variation, suggesting a specific event rather than standard seasonality. Second, events: No policy or legislative changes are listed within +/-6 months to explain this magnitude. Third, data quality: The record shows zero cancelled notices and zero records without an identifier for April 2025, unlike neighboring months with significant cancellation/no_id counts. Crucially, the fine_total_brl also drops proportionally (8.6M vs ~300-800M in neighbors), implying a systematic reporting failure or system migration affecting both count and value simultaneously, rather than a genuine enforcement pause. This pattern of simultaneous zeroing of related metrics points to a data-quality event like a system glitch or migration.",
+     "seed": 11,
+     "latency_s": 107.77,
+     "tokens": 236
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The April 2025 drop is extreme (ratio 0.03), yet historical ratios show frequent sub-1 values (4/10 prior years). Crucially, April was flagged as anomalous in 1996 as well, indicating a recurring pattern rather than a one-off error or event. No cancellations, missing IDs, or system migration signs exist; the data is clean, ruling out DQE. No policy events occurred to explain this direction. Since seasonality explains the deviation direction and frequency without invoking policy or errors, this fits SP.",
+     "seed": 22,
+     "latency_s": 37.09,
+     "tokens": 146
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "Seasonality is not confirmed as the primary driver because April was flagged in only 4 of the last 10 years and historically shows high variance (ratios ranging from 0.48 to 1.43). A policy-driven event is excluded due to no known legislative changes or mandates within the relevant timeframe. Data quality issues are ruled out since there are zero cancelled notices, zero records without identifiers, and the fine total is non-zero, indicating real enforcement rather than a reporting failure. Consequently, this represents a genuine, unexplained shift in enforcement intensity.",
+     "seed": 33,
+     "latency_s": 35.81,
+     "tokens": 140
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2025-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly shows a massive drop in fines (97%) and notices (from ~1,000 to 35) in June 2025, while the 'other series' (notices) was also flagged as anomalous. Historically, this specific calendar month deviated below the median in 3 out of 10 prior years and was previously flagged in 1986 and 2008. There are no policy events or system migrations to explain a simultaneous collapse in both fine volume and notice counts. The pattern of repeated deviations in the same calendar month aligns with the definition of Seasonal Pattern.",
+     "seed": 11,
+     "latency_s": 90.51,
+     "tokens": 158
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality is evaluated: June typically shows high variability and deviation in previous years (flagged anomalous in 1986, 2008, and deviating below median in 3 of the last 10 years). However, the anomaly persists despite no policy events or system migrations. Second, data quality signs are absent: there are zero cancelled notices and zero records without identifiers in 2025-06, unlike other months where ~40-80% of notices were later cancelled. Third, the context shows a complete cessation of enforcement activity (only 35 notices vs ~1,000+ neighbors), yet no backlog or reporting failure explains this drop; it is not a 'system migration' per se but an operational halt. Since seasonality does not explain the extreme magnitude consistently, and there are no data errors or policy events, this represents a genuine, unexplained shift in enforcement intensity.",
+     "seed": 22,
+     "latency_s": 57.28,
+     "tokens": 223
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality: June shows deviation in 3/10 prior years and was flagged historically in 1986 and 2006, indicating a recurring pattern rather than an anomaly this year alone. However, the 2025 drop is extreme (down to 35 notices vs ~1,400), not just a typical low month. Second, events: no policy or political events explain such a drastic reduction in activity. Third, data quality: there are no signs of reporting failure; 'cancelled' and 'no_id' counts remain zero, ruling out backlog or duplication issues. Fourth, genuine shift: the sustained drop in both notice volume and fine total, without event or seasonality explanation, points to a real enforcement pause or strategic change.",
+     "seed": 33,
+     "latency_s": 48.73,
+     "tokens": 189
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2015-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality: March historically varies between 0.73 and 1.34 relative to its prior-year median; six of ten previous years showed a ratio above 1, indicating no consistent upward seasonal trend for March. Thus, the anomaly is not purely seasonal.\n\nSecond, check events: No specific policy or legislative changes are listed within \u00b16 months to explain this spike. Currency reforms do not apply here as values remain plausible in magnitude (fines and counts).\n\nThird, check records: The 2015-03 record shows zero cancelled notices and zero no_id entries. While the count is high, there is no evidence of a reporting failure like system migration or duplication. However, the Page-Hinkley test indicates a sustained level shift starting within two months, suggesting this spike persisted beyond a one-off data glitch.\n\nFourth, determine genuine shift: The combination of a significant increase in notices and fines without an external policy trigger or data quality issue points to a real change in enforcement intensity.",
+     "seed": 11,
+     "latency_s": 110.62,
+     "tokens": 241
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality is evaluated: March historically shows mixed ratios (0.73\u20131.34) and was flagged anomalous in 1981/1989, suggesting it is not a consistent seasonal pattern. Second, no policy events are listed within the relevant timeframe to explain this specific spike. Third, data quality checks reveal no cancelled notices or missing identifiers for March 2015; however, the count jumps from ~1,330 (previous median) to 3,202, a magnitude not seen in surrounding months or prior years' same month averages. The Page-Hinkley test confirms a sustained level shift persisting into April/May, indicating this was not a fleeting error or backlog. Since it lacks seasonal consistency, policy explanation, or data artifacts, the deviation represents a genuine enforcement intensification.",
+     "seed": 22,
+     "latency_s": 53.1,
+     "tokens": 204
+    },
+    {
+     "category": "GES",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is not Seasonal (SP) because March typically shows low or neutral activity (ratios mostly <1.2), whereas this year's ratio is 2.41. No Policy-Driven (PDC) events are listed. Data-Quality (DQE) signs are absent: the spike persists into April/May with no mass of cancellations or missing IDs, and fine totals scale proportionally, ruling out reporting failures. The Page-Hinkley test confirms a sustained level shift rather than an isolated error. Since seasonality and policy explanations fail, and data integrity looks sound, this represents a genuine enforcement shift (GES), likely due to specific operational changes not captured in the event list.",
+     "seed": 33,
+     "latency_s": 44.0,
+     "tokens": 169
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality check: March usually exceeds its recent median in 7 of 10 prior years (ratios >1), and this specific month was flagged as anomalous in other decades (1981, 1986, 1988). The direction is consistent. Second, events: No policy or legislative changes are listed for early 2018; thus PDC is unlikely. Third, records: While fine values spiked and notices increased, there are no signs of data issues like cancellations (only 142 cancelled vs typical ~150) or missing IDs in March. The spike persists into April/May but lacks a specific DQE trigger like system migration. Since the deviation aligns with historical seasonal patterns and was flagged repeatedly for this calendar month, it fits SP.",
+     "seed": 11,
+     "latency_s": 101.67,
+     "tokens": 198
+    },
+    {
+     "category": "GES",
+     "confidence": 0.92,
+     "reasoning": "Seasonality is the primary driver here. March consistently shows elevated activity compared to its own annual median across most previous years (7 of 10), and historical flags confirm this specific month recurs as anomalous in other decades (e.g., 1981, 1986). While the 2018 spike is extreme, the direction aligns with a recurring pattern rather than a one-off shift. No data quality issues (like cancellations or missing IDs) explain the burst. With no listed policy events, the anomaly represents a genuine enforcement intensity change occurring within an established seasonal context.",
+     "seed": 22,
+     "latency_s": 38.35,
+     "tokens": 149
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality: March usually exceeds the median of the prior 12 months (ratio >1) in 7 of 10 recent years and was flagged anomalous in multiple past years (1981-03, etc.), indicating a recurring annual pattern rather than an isolated event. Second, check events: no specific policy shift or restructuring is listed for this period to explain such a spike. Third, check data quality: the anomaly shows 2,966 notices and 142 cancellations, both consistent with typical volumes; there are no duplicate IDs, zero values, or system migration indicators. Finally, since seasonality explains the direction but not the magnitude of this specific outlier relative to historical norms, and no other cause fits, it is likely a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 48.98,
+     "tokens": 190
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, seasonality: February typically shows below-average counts (ratio <1) in 6 of the last 10 prior years and was flagged anomalous in 1989-02, 1993-02, 1996-02. The 2001 deviation aligns with this recurring pattern rather than a one-off shift. Second, events: no policy or legislative changes occurred around this time. Third, data quality: the record has no identifiers issues (no_id=0) and few cancellations, ruling out reporting failures or systematic drops like system migration. The sustained level shift detected by Page-Hinkley is consistent with seasonal behavior rather than a genuine structural break. Therefore, the anomaly is best explained as SP.",
+     "seed": 11,
+     "latency_s": 95.09,
+     "tokens": 188
+    },
+    {
+     "category": "SP",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality: February is historically low (ratios <1 in 6/10 prior years), but it was also flagged as anomalous in 1989, 1993, and 1996, indicating a recurring pattern rather than a one-off. Second, events: no policy changes or system migrations occurred within +/-6 months to explain the drop. Third, data quality: the record has zero cancellations and no missing identifiers; surrounding months show consistent reporting volumes. The sustained level shift is likely a statistical artifact of the inherent low seasonality combined with natural noise, rather than a genuine enforcement collapse or data error. Thus, it represents a recurring seasonal anomaly.",
+     "seed": 22,
+     "latency_s": 43.15,
+     "tokens": 169
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly shows a sustained drop in February 2001. However, historical data reveals this is not unique: six of the previous ten years showed deviations below 1.0 for the same month, and the series was flagged as anomalous in three other specific months (1989-02, 1993-02, 1996-02). The Page-Hinkley test confirms a level shift, but given the consistent direction of deviation for this specific calendar month across multiple years and previous flags, the pattern is recurrent rather than driven by a singular policy event or data error. This recurring behavior fits the definition of a seasonal pattern.",
+     "seed": 33,
+     "latency_s": 42.19,
+     "tokens": 165
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2015-01",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The January month consistently shows a low ratio relative to its own recent median across nearly all previous years (9 of 10), indicating a strong seasonal pattern. This specific calendar month was historically flagged as anomalous in multiple other instances (1989, 1999, 2014, etc.). Despite the Page-Hinkley test detecting a level shift and detectors flagging it, the deviation aligns perfectly with the established recurring behavior of January rather than an external policy event or data error. Therefore, the anomaly is best explained as a Seasonal Pattern.",
+     "seed": 11,
+     "latency_s": 86.03,
+     "tokens": 147
+    },
+    {
+     "category": "SP",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality: Jan typically shows low ratios (<1) across most years; however, 2015-01's ratio (0.11) is an extreme outlier compared to previous Jan values (e.g., 2014-01: 0.15). Second, events: no known policy or political events explain this specific drop. Third, records: while Jan historically has lower activity, the volume of notices in 2015-01 (368) is not drastically different from 2016-01 (290), yet fines plummeted. The sustained level shift detected and historical flagging suggest a recurring pattern, but the extreme deviation lacks a plausible seasonal cause or policy event. However, given the consistent low activity in Jan over a decade and previous flags for Jan, this aligns with a known seasonal lull where enforcement drops significantly after holidays, making it a Seasonal Pattern despite the anomaly detection.",
+     "seed": 22,
+     "latency_s": 59.32,
+     "tokens": 231
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Seasonality is the primary driver here. The ratio for January 2015 (0.11) fits the pattern of low activity seen in 9 out of 10 prior years, where Jan ratios were consistently below 1.0 (e.g., 0.15 in 2014). This specific calendar month is historically flagged as anomalous in multiple other years (1989, 1999, etc.), indicating a recurring annual cycle rather than a policy shift or data error. Although the Page-Hinkley test detected a step change, the sustained low level aligns with established seasonality. No data quality issues (cancellations, missing IDs) or specific events explain this drop; it represents a genuine, predictable seasonal fluctuation.",
+     "seed": 33,
+     "latency_s": 48.39,
+     "tokens": 187
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-07",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, seasonality check: July shows sporadic high ratios in prior years (e.g., 1996-07: 2.15), but most are below 1.4. Only 4 of the last 10 previous Julys deviated above 1, and the same month was flagged anomalous only once before (1989-07). Thus, it is not a stable seasonal pattern. Second, events: no known policy or legislative changes occurred within +/-6 months to explain a sudden doubling of notices. Third, data quality: the record for 2001-07 has no missing identifiers, and while cancelled notices are higher than average, they do not indicate a reporting failure or system error; the fine amount is plausible. Finally, since seasonality is weak, no event explains it, and no data errors are present, this represents a genuine enforcement shift.",
+     "seed": 11,
+     "latency_s": 104.14,
+     "tokens": 217
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "Seasonality check shows July historically deviates in the same direction (ratio >1) in only 4 of the last 10 years, and it was not flagged as anomalous in most of those instances. Therefore, this is not a consistent seasonal pattern. No policy-driven events are listed for this period to explain a sudden tripling of notices. Data quality indicators (cancelled/no_id) show no burst or systematic reporting failure; the high fine total confirms records are valid. Since the deviation lacks a seasonal precedent, policy cause, or data error, it represents a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 37.94,
+     "tokens": 147
+    },
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "1. Seasonality: July ratios fluctuate (e.g., 1996-07 was high, others low). The anomaly direction is not consistently repeated across all prior years, and the same month was flagged in other years, but this pattern alone does not confirm seasonality as the primary driver for a specific large spike without consistent directional deviation.\n2. Events: No listed policy events explain the timing or magnitude of this specific surge.\n3. Records: The data shows no evidence of reporting failure (no cancellations or missing IDs in July 2001 specifically causing the count; high fine total supports real issuance). The Page-Hinkley test indicates a sustained level shift, suggesting a structural change rather than a transient error.\n4. Conclusion: Since it is not purely seasonal, event-driven, or data-quality related, this represents a genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 52.96,
+     "tokens": 205
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-05",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.92,
+     "reasoning": "First, check seasonality: Month 5 deviations are mixed across years (above median in 6/10 prior years), and while flagged in 1983-05, this is not a consistent directional spike like 2018-05. Thus, it is not purely seasonal.\n\nSecond, check events: No policy or legislative changes occurred around May 2018 to explain such a sharp increase.\n\nThird, check data quality: The record shows 1,866 notices and 902.0M in fines with zero cancellations (cancelled=0) and no missing identifiers. There is no evidence of reporting failure or system migration causing this specific spike; the volume and value are plausible given the high activity in late 2018.\n\nFinally, conclude: Since seasonality is inconsistent, no policy event explains it, and data integrity appears sound, this represents a genuine enforcement shift.",
+     "seed": 11,
+     "latency_s": 107.81,
+     "tokens": 226
+    },
+    {
+     "category": "GES",
+     "confidence": 0.92,
+     "reasoning": "First, seasonality is examined: May typically shows high variability with no consistent direction; the specific large spike in 2018 does not align with a stable seasonal pattern. Second, no policy-driven events (legislation, restructuring) are listed for this period. Third, data quality checks reveal no signs of failure: there are zero cancelled notices and zero records without identifiers in May 2018, unlike other months where these occur frequently. The fine value is plausible relative to the notice count. Since the deviation is large but unexplained by seasonality, policy events, or data errors, it represents a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 41.05,
+     "tokens": 157
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Step 1 (Seasonality): May 2018 is anomalous, but historical ratios show May often deviates above the median in 6 of 10 prior years. Additionally, May was explicitly flagged as anomalous in 1983. This recurring pattern across decades confirms a seasonal pattern rather than a one-off event. Step 2 (Events): No specific policy events or political transitions are listed for this period to explain the spike. Step 3 (Records): The high fine value and notice count are consistent with normal operational volume; there are no signs of system migration, backlogs, or data errors like zero values or missing IDs. The anomaly is driven by the established seasonal cycle.",
+     "seed": 33,
+     "latency_s": 44.26,
+     "tokens": 170
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2005-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, check seasonality: February typically deviates below the median (ratio <1) in 7 of 10 prior years and was flagged anomalous in 1989, 1993, and 1996. The 2005-02 ratio (0.36) aligns with this recurring low pattern rather than an outlier direction. Second, check events: no policy or legislative changes occurred within \u00b16 months. Third, check data quality: the record has no identifier issues, zero cancellations, and plausible fine values; no system migration or duplication signs exist. Since the deviation follows a consistent historical calendar-month pattern and lacks external causes, it is best explained as a seasonal effect.",
+     "seed": 11,
+     "latency_s": 94.47,
+     "tokens": 180
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The February 2005 value (783) is significantly below the median, but historical seasonality shows February was already flagged as anomalous in seven of ten prior years and specifically in 1996-02. The direction of deviation (low) is consistent across decades for this month. No policy events or system migrations explain a sustained drop starting late 2004/early 2005, and there are no data quality flags (cancellations or missing IDs). Since the anomaly follows a recurring annual pattern and was flagged in multiple previous years without an external event, it represents a seasonal pattern rather than a genuine shift or data error.",
+     "seed": 22,
+     "latency_s": 42.72,
+     "tokens": 167
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Seasonality check shows the same calendar month (February) deviated below the median in 7 of 10 prior years, indicating a recurring low-activity pattern rather than an anomaly. Historical flags for February support this cyclical nature. No policy events explain the timing. Crucially, the specific anomalous record count is not accompanied by cancelled notices or records without identifiers, ruling out data-quality issues like duplication or reporting failures. The sustained level shift detected is consistent with a known seasonal trough rather than an unexplained enforcement change.",
+     "seed": 33,
+     "latency_s": 33.92,
+     "tokens": 132
+    }
+   ]
+  }
+ ]
+}

@@ -2,8 +2,8 @@
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "prompt_refs": {
   "main": {
-   "commit": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "fingerprint": "a74bdbd1ece574f116df5bb3fca97800451c2fc3ebf22cd93544f2b89489361d"
+   "commit": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "fingerprint": "135947fd6e557283ae6548c5557a76bd935da63e0500c96601fa416528c20af5"
   },
   "7da22b7": {
    "commit": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
@@ -24,7 +24,11 @@
   "min_coverage": 0.9,
   "max_p90_latency_s": 150,
   "switch_margin_macro_f1": 0.05,
-  "bootstrap_resamples": 2000
+  "bootstrap_resamples": 2000,
+  "min_age_days_to_adopt": 30,
+  "adopt_backends": [
+   "ollama"
+  ]
  },
  "entries": [
   {
@@ -35,8 +39,9 @@
    "options": {},
    "experiment": false,
    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "35100ab048cbc8db",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "56a7513615422481",
    "slug": "gemma3_4b"
   },
   {
@@ -49,8 +54,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "ae348eb2554131a8",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "6a6f5a8645ddc49e",
    "slug": "qwen3.5_4b"
   },
   {
@@ -63,8 +69,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "de22952866742ddb",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "4063869fe95098bb",
    "slug": "qwen3_4b"
   },
   {
@@ -75,8 +82,9 @@
    "options": {},
    "experiment": false,
    "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "754df1de013cd89e",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "c8c88d70ec9ab24f",
    "slug": "granite4.2_3b"
   },
   {
@@ -87,8 +95,9 @@
    "options": {},
    "experiment": false,
    "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "44a249aeaa2c6c6f",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "b311833669a40a26",
    "slug": "ministral-3_3b"
   },
   {
@@ -99,8 +108,9 @@
    "options": {},
    "experiment": false,
    "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "157d4fc2c9037702",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "e55d9463142c0e1f",
    "slug": "phi4-mini_3.8b"
   },
   {
@@ -111,8 +121,9 @@
    "options": {},
    "experiment": false,
    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "8c108323f9d78609",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "b9022775a2735ab9",
    "slug": "llama3.2_3b"
   },
   {
@@ -123,8 +134,9 @@
    "options": {},
    "experiment": false,
    "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "c24d7f74dc060033",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "3e8ca263ee88b48f",
    "slug": "lfm2.5_8b-a1b"
   },
   {
@@ -135,8 +147,9 @@
    "options": {},
    "experiment": false,
    "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "0f723c3e755bcbe7",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "ed4fdb544f79853d",
    "slug": "granite4_7b-a1b-h"
   },
   {
@@ -149,8 +162,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "065d43843582c1fa",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "15c89ba3bd153d62",
    "slug": "qwen3.5_9b"
   },
   {
@@ -163,8 +177,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "c01eb56e6959ca11",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "dd3378e2d2f9f021",
    "slug": "gemma4_12b"
   },
   {
@@ -175,8 +190,9 @@
    "options": {},
    "experiment": false,
    "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "33837e37db493dfb",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "f3ac3fa197b1b24a",
    "slug": "ministral-3_8b"
   },
   {
@@ -187,8 +203,9 @@
    "options": {},
    "experiment": false,
    "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "18b12e4c424ba26f",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "3b7079db5f7c4df3",
    "slug": "granite4.2_8b"
   },
   {
@@ -199,8 +216,9 @@
    "options": {},
    "experiment": false,
    "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "1da0ebf1f2ba24e9",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "45253ed9a86b923a",
    "slug": "llama3.1_8b"
   },
   {
@@ -213,8 +231,9 @@
    "options": {},
    "experiment": false,
    "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "dd0615918fccdfa2",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "201da6d614651482",
    "slug": "gemma3_4b_llama.cpp"
   },
   {
@@ -231,8 +250,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "15397b9cd3bbac4f",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "806bcb4d35c73312",
    "slug": "qwen3_4b_llama.cpp"
   },
   {
@@ -249,8 +269,9 @@
    "prompt_ref": "main",
    "experiment": false,
    "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "e561a5b0d2c8558c",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "d17907f36bb0e50a",
    "slug": "Ternary-Bonsai-8B_PQ2_0"
   },
   {
@@ -274,8 +295,9 @@
    "note": "on the 4-vCPU runner a single call took over 15 min in the first run; measured on a sample only",
    "prompt_ref": "main",
    "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "046641f1cce23585",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "df9cc7631608c34a",
    "slug": "Ternary-Bonsai-2-27B_PTQ1_0"
   },
   {
@@ -286,6 +308,7 @@
    "experiment": true,
    "options": {},
    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "first_seen": "2026-10-01T13:57:49+00:00",
    "prompt_sha": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
    "key": "1441d22a03553bf4",
    "slug": "gemma3_4b_prompt_v1"
@@ -301,8 +324,9 @@
    "prompt_ref": "main",
    "options": {},
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "860303468e641385",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "6ab91d91e9fc5b50",
    "slug": "gemma3_12b"
   },
   {
@@ -318,8 +342,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "6af6230a3db38b86",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "90d227724cebbfbd",
    "slug": "gemma4_e2b"
   },
   {
@@ -333,8 +358,9 @@
    "prompt_ref": "main",
    "options": {},
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "5351d5aeb0f4ea6c",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "92f2d4cfb4a62ae6",
    "slug": "gemma3n_e2b"
   },
   {
@@ -348,8 +374,9 @@
    "prompt_ref": "main",
    "options": {},
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "40250d854b107292",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "98202f8452484b4f",
    "slug": "gemma3n_e4b"
   },
   {
@@ -365,8 +392,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "3fe2d7e74d0854b7",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "3edbdca7bf7c2ac3",
    "slug": "qwen3_1.7b"
   },
   {
@@ -382,8 +410,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "ef866abd35fd0efb",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "52e90807d3fe876d",
    "slug": "qwen3_4b-q4_K_M"
   },
   {
@@ -399,8 +428,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "7dd22e33306d65df",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "6a04250e5ef98b04",
    "slug": "qwen3_8b"
   },
   {
@@ -416,8 +446,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "9085eae56b2ccdf2",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "6e01cff8567050c7",
    "slug": "qwen3.5_0.8b"
   },
   {
@@ -433,8 +464,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "e433fbfaabfd86d4",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "727be6ba28e65eec",
    "slug": "qwen3.5_2b"
   },
   {
@@ -450,8 +482,9 @@
    },
    "prompt_ref": "main",
    "experiment": false,
-   "prompt_sha": "c9ccc8521c4a3243a47dd89eca0c34b9fe43f832",
-   "key": "8b73c13446582ebd",
+   "first_seen": "2026-10-01T13:57:49+00:00",
+   "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+   "key": "67bc15e446d3b3fe",
    "slug": "qwen3.5_2b-q4_K_M"
   }
  ],

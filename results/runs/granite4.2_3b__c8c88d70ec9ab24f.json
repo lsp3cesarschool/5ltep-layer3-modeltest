@@ -1,0 +1,949 @@
+{
+ "entry": {
+  "label": "granite4.2:3b",
+  "backend": "ollama",
+  "model": "granite4.2:3b",
+  "prompt_ref": "main",
+  "options": {},
+  "experiment": false,
+  "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
+  "first_seen": "2026-10-01T13:57:49+00:00",
+  "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+  "key": "c8c88d70ec9ab24f",
+  "slug": "granite4.2_3b"
+ },
+ "key": "c8c88d70ec9ab24f",
+ "label": "granite4.2:3b",
+ "upstream_ref": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "cases_total": 30,
+ "cases_done": 30,
+ "sampled": false,
+ "seeds": [
+  11,
+  22,
+  33
+ ],
+ "stopped": null,
+ "server": {
+  "server_version": "0.35.0",
+  "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
+  "size_bytes": 2244023965,
+  "details": {
+   "parent_model": "/Users/runner/.ollama/models/blobs/sha256-20e436143017578687f7f848225cc6c6038126c84149192229c7dff6e4e0f427",
+   "format": "gguf",
+   "family": "granite",
+   "families": [
+    "granite"
+   ],
+   "parameter_size": "3.7B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 131072,
+   "embedding_length": 2560
+  }
+ },
+ "started_at": "2026-10-01T13:58:43+00:00",
+ "ended_at": "2026-10-01T14:33:39+00:00",
+ "answers": [
+  {
+   "case": "SP-fine_total_brl-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The series shows consistent seasonal pattern: same calendar month 1 deviated below median in 9 of 10 years, and was also flagged in multiple years (1989, 1999, 2020, 2021, 2024). This matches Seasonal Pattern criteria (same direction, repeated across years). No data quality events (no burst of cancelled/no_id records; values plausible). No policy-driven event (no known events within +-6 months). The shift is sustained level shift? Page-Hinkley test found sustained level shift within 2 months, but no event; however seasonality check indicates pattern repeats, not a one-time shift. The anomaly is explained by seasonal pattern, not genuine shift. Therefore category is SP.",
+     "seed": 11,
+     "latency_s": 34.44,
+     "tokens": 176
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality data: for Jan months across years, the ratios show 0.62, 0.29, 0.99, 0.21, 0.21, 0.59, 0.88, 0.22, 0.67. The given month 2014-01 is 39.7M, median previous 12 months 258.3M => ratio = 39.7/258.3 \u2248 0.154 (matches -85% deviation). We see that 9 of 10 previous Jan months deviated below 1 (i.e., lower than median). Also the same calendar month was flagged as anomalous in multiple years: 1989-01, 1999-01, 2020-01, 2021-01, 2024-01. This indicates a recurring pattern, not a one-off data error. No events, no Page-Hinkley shift, no data-quality signs (cancelled count low, no_id zero). The anomaly is consistent across years, same direction (below 1), same calendar month flagged each year. Therefore it's a seasonal pattern: the series shows a regular dip in January across multiple years, matching the definition of SP (Seasonal Pattern).",
+     "seed": 22,
+     "latency_s": 18.86,
+     "tokens": 289
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality. The ratio of calendar month 1 to previous median across years shows consistent below-1 deviations (all <1) in 9 of 10 years, and the same month flagged in multiple years (1989, 1999, 2020, 2021, 2024). This indicates a seasonal pattern where month 1 typically is lower. Therefore, the anomaly is seasonal (SP).",
+     "seed": 33,
+     "latency_s": 6.96,
+     "tokens": 108
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The series shows monthly infraction notices. Seasonality check reveals that month 1 (January) consistently deviates below previous median in 9 of 10 years, and the same calendar month was flagged in many previous years. This matches seasonal pattern behavior: the same month each year shows lower values, indicating a recurring annual enforcement cycle. No event or policy change is indicated, and data quality issues are absent (no bursts, no missing identifiers). The anomaly is seasonal, not due to data problems or genuine shift. Therefore, category is SP.",
+     "seed": 11,
+     "latency_s": 23.73,
+     "tokens": 129
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The seasonality check shows that for January months across multiple years, the ratio compared to the previous 12-month median is consistently below 1 (0.44 to 0.82). In 9 of 10 years, January deviated below 1 (same direction, lower). The same calendar month (January) was flagged as anomalous in multiple previous years (1983-01, 1989-01, 1996-01, 1999-01, 2003-01, 2009-01, 2010-01, 2012-01, 2017-01, 2019-01, 2021-01, 2024-01). This indicates a clear seasonal pattern where January typically shows lower counts due to enforcement cycle timing. No data quality issues indicated (cancelled = few, no_id = 0). No policy event or system change mentioned. The anomaly is explained by seasonal pattern, not policy, data quality, or genuine shift. Therefore category is SP.",
+     "seed": 22,
+     "latency_s": 15.23,
+     "tokens": 233
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We examine the anomaly in January 2014 (2014-01). The series shows a clear seasonal pattern: the ratio of January to the median of previous 12 months is 0.34, and this January value is below typical levels (471 vs 1384 median, -66%). The seasonality check reveals that the same calendar month deviated (below 1) in 9 of the previous 10 years, and the month was also flagged in multiple prior years (1983-01, 1989-01, 1996-01, 1999-01, 2003-01, 2009-01, 2010-01, 2012-01, 2017-01, 2019-01, 2021-01, 2024-01). This indicates a recurring seasonal pattern across years, matching the definition of Seasonal Pattern (SP). No data-quality signs (no burst of cancelled notices, no records without identifier). The Page-Hinkley test found no sustained level shift. Therefore, the anomaly is seasonal rather than policy-driven, data-quality, or genuine enforcement shift.",
+     "seed": 33,
+     "latency_s": 16.96,
+     "tokens": 260
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2017-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Seasonality check: The ratio of calendar month 1 in each year compared to the median of previous 12 months shows consistent low ratios (0.48-0.85) across multiple years. All provided years show the same direction (below 1) and same calendar month flagged. This indicates a recurring seasonal pattern where month 1 consistently deviates below the previous year's median. The data shows the same calendar month deviated in the same direction in 10 of the previous 10 years, and it was also flagged in multiple other years. No data quality signs (no burst of cancelled notices, no records without identifier). No event explains the timing. Therefore, the anomaly is seasonal.",
+     "seed": 11,
+     "latency_s": 25.18,
+     "tokens": 160
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The seasonality check shows that for each of the previous years, January had ratios below 1 (i.e., lower than the median of the previous 12 months) and specifically 10 of the 10 years showed the same direction (below 1). The same calendar month (January) was also flagged as anomalous in multiple years listed (1983-01, 1989-01, 1996-01, 1999-01, 2003-01, 2009-01, 2010-01, 2012-01, 2014-01, 2019-01, 2021-01, 2024-01). This indicates a consistent seasonal pattern where January (calendar month 1) consistently deviates downward across multiple years. No data quality events are apparent (no large cancellations or missing IDs). No policy events or shifts are indicated. Therefore the anomaly is seasonal.",
+     "seed": 22,
+     "latency_s": 14.11,
+     "tokens": 213
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality data: for January months in previous years, the ratios are around 0.48-0.85. The anomalous month 2017-01 has ratio 0.33, which is lower than most (below 1). Seasonality check: the same calendar month (January) deviated in the same direction (below median) in 10 of the 10 years listed, and also flagged in multiple years (1983-01, 1989-01, ...). This pattern is consistent across years, indicating a seasonal pattern where January typically has lower counts due to lower enforcement activity or reporting cycles. The data shows that January is consistently lower than other months, and the same calendar month was flagged historically, supporting a seasonal pattern. No events, data problems, or policy changes are indicated. The Page-Hinkley test found no sustained level shift. Therefore, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 13.7,
+     "tokens": 207
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "Seasonality check: The ratio of calendar month 1 in 2021-01 is 0.25 compared to previous median. The pattern shows month 1 typically deviates below 1 in many years (9 of 10 years). Multiple years flagged (1989-01, 1999-01, 2014-01, 2020-01, 2024-01). This indicates a consistent seasonal pattern where month 1 is lower than usual across years. No data quality signs (cancelled/no_id counts are normal, no abrupt step, values plausible). The Page-Hinkley test found no sustained level shift. Therefore, the anomaly is seasonal.",
+     "seed": 11,
+     "latency_s": 24.08,
+     "tokens": 160
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality data: for Jan (calendar month 1) ratios: 2020-01: 0.25, 2019-01: 1.10, 2018-01: 0.42, 2017-01: 0.29, 2016-01: 0.29, 2015-01: 0.19, 2014-01: 0.15, 2013-01: 0.62, 2012-01: 0.29, 2011-01: 0.99. All are below 1 (below median ratio 0.12? Actually median of previous 12 months is 170.9M, 21.0M/170.9M \u2248 0.12). The series shows consistent lower values each year, same direction (below median). The same calendar month was flagged in multiple years (1989, 1999, 2014, 2020, 2024). The Page-Hinkley test found a sustained level shift but no? Actually test found a sustained level shift within 2 months: no. Other series flagged in same month but data shows fine_total_brl for 2021-01 is 21.0M, which is far below median (0.12). Records show notices and cancelled counts are reasonable, no_id counts are moderate, no extreme anomalies. No events. The pattern matches seasonal pattern: same calendar month deviates consistently (below median) across multiple years, flagged each year. Therefore anomaly is seasonal pattern (SP).",
+     "seed": 22,
+     "latency_s": 23.44,
+     "tokens": 358
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "First, check seasonality. The ratio of 2021-01 fine_total_brl (21.0M) to median of previous 12 months (170.9M) is 21.0/170.9 \u2248 0.123, which is below the median ratio of 0.12. Seasonality check ratios for January across years show that January typically deviates below 1 (e.g., 0.25, 1.10, 0.42, etc.). The same calendar month deviated in the same direction (below 1) in 9 of 10 years, and also flagged in multiple years (1989-01, 1999-01, 2014-01, 2020-01, 2024-01). This indicates a consistent seasonal pattern. No data-quality events (cancelled or no_id counts are reasonable, no burst of cancelled records, no implausible values). No sustained level shift (Page-Hinkley test negative). No known events. Therefore, the anomaly is due to seasonal pattern, not policy, data quality, or genuine shift.",
+     "seed": 33,
+     "latency_s": 16.43,
+     "tokens": 255
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.98,
+     "reasoning": "We have seasonality data: ratio of 2021-01 to median of previous 12 months' January values is 0.37 (vs 0.45, 0.29, etc. across years). This is a consistent drop below 1 in many years, indicating a recurring pattern where January is lower than average. The same calendar month deviated in the same direction (below 1) in 10 of the 10 years, and the same calendar month was also flagged in multiple years (1983-01, 1989-01, 1996-01, 1999-01, 2003-01, 2009-01, 2010-01, 2012-01, 2014-01, 2017-01, 2019-01, 2024-01). This matches the definition of Seasonal Pattern: a recurring annual enforcement cycle where the same calendar month consistently shows lower values across multiple years. No data quality signs (no burst of later cancelled notices, records without identifier, implausible values). Page-Hinkley test found no sustained level shift. Therefore, the anomaly is due to seasonal pattern.",
+     "seed": 11,
+     "latency_s": 31.48,
+     "tokens": 264
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The seasonality check shows that for the same calendar month (January) across multiple years, the ratio (e.g., 0.45, 0.29, 0.44, 0.33, 0.48, 0.56, 0.34, 0.44, 0.49, 0.60) consistently deviates below 1 (i.e., lower than previous 12-month median). The same calendar month was flagged as anomalous in 10 of the previous years, indicating a recurring seasonal pattern. The anomaly is flagged for 2021-01, and the pattern matches the previous years, so this is a seasonal pattern, not a policy change, data-quality event, or genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 11.43,
+     "tokens": 179
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality check results: For calendar month 1 across multiple years, the ratio (2021-01: 0.37) is lower than typical previous years (0.45, 0.29, 0.44, 0.33, 0.48, 0.56, 0.34, 0.44, 0.49, 0.60). The deviation is consistently below 1 (stronger anomaly). The same calendar month (January) has been flagged in 10 of 10 years, showing a recurring pattern each year. This matches the definition of Seasonal Pattern (SP): a recurring annual enforcement cycle where the same calendar month deviates consistently across years. No events are mentioned, and there are no signs of data quality issues (no burst of cancelled notices, no missing identifiers, no implausible values). The Page-Hinkley test found no sustained level shift, indicating it's not a data-quality or genuine shift. Therefore, the anomaly is due to seasonal variation.",
+     "seed": 33,
+     "latency_s": 15.2,
+     "tokens": 234
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We need to decide category based on evidence. First, seasonality check: ratio of calendar month 1 to median of previous 12 months in each year shows decreasing trend: 2023-01:0.50, 2022-01:0.31, 2021-01:0.12, 2020-01:0.25, 2019-01:1.10, 2018-01:0.42, 2017-01:0.29, 2016-01:0.29, 2015-01:0.19, 2014-01:0.15. The anomaly is 2024-01 with value 43.4M, median previous 12 months 385.8M, ratio = 43.4/385.8 \u2248 0.112 (consistent with -89% deviation). In previous years, month 1 values are gene",
+     "seed": 11,
+     "latency_s": 40.37,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality data: for Jan 2024, the ratio to median of previous years is below 1 consistently across many years (0.50, 0.31, 0.12, 0.25, 1.10, 0.42, 0.29, 0.15). The same calendar month deviated below 1 in 9 of 10 years, and the month was also flagged in previous years (1989-01, 1999-01, 2014-01, 2020-01, 2021-01). This indicates a recurring seasonal pattern where January values are consistently lower than the median across years. No single event plausibly explains the timing because no known events within +-6 months. No data-quality signs: there are no bursts of cancelled or no_id records that cause anomalies; values are plausible; no system migration or implausibility. The Page-Hinkley test found no sustained level shift. Therefore, the anomaly is seasonal based on consistent calendar-month deviation across years.",
+     "seed": 22,
+     "latency_s": 15.76,
+     "tokens": 241
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The series shows consistent seasonal deviation for calendar month 1 across multiple years: 2023-01: 0.50, 2022-01: 0.31, 2021-01: 0.12, 2020-01: 0.25, 2019-01: 1.10, 2018-01: 0.42, 2017-01: 0.29, 2016-01: 0.29, 2015-01: 0.19, 2014-01: 0.15. All are below 1 (below median) and the same direction (below). The same calendar month was flagged as anomalous in multiple years (1989-01, 1999-01, 2014-01, 2020-01, 2021-01). This indicates a recurring seasonal pattern, not a one-time anomaly or data quality issue. No data quality signs (burst of cancelled records later, missing identifiers, implausible values) are present; the flagged month matches the seasonal pattern. Therefore, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 16.74,
+     "tokens": 257
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We need to determine the category for the anomaly in January 2024. First, check seasonality: The seasonality check shows the ratio of January values to the median of previous 12 months for each year. All ratios are below 1, indicating January is consistently lower than previous medians. The same calendar month deviated in the same direction (below 1) in 9 of the 10 years. Also, the same calendar month was flagged in multiple years (list includes many years). This matches the definition of Seasonal Pattern: a recurring annual enforcement cycle where the same calendar month typically shows lower counts due to seasonal factors. The detectors flagged it (zscore, mad) and ensemble score 0.57 near threshold. No Page-Hinkley test shift. No data quality issues indicated (no burst of cancelled notices, no missing identifiers). The anomaly is consistent across years, indicating a seasonal pattern rather than a policy change, data quality problem, or genuine shift. Therefore, category is SP (Seasonal Pattern). Confidence high based on clear seasonal evidence.",
+     "seed": 11,
+     "latency_s": 30.23,
+     "tokens": 237
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The seasonality check shows that for January across multiple years, the ratio compared to the median of previous 12 months is consistently below 1 (all values < 1), indicating a recurring downward trend for that calendar month. The same calendar month (January) was flagged as anomalous in multiple years (9 of 10 years checked). This indicates a seasonal pattern: the same calendar month deviates in the same direction across years. The anomaly is due to seasonal variation, not a policy change, data quality issue, or genuine enforcement shift. There are no signs of data quality problems (no burst of cancelled notices, missing identifiers, implausible values). The Page-Hinkley test also shows no sustained level shift. Therefore, the anomaly is Seasonal Pattern.",
+     "seed": 22,
+     "latency_s": 11.2,
+     "tokens": 174
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We need to decide the anomaly category based on evidence. First, check seasonality: The ratio of calendar month 1 (Jan) to median of previous 12 months is around 0.33-1.01. For most years, the ratio is less than 1, indicating lower counts than average. The same calendar month deviated in same direction in 9 of 10 years, and also flagged in multiple past years (1983-01, etc.). This strongly suggests a seasonal pattern. The Page-Hinkley test found no sustained level shift, so not a real change. No data-quality signs (no burst of later cancelled notices, no records without identifier in the flagged month). Therefore, the anomaly is Seasonal Pattern (SP).",
+     "seed": 33,
+     "latency_s": 11.27,
+     "tokens": 175
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2018-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality: The ratio of calendar month 6 across years shows most are near 1, with a few above 1. The anomaly is flagged because 2018-06 is above average (3,468 vs median 1,310). However, the seasonality check indicates that month 6 usually deviates in same direction (above 1) in 5 of the 10 years. This suggests a seasonal pattern where month 6 is typically higher. The data shows consistent direction across years, so the anomaly is likely seasonal. However, note that 2018-06 is flagged and the Page-Hinkley test found a sustained level shift within 2 months. The known event is a policy change in June 2018 (new federal decree). This is a policy-driven change, which explains the anomaly because the event plausibly explains timing and direction. Therefore, the category is PDC (Policy-Driven Change).",
+     "seed": 11,
+     "latency_s": 28.27,
+     "tokens": 217
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "We have a series of data points showing monthly infraction notices. The anomalous month is 2018-06 with value 3,468, which is higher than previous medians (+165% ratio). Seasonality check shows that for the previous years, month 6 had ratios ranging from 0.92 to 1.14, but 5 of the 10 years had ratios above 1 (i.e., same direction deviation). The same calendar month was flagged as anomalous in no other year. A Page-Hinkley test found a sustained level shift within 2 months: yes. The known event is a policy change: New federal decree changes the administrative procedure for issuing and recording infraction notices in 2018-06 itself. This event plausibly explains the timing and direction (increase). Therefore, according to rule 2, if a listed event plausibly explains the timing and direction, the anomaly is policy-driven (PDC). The other categories are not appropriate: it's not seasonal (since multiple years show same direction but not all flagged; the same month was flagged only once overall). It's not a data-quality event (no signs of reporting failure, cancellation bursts, or implausibility). It's not a genuine enforcement shift because the policy change is the explanation. So category is PDC.",
+     "seed": 22,
+     "latency_s": 19.12,
+     "tokens": 296
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The seasonality check shows that month 6 has deviated above 1 in 5 of the previous 10 years, consistent direction. This matches the definition of Seasonal Pattern (SP). The Page-Hinkley test found a sustained level shift within 2 months, but the same calendar month was also flagged in other years, indicating a recurring seasonal pattern, not a one-time shift. No evidence of data quality issues (no burst of cancelled notices, no missing identifiers). There is a policy event (New federal decree) that occurred around the same time as the anomaly. However, the policy event is exactly the month flagged, which aligns with the timing but the deviation direction is consistent across years, making it seasonal rather than policy-driven (PDC). The policy event is a specific event that may explain the anomaly, but the seasonality check indicates a recurring pattern across multiple years, which is characteristic of SP. Since the same calendar month deviated in the same direction in multiple years, and the pattern repeats, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 15.11,
+     "tokens": 234
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.6,
+     "reasoning": "First, check seasonality: ratio of calendar month 4 across years varies (0.70, 1.41, 1.06, 1.14, 1.76, 0.76, 0.82, 0.48, 0.80, 1.06). Most are below or around 1, with only a few above 1 (2015-04: 1.06, 2016-04: 1.41, 2013-04: 1.76). The direction is not consistently above 1 in the same way, and not all months deviate similarly. So seasonality does not strongly indicate a recurring pattern; the anomaly is not purely seasonal.",
+     "seed": 11,
+     "latency_s": 25.74,
+     "tokens": 172
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.96,
+     "reasoning": "We have seasonality data: For calendar month 4, the ratios to median of previous 12 months are mostly around 0.8-1.4, with a few above 1. The same month deviated above 1 in 5 of the 10 years, and also flagged in 1992-04. The Page-Hinkley test indicates a sustained level shift within 2 months, which matches a real change in enforcement intensity. There is a known event: New law changes the rules and minimum values of environmental fines in 2018-04 (+0 months, policy). This event plausibly explains the timing and direction (increase). Therefore, the anomaly is policy-driven (PDC). No data quality signs present (no burst of cancelled records, no missing identifiers, values plausible). The deviation is due to a real legislative change, not seasonality, data quality, or an unknown shift. Confidence high.",
+     "seed": 22,
+     "latency_s": 13.91,
+     "tokens": 213
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The seasonality check shows ratio of calendar month 4 across years: some months are above 1 (deviation above median). The same calendar month deviated in the same direction (above 1) in 5 of the 10 years, and also flagged in 1992-04. The Page-Hinkley test indicates a sustained level shift within 2 months, which aligns with a genuine enforcement shift or policy change. Known event: New law changes the rules and minimum values of environmental fines in 2018-04 (+0 months). This event plausibly explains timing and direction (increase). Therefore, the anomaly is policy-driven (PDC).",
+     "seed": 33,
+     "latency_s": 10.48,
+     "tokens": 160
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2015-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "First, check seasonality: The ratio of calendar month 6 across years shows most are near 1, with some below 1. The anomaly in 2015-06 is below median and ratio ~0.39 (560/1444). The same month deviated below 1 in 5 of the 10 years, consistent with seasonal pattern. However, the anomaly is flagged because value is significantly lower. The Page-Hinkley test found a sustained level shift within 2 months, which suggests a real change in enforcement intensity, not just seasonal. Also, known event: 2015-06 policy restructuring moves inspection teams and changes enforcement priorities. This plausibly explains timing and direction (lower notices). So policy-driven change fits. No data quality signs: no burst of cancelled or no_id records; values plausible. The same month was flagged only in 2015, not other years, but that's okay. Therefore category is PDC (Policy-Driven Change). Confidence high.",
+     "seed": 11,
+     "latency_s": 28.78,
+     "tokens": 228
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data: ratio of calendar month 6 across years. Many years show deviations below 1 (e.g., 2006-06: 0.64, 2007-06: 0.78). In 2015-06, value 560, median of previous 12 months is 1,444, ratio = 560/1444 \u2248 0.387. Seasonal pattern: ratio is lower than typical previous years? We have 5 years with ratio below 1 (specifically 2006-06, 2007-06, maybe others). The same calendar month deviated in same direction (below 1) in 5 of 10 years. That's seasonal pattern SP. No othe",
+     "seed": 22,
+     "latency_s": 26.32,
+     "tokens": 400
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The anomaly is for calendar month 6 (2015-06). Seasonality check shows the ratio of June to previous 12 months median varies; most years are around 1.0, but 5 of the 10 previous years had deviations below 1 (i.e., lower than June in other years). The same calendar month (June) also deviated in the same direction (below 1) in 5 previous years, but the current year (2015-06) is not flagged as anomalous in other years (none flagged). The Page-Hinkley test indicates a sustained level shift within 2 months. The known event is an agency restructuring that occurred in 2015-06 (policy). The event plausibly explains the timing and direction (lower notices). Therefore, the anomaly is policy-driven.",
+     "seed": 33,
+     "latency_s": 12.54,
+     "tokens": 193
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.7,
+     "reasoning": "First, check seasonality: The ratio of calendar month 4 across previous years shows varying ratios (1.41, 2.15, 2.02, 0.87, 0.58, 6.66, 0.73, 2.12, 0.42, 16.57). The anomaly is below 1 in 4 years (2001-04, 1998-04, 1997-04, maybe others). The same calendar month deviated in the same direction (below 1) in 4 of these 10 years. This is consistent with seasonal pattern? Seasonal pattern would require that month 4 consistently deviates in same direction across years, which is partially true but not uniformly (some years have ratios >1). The anomaly is flagged due to deviation, but the direction is below 1 (lower than previous months). The values: 2002-04 is 8.7M vs median 47.9M, ratio 0.18, which is much lower than previous months' median for that month. The seasonality check ratios vary widely, so it's not a clear seasonal pattern where month 4 is consistently lower across years; some years have higher values (ratio >1). However, the same calendar month deviated in same direction (below 1) in 4 years, which is a hint but not definitive seasonal pattern because the pattern is not uniform across all years. Need to consider other categories.",
+     "seed": 11,
+     "latency_s": 36.01,
+     "tokens": 328
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.92,
+     "reasoning": "We have an anomalous month 2002-04 with fine_total_brl = 8.7M, far below the median 47.9M (ratio 0.18). Seasonality check shows that in previous years, April values varied widely: 1.41, 2.15, 2.02, 0.87, 0.58, 6.66, 0.73, 2.12, 0.42, 16.57. Only 4 years (1998-04, 1997-04, 1996-04, 1995-04) had ratios below 1; the same calendar month deviated in the same direction (below 1) in 4 of these 10 years, and it was also flagged in 1992-04. No burst of cancelled or no_id records; values are plausible. The Page-Hinkley test found no sustained level shift. Known event: policy change in 2002-04 (New normative instruction changes). This plausibly explains the timing and direction: a policy-driven change. Therefore, the anomaly is policy-driven (PDC).",
+     "seed": 22,
+     "latency_s": 17.86,
+     "tokens": 272
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality using the provided ratios of calendar month 4 across years. The ratios vary widely (1.41 to 6.66), indicating no consistent seasonal pattern. The anomaly is below the median and many years show similar direction (below 1). However, the ratio varies, not consistently below 1 across all years, so seasonal pattern may not be uniform. Next, consider policy-driven change: there is a known event within +-6 months: New normative instruction changes which conducts are sanctioned with infraction notices in 2002-04. This event plausibly explains the timing (same month as anomaly) and direction (likely reduction due to new instruction). The event is plausible, so anomaly may be policy-driven. Data quality checks: no records with burst of notices later cancelled or missing identifiers; values seem plausible; no abrupt step; no implausibility. The Page-Hinkley test found no sustained level shift. Since a plausible event exists that matches timing and direction, the anomaly is likely policy-driven (PDC).",
+     "seed": 33,
+     "latency_s": 15.66,
+     "tokens": 241
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2001-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"The series shows an anomalous month (2001-06) with higher count than previous months. Seasonality check: the ratio of calendar month 6 across years varies (0.79, 1.04, 0.98, ..., 6.00). Only 4 out of 10 years had deviation above 1 (same direction). The same calendar month was flagged only for 2001-06 (not other years). The Page-Hinkley test found a sustained level shift within 2 months, which is a real change in enforcement intensity. This matches Genuine Enforcement Shift (GES). ",
+     "seed": 11,
+     "latency_s": 40.72,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have a single anomalous month (2001-06). The series is monthly counts of infraction notices. The anomaly is flagged due to a large deviation (zscore, mad, iforest). Seasonality check shows that month 6 has varied across years: most years have ratio around 0.8-1.0, but 1996-06 is 6.00, 1995-06 1.50, 1994-06 1.23, 1993-06 0.58. The current month (2001-06) has ratio 2.67 (value 5,080 vs median 1,902). However, the description says the same calendar month deviated in the same direc",
+     "seed": 22,
+     "latency_s": 26.25,
+     "tokens": 400
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The series shows an anomalous month (2001-06) with a high count (5,080 vs median 1,902). Seasonality check: calendar month 6 values across previous years are mixed (some below median, some above). Ratio of 2001-06 to previous 12 months median is 2.67, indicating higher than normal. The same calendar month deviated in the same direction (above median) in 4 of 10 previous years, and the same month was flagged only for 2001-06, not other years. Detectors flagged it; Page-Hinkley test found a sustained level shift within 2 months, indicating a real change. There are no signs of data quality events (cancelled, no_id counts are normal, no burst of cancelled records, no implausible values). The known event is a policy change (new federal decree) that plausibly explains the timing and direction (increase). Therefore, the anomaly is policy-driven change, not seasonal, data quality, or genuine shift.",
+     "seed": 33,
+     "latency_s": 15.2,
+     "tokens": 236
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-05",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality: the ratio of calendar month 5 across previous years shows variation (0.87 to 2.20). Some months deviate above 1, but not consistently; the 2018-05 value (1,993.7M) is above median of previous 12 months (217.4M, ratio 9.17). The same calendar month was flagged in 6 of 10 years, and also flagged in 1983-05. The Page-Hinkley test indicates a sustained level shift within 2 months, yes. Known event: a new law changes the rules and minimum values of environmental fines in 2018-05 (+0 months, policy). This event plausibly explains timing and direction (increase). Therefore, anomaly is policy-driven due to legislative change.",
+     "seed": 11,
+     "latency_s": 27.02,
+     "tokens": 191
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "We have a monthly time series of fine_total_brl for May 2018. The anomalous month is flagged by ensemble. Seasonality check: ratio of calendar month 5 across previous years shows varied values (0.87, 1.08, ..., 2.20). Some are above 1, some below, and there is variation; however, the same calendar month deviated in the same direction (above 1) in 6 of 10 years. This suggests some seasonal pattern but not consistent across all years. The Page-Hinkley test found a sustained level shift within 2 months: yes. Known event: 2018-05 new law changes rules and minimum values of environmental fines. This plausible event explains timing (same month) and direction (increase). Therefore, the anomaly is policy-driven change due to legislative change (PDC). No signs of data quality issues (cancelled and no_id counts are reasonable, no extreme outliers). The anomaly is not just large deviation but flagged due to policy change, which matches PDC category. Confidence high.",
+     "seed": 22,
+     "latency_s": 15.97,
+     "tokens": 245
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.94,
+     "reasoning": "First, check seasonality using the provided ratios of calendar month 5 across years. The ratios vary (0.87, 1.08, 1.23, 0.78, 1.03, 1.76, 0.95, 0.39, 2.20, 1.36). Only a few are consistently above 1; the majority are less than 1, and the pattern is not uniform (some increase, some decrease). The statement says the same calendar month deviated in the same direction (above 1) in 6 of these 10 years, but the direction (above 1) is not consistent across years; some ratios are less than 1. So seasonality is not clearly present as a recurring annual pattern. Next, consider events: there is a known event within +-6 months: New law changes the rules and minimum values of environmental fines in 2018-05. This plausible event explains timing and direction (increase). The anomaly month is 2018-05, and the event occurs exactly that month. Therefore, the anomaly is policy-driven (PDC). No evidence of data quality issues (no burst of cancelled notices later, few no_id records, moderate cancellations in earlier months, but the anomaly month itself has no_id=0 and cancelled=1188, which is large but not extreme; the Page-Hinkley test indicates a sustained level shift, consistent with an event, not a data problem). The shift is explained by the new law, which is a policy change, matching PDC. The same calendar month was flagged in 1983-05, but that's an outlier; the main evidence is the 2018-05 event. Thus, category is PDC.",
+     "seed": 33,
+     "latency_s": 25.63,
+     "tokens": 388
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2004-12",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.95,
+     "reasoning": "Step 1: Seasonality check. The ratio of calendar month 12 to the median of its previous 12 months shows varying ratios (1.04, 0.57, 0.57? Actually 0.57 etc). Several years show below-1 deviations (2002-12: 0.57, 1999-12: 0.66, 1998-12: 0.83, 1997-12: 0.80, 1996-12: 1.04, 1995-12: 0.88, 1994-12: 1.03). The same calendar month deviated in the same direction (below 1) in 6 of these 10 years. This indicates consistent seasonal pattern across years. However, the anomaly is only in 2004-12, not all years. So it's not a pure seasonal pattern where every December is low; it's intermittent. Step 2: Events. There is a known event: Agency restructuring moves inspection teams and changes enforcement priorities, which occurred in 2004-12 (+0 months). This plausibly explains the timing (December) and direction (below 1). The event explains the anomaly direction (the ratio is below 1, which matches the restructuring changing priorities). So this is policy-driven. Step 3: Records quality checks - no burst of cancelled/no_id records; values are plausible; Page-Hinkley test found sustained level shift within 2 months: yes. So not a DQE. Step 4: The anomaly is explained by the known event, which is policy-driven. Therefore category is PDC. Confidence is high because the event clearly explains the anomaly.",
+     "seed": 11,
+     "latency_s": 39.13,
+     "tokens": 383
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "We have seasonality ratios for previous years: most are around 0.66-1.04 for December, indicating a pattern where December is often lower (below 1) in about 6 of the 10 years. The same calendar month (December) was flagged as anomalous in 1987-12 and 1988-12, showing recurring pattern. The Page-Hinkley test found a sustained level shift within 2 months, indicating a real change over time, not just seasonal. There is a known event: 2004-12 is an agency restructuring that moves inspection teams and changes enforcement priorities. This event plausibly explains the timing and direction (lower count) and matches the policy-driven category. Therefore, the anomaly is due to policy-driven change.",
+     "seed": 22,
+     "latency_s": 11.75,
+     "tokens": 184
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The seasonality check shows the ratio of calendar month 12 across years ranges from 0.57 to 1.35. The anomalous month 2004-12 has a ratio of 0.33 compared to its previous 12 months median, which is below typical seasonal patterns. However, the same calendar month deviated in the same direction (below 1) in 6 of the 10 previous years, indicating a consistent seasonal pattern. The Page-Hinkley test found a sustained level shift within 2 months, which aligns with a genuine enforcement shift rather than a simple seasonal pattern. The known event 'Agency restructuring moves inspection teams and changes enforcement priorities' plausibly explains the timing and direction (a reduction in notices). This event is not just a policy mandate but a specific restructuring that could cause a real change in enforcement intensity. Since the event plausibly explains the anomaly, the category is Policy-Driven Change (PDC).",
+     "seed": 33,
+     "latency_s": 13.84,
+     "tokens": 217
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "The series is fine_total_brl (fine totals in Reais). Anomalous month is 2002-06 with value 9.6M, median of previous 12 months 46.6M, ratio -79%. Seasonality check: ratio of calendar month 6 across years shows most months are above 1, but 2002-06 ratio is below 1 (9.6M vs median 46.6M). The ratio list indicates that 2002-06 is lower than previous years' same month values (2001-06: 0.78, 2002-06: 9.6M vs median 46.6M). The same calendar month deviated in same direction (below 1) in 5 of the 10 years, and also flagged in 1986-06 and 2008-06. However, there is a known event: New normative instruction changes which conducts are sanctioned with infraction notices in 2002-06 (+0 months, policy). This event plausibly explains the timing and direction of the deviation (the policy change likely reduces enforcement intensity or changes sanction criteria, leading to lower fines). Therefore, the anomaly is policy-driven (PDC).",
+     "seed": 11,
+     "latency_s": 33.6,
+     "tokens": 281
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.9,
+     "reasoning": "We have seasonality data: ratio of calendar month 6 across previous years is mixed (0.78, 1.16, 1.11, 1.02, 0.60, 6.28, 0.75, 1.14, 0.31, 0.95). Most are >0.8 or >1, but some are below 1. The series shows a sustained level shift detected (Page-Hinkley test yes). Known event: New normative instruction changes which conducts are sanctioned with infraction notices in 2002-06 (+0 months, policy). This event plausibly explains the timing and direction (the month deviates below median). So the anomaly is policy-driven. There is no indication of data quality issues (no burst of cancelled or no_id records; median values typical; only one anomaly per month). No indication of seasonal pattern across all years (only 5 out of 10 years deviated below 1, but same calendar month flagged in multiple years). However, the known policy event specifically matches the timing, so SP does not apply because it's not a recurring annual cycle; it's a specific normative change. The flag is due to a policy change, not a genuine enforcement shift, nor data quality. Therefore category is PDC.",
+     "seed": 22,
+     "latency_s": 19.28,
+     "tokens": 296
+    },
+    {
+     "category": "GES",
+     "confidence": 0.7,
+     "reasoning": "First, check seasonality using the provided ratios of calendar month 6 across years. The ratios vary (0.78, 1.16, 1.11, 1.02, 0.60, 6.28, 0.75, 1.14, 0.31, 0.95). Only a few are consistently below 1; the majority are not uniformly below 1 across all years. The same calendar month deviated in the same direction (below 1) in 5 of the 10 years, but the pattern is not consistent across all years (some years have ratios >1). Therefore, seasonality does not hold uniformly; it's not a clear seasonal pattern.",
+     "seed": 33,
+     "latency_s": 10.89,
+     "tokens": 169
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2022-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"Step 1: Check seasonality using calendar month 5 values from previous years. The ratio of 2022-05 to median of previous 12 months is 2.69 (above 1), indicating an anomaly. Seasonal pattern test: ratio values: 0.96, 0.88, 0.88, 1.05, 0.92, 1.11, 1.30, 0.79, 1.18, 1.21. Only 6 years have ratio >1 (2020-05: 0.88? actually 0.88 is less than 1, so maybe only 2021-05, 2019-05, 2017-05? Wait: 2021-05 ratio? Not given directly but median of previous 12 months is 807, 2021-05 value is 715,",
+     "seed": 11,
+     "latency_s": 40.16,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data: for May months across years, the ratio compared to median of previous 12 months is around 0.96-1.51. Six years show above-1 deviation (2020-05: 0.88 is below, but 2019-05: 1.51, 2018-05: 1.05, 2017-05: 0.92, 2016-05: 1.11, 2015-05: 1.30, 2014-05: 0.79, 2013-05: 1.18, 2012-05: 1.21). Count of years with ratio >1 is roughly 4 (2019, 2016, 2015, 2013). But the problem says 'same calendar month deviated in the same direction (above 1) in 6 of these 10 years.'",
+     "seed": 22,
+     "latency_s": 26.61,
+     "tokens": 400
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The anomaly is in May 2022. Seasonality check shows May values across years: 2021-05 ratio 0.96, 2020-05 0.88, 2019-05 1.51, 2018-05 1.05, 2017-05 0.92, 2016-05 1.11, 2015-05 1.30, 2014-05 0.79, 2013-05 1.18, 2012-05 1.21. Several months have >1 deviation, indicating seasonal pattern with variation across years. The same calendar month (May) deviated in the same direction (above 1) in 6 of the 10 previous years, and May 2006 was also flagged. A Page-Hinkley test found a sustained level shift within 2 months, which is a real change in enforcement intensity (not explained by seasonality). No events, cancelled or no_id records indicate no policy-driven change. Since the anomaly is seasonal across years and also shows a sustained shift, but the shift is likely due to enforcement intensity change, not seasonality alone. The data quality signs are absent (no burst later cancelled, no records without identifier). Therefore, the anomaly is a genuine enforcement shift due to real change in enforcement intensity.",
+     "seed": 33,
+     "latency_s": 20.21,
+     "tokens": 304
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality: the ratio of calendar month 5 across years shows varying deviations. Some years (2017-05: 0.87, 2016-05: 1.08, etc.) have deviations of varying sizes, but the problem states the same calendar month deviated in the same direction (above 1) in 6 of these 10 years. Indeed, 2017-05 ratio 0.87 is below 1, so not above 1; 2016-05 ratio 1.08 >1, 2015-05 1.23 >1, 2014-05 0.78 <1, 2013-05 1.03 >1, 2012-05 1.76 >1, 2011-05 0.95 <1, 2010-05 0.39 <1, 2009-05 2.20 >1,",
+     "seed": 11,
+     "latency_s": 40.27,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data for May across multiple years. The ratio for each previous year shows deviations: many years have values above 1 (e.g., 2013-05: 1.03, 2014-05: 1.08, 2015-05: 1.23, 2016-05: 1.08, 2017-05: 0.87, 2018-05 is anomalous with 1,462.1M vs median 217.4M). The same calendar month deviated above median in 6 of 10 years, and also flagged in 1983-05. The Page-Hinkley test found no sustained level shift. The anomaly detection flags it. Data quality checks show some ca",
+     "seed": 22,
+     "latency_s": 26.4,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly is in May 2018. Seasonality check shows ratio of May values across years: 2017-05 0.87, 2016-05 1.08, 2015-05 1.23, 2014-05 0.78, 2013-05 1.03, 2012-05 1.76, 2011-05 0.95, 2010-05 0.39, 2009-05 2.20, 2008-05 1.36. The same calendar month deviated in the same direction (above 1) in 6 of these 10 years. That indicates a consistent pattern across years, which matches seasonal pattern (SP). There is no indication of policy change (no event plausibly explains timing), no data quality signs (cancelled and no_id counts are normal, no burst of cancellations, no outliers in records). The Page-Hinkley test shows no sustained level shift. Therefore the anomaly is seasonal pattern.",
+     "seed": 33,
+     "latency_s": 15.67,
+     "tokens": 240
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2004-12",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality: the ratio of calendar month 12 across years shows variation (some above 1, some below). However, the same calendar month deviated in the same direction (below 1) in 6 of the 10 years, indicating a consistent seasonal pattern? Wait, the ratio is below 1 for many years, meaning lower than previous median. The values are percentages relative to median? The median of previous 12 months is 2,168. The value for 2004-12 is 72, which is much lower than median (72",
+     "seed": 11,
+     "latency_s": 40.1,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "We have seasonality ratios for December across multiple years. Most are close to 1 (e.g., 2002-12: 0.57, 2003-12: 1.04, etc.). Six of the ten years showed deviation below 1 (consistent direction). Also, December was flagged anomalous in 1987-12 and 1988-12, indicating a recurring seasonal pattern across multiple years. The Page-Hinkley test found a sustained level shift within 2 months, which aligns with seasonal variation rather than a true shift. No data quality issues (cancelled or no_id are zero or normal). Therefore, the anomaly is due to seasonal pattern, not policy, data-quality, or genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 11.3,
+     "tokens": 175
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The seasonality check shows varying ratios for calendar month 12 across years; most are below 1 (some below 0.5) but not consistently the same direction across all years. The same calendar month (2004-12) was flagged as anomalous in previous years, indicating possible seasonality, but the ratios differ. The Page-Hinkley test indicates a sustained level shift within 2 months, which suggests a real change in enforcement intensity, not purely seasonal. No known events explain timing or direction. Data quality signs are minimal (no burst of cancelled notices, no records without identifier, values plausible). Therefore, the anomaly is likely a genuine enforcement shift due to real change in enforcement intensity.",
+     "seed": 33,
+     "latency_s": 10.44,
+     "tokens": 163
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2002-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality: the ratio of calendar month 4 across years shows varying values, but the anomaly is below 1 in 4 of 10 years, indicating a consistent downward deviation, which fits seasonal pattern? The ratio being below 1 in multiple years suggests a seasonal pattern where month 4 is typically lower than median, but the given ratios are not all below 1; they vary widely. The anomaly is extreme (655,059 vs median 47.9M). The same calendar month deviated in same direction",
+     "seed": 11,
+     "latency_s": 40.28,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality ratios for April across years: 2001-04: 1.41, 2000-04: 2.15, 1999-04: 2.02, 1998-04: 0.87, 1997-04: 0.58, 1996-04: 6.66, 1995-04: 0.73, 1994-04: 2.12, 1993-04: 0.42, 1992-04: 16.57. The anomaly is April 2002 with fine_total_brl = 655,059 (0.655M) while median previous 12 months = 47.9M (-99% ratio). Seasonality ratios are all above 0.87-2.12 etc., but note that 2002-04 value is below the median, and the ratio of calendar month 4 to median is given as 1.41, 2.15",
+     "seed": 22,
+     "latency_s": 26.26,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We need to decide the anomaly category for the series fine_total_brl in month 2002-04. First, check seasonality: The ratio of calendar month 4 across previous years shows variation; typical ratios are >1 for many years, <1 for others. The values are 1.41 (2001-04), 2.15 (2000-04), 2.02 (1999-04), 0.87 (1998-04), 0.58 (1997-04), 6.66 (1996-04), 0.73 (1995-04), 2.12 (1994-04), 0.42 (1993-04), 16.57 (1992-04). The same calendar month deviated in the same direction (below 1) in 4 of t",
+     "seed": 33,
+     "latency_s": 26.19,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2001-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "The seasonality check shows that in previous years, the ratio of calendar month 6 to the median of its previous 12 months varied (0.79, 1.04, 0.98, 0.78, 0.78, 1.50, 1.23, 0.58, 0.85, 0.57). Only 4 of these 10 years had a deviation above 1 (positive direction). The value for 2001-06 is 4,470 with median 1,902 (+135%), indicating a strong deviation. The anomaly is flagged for 2001-06. The same calendar month deviated in the same direction in 4 years, but only in 2001-06 itself (the flagged month). No other years are flagged for that month. There is no known event explaining the timing. The Page-Hinkley test found no sustained level shift. Data quality issues: cancelled and no_id columns show normal counts (e.g., 84, 80, etc.) and no_id is 0 except for 2001-06 where no_id = 2012, which is a record without an identifier - this could be an anomaly but is a single record with a specific id, not a burst or widespread problem. The deviation is due to an anomalous month, not a data quality problem like burst of cancelled records. Given the pattern, the anomaly is not fully explained by seasonality (since only 4 out of 10 years have similar deviation, and the magnitude varies). There is no policy event. So the best explanation is a genuine enforcement shift: a real change in enforcement intensity not explained by policy, seasonality, or data quality.",
+     "seed": 11,
+     "latency_s": 38.59,
+     "tokens": 379
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data for June (month 6) across multiple years: ratios 0.79, 1.04, 0.98, 0.78, 0.78, 1.50, 1.23, 0.58, 0.85, 0.57. The anomalous June 2001 had value 4,470 with median of previous 12 months 1,902 (+135%). The seasonality check indicates that in most years, June values are lower than June 2001 (ratios < 1.5, some below 1). The same calendar month deviated above 1 in 4 of the 10 years (likely 1999-06, 2000-06, 2001-06, maybe 2002-06? Actually data shows 2000-06 rat",
+     "seed": 22,
+     "latency_s": 26.33,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We need to decide the anomaly category for 2001-06 based on the given evidence. First, examine seasonality: we have ratios for June in previous years: 2000-06: 0.79, 1999-06: 1.04, 1998-06: 0.98, 1997-06: 0.78, 1996-06: 6.00, 1995-06: 1.50, 1994-06: 1.23, 1993-06: 0.58, 1992-06: 0.85, 1991-06: 0.57. The values vary widely but most are below 1.0 except 1999-06 (1.04) and maybe 1998-06 (0.98). The ratio is month-to-median of previous 12 months. The series shows some variation but no",
+     "seed": 33,
+     "latency_s": 26.66,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"The series is fine_total_brl, fine amount in Reais. Anomalous month is 2018-04 with value 1,278.8M, median of previous 12 months 199.1M, ratio +542% (median 199.1M, actual 1,278.8M => ratio 1,278.8/199.1 \u2248 6.42). Seasonality check: ratio of calendar month 4 to median of previous 12 months in previous years: values given: 2017-04 ratio 0.70, 2016-04 1.41, 2015-04 1.06, 2014-04 1.14, 2013-04 1.76, 2012-04 0.76, 2011-04 0.82, 2010-04 0.48, 2009-04 0.80, 2008-04 1.06. All are between ",
+     "seed": 11,
+     "latency_s": 40.65,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data for April (month 4) across previous years. The ratio shows variation: 2017-04: 0.70, 2016-04: 1.41, 2015-04: 1.06, 2014-04: 1.14, 2013-04: 1.76, 2012-04: 0.76, 2011-04: 0.82, 2010-04: 0.48, 2009-04: 0.80, 2008-04: 1.06. The same calendar month deviated in the same direction (above 1) in 5 of these 10 years. The April values are sometimes above 1 (i.e., larger) and sometimes below 1? Actually all given ratios are above 1? 0.70 is below 1, but the direction ",
+     "seed": 22,
+     "latency_s": 26.52,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality using the provided ratios of calendar month 4 across years. The ratios vary (0.70, 1.41, 1.06, 1.14, 1.76, 0.76, 0.82, 0.48, 0.80, 1.06). Some months have values above 1 (positive deviation) in multiple years (5 out of 10). The pattern shows that month 4 usually deviates consistently in the same direction (above 1) across those years, indicating a seasonal pattern where April is higher than average in those years. Therefore, the anomaly is seasonal. The same calendar month was also flagged in 1992-04, but that's far earlier and may not be strong enough to override seasonality. The Page-Hinkley test found no sustained level shift, and there are no data quality events like many cancelled or no_id records. The median of previous 12 months is 199.1M, and April 2018 is 1,278.8M, which is above the median, but the seasonality check shows variation across years; however, the majority of ratios are >1, indicating typical seasonal deviation. The detection detectors (zscore, mad) flagged it, ensemble score 0.56 near threshold. No clear policy event or data quality issue. Thus, the anomaly is seasonal pattern.",
+     "seed": 33,
+     "latency_s": 20.65,
+     "tokens": 312
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2025-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.93,
+     "reasoning": "The seasonality check shows that April values vary significantly across years: 2024-04 ratio 0.48, 2023-04 1.43, 2022-04 1.33, 2021-04 0.81, 2020-04 0.85, 2019-04 1.05, 2018-04 1.19, 2017-04 0.65, 2016-04 1.09, 2015-04 1.22. Some are above 1, some below, indicating mixed pattern, not consistent seasonal deviation. The same calendar month (April) deviated below 1 in 4 of the 10 years, but the deviation direction is consistent (below 1). The anomaly is flagged due to low value (37 vs median 1088). No clear event explains the timing; no known events within +-6 months. Detectors flag it but no burst of cancelled or no_id records. Seasonality is not consistently seasonal (ratio varies). The Page-Hinkley test found no sustained level shift. Therefore, the anomaly is not seasonal (SP). It is not policy-driven (no event plausibly explains timing/direction; no known events). It is not data-quality (no burst of cancelled records or missing identifiers; values are plausible). So the anomaly is a genuine shift (GES) due to real change in enforcement intensity. Confidence is high based on evidence.",
+     "seed": 11,
+     "latency_s": 35.48,
+     "tokens": 330
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have a series of infraction notices per month. The anomalous month is 2025-04 with value 37, far below the previous 12-month median (1088) (-97%). Seasonality check shows ratios for April across years: 0.48, 1.43, 1.33, 0.81, 0.85, 1.05, 1.19, 0.65, 1.09, 1.22. Only 4 out of 10 previous years had ratios below 1 (April deviated below median in 4 years). The same calendar month was also flagged in 1996-04. Detectors flagged the anomaly (zscore, mad, iforest, lstm_ed). No Page-Hin",
+     "seed": 22,
+     "latency_s": 26.4,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"Step 1: Check seasonality. The seasonality check ratios for April across years show mixed values: 0.48, 1.43, 1.33, 0.81, 0.85, 1.05, 1.19, 0.65, 1.09, 1.22. The deviation in 2025-04 is 0.03 (37 vs median 1088). Some months are above 1 (positive deviation), some below (negative deviation). The same calendar month deviated in the same direction (below 1) in 4 of 10 years, indicating a consistent seasonal pattern? However, the direction varies (some above, some below) and the deviat",
+     "seed": 33,
+     "latency_s": 26.14,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2025-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality: the ratio of calendar month 6 across years shows varying values (0.89 to 2.38). Most are above 1, but three years (2017, 2016, 2015?) are below 1 indicating deviation below median. However, the pattern is not consistent (some above 1, some below). The median of previous 12 months is 389.9M, and 2025-06 is 12.7M, which is far below (ratio 0.03). The same calendar month deviated in the same direction (below 1) in 3 of 10 years, but also flagged in 1986 and ",
+     "seed": 11,
+     "latency_s": 40.41,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have series of fine_total_brl values for each month. The anomalous month is 2025-06 with value 12.7M, which is far below the median of previous 12 months (389.9M) resulting in a -97% ratio. Seasonality check: for calendar month 6 across previous years, the ratios are 0.89, 2.38, 1.26, 1.52, 1.56, 1.65, 1.11, 0.67, 1.26, 0.78. Only a few are below 1 (2024-06: 0.89, 2022-06: 1.26>1? Actually 1.26>1, but 0.67, 0.78). Wait the instruction: 'The same calendar month deviated in the s",
+     "seed": 22,
+     "latency_s": 26.25,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We need to decide the anomaly category based on evidence. First, check seasonality: The ratio of calendar month 6 across years shows variation; most are above 0.89, but some are below 1. The series median previous 12 months is 389.9M, and 2025-06 is 12.7M, which is far below (ratio 0.03). The seasonality check indicates that month 6 deviates below typical values in some years (2021-06, 2022-06, etc.) and is flagged in multiple years. The same calendar month deviated in same direct",
+     "seed": 33,
+     "latency_s": 26.22,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2015-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "The series shows that March 2015 is flagged anomalously with a large deviation (+141%). Seasonality check reveals that in previous years, March values deviated in the same direction (above 1) in 6 of 10 years, and the same calendar month was also flagged in 1981-03 and 1989-03. The Page-Hinkley test indicates a sustained level shift within 2 months, which suggests a real change in enforcement intensity, not a seasonal pattern. There are no signs of data problems (no burst of cancelled notices, no missing identifiers, values are plausible). The anomaly is not explained by policy-driven events (no known events within +-6 months) nor by data-quality events. Therefore, the anomaly is a genuine enforcement shift (Ges).",
+     "seed": 11,
+     "latency_s": 26.05,
+     "tokens": 184
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data: for calendar month 3, the ratios in previous years are mixed (some above 1, some below). The ratio for 2015-03 is 3,202 vs median 1,330 (+141%, ratio 2.41). The anomaly is flagged due to large deviation. Seasonality check: many years show deviation above 1, but not consistently same direction? Actually all ratios given are for March; they vary: 0.87, 0.73, 0.87, 0.87, 0.77, 0.87, 1.10, 1.12, 1.16. Some are below 1, some above; but the check says ratio of ",
+     "seed": 22,
+     "latency_s": 26.13,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The series shows a sustained level shift within 2 months according to the Page-Hinkley test, indicating a real change. Seasonality check shows that month 3 deviated above 1 in 6 of 10 years, with the same calendar month also flagged in past years (1981-03, 1989-03). This matches seasonal pattern criteria: same calendar month flagged in multiple years, consistent direction (above 1). Therefore the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 7.39,
+     "tokens": 116
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The series shows strong seasonal pattern: in 7 out of 10 prior years, March (calendar month 3) had ratios above 1 (above median), indicating consistent seasonal deviation. The anomaly month (2018-03) is flagged similarly, and the ensemble score indicates a sustained level shift within 2 months (yes). No clear policy event, no data-quality signs (no burst of cancelled/no_id records, implausible values). The same calendar month is flagged across multiple years, which matches seasonal pattern definition. Therefore, the anomaly is seasonal (SP).",
+     "seed": 11,
+     "latency_s": 24.03,
+     "tokens": 138
+    },
+    {
+     "category": "GES",
+     "confidence": 0.93,
+     "reasoning": "We have seasonality data: for calendar month 3 across previous years, ratios are 1.64, 1.14, 0.80, 0.70, 1.49, 1.10, 1.20, 2.00, 0.57, 1.49. Only 7 years show deviation above 1 (i.e., higher than median). Seasonality check says if same calendar month deviated in same direction in multiple years, it's seasonal. Here, 7 out of 10 years show deviation above 1, consistent direction (above median). Also same calendar month flagged in 1981-03, 1986-03, 1988-03 indicates recurring anomaly pattern. The ensemble score 0.44 (<0.5 threshold) but flagged due to large deviation (zscore and mad). No data quality events: cancelled and no_id counts are moderate but no extreme spikes (81 cancelled notices in 2017-03, but other months similar). Page-Hinkley test found sustained level shift within 2 months, which explains anomaly. However, the shift is not due to policy event (no known events) and not due to seasonal pattern (consistent across years). The shift is likely a genuine change in enforcement intensity (real enforcement shift). Seasonality check indicates pattern repeats, but the test found a level shift within the month, meaning the anomaly is not purely seasonal but a sustained increase. Since there is a shift due to change in enforcement intensity not explained by seasonality or policy, and no data quality signs, the anomaly is a genuine enforcement shift.",
+     "seed": 22,
+     "latency_s": 23.57,
+     "tokens": 356
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "The anomaly is in March 2018. Seasonality check shows that March values deviate above 1 in 7 of 10 previous years, and the same calendar month was flagged in multiple years (1981, 1986, 1988). This indicates a consistent seasonal pattern where March tends to be higher. The Page-Hinkley test confirms a sustained level shift within 2 months, which aligns with seasonal variation rather than a one-time policy change. No data quality events are evident (only normal counts, no burst of cancelled notices or missing identifiers). No policy-driven event is mentioned. Therefore, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 9.92,
+     "tokens": 153
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality: ratio of calendar month 2 across previous years shows variation (0.79 to 9.10). Most are below 1, but not consistently below 1; some months are above 1. However, six of ten years showed deviation below 1, and the same calendar month was flagged in multiple years (1989-02, 1993-02, 1996-02). This suggests a recurring pattern but not a strict seasonal ratio across all years. The anomaly is flagged due to being below the median of previous 12 months (-67%). The Page-Hinkley test found a sustained level shift within 2 months: yes. No known events. No data quality signs (cancelled, no_id counts are low and consistent). Since the same calendar month has been flagged in multiple years with similar direction (below median), and there is no clear policy event or data problem, this aligns with a genuine enforcement shift (GES). The deviation is due to a real change in enforcement intensity not explained by seasonality or events.",
+     "seed": 11,
+     "latency_s": 29.37,
+     "tokens": 238
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality ratios for February across multiple years. The ratio shows a clear pattern: many years (6 of 10) have ratios below 1, indicating February typically is lower than the median of previous 12 months. The same calendar month (February) was flagged as anomalous in multiple years (1989-02, 1993-02, 1996-02). The anomaly is flagged due to the month being consistently lower than expected (below 1). This matches the definition of Seasonal Pattern: a recurring annual enforcement cycle where the same calendar month deviates consistently in the same direction across years. The Page-Hinkley test also indicates a sustained level shift within 2 months, but the seasonality pattern is repeated across multiple years, which aligns with SP rather than GES. No data quality events are evident (no burst of cancellations or missing identifiers). Therefore, the anomaly is seasonal.",
+     "seed": 22,
+     "latency_s": 13.39,
+     "tokens": 208
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "We have seasonality ratios for February across many years. Most are below 1 (decrease) and some are above 1. The ratio for 2001-02 is 0.33 (very low). The anomaly is in February 2001 with value 687 vs median 2,062 (-67%). Seasonality check shows that February has been consistently below the median in 6 of 10 years, and also flagged in 1989-02, 1993-02, 1996-02. This indicates a recurring pattern where February deviates similarly across years. The Page-Hinkley test found a sustained level shift within 2 months, but the shift is small (0.33 vs typical ~0.79-1.10). The data quality indicators (cancelled, no_id) are stable and no outliers. The anomaly is due to a pattern rather than a one-time event or data problem. Therefore, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 14.14,
+     "tokens": 219
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2015-01",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.96,
+     "reasoning": "The anomaly is in January 2015. Seasonality check shows that month 1 typically has ratios like 0.15, 0.62, 0.29, 0.99, etc. For 2015, ratio = 26.5M / 240.7M \u2248 0.11, which is lower than previous years' typical ratios (most below 1). The same calendar month deviated in the same direction (below 1) in 9 of the 10 previous years. Also, the same calendar month was flagged as anomalous in multiple years (1989-01, 1999-01, 2014-01, 2020-01, 2021-01, 2024-01). This matches the definition of Seasonal Pattern: a recurring annual enforcement cycle where the same calendar month consistently deviates in the same direction across years. The Page-Hinkley test found a sustained level shift within 2 months, but the deviation is consistent with seasonal pattern rather than a one-time shift. No data-quality signs (no burst of cancelled notices, no missing identifiers). No policy event explained. Therefore, the anomaly is seasonal.",
+     "seed": 11,
+     "latency_s": 31.82,
+     "tokens": 268
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data: for Jan 2015, ratio = 0.15 compared to previous year median; in 9 of 10 years, Jan deviated below 1 (i.e., lower than previous medians). Also, Jan 2015 was flagged as anomalous in multiple years (1989, 1999, 2014, 2020, 2021, 2024). The Page-Hinkley test indicates a sustained level shift within 2 months, which is a real change. No data quality signs (no burst of cancelled notices, no missing identifiers). The anomaly is not due to policy (no event plausib",
+     "seed": 22,
+     "latency_s": 26.58,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "The anomaly is in January 2015. The seasonality check shows that January values across previous years are consistently below 1 (ratio < 1) in 9 of 10 years, indicating a recurring seasonal deviation in calendar month 1. The same month was flagged in multiple years (1989, 1999, 2014, 2020, 2021, 2024). The Page-Hinkley test indicates a sustained level shift within 2 months. This matches SP (Seasonal Pattern) because the deviation is consistent across years for the same calendar month and is explained by the seasonal cycle, not a data problem or real enforcement shift. No evidence of data quality events (bursts of cancelled/no_id records, implausible values) or policy events. Therefore, the anomaly is seasonal.",
+     "seed": 33,
+     "latency_s": 12.42,
+     "tokens": 188
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-07",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.85,
+     "reasoning": "First, check seasonality: ratio of July values vs median of previous 12 months across years shows varied ratios (0.93 to 2.15). Some months are above median, some below, not consistent pattern. However, same calendar month deviated in same direction (above 1) in 4 of 10 years, which suggests a possible seasonal pattern? But the ratios are not uniformly high; some are low (<1). The anomaly is defined as same calendar month flagged in multiple years with consistent direction. The data shows 4 years with ratio >1 (1999-07, 2000-07, 2001-07, 2002-07? Actually 2002-07 ratio not given but likely similar). However, the definition requires same calendar month flagged in other years too, which is true (1989-07, 1998-07, 1997-07, 1996-07). The series shows a sustained level shift within 2 months according to Page-Hinkley test: yes. No events or data quality signs. No cancelled or no_id records in the anomalous month (2001-07 has 0 cancelled, 0 no_id). The large deviation is due to flagging; it's not due to data quality issues. The Page-Hinkley test indicates a shift, not just noise. This suggests a genuine change in enforcement intensity, likely due to real operational change rather than policy or seasonal. Thus category is GES (Genuine Enforcement Shift).",
+     "seed": 11,
+     "latency_s": 36.62,
+     "tokens": 336
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data: For July (month 7) in previous years, the ratio compared to the median of its previous 12 months shows varying values: 2000-07: 0.93, 1999-07: 1.21, 1998-07: 0.98, 1997-07: 0.94, 1996-07: 2.15, 1995-07: 1.46, 1994-07: 0.98, 1993-07: 0.88, 1992-07: 1.11, 1991-07: 0.37. The same calendar month (July) deviated above 1 in 4 of these 10 years (likely 1999-07, 2000-07? Wait 2000-07 ratio 0.93 is below 1, so not above; 1999-07 1.21 >1; 1997-07 0.94 <1; 1996-07 2",
+     "seed": 22,
+     "latency_s": 26.81,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality using the provided ratios and direction. The values for July in previous years are mostly around 1 (e.g., 0.93, 0.98, 0.94, 0.98, 0.88, 1.11, 1.46, 1.21, 2.15). Only 1996-07 is significantly higher (2.15). The same calendar month deviated in the same direction (above 1) in 4 of the 10 years. The anomaly is flagged for 2001-07, which is above 1 (value 6,260 vs median 2,062). This suggests a non-seasonal pattern, not pure seasonal deviation. Seasonality chec",
+     "seed": 33,
+     "latency_s": 26.78,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-05",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality: the ratio of calendar month 5 across previous years shows varying deviations; most are above 1 but not consistently same direction across all years. The median ratio is around 1.0, and the anomaly appears due to a shift rather than pure seasonality. The same calendar month was flagged in multiple years (6 out of 10) and also in 1983-05, suggesting a recurring pattern but not necessarily a strict seasonal cycle. The Page-Hinkley test indicates a sustained level shift within 2 months, which is more than just seasonality. There are no obvious policy events (no known events within +-6 months). Data quality signs: cancelled and no_id counts are moderate and consistent; no burst of cancelled records or records without identifier beyond normal; values are plausible (fine_total_brl ranges are reasonable). Therefore, the anomaly is not a data-quality event. The shift is not explained by policy events, and it's not purely seasonal. Hence, it's a genuine enforcement shift: a real change in enforcement intensity not explained by above.",
+     "seed": 11,
+     "latency_s": 30.02,
+     "tokens": 244
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"We have seasonality data for May across multiple years. The ratio for each previous year shows consistent deviation pattern: many ratios <1 (below median) and a few >1. Specifically, 2017-05 ratio 0.87 (<1), 2016-05 1.08 (>1), 2015-05 1.23 (>1), 2014-05 0.78 (<1), 2013-05 1.03 (>1), 2012-05 1.76 (>1), 2011-05 0.95 (<1), 2010-05 0.39 (<1), 2009-05 2.20 (>1), 2008-05 1.36 (>1). The same calendar month deviated in the same direction (above 1) in 6 of these 10 years (2015-05, 2016-05,",
+     "seed": 22,
+     "latency_s": 26.91,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"First, check seasonality using the provided ratios of calendar month 5 across years. The ratios vary (0.87, 1.08, 1.23, 0.78, 1.03, 1.76, 0.95, 0.39, 2.20, 1.36). Most are less than 1, indicating the month 5 typically has lower values than the median of previous 12 months. However, the anomaly month 2018-05 has value 902.0M, which is above the median 217.4M (+315%). The same calendar month deviated above 1 in 6 of the 10 years, showing a consistent direction but not a strict seaso",
+     "seed": 33,
+     "latency_s": 27.04,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2005-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 0.9,
+     "reasoning": "First, check seasonality: the ratio of calendar month 2 across years shows most are above 0.9, with 7 of 10 years having deviations below 1 (consistent direction). This pattern repeats for the same calendar month across years, indicating a seasonal pattern. The anomaly is flagged for 2005-02, and other years also had similar deviations, supporting SP category. The Page-Hinkley test indicates a sustained level shift within 2 months, which is consistent with seasonal variation, not a one-time event. No data quality issues are evident (no burst of cancelled notices, no missing IDs). There is no policy event mentioned. Therefore, the anomaly is seasonal.",
+     "seed": 11,
+     "latency_s": 24.84,
+     "tokens": 161
+    },
+    {
+     "category": "SP",
+     "confidence": 0.95,
+     "reasoning": "We have seasonality data: for February across years, the ratio (month vs median previous 12 months) shows that 2005-02 ratio is below 1 (0.36) and is consistent with previous years where month 2 was below 1 in 7 of 10 years. Also same calendar month was flagged in 1989-02, 1993-02, 1996-02, indicating recurring seasonal pattern. The Page-Hinkley test indicates a sustained level shift within 2 months, but this is within the month flagged as anomalous due to seasonality. No data-quality signs (no burst of cancelled notices, no missing identifiers, values plausible). No policy-driven events mentioned. So the anomaly is seasonal.",
+     "seed": 22,
+     "latency_s": 11.34,
+     "tokens": 176
+    },
+    {
+     "category": "SP",
+     "confidence": 0.93,
+     "reasoning": "The anomaly is for calendar month 2 in 2005-02. Seasonality check shows that month 2 typically has values around 0.36-0.97 relative to previous median; 2005-02 deviates with ratio 0.36, which is similar direction to many past years (7 out of 10 years below 1). The same calendar month was flagged in other years, indicating a recurring pattern. The Page-Hinkley test indicates a sustained level shift within 2 months. No data quality issues (no cancelled records or missing identifiers). No policy event is mentioned. Therefore, the anomaly is due to a recurring seasonal pattern, not a policy change, data problem, or genuine shift.",
+     "seed": 33,
+     "latency_s": 10.78,
+     "tokens": 167
+    }
+   ]
+  }
+ ]
+}
