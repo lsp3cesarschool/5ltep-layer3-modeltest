@@ -120,3 +120,12 @@ def test_readme_and_leiame_stay_parallel():
     for text in (readme, leiame):
         assert "<!-- LEADERBOARD:START -->" in text and "<!-- LEADERBOARD:END -->" in text
     assert "(LEIAME.md)" in readme and "(README.md)" in leiame
+
+
+def test_status_badge(tmp_path, monkeypatch):
+    monkeypatch.setattr(score, "RESULTS_DIR", tmp_path)
+    score.write_status({"use": {"label": "qwen3:4b"}, "generated_at": "2026-09-30T18:07:00+00:00"})
+    en = json.loads((tmp_path / "status.json").read_text(encoding="utf-8"))
+    pt = json.loads((tmp_path / "status.pt.json").read_text(encoding="utf-8"))
+    assert en == {"schemaVersion": 1, "label": "recommended model", "message": "qwen3:4b · 2026-09-30", "color": "brightgreen"}
+    assert pt["label"] == "modelo recomendado"

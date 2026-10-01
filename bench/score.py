@@ -258,11 +258,23 @@ def main() -> None:
         "reason": reason,
     }
     RECOMMENDATION_FILE.write_text(json.dumps(rec, indent=1), encoding="utf-8")
+    write_status(rec)
     if switch:
         adopt(best, now)
     comparisons = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8")).get("comparisons", [])
     write_markdown(rows, scored, rec, len(gold_cases), now, comparisons, reasons)
     print(reason)
+
+
+def write_status(rec: dict) -> None:
+    """README badge (shields.io "endpoint" format): the model in use and when it was decided,
+    instead of GitHub's passed/failed of the last run."""
+    use = rec.get("use") or {}
+    for lang, label in (("en", "recommended model"), ("pt", "modelo recomendado")):
+        name = "status.json" if lang == "en" else "status.pt.json"
+        msg = f"{use['label']} · {rec['generated_at'][:10]}" if use.get("label") else "–"
+        (RESULTS_DIR / name).write_text(json.dumps({"schemaVersion": 1, "label": label, "message": msg,
+                                                    "color": "brightgreen" if use else "lightgrey"}), encoding="utf-8")
 
 
 def adopt(best: dict, now: str) -> None:
