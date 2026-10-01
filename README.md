@@ -240,17 +240,35 @@ within 15 minutes, so it is now measured on a small sample only, as an experimen
 
 ## Cost: free, but slow
 
-Everything here runs on GitHub's standard hosted runners of a **public** repository, which GitHub does
-not charge for: *"GitHub Actions usage is free for self-hosted runners and for public repositories that
-use standard GitHub-hosted runners"* ([About billing for GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions)),
+**Free.** Everything here runs on GitHub's standard hosted runners of a **public** repository, which
+GitHub does not charge for: *"GitHub Actions usage is free for self-hosted runners and for public
+repositories that use standard GitHub-hosted runners"* ([About billing for GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions)),
 and *"Use of the standard GitHub-hosted runners is free and unlimited on public repositories"*, on a
 Linux runner with 4 CPUs and 16 GB of RAM ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)).
-The models run on those CPUs, with no GPU, so inference is slow: tens of seconds to minutes per call.
-The practical limits are those of the free plan: each job can run for up to 6 hours and up to 20 jobs
-run at once ([Actions limits](https://docs.github.com/en/actions/reference/limits)); hence the time
-budget per candidate, the sampling of very slow models and the parallel jobs. Installing Ollama or
-llama.cpp in the runner is ordinary use of the runner; the model weights are downloaded from their
-official sources at run time.
+No GPU, no API key, no paid service.
+
+**Slow.** The models run on those CPUs: tens of seconds to minutes per call. The production model,
+`qwen3:4b`, judges about 47 anomalies per hour (three calls each); a 12B model, about 12; the 27B
+ternary Bonsai, less than one.
+
+**Why slow is a good fit for this project.** Layer 3 watches *monthly* series: the data are evaluated
+month by month, so there is something new to judge only once a month, and usually only a handful of
+anomalies at that. Even the first run over IBAMA's whole history (44 anomalies since 1980, 132 calls)
+took about an hour and a half of judging, in two batches. And the deadline is generous: the next
+month's data arrive only a month later, so a run could take the whole month and still be on time.
+Batches chain on their own (each job is limited to 6 hours), so the runner's speed never blocks a
+result; it only spends part of a window that is much larger than needed. For this use case, a free,
+CPU-only runner is not a compromise but the right size: no cost, and capacity to spare.
+
+**This benchmark** follows the same logic. It runs once a month (day 20), before the main
+repositories' model check (day 22) and their next monthly run (day 5). Each candidate is a separate
+job, with up to 20 running at once, so a full run of all 28 candidates takes about four hours.
+
+**Limits that shape the design.** Each job can run for up to 6 hours, and up to 20 jobs run at once
+([Actions limits](https://docs.github.com/en/actions/reference/limits)); hence the time budget per
+candidate, the sampling of very slow models (Bonsai-27B takes about 30 minutes per call) and the
+parallel jobs. Installing Ollama or llama.cpp in the runner is ordinary use of the runner; the model
+weights are downloaded from their official sources at run time.
 
 ## Adding a candidate
 
