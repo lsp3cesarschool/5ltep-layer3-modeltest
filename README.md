@@ -13,6 +13,7 @@ whose right answers are known by construction.
 | 🏆 **Leaderboard** | [below](#leaderboard), updated by every run |
 | 📌 **Current recommendation** | [recommendation.json](https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json): machine-readable, read by every Layer 3 instance |
 | 🏛️ **Instances that use it** | [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3) (IBAMA) and [5ltep-layer3-aneel](https://github.com/lsp3cesarschool/5ltep-layer3-aneel) (ANEEL, control case) |
+| 🔒 **Security** | [SECURITY.md](SECURITY.md): what is not trusted (the model, the data portal, web sources), how the toolkit contains it, and how to report a vulnerability |
 
 ## What the models are asked to do
 

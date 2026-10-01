@@ -14,7 +14,11 @@
     "min_coverage": 0.9,
     "max_p90_latency_s": 150,
     "switch_margin_macro_f1": 0.05,
-    "bootstrap_resamples": 2000
+    "bootstrap_resamples": 2000,
+    "min_age_days_to_adopt": 30,
+    "adopt_backends": [
+      "ollama"
+    ]
   },
   "discovery": {
     "enabled": true,

@@ -13,6 +13,7 @@ cujas respostas certas são conhecidas por construção.
 | 🏆 **Classificação** | [abaixo](#classificação), atualizada a cada execução |
 | 📌 **Recomendação atual** | [recommendation.json](https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json): legível por máquina, lida por toda instância da Camada 3 |
 | 🏛️ **Instâncias que o usam** | [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3/blob/main/LEIAME.md) (IBAMA) e [5ltep-layer3-aneel](https://github.com/lsp3cesarschool/5ltep-layer3-aneel/blob/main/LEIAME.md) (ANEEL, caso de controle) |
+| 🔒 **Segurança** | [SECURITY.md](SECURITY.md): o que não é confiável (o modelo, o portal de dados, fontes da web), como o kit o contém, e como relatar uma vulnerabilidade |
 
 ## O que se pede aos modelos
 

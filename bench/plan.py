@@ -11,8 +11,10 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -23,6 +25,22 @@ from bench.common import (CANDIDATES_FILE, DISCOVERED_FILE, PROFILE_ID, RESULTS_
 from bench.discover import manifest  # noqa: E402
 
 PROMPT_FILES = ["src/judge.py", "src/profile.py", f"profiles/{PROFILE_ID}.json"]
+FIRST_SEEN_FILE = RESULTS_DIR / "first_seen.json"
+
+# Names that reach a shell, a URL or a job name (SECURITY.md): anything else is skipped.
+SAFE = {
+    "label": re.compile(r"^[A-Za-z0-9][A-Za-z0-9 ._:()+/-]{0,79}$"),
+    "model": re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}(/[A-Za-z0-9][A-Za-z0-9._-]{0,63})?(:[A-Za-z0-9][A-Za-z0-9._-]{0,63})?$"),
+    "hf_repo": re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,95}/[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"),
+    "hf_file": re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,150}\.gguf$"),
+}
+BACKENDS = {"ollama", "llamacpp", "llamacpp-prism"}
+
+
+def safe_entry(entry: dict) -> bool:
+    if entry.get("backend") not in BACKENDS:
+        return False
+    return all(SAFE[k].match(str(entry[k])) for k in SAFE if k in entry and entry[k] is not None)
 
 
 def git(*args) -> str:
@@ -68,8 +86,13 @@ def main(argv=None) -> None:
     done_keys = {p.stem.split("__")[-1] for p in RUNS_DIR.glob("*.json")}
     refs: dict[str, tuple[str, str]] = {}
     plan, matrix, seen, unavailable = [], [], set(), []
+    first_seen = json.loads(FIRST_SEEN_FILE.read_text(encoding="utf-8")) if FIRST_SEEN_FILE.exists() else {}
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for raw in cfg["entries"] + discovered:
         entry = dict(raw)
+        if not safe_entry(entry):
+            print(f"::warning::skipping a candidate with an unexpected name or back-end: {str(raw)[:120]}")
+            continue
         entry.setdefault("prompt_ref", "main")
         entry.setdefault("options", {})
         entry.setdefault("experiment", False)
@@ -77,9 +100,12 @@ def main(argv=None) -> None:
             entry["digest"] = resolve_digest(entry)
         except requests.RequestException:
             entry["digest"] = None
-        if not entry["digest"]:
+        if not entry["digest"] or not re.match(r"^(sha256:)?[0-9a-f]{64}$", entry["digest"]):
             unavailable.append(entry["label"])
             continue
+        # When this exact build was first seen: a new build is adopted only after a waiting period.
+        build = f"{entry['backend']}|{entry.get('model')}|{entry['digest']}"
+        entry["first_seen"] = first_seen.setdefault(build, now)
         dedup = (entry["backend"], entry["digest"], entry["prompt_ref"], json.dumps(entry["options"], sort_keys=True))
         if dedup in seen:
             continue  # e.g. "latest" and a size tag pointing to the same build
@@ -95,6 +121,7 @@ def main(argv=None) -> None:
             matrix.append(entry)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    FIRST_SEEN_FILE.write_text(json.dumps(first_seen, indent=1, sort_keys=True), encoding="utf-8")
     (RESULTS_DIR / "plan.json").write_text(json.dumps({
         "gold_hash": g_hash, "prompt_refs": {k: {"commit": v[0], "fingerprint": v[1]} for k, v in refs.items()},
         "production": cfg["production"], "selection": cfg["selection"], "entries": plan,

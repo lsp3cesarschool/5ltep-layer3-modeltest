@@ -48,6 +48,8 @@ TEXT = {
         "prod_no_result": "the production model has no result yet",
         "beats": "{best} beats {current} by {diff} macro-F1 (paired 95% CI {ci})",
         "not_enough": "; not enough to recommend a switch",
+        "held_backend": "; not adopted: production runs on Ollama, not {backend}",
+        "held_age": "; not adopted yet: this build was first seen {age} days ago (adoption after {need})",
     },
     "pt": {
         "updated": "*Atualizado em {when} UTC · {n} casos do gabarito · 3 sementes cada · prompt de produção em `{commit}`*",
@@ -64,6 +66,8 @@ TEXT = {
         "prod_no_result": "o modelo de produção ainda não tem resultado",
         "beats": "{best} supera {current} por {diff} de macro-F1 (IC 95% pareado {ci})",
         "not_enough": "; não é suficiente para recomendar a troca",
+        "held_backend": "; não adotado: a produção roda no Ollama, não em {backend}",
+        "held_age": "; ainda não adotado: esta build foi vista pela primeira vez há {age} dias (adoção após {need})",
     },
 }
 
@@ -217,10 +221,14 @@ def main() -> None:
             margin_ok = comparison["diff"] is not None and comparison["diff"] >= sel["switch_margin_macro_f1"]
             ci_ok = comparison.get("ci95") and comparison["ci95"][0] > 0
             switch = bool(margin_ok and ci_ok)
+            held = adoption_hold(best, sel) if switch else None
             reasons = {lang: TEXT[lang]["beats"].format(best=best["label"], current=current["label"],
                                                        diff=num(comparison["diff"], lang, "+.3f"),
                                                        ci=interval(comparison["ci95"], lang)) +
-                       ("" if switch else TEXT[lang]["not_enough"]) for lang in TEXT}
+                       ("" if switch else TEXT[lang]["not_enough"]) +
+                       (TEXT[lang]["held_" + held[0]].format(**held[1]) if held else "") for lang in TEXT}
+            if held:
+                switch = False  # measured better, but not adopted automatically (SECURITY.md)
     elif best:
         reasons = {lang: TEXT[lang]["prod_no_result"] for lang in TEXT}
     reason = reasons["en"]
@@ -264,6 +272,23 @@ def main() -> None:
     comparisons = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8")).get("comparisons", [])
     write_markdown(rows, scored, rec, len(gold_cases), now, comparisons, reasons)
     print(reason)
+
+
+def adoption_hold(row: dict, sel: dict):
+    """Why a better candidate is not adopted automatically, or None (SECURITY.md).
+
+    Production runs on Ollama, so only an Ollama candidate can be adopted; and a build is adopted
+    only after it has been around for a while, so a malicious or broken release has time to be
+    noticed by others (the public gold set cannot exclude a model tuned to pass it)."""
+    if row["backend"] not in sel.get("adopt_backends", ["ollama"]):
+        return ("backend", {"backend": row["backend"]})
+    first = (row.get("entry") or {}).get("first_seen")
+    if first:
+        age = (datetime.now(timezone.utc) - datetime.fromisoformat(first)).days
+        need = sel.get("min_age_days_to_adopt", 30)
+        if age < need:
+            return ("age", {"age": age, "need": need})
+    return None
 
 
 def write_status(rec: dict) -> None:

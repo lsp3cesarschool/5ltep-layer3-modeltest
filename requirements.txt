@@ -1,6 +1,8 @@
+# Exact versions, as in 5ltep-layer3 (SECURITY.md): a new release never enters a run by itself.
 # The benchmark renders the production prompt (upstream src/judge.py) and calls
 # the model servers; the detectors (PyTorch) are only needed to rebuild the gold set.
-pandas>=2.1
-numpy>=1.26
-requests>=2.31
-pytest>=7.4
+pandas==3.0.6
+numpy==2.4.6
+requests==2.34.2
+pytest==9.1.1
+PyYAML==6.0.3

