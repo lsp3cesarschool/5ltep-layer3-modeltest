@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this repository or its results, please cite the master's thesis it is part of (preferred citation below)."
+title: "5LTEP-L3 · Model benchmark"
+abstract: >-
+  Monthly, reproducible benchmark of small open LLMs for the LLM-as-a-Judge of the
+  5L-TEP Layer 3 toolkit: a gold set whose answers are known by construction, the
+  production prompt, three seeds, and a paired bootstrap rule for switching models,
+  on free GitHub-hosted CPU runners (Ollama, llama.cpp, PrismML fork for Bonsai
+  models). Part of the master's thesis cited below.
+type: software
+authors:
+  - family-names: Pinheiro
+    given-names: Luciano Santos
+    affiliation: "CESAR School, Recife, Brazil"
+  - family-names: Sérgio
+    given-names: Anderson Tenório
+    affiliation: "CESAR School, Recife, Brazil"
+repository-code: "https://github.com/lsp3cesarschool/5ltep-layer3-modeltest"
+license: MIT
+version: 0.1.0
+date-released: 2026-09-30
+keywords:
+  - LLM-as-a-Judge
+  - benchmark
+  - model selection
+  - Ollama
+  - llama.cpp
+  - open government data
+preferred-citation:
+  type: thesis
+  thesis-type: "Master's thesis"
+  title: "Engenharia da Confiança (5L-TEP) Aplicada a Dados Abertos do IBAMA: Automação, Inteligência Artificial e Human-in-the-Loop para Avaliação da Qualidade de Big Data através da Plataforma CUPIM"
+  authors:
+    - family-names: Pinheiro
+      given-names: Luciano Santos
+  institution:
+    name: "CESAR School, Programa de Pós-Graduação em Engenharia de Software"
+    city: Recife
+    country: BR
+  year: 2027
+  notes: "In preparation. Advisor: Prof. Anderson Tenório Sérgio."
