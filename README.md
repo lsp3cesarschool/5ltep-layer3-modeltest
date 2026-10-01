@@ -1,17 +1,18 @@
 # 5LTEP-L3 · Model benchmark
 
+[![Model benchmark](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml) [![Tests](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **English** · [Português](LEIAME.md)
 
 **Which local LLM should judge the anomalies of [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3)?**
 A monthly, reproducible benchmark of small open models on the production prompt, with a gold set
 whose right answers are known by construction.
 
-[![Model benchmark](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml)
-[![Tests](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-📌 **Current recommendation (machine-readable):**
-<https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json>
+| Resource | What you find there |
+|---|---|
+| 🏆 **Leaderboard** | [below](#leaderboard), updated by every run |
+| 📌 **Current recommendation** | [recommendation.json](https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json): machine-readable, read by every Layer 3 instance |
+| 🏛️ **Instances that use it** | [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3) (IBAMA) and [5ltep-layer3-aneel](https://github.com/lsp3cesarschool/5ltep-layer3-aneel) (ANEEL, control case) |
 
 ## What the models are asked to do
 

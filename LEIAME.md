@@ -1,17 +1,18 @@
 # 5LTEP-L3 · Benchmark de modelos
 
+[![Model benchmark](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml) [![Tests](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [English](README.md) · **Português**
 
 **Qual LLM local deve julgar as anomalias do [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3/blob/main/LEIAME.md)?**
 Um benchmark mensal e reproduzível de modelos abertos pequenos no prompt de produção, com um gabarito
 cujas respostas certas são conhecidas por construção.
 
-[![Model benchmark](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/benchmark.yml)
-[![Tests](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml/badge.svg)](https://github.com/lsp3cesarschool/5ltep-layer3-modeltest/actions/workflows/tests.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
-📌 **Recomendação atual (legível por máquina):**
-<https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json>
+| Recurso | O que tem lá |
+|---|---|
+| 🏆 **Classificação** | [abaixo](#classificação), atualizada a cada execução |
+| 📌 **Recomendação atual** | [recommendation.json](https://raw.githubusercontent.com/lsp3cesarschool/5ltep-layer3-modeltest/main/results/recommendation.json): legível por máquina, lida por toda instância da Camada 3 |
+| 🏛️ **Instâncias que o usam** | [5ltep-layer3](https://github.com/lsp3cesarschool/5ltep-layer3/blob/main/LEIAME.md) (IBAMA) e [5ltep-layer3-aneel](https://github.com/lsp3cesarschool/5ltep-layer3-aneel/blob/main/LEIAME.md) (ANEEL, caso de controle) |
 
 ## O que se pede aos modelos
 
