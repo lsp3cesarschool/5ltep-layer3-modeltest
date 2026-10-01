@@ -252,14 +252,15 @@ e *"Use of the standard GitHub-hosted runners is free and unlimited on public re
 Linux com 4 CPUs e 16 GB de RAM ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)).
 Sem GPU, sem chave de API, sem serviço pago.
 
-**Lento.** Os modelos rodam nessas CPUs: de dezenas de segundos a minutos por chamada. O modelo de
-produção, `qwen3:4b`, julga cerca de 47 anomalias por hora (três chamadas cada); um modelo de 12B,
-cerca de 12; o Bonsai ternário de 27B, menos de uma.
+**Lento.** Os modelos rodam nessas CPUs: de dezenas de segundos a minutos por chamada. A coluna
+*Anomalias/h* da [classificação](#classificação), atualizada a cada execução, mostra quantas anomalias
+(três chamadas cada) cada modelo julga por hora neste runner: algumas dezenas nos modelos pequenos, bem
+menos nos grandes.
 
 **Por que lento serve bem a este projeto.** A Camada 3 observa séries *mensais*: os dados são avaliados
 mês a mês, então só há algo novo para julgar uma vez por mês, e em geral só um punhado de anomalias.
-Mesmo a primeira execução sobre todo o histórico do IBAMA (44 anomalias desde 1980, 132 chamadas) levou
-cerca de uma hora e meia de julgamento, em dois lotes. E o prazo é folgado: os dados do mês seguinte só
+Mesmo a primeira execução sobre todo o histórico do IBAMA (44 anomalias desde 1980, 132 chamadas, em
+setembro de 2026) levou cerca de uma hora e meia de julgamento, em dois lotes. E o prazo é folgado: os dados do mês seguinte só
 chegam um mês depois, então uma execução poderia levar o mês inteiro e ainda estaria em dia. Os lotes se
 encadeiam sozinhos (cada job é limitado a 6 horas), então a velocidade do runner nunca impede um
 resultado; ela só ocupa parte de uma janela muito maior que o necessário. Para este caso de uso, um
@@ -268,12 +269,12 @@ sobra.
 
 **Este benchmark** segue a mesma lógica. Roda uma vez por mês (dia 20), antes do *Model check* dos
 repositórios principais (dia 22) e da próxima execução mensal deles (dia 5). Cada candidato é um job
-separado, com até 20 rodando ao mesmo tempo, então uma execução completa dos 28 candidatos leva cerca de
-quatro horas.
+separado, com até 20 rodando ao mesmo tempo, então mesmo uma execução completa de todos os candidatos
+leva só algumas horas.
 
 **Limites que moldam o desenho.** Cada job pode rodar por até 6 horas, e até 20 jobs rodam ao mesmo
 tempo ([Actions limits](https://docs.github.com/en/actions/reference/limits)); daí o tempo disponível
-por candidato, a amostragem de modelos muito lentos (o Bonsai-27B leva cerca de 30 minutos por chamada)
+por candidato, a amostragem de modelos muito lentos (o Bonsai de 27B precisa de dezenas de minutos por chamada)
 e os jobs em paralelo. Instalar o Ollama ou o llama.cpp no runner é uso comum do runner; os pesos dos
 modelos são baixados das fontes oficiais no momento da execução.
 

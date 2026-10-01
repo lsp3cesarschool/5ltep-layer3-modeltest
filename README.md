@@ -247,14 +247,15 @@ and *"Use of the standard GitHub-hosted runners is free and unlimited on public 
 Linux runner with 4 CPUs and 16 GB of RAM ([GitHub-hosted runners reference](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)).
 No GPU, no API key, no paid service.
 
-**Slow.** The models run on those CPUs: tens of seconds to minutes per call. The production model,
-`qwen3:4b`, judges about 47 anomalies per hour (three calls each); a 12B model, about 12; the 27B
-ternary Bonsai, less than one.
+**Slow.** The models run on those CPUs: tens of seconds to minutes per call. The *Anomalies/h* column
+of the [leaderboard](#leaderboard), updated by every run, shows how many anomalies (three calls each)
+each model judges per hour on this runner: a few dozen for the small models, much less for the large
+ones.
 
 **Why slow is a good fit for this project.** Layer 3 watches *monthly* series: the data are evaluated
 month by month, so there is something new to judge only once a month, and usually only a handful of
-anomalies at that. Even the first run over IBAMA's whole history (44 anomalies since 1980, 132 calls)
-took about an hour and a half of judging, in two batches. And the deadline is generous: the next
+anomalies at that. Even the first run over IBAMA's whole history (44 anomalies since 1980, 132 calls,
+in September 2026) took about an hour and a half of judging, in two batches. And the deadline is generous: the next
 month's data arrive only a month later, so a run could take the whole month and still be on time.
 Batches chain on their own (each job is limited to 6 hours), so the runner's speed never blocks a
 result; it only spends part of a window that is much larger than needed. For this use case, a free,
@@ -262,11 +263,11 @@ CPU-only runner is not a compromise but the right size: no cost, and capacity to
 
 **This benchmark** follows the same logic. It runs once a month (day 20), before the main
 repositories' model check (day 22) and their next monthly run (day 5). Each candidate is a separate
-job, with up to 20 running at once, so a full run of all 28 candidates takes about four hours.
+job, with up to 20 running at once, so even a full run of every candidate takes only a few hours.
 
 **Limits that shape the design.** Each job can run for up to 6 hours, and up to 20 jobs run at once
 ([Actions limits](https://docs.github.com/en/actions/reference/limits)); hence the time budget per
-candidate, the sampling of very slow models (Bonsai-27B takes about 30 minutes per call) and the
+candidate, the sampling of very slow models (the 27B Bonsai needs tens of minutes per call) and the
 parallel jobs. Installing Ollama or llama.cpp in the runner is ordinary use of the runner; the model
 weights are downloaded from their official sources at run time.
 
