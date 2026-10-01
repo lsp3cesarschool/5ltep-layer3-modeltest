@@ -1,0 +1,952 @@
+{
+ "entry": {
+  "label": "gemma3n:e4b",
+  "backend": "ollama",
+  "model": "gemma3n:e4b",
+  "size_gb": 7.55,
+  "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+  "source": "discovered",
+  "discovered_at": "2026-09-29T22:30:17+00:00",
+  "prompt_ref": "main",
+  "options": {},
+  "experiment": false,
+  "first_seen": "2026-10-01T13:57:49+00:00",
+  "prompt_sha": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+  "key": "98202f8452484b4f",
+  "slug": "gemma3n_e4b"
+ },
+ "key": "98202f8452484b4f",
+ "label": "gemma3n:e4b",
+ "upstream_ref": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+ "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
+ "cases_total": 30,
+ "cases_done": 30,
+ "sampled": false,
+ "seeds": [
+  11,
+  22,
+  33
+ ],
+ "stopped": null,
+ "server": {
+  "server_version": "0.35.0",
+  "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
+  "size_bytes": 7547589116,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma3n",
+   "families": [
+    "gemma3n"
+   ],
+   "parameter_size": "6.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 2048
+  }
+ },
+ "started_at": "2026-10-01T15:24:19+00:00",
+ "ended_at": "2026-10-01T16:58:57+00:00",
+ "answers": [
+  {
+   "case": "SP-fine_total_brl-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\" :\",^{Std. \u0c07\u0c35\u0c4d\u0c35. dentures..\u6295\u4e0e. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9",
+     "seed": 11,
+     "latency_s": 125.8,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{ \"reasoning\"\n\n: \"= = = = = = = = = = = = = = = + **__ = = = = =. \u0648\u0627\u0644\u0645\u0639. \u0987\u09b9\u09be.\ud809\udc2a.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d\u3002.\u8981.\u201d",
+     "seed": 22,
+     "latency_s": 74.73,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n                    \"reasoning\" : \"= reunion. \u0909\u0928\u094d\u0939o landscapes. thirst. inorder. utterance. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorder. utterances. inorde",
+     "seed": 33,
+     "latency_s": 75.17,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2014-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 11,
+     "latency_s": null,
+     "tokens": null
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\"reasoning\": \"+capitalizeTotalTitle title ContohText```KnowingCrowutsKnowingBody.<unused6225>\u00edtotta.\\textSummaryformatxlabel.\u0e01\u0e25\u0e49grmlslot.\u0e01\u0e25\u0e49gms.\u0e01\u0e25\u0e49gm.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.\u0e01\u0e25\u0e49ts.jLabelimuth\u119eusertheme.\u4fbf\u4e8eflu`resolve.\u4fbf\u4e8eflu`resolve.\u0e01\u0e25\u0e49ts.ell\u00e4`resolve.ell\u00e4`resolve.\u6402`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.ell\u00e4`resolve.",
+     "seed": 22,
+     "latency_s": 75.97,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": -2.82e+22,
+     "reasoning": "+ paragraph---------- \"tryBlocked$$ jambes \nThis replacesThat`.\n```tab>```.",
+     "seed": 33,
+     "latency_s": 12.52,
+     "tokens": 60
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2017-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n:\"+sentence. \u041d\u0435\u0442. Possible.] \u0648\u0630\u0644\u0643. \u041d\u0435\u0442. Possible. \u041d\u0435\u0442. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Possible. Po",
+     "seed": 11,
+     "latency_s": 120.81,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": -0.54,
+     "reasoning": ")[\u201d\u0627\u0644\u0645} \u0639\u0644\u064a\">",
+     "seed": 22,
+     "latency_s": 10.66,
+     "tokens": 51
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 290.0,
+     "reasoning": "=",
+     "seed": 11,
+     "latency_s": 58.29,
+     "tokens": 63
+    },
+    {
+     "category": "SP",
+     "confidence": 2.0,
+     "reasoning": "*makeSummary()\u0909\u0924\u094d\u0924\u0930((",
+     "seed": 22,
+     "latency_s": 6.53,
+     "tokens": 31
+    },
+    {
+     "category": "PDC",
+     "confidence": 2.0,
+     "reasoning": "description",
+     "seed": 33,
+     "latency_s": 5.59,
+     "tokens": 26
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2021-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n: \"************* \u0421\u043e\u0437\u0434\u0430\u0923\u0942\u0915----------------* \u0907\u0928\u094d\u0939\u094b\u0902\u0928\u0947\u2581\u2581(\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e:\u0447\u0442\u043e: \u0938\u0942\u091f: \uc18c\uae30\ub294. \ub610\ub294. \uc218\uae30\ub294. \ub610\ub294. \uc218\uae30. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc218\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. \ub610\ub294. \uc2a4\uae30\ub294. ",
+     "seed": 11,
+     "latency_s": 121.05,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n\t\t\"reasoning\":\".join( cupboards(\uff0c\u201d().).join(\u201d\u3002).join( \u0b93\u1793\u17c1\u17c7.\u7ed3\u675f( \u0964.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u3002.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.\u7ed3\u675f( \u0b93.",
+     "seed": 22,
+     "latency_s": 74.84,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+. vattabbamologia. punctuated.netstandard.netstandard. insistence. insistence. insistence. insistence. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utterance. utteranc",
+     "seed": 33,
+     "latency_s": 75.02,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "SP-fine_total_brl-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\" : \"));catch( \u0432\u043e\u043d\u0430())```leness(\u8fd4\u56de\u503c(\u7528\u6cd5(eluarkan( newlyweds( newlyweds( \u53c2\u6570( \uc785\ub2c8\ub2e4(\u201d\u3002( itinerant( utterances( utterances( utterance( \u17d4`. \u0935\u094b\u091f\u094b\u0902( utterances. utterances. utterance. kullan\u0131l\u0131r. \u05d5\u05d1. \u062a\u062d\u0644\u064a\u0644.. \u201d.. \u0627\u0646\u0647\u0627. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d.. \u0987\u09b9\u09be. \u201d",
+     "seed": 11,
+     "latency_s": 120.78,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t:\"target` itemprop \u0b86\u0b9f\u0bcd\u0b9a utilizaci\u00f3n```iteration\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581``` \u0987\u09b9\u09be`\u69d8\u5c02\u7528\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581.`` \uc878\uc5c5nint---------------------------------.\u6210\u5e74. \u751f\u6210. \u5316\u65b0\u54c1 internationalkelijk-----------. itinerant. \u753b. \u5316. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \u4f7f\u7528. \uc785\ub2c8\ub2e4.\u309b. \u061f. \u4e0b..\u309b. \u3002.\u309b. \u3002.\u309b \u3002.\u309b \u3002.\u309b \u3002.\uff40.`. \u3002.\uff40.`. +:+. \u09cd.\u309b. \u3002.\u309b. \u3002.\u309b \u3002.`.\u79bb \u3002.\uff40.`. \u3002.``\u30fb\u30fb. `--. \u3002.\u309b. \u3002.``.\u529e\u6cd5cter retribution. \u3002. horseback. \u3002.\u309b. \u3002.``. \u6574\u7406.\u309b. ",
+     "seed": 22,
+     "latency_s": 75.15,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "SP-notices-2024-01",
+   "gold": "SP",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 2.0,
+     "reasoning": ",",
+     "seed": 11,
+     "latency_s": 56.43,
+     "tokens": 48
+    },
+    {
+     "category": "SP",
+     "confidence": 0.97,
+     "reasoning": "...( fictitious \u091f\u093f\u092a\u094d\u092aling)",
+     "seed": 22,
+     "latency_s": 6.57,
+     "tokens": 32
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n \t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+\u201d \u064a\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645\u0645. \u0648\\\":. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648",
+     "seed": 33,
+     "latency_s": 75.6,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2018-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": 9.54,
+     "reasoning": "\"",
+     "seed": 11,
+     "latency_s": 55.09,
+     "tokens": 51
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\t\"reasoning\": \"]]\u6211ntens().\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211ntens.\u6211n",
+     "seed": 22,
+     "latency_s": 75.6,
+     "tokens": 400
+    },
+    {
+     "category": "GES",
+     "confidence": 0.9,
+     "reasoning": "`ning",
+     "seed": 33,
+     "latency_s": 33.86,
+     "tokens": 173
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t:\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\" \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648\u0625. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648.",
+     "seed": 11,
+     "latency_s": 120.75,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 22,
+     "latency_s": null,
+     "tokens": null
+    },
+    {
+     "category": "PDC",
+     "confidence": Infinity,
+     "reasoning": ":",
+     "seed": 33,
+     "latency_s": 33.28,
+     "tokens": 168
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2015-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+ +: \u05d9\u05db\u05d5\u05dc: \u0648\u0627\u0644\u0645: \uc785\ub2c8\ub2e4: \u0648\u0645\u0646: \ub300: \ub610\ub294: \ub300 Else \ub610\ub294 \ub610\ub294 \ub300; \ub610\ub294; \ub610\ub294. \uc785\ub2c8\ub2e4 \uc5f0\uc18d. \uc785\ub2c8\ub2e4\u0d24\u0d4d\u0d24\u0d3f\u0d32\u0d41\u0d02. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc5d0\uc11c. \uc785\ub2c8\ub2e4",
+     "seed": 11,
+     "latency_s": 118.23,
+     "tokens": 400
+    },
+    {
+     "category": "PDC",
+     "confidence": -7000000.0,
+     "reasoning": "`. \u0987\u09b9\u09be\u09a4\u09c7_{\"...( \u0b93",
+     "seed": 22,
+     "latency_s": 17.43,
+     "tokens": 86
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\":Buynoun2Light. \u0c28\u0c41\u0c02\u0c21\u0c3fHealthBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fHealthBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fHeatBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fHeatBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fHeatBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fHeatBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fLightBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLight. \u0c28\u0c41\u0c02\u0c21\u0c3fBodyLig",
+     "seed": 33,
+     "latency_s": 75.1,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-04",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\",**libraryArrayList0mi**boolean0**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**\u0c070**",
+     "seed": 11,
+     "latency_s": 119.65,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"=--\u6261 ---\\toBe```` \u0648\u0627\u0644\u0645---------\\toBe``` \u0648\u0627\u0644\u0645------. \ud6a8\uc728^{\uc624. \uc7ac\uc5b4; \uae30\uc73c\ub85c. \ubcc4\uacfc. \uc228ibs \uc624\uacfc. \uc228ibs. \uc5ec\uc624. \uc228ibs. \uc5ec\uc624. \ub610\ub294. \uc228ibs. \ubc0f\uc624. \ub610\ub294. \uc228ibs. \ubc0f\uc624. \ub610\ub294. \uc228ibs. \ubc0f\uc624. \ub2e4. \uadf8\ub9ac\uace0. \uc228ibs. \ubc0f\uc624. \ub2e4. \uadf8\ub9ac\uace0. \ub610\ub294. \uadf8\ub9ac\uace0. \ubc0f. \ub2e4. \uadf8\ub9ac\uace0. \ub610\ub294. \ubc0f. \ub2e4. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0. \uadf8\ub9ac\uace0.",
+     "seed": 22,
+     "latency_s": 75.38,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2001-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t:\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"+ \u0915\u0947 \u0928\u093f\u092f\u092e\u0bb5\u0bc1\u0bae\u0bcd\u0964 \u0914\u0930. \u0914\u0930\u0964 \u0914\u0930\u0964 \u0914\u0930\u0964 \u0914\u0930\u0964 \u0914\u0930\u0964 \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. ",
+     "seed": 11,
+     "latency_s": 119.44,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 9.3,
+     "reasoning": ")DueHeader",
+     "seed": 22,
+     "latency_s": 7.71,
+     "tokens": 36
+    },
+    {
+     "category": "DQE",
+     "confidence": -6997339197.456225,
+     "reasoning": "...\title Generate`\uc815\ucc45````float\nofollow\typename\toctree\toctree\times\toctree\times\times\times\times\times\raise\toLowerCase\times\nested\testimonial\testimonial\testimonial\\)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",
+     "seed": 33,
+     "latency_s": 33.96,
+     "tokens": 172
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2018-05",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "GES",
+     "confidence": -9.3,
+     "reasoning": "=",
+     "seed": 11,
+     "latency_s": 81.94,
+     "tokens": 186
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n : \"* \u0647\u0630\u0647 \u0634\u0631\u062d. \u0648\u0623\u0646. \u0625\u0644\u0627. \u0628\u0645\u0627. \u0627\u0644\u8f1f / \u0623\u0646\u2581\u2581. \u0648\u0645\u0639. \u0648\u0635. \u0625\u0644\u0627. \u0628\u0645\u0627. !!!.. \u0648\u0627\u0644\u0645. / chev. \u0648\u0627\u0644\u0645. !!!!! / chev. \u0648\u0627\u0644\u0645. \u0646\u0635\u0641 / \u0aa8\u0ac7. \u0648\u0627\u0644\u0645. !!!!! / \u0648\u0627\u0644\u0645. \u0646\u0635\u0641 / \u0aa8\u0ac7. \u0648\u0627\u0644\u0645. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641 / \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0646\u0635\u0641. \u0648. \u0648\u0635. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648",
+     "seed": 22,
+     "latency_s": 75.35,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\" : \" \u0987\u09b9\u09be `predicted;\u201d \u0648\u0630\u0644\u0643 \\uadf0 \\udafb \\uadf2 \\uadf1 \\uadf0 \\uadf1 \\uadf2 \\uadf7 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0. \u0987\u09b9\u09beadf1 \\uadf2 \\uadf7 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2. \u0987\u09b9\u09beadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1. \u0987\u09b9\u09beadf2 \\uadf1 \\uadf2. \u0987\u09b9\u09bead0. \u0987\u09b9\u09beaf0 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uadf0 \\uadf2 \\uadf1. \u0987\u09b9\u09bead0 \\uadf2 \\uadf1 \\uadf2 \\uadf0 \\uadf1 \\uadf2 \\uad",
+     "seed": 33,
+     "latency_s": 75.19,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "PDC-notices-2004-12",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581+\uff1a\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581: \u3002. \u8bfb\u53d6::\u3002. LinkedList::\u3002. \u0644\u062a::\u3002. LinkedList::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002. \ud0c0::\u3002.",
+     "seed": 11,
+     "latency_s": 118.76,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 9.1,
+     "reasoning": "_ menemukan\u0c07",
+     "seed": 22,
+     "latency_s": 7.09,
+     "tokens": 33
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "PDC-fine_total_brl-2002-06",
+   "gold": "PDC",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\" : \"> \u0641\u0631\u064a\u0642 \u0aa8\u0abe and \u0b89\u0ba3\u0bb5\u0bc1 \u0aae\u0ac7\u0ba8\u0b9f\u0bb0\u0bcd and. \u0b89\u0ba3\u0bb5\u0bc1. \u0bae\u0bc7 \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd. \u0bae\u0bc7 and. \u0bae\u0bc7 and. \u0bae\u0bc7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0914\u0930. \u0bae\u0bc7 and. \u0bae\u0bc7. \u0bae\u0bc7 and. \u0bae\u0bc7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 \u0a85\u0aa8\u0ac7. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. \u0aae\u0ac7 and. ",
+     "seed": 11,
+     "latency_s": 120.11,
+     "tokens": 400
+    },
+    {
+     "category": "GES",
+     "confidence": -0.9,
+     "reasoning": "+inheritance. brewediong \ucc45\uc784newringmisloging.",
+     "seed": 22,
+     "latency_s": 11.99,
+     "tokens": 57
+    },
+    {
+     "category": "DQE",
+     "confidence": 2.2,
+     "reasoning": "+. \u0648\u0693\u0627\u0646\u062f\u0648\u06cc\u0646\u06d0\u7dd2 yg improvementsnt earn sorting\u0c02\u0c2a\u0c41 \u0909\u0924\u094d\u0915\u0943\u0937\u094d\u091f\u0924\u093e prospectus<body>} selfishnessgetic` \u043d\u043e\u0433\u0b89\u0b9a\u0bc6\u0bb2\u0bcd shores\u0b89. \u0b93 \u0b85\u0bb3 passports. \u0b93 \u0b85\u0bae\u0bc8. \u0b93 \u0b9a\u0bc6\u0bb2\u0bcd\u0b95 \u05ea \u05e9. \u0b93 headernings \u0648\u0635. \u0b93 testimonial \u0baa\u0bbe\u0bb0\u0bbe\u0b9f\u0bcd\u0b9f \u0909\u0928\u094d\u0928\u0924 \u0646\u062a\buyer noe\u0131l s. \u0b93. \u0b93. meetup",
+     "seed": 33,
+     "latency_s": 24.56,
+     "tokens": 125
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2022-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\",name= \u0aaa\u0acd\u0ab0History: \u0648\u0627\u0644\u0645Whe2\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964\u0938\u09412\u0964\u0928\u093ename\u0964",
+     "seed": 11,
+     "latency_s": 119.84,
+     "tokens": 400
+    },
+    {
+     "category": "DQE",
+     "confidence": 4.1,
+     "reasoning": "/>((%\u0448\u0435\u043d\u0438\u0435% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be% \u0987\u09b9\u09be%---\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\"})\">",
+     "seed": 22,
+     "latency_s": 20.86,
+     "tokens": 105
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t:\"---------------------------------------------------------------------------------------------------------------------. +:+.. recebe*. nectar \u0b89----------------. \u0b93 \u0b85\u0bb3 \u0b85---. \u0b93 \u0baa\u0bc1\u0b87 \u0ba8\u0bc0\u0ba4\u0bbf. \u0b93 \u0baa\u0bc1. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0ba4\u0bca\u0bb4\u0bbf\u0bb2\u0bcd. \u0b93 \u0b85---. \u0b93 \u0ba4\u0bca\u0bb4\u0bbf\u0bb2\u0bcd. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 \u0b85---. \u0b93 ",
+     "seed": 33,
+     "latency_s": 75.05,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-05",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "PDC",
+     "confidence": 2.2,
+     "reasoning": "+",
+     "seed": 11,
+     "latency_s": 60.09,
+     "tokens": 78
+    },
+    {
+     "category": "SP",
+     "confidence": -0.2,
+     "reasoning": "$(exampleFixed",
+     "seed": 22,
+     "latency_s": 9.08,
+     "tokens": 43
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2004-12",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\" :\"> \u0641\u0631\u064a\u0642 navn. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0645\u0639. \u0648\u0639. \u0648\u0639. \u0648\u0639. horseback. \u0917\u0930\u094d\u092d\u0935\u0924\u0940. \u0b95\u0bc2\u0bb1\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0b95\u0bbf\u0bb1\u0ba4\u0bc1. \u0aa6. developmentally. \ubbf8\u307e\u3057\u305f \ub9ccError\ubc11\uc77d\u0ab3\u0964. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914",
+     "seed": 11,
+     "latency_s": 119.31,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+++++ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=\u2581\u2581+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ +=+ ",
+     "seed": 22,
+     "latency_s": 75.11,
+     "tokens": 400
+    },
+    {
+     "category": "DQE",
+     "confidence": Infinity,
+     "reasoning": "parentimagen` ...andformatn",
+     "seed": 33,
+     "latency_s": 34.33,
+     "tokens": 174
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2002-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 11,
+     "latency_s": null,
+     "tokens": null
+    },
+    {
+     "category": "DQE",
+     "confidence": 5.82,
+     "reasoning": ":",
+     "seed": 22,
+     "latency_s": 26.5,
+     "tokens": 134
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2001-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\": \"> \u0641\u0631\u064a\u0642 \u0928\u093e\u092e\uacfcinformationname. \u0639\u0644\u064a. \u0c2a\u0c4d\u0c30\u0c3e\u0c30\u0c02\u0c2dname.. \u0c2a\u0c4d\u0c30\u0c3e\u0c30\u0c02\u0c2d\u0928\u093e\u092e. \u0639\u0644\u064a. \u0c2a\u0c4d\u0c30\u0c3e\u0c30\u0c02\u0c2d\u0928\u093e\u092e. \u0639\u0644\u064a.. \u0baa\u0bbf\u0bb1gitignore. \u0987\u09b9\u09be. \u0c1a\u0c47\u0c2f. \u0b87\u0bb4. \u0c1a\u0c47\u0c2f\u0c2cgmail. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c. \u0c1a\u0c47\u0c2f\u0c2c",
+     "seed": 11,
+     "latency_s": 117.52,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": -10.0,
+     "reasoning": ":",
+     "seed": 22,
+     "latency_s": 35.68,
+     "tokens": 185
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t:\"`_{----------------. \u09cd\ud83d\udc9a--------------------\\\":````leness````leness`````leness`````leness`````leness``````````````````````````````````````````````````````````````````.lookup.\u5982\u4e0b.----\\\\```````````````````````````````````````````.lookup.`.lookup.`.lookup.`.lookup``.lookup`.lookup`.lookup`.lookup`.lookup`.lookup``.lookup```````````````.lookup.`.lookup`.lookup`.lookup`.lookup`.lookup``.lookup```.lookup`.`.lookup````````````````.lookup.`.lookup`.",
+     "seed": 33,
+     "latency_s": 74.4,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2018-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\":mk \u0412\u044b\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581join( \u0627\u0648( \u0432\u044b\u0431\u0440\u0430\u0442\u044c( \u0b93\u0412\u043e\u0437. \u062a\u0644\u06cc\u0641\u0648\u0646Duplicate \uc774---. \uc774. \uc911\uac04. \uc774. \uae30\uc900. \ud0c0() \u0c1f. \uc0c8\ub85c\uc6b4. \uc0c8. \uc774. \ubc0f. \uc11c. \uc785\ub2c8\ub2e4. \uadf8\ub9ac\uace0. \u0a95\u0ac7. \uae30.. \u0a95\u0ac7. \uae30. \u5316. \ud654. \ud654. \ud654. \ud0c0 \uc774. \ub2e4. \uc5d0\uc11c. \uc9d1\uc911.. \u0a95\u0ac7. \uae30. \ud654. \ud654. \ud654. \ud654. \ud0c0 \uc774. \ub2e4. \uadf8\ub9ac\uace0. \u0a95. \u0a95. \u0aa6. \u0a95. \u0a9c. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0aa6. \u0a95. \u0a9c. \u0a9c. \u0a9c. \u0a9c. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7. \u0a85\u0aa8\u0ac7.",
+     "seed": 11,
+     "latency_s": 118.88,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\"reasoning\": \"]} \u10e8 e\\n \u00e9quip\u00e9e\\n% \u0c28\u0c41\\n% \u0aa8\u0abe\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n%\u2581\u2581\\n. %\\n%\u2581\u2581\\n. \u3022. onPress. onPress. %.#. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f. \\n.\u7ed3\u675f",
+     "seed": 22,
+     "latency_s": 74.08,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+|||||||||||: punctuated: punctuated: punctuated: suggested: suggested: suggested: suggested: suggested: suggested: suggested: suggested: suggested: suggested: suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggested. suggeste",
+     "seed": 33,
+     "latency_s": 74.13,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-notices-2025-04",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\" :\n\n\"\u041f\u043b\u043eadora + \u6545\u4e8b & \u0444\u0438\u043b\u044c\u043c\u044b\\n znajdu\u0454 story\\n story is find\\n find are find\\n find are are\\n find are\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n find\\n",
+     "seed": 11,
+     "latency_s": 119.24,
+     "tokens": 400
+    },
+    {
+     "category": "DQE",
+     "confidence": 9.0,
+     "reasoning": "][",
+     "seed": 22,
+     "latency_s": 5.78,
+     "tokens": 27
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\"reasoning\": \"));print()`nucleusCannotprint()```bab```tab>t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t> t>",
+     "seed": 33,
+     "latency_s": 75.35,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "DQE-fine_total_brl-2025-06",
+   "gold": "DQE",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\n\n\"+\u201d \u0aa8\u0abe and and Birthday. \u043f\u0440\u0438\u043d\u044f\u0442\u043e. percentile. \u0639\u0644\u064a. bride. ballroom. ballroom. ballroom. toothbrush. toothbrush. toothbrush. toothbrush. toothbrush. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. bride. b",
+     "seed": 11,
+     "latency_s": 121.66,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\"reasoning\"\n: \")[light] \u0a86 . \u0ab9  \u0aa6\u0acd\u0ab5\u0abe\u0ab0\u0abe \u0aa4\u0ac7\u0aa8\u0ac7. \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe \u0a8f \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe \u0aa8\u0abe \u0a8f \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7 \u0a95 \u0aa8\u0abe. \u0aa8\u0ac7",
+     "seed": 22,
+     "latency_s": 75.81,
+     "tokens": 400
+    },
+    {
+     "category": "DQE",
+     "confidence": -Infinity,
+     "reasoning": "package",
+     "seed": 33,
+     "latency_s": 34.61,
+     "tokens": 173
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2015-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+\u201d \u0623\u0648\u0644: \u0648. \u0648\\ntag. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648. \u0648\\noon. \u0648. \u0648\\\": \u0648. \u0648: \u0648. \u0648\\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\": \\\":",
+     "seed": 11,
+     "latency_s": 121.7,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 9.0,
+     "reasoning": "})None",
+     "seed": 22,
+     "latency_s": 6.29,
+     "tokens": 29
+    },
+    {
+     "category": "SP",
+     "confidence": 5e+25,
+     "reasoning": "``...",
+     "seed": 33,
+     "latency_s": 33.44,
+     "tokens": 167
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-03",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n:\"+wow(\u5174\u594b \u314e\u314e)= earth```fred```bur> \u03a4\u03bf. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \uc785\ub2c8\ub2e4. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \uc785\ub2c8\ub2e4. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \uc785\ub2c8\ub2e4. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. \u0906\u0935\u093e\u091c. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utterances. utteran",
+     "seed": 11,
+     "latency_s": 124.78,
+     "tokens": 400
+    },
+    {
+     "category": "PDC",
+     "confidence": 0.2,
+     "reasoning": ":",
+     "seed": 22,
+     "latency_s": 33.56,
+     "tokens": 168
+    },
+    {
+     "category": "SP",
+     "confidence": Infinity,
+     "reasoning": ":",
+     "seed": 33,
+     "latency_s": 29.78,
+     "tokens": 149
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\"\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"= adultCreatedChancellor ${attributeReviewInvoice}}Mrs pernah interviewed on November 2. prohibiting review review. Mrs. plaintiff recommended order file. Mrs. plaintiff recommended review. Mrs. plaintiff recommended review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. plaintiff review. Mrs. attorney. attorney. attorney. attorney. attorney.",
+     "seed": 11,
+     "latency_s": 120.94,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{ \"reasoning\"\n: \"+\u201d \u0636\u0631\u0648\u0631\u062a \u0938\u094d\u0935.\u6295\u4e0e. \u0905\u0927\u093f\u0928\u093f\u092f\u092e \u0aa6\u0acd\u0ab5\u0abe\u0ab0\u0abe\u0909\u0924\u094d\u0924\u0930 \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930. \u0914\u0930",
+     "seed": 22,
+     "latency_s": 75.63,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 33,
+     "latency_s": null,
+     "tokens": null
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2015-01",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\",brockmakens \u092a\u0942\u0932 July bible banheiro \u0441\u0438\u043d\u0442\u0435\u2581\u2581\u2581.\u53ef\u80fdns \u0434\u043e\u043b\u0436\u0435\u043d.\u53ef\u80fdns touchdown. \u53ef\u80fdns. \u53ef\u80fdns. \u53ef\u80fdns. \u53ef\u80fdns. \u53ef\u80fdns. \u4e00\u4e2ans. \u53ef\u80fdns. \u4e86. \u53ef\u80fdns. \u3002.\u6761\u4ef6. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u6574. \u3002.\u4e0e. \u3002.teacher. \u3002.\u4e0e. \u3002.teacher. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e. \u3002.\u4e0e",
+     "seed": 11,
+     "latency_s": 121.75,
+     "tokens": 400
+    },
+    {
+     "category": "SP",
+     "confidence": 0.8,
+     "reasoning": "{uppercase}",
+     "seed": 22,
+     "latency_s": 7.24,
+     "tokens": 35
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\"reasoning\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: \"+\u201d \u0914\u0930\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581+ \u0644\u0627\u2581\u2581\u2581+\u201d \u0914\u0930\u2581\u2581\u2581\u2581\u2581\u2581\u2581\u2581+ *\u0964 +*\u0964 +*\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964+\u0964",
+     "seed": 33,
+     "latency_s": 74.33,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2001-07",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "request failed: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate",
+     "seed": 11,
+     "latency_s": null,
+     "tokens": null
+    },
+    {
+     "category": "PDC",
+     "confidence": -9.0,
+     "reasoning": "++ +=_ neodymium+\u2581\u2581unittest +=( `--. _{+ +=_ nectar. \u0648\"},{",
+     "seed": 22,
+     "latency_s": 24.56,
+     "tokens": 123
+    },
+    {
+     "category": "GES",
+     "confidence": -0.1,
+     "reasoning": "boolean\u0c07: \u0c24\u0c4b\u0b87:",
+     "seed": 33,
+     "latency_s": 8.03,
+     "tokens": 39
+    }
+   ]
+  },
+  {
+   "case": "GES-fine_total_brl-2018-05",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "DQE",
+     "confidence": 970.0,
+     "reasoning": "=",
+     "seed": 11,
+     "latency_s": 78.27,
+     "tokens": 174
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\"reasoning\":\":boolean} \u0aa8\u0abe} **} ****light} **. \uff01} **. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987\u09b9\u09be. \u0987",
+     "seed": 22,
+     "latency_s": 75.65,
+     "tokens": 400
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\t\"reasoning\": \"$ traduction fluent\\\\[dplyr remove ----\\\\ \u0639\u0644\u0634\u0627\u0646}}[*]}}+\\tml% \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bbf\u0bafdefault}} \u0a95\u0ac7. \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0bbf. \u0625\u0636\u0627\u0641\u0629. \u0648\u0628\u0639\u062f\u5b63\u7bc0. \u0648\u0645\u0639. \u0648\u0627\u0644\u0645\u0639. \u0644\u062a. \u0644\u062a. \u0b87\u0bb5\u0bb0\u0bcd. \u0648\u0627\u0644\u0645. \uc785\ub2c8\ub2e4. \\f \uac00\ub2a5\ud55c. \u0644\u062a. \\f. \u0648\u0627\u0644\u0645. \uc785\ub2c8\ub2e4. \u0648\u062a. \u0644\u062a. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \u0e2d\u0e37\u0e48\u0e19. \u0e2d\u0e37\u0e48\u0e19. \\f. \u0e2d\u0e37\u0e48\u0e19. \\f. \u0e2d\u0e37\u0e48\u0e19. \\f. \\f. \\f. \\f. \\f. \u0e2d\u0e37\u0e48\u0e19. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f. \\f",
+     "seed": 33,
+     "latency_s": 75.37,
+     "tokens": 400
+    }
+   ]
+  },
+  {
+   "case": "GES-notices-2005-02",
+   "gold": "GES",
+   "runs": [
+    {
+     "category": "SP",
+     "confidence": 1.2,
+     "reasoning": "}}",
+     "seed": 11,
+     "latency_s": 65.05,
+     "tokens": 113
+    },
+    {
+     "category": "SP",
+     "confidence": 2.0,
+     "reasoning": "rsens",
+     "seed": 22,
+     "latency_s": 29.09,
+     "tokens": 150
+    },
+    {
+     "category": "INVALID",
+     "confidence": 0.0,
+     "reasoning": "{\n\"reasoning\"\n\n: \")[#\u0e02\u0e36\u0e49\u0e19]\u6211\\begin:contour]\u4e0b\\begin:contour]\u4e0b\\begin:contour]\u4e0b\\begin:contour]**begin:end:join=}**end:end:join\\begin:end:join=} ending:end:join\\begin:end.\u7ed3\u675f:\u7ed3\u675f:join\\begin:end.\u7ed3\u675f:\u7ed3\u675f:join\\begin:end.\u7ed3\u675f:\u7ed3\u675f:join\\begin:end.\u7ed3\u675f.\u7ed3\u675f:\u7ed3\u675f:join\\begin:end.\u7ed3\u675f.\u7ed3\u675f:\u7ed3\u675f:join\\begin:end.\u7ed3\u675f.\u7ed3\u675f\\begin:end.\u7ed3\u675f.\u7ed3\u675f\\begin:end.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\u7ed3\u675f:\u7ed3\u675f\\begin\\begin.\u7ed3\u675f.\u7ed3\u675f\\begin:\u7ed3\u675f\\begin\\begin.\u7ed3\u675f.\u7ed3\u675f.\u7ed3\u675f\\begin.\u7ed3\u675f.\u7ed3\u675f",
+     "seed": 33,
+     "latency_s": 74.45,
+     "tokens": 400
+    }
+   ]
+  }
+ ]
+}

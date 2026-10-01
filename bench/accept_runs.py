@@ -35,7 +35,8 @@ def check(data: dict, entry: dict) -> dict:
         for r in a["runs"]:
             if not isinstance(r, dict) or not CATEGORY.match(str(r.get("category", ""))):
                 raise ValueError("malformed run")
-            if not isinstance(r.get("latency_s", 0), (int, float)) or not isinstance(r.get("seed", 0), int):
+            # a failed call has no latency (None); anything else must be a number
+            if not isinstance(r.get("latency_s", 0), (int, float, type(None))) or not isinstance(r.get("seed", 0), int):
                 raise ValueError("malformed run numbers")
             r["reasoning"] = str(r.get("reasoning", ""))[:MAX_TEXT]
     data["entry"] = entry  # what was planned, not what the job says it ran

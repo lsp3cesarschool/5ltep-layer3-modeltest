@@ -142,7 +142,8 @@ def test_each_run_job_can_only_hand_over_its_own_result(tmp_path, monkeypatch):
     art = tmp_path / "art" / "run-a_1b"
     art.mkdir(parents=True)
     run = {"key": "k1", "label": "a:1b", "answers": [{"case": "c1", "runs": [
-        {"category": "SP", "seed": 11, "latency_s": 1.0, "reasoning": "x" * 5000}]}]}
+        {"category": "SP", "seed": 11, "latency_s": 1.0, "reasoning": "x" * 5000},
+        {"category": "INVALID", "seed": 22, "latency_s": None, "tokens": None}]}]}  # a failed call
     (art / "a_1b__k1.json").write_text(json.dumps(run))
     forged = {"key": "k2", "label": "b:1b", "answers": []}  # a fake result for another candidate
     (art / "b_1b__k2.json").write_text(json.dumps(forged))
