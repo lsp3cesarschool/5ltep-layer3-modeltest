@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-01T18:30:42+00:00",
+ "generated_at": "2026-10-20T13:43:44+00:00",
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "gold_cases": 30,
  "prompt_refs": {
   "main": {
-   "commit": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
-   "fingerprint": "135947fd6e557283ae6548c5557a76bd935da63e0500c96601fa416528c20af5"
+   "commit": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "fingerprint": "287ebc9540ba63a8bdc9d3d72c886d4c1744156106e0929176fb0a581020d8d9"
   },
   "7da22b7": {
    "commit": "7da22b710084d35279375a3dfd5bb88fd2614aaf",
@@ -28,21 +28,22 @@
    "label": "gemma3:4b",
    "backend": "ollama",
    "model": "gemma3:4b",
-   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
    "eligible": true,
-   "tested_at": "2026-10-01T14:32:24+00:00",
+   "tested_at": "2026-10-20T09:36:29+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-    "size_bytes": 3338801804,
+    "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+    "size_bytes": 3350272403,
     "details": {
-     "parent_model": "",
+     "parent_model": "dhiltgen/gemma3:4b-it-q4_K_M-llamacpp",
      "format": "gguf",
      "family": "gemma3",
      "families": [
-      "gemma3"
+      "gemma3",
+      "clip"
      ],
-     "parameter_size": "4.3B",
+     "parameter_size": "3.9B",
      "quantization_level": "Q4_K_M",
      "context_length": 131072,
      "embedding_length": 2560
@@ -50,24 +51,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.501,
+   "macro_f1": 0.614,
    "macro_f1_ci95": [
-    0.325,
-    0.66
+    0.419,
+    0.771
    ],
-   "accuracy": 0.533,
+   "accuracy": 0.633,
    "recall": {
     "PDC": 0.625,
     "SP": 1.0,
-    "DQE": 0.125,
-    "GES": 0.429
+    "DQE": 0.25,
+    "GES": 0.714
    },
-   "consistency": 0.844,
-   "unanimous_rate": 0.567,
+   "consistency": 0.856,
+   "unanimous_rate": 0.6,
    "valid_rate": 0.989,
-   "latency_median_s": 15.2,
-   "latency_p90_s": 40.6,
-   "anomalies_per_hour": 53.8,
+   "latency_median_s": 15.8,
+   "latency_p90_s": 43.5,
+   "anomalies_per_hour": 50.6,
    "confusion": {
     "PDC": {
      "PDC": 5,
@@ -77,13 +78,13 @@
      "SP": 7
     },
     "DQE": {
-     "GES": 4,
-     "SP": 3,
-     "DQE": 1
+     "GES": 5,
+     "DQE": 2,
+     "SP": 1
     },
     "GES": {
-     "GES": 3,
-     "SP": 4
+     "GES": 5,
+     "SP": 2
     }
    },
    "status": "eligible"
@@ -92,21 +93,21 @@
    "label": "qwen3.5:4b",
    "backend": "ollama",
    "model": "qwen3.5:4b",
-   "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+   "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
    "eligible": true,
-   "tested_at": "2026-10-01T15:14:04+00:00",
+   "tested_at": "2026-10-20T09:54:45+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
-    "size_bytes": 3389983735,
+    "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "size_bytes": 3324173934,
     "details": {
-     "parent_model": "",
+     "parent_model": "model.gguf",
      "format": "gguf",
      "family": "qwen35",
      "families": [
       "qwen35"
      ],
-     "parameter_size": "4.7B",
+     "parameter_size": "4.2B",
      "quantization_level": "Q4_K_M",
      "context_length": 262144,
      "embedding_length": 2560
@@ -114,24 +115,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.496,
+   "macro_f1": 0.595,
    "macro_f1_ci95": [
-    0.356,
-    0.65
+    0.436,
+    0.732
    ],
-   "accuracy": 0.567,
+   "accuracy": 0.633,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
-    "DQE": 0.125,
+    "DQE": 0.375,
     "GES": 0.143
    },
    "consistency": 0.856,
-   "unanimous_rate": 0.567,
+   "unanimous_rate": 0.6,
    "valid_rate": 1.0,
-   "latency_median_s": 25.7,
-   "latency_p90_s": 107.7,
-   "anomalies_per_hour": 23.9,
+   "latency_median_s": 19.9,
+   "latency_p90_s": 73.9,
+   "anomalies_per_hour": 33.5,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -140,9 +141,9 @@
      "SP": 7
     },
     "DQE": {
-     "GES": 2,
-     "SP": 5,
-     "DQE": 1
+     "DQE": 3,
+     "SP": 1,
+     "GES": 4
     },
     "GES": {
      "SP": 6,
@@ -157,7 +158,7 @@
    "model": "qwen3:4b",
    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
    "eligible": true,
-   "tested_at": "2026-10-01T15:14:08+00:00",
+   "tested_at": "2026-10-20T10:20:55+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
@@ -192,9 +193,9 @@
    "consistency": 0.856,
    "unanimous_rate": 0.567,
    "valid_rate": 0.989,
-   "latency_median_s": 33.8,
-   "latency_p90_s": 92.6,
-   "anomalies_per_hour": 24.0,
+   "latency_median_s": 39.6,
+   "latency_p90_s": 95.1,
+   "anomalies_per_hour": 22.5,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -220,7 +221,7 @@
    "model": "granite4.2:3b",
    "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
    "eligible": false,
-   "tested_at": "2026-10-01T14:33:39+00:00",
+   "tested_at": "2026-10-20T10:11:54+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
@@ -240,24 +241,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.532,
+   "macro_f1": 0.492,
    "macro_f1_ci95": [
-    0.408,
-    0.638
+    0.38,
+    0.604
    ],
-   "accuracy": 0.6,
+   "accuracy": 0.567,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
     "DQE": 0.0,
-    "GES": 0.429
+    "GES": 0.286
    },
-   "consistency": 0.678,
-   "unanimous_rate": 0.367,
-   "valid_rate": 0.7,
-   "latency_median_s": 25.4,
-   "latency_p90_s": 38.6,
-   "anomalies_per_hour": 51.5,
+   "consistency": 0.767,
+   "unanimous_rate": 0.467,
+   "valid_rate": 0.733,
+   "latency_median_s": 45.7,
+   "latency_p90_s": 68.2,
+   "anomalies_per_hour": 25.3,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -271,11 +272,11 @@
      "INVALID": 2
     },
     "GES": {
-     "GES": 3,
-     "SP": 4
+     "SP": 5,
+     "GES": 2
     }
    },
-   "status": "not eligible: valid answers 70%"
+   "status": "not eligible: valid answers 73%"
   },
   {
    "label": "ministral-3:3b",
@@ -283,7 +284,7 @@
    "model": "ministral-3:3b",
    "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
    "eligible": true,
-   "tested_at": "2026-10-01T14:46:26+00:00",
+   "tested_at": "2026-10-20T10:04:08+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
@@ -303,39 +304,40 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.669,
+   "macro_f1": 0.667,
    "macro_f1_ci95": [
-    0.497,
-    0.815
+    0.465,
+    0.823
    ],
-   "accuracy": 0.7,
+   "accuracy": 0.667,
    "recall": {
-    "PDC": 1.0,
+    "PDC": 0.5,
     "SP": 1.0,
-    "DQE": 0.25,
-    "GES": 0.571
+    "DQE": 0.5,
+    "GES": 0.714
    },
-   "consistency": 0.833,
-   "unanimous_rate": 0.5,
+   "consistency": 0.789,
+   "unanimous_rate": 0.4,
    "valid_rate": 1.0,
-   "latency_median_s": 26.4,
-   "latency_p90_s": 53.3,
-   "anomalies_per_hour": 37.7,
+   "latency_median_s": 28.9,
+   "latency_p90_s": 76.5,
+   "anomalies_per_hour": 28.4,
    "confusion": {
     "PDC": {
-     "PDC": 8
+     "PDC": 4,
+     "GES": 4
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "DQE": 2,
-     "GES": 5,
-     "SP": 1
+     "SP": 2,
+     "DQE": 4,
+     "GES": 2
     },
     "GES": {
-     "SP": 3,
-     "GES": 4
+     "GES": 5,
+     "SP": 2
     }
    },
    "status": "eligible"
@@ -346,7 +348,7 @@
    "model": "phi4-mini:3.8b",
    "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
    "eligible": true,
-   "tested_at": "2026-10-01T14:45:06+00:00",
+   "tested_at": "2026-10-20T09:26:55+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
@@ -366,41 +368,41 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.3,
+   "macro_f1": 0.479,
    "macro_f1_ci95": [
-    0.16,
-    0.437
+    0.318,
+    0.598
    ],
-   "accuracy": 0.367,
+   "accuracy": 0.533,
    "recall": {
-    "PDC": 0.125,
+    "PDC": 0.5,
     "SP": 0.857,
     "DQE": 0.0,
-    "GES": 0.571
+    "GES": 0.857
    },
-   "consistency": 0.733,
-   "unanimous_rate": 0.3,
+   "consistency": 0.8,
+   "unanimous_rate": 0.433,
    "valid_rate": 1.0,
-   "latency_median_s": 18.8,
-   "latency_p90_s": 61.7,
-   "anomalies_per_hour": 38.9,
+   "latency_median_s": 12.1,
+   "latency_p90_s": 30.9,
+   "anomalies_per_hour": 69.3,
    "confusion": {
     "PDC": {
-     "GES": 6,
-     "DQE": 1,
-     "PDC": 1
+     "GES": 3,
+     "PDC": 4,
+     "SP": 1
     },
     "SP": {
      "SP": 6,
      "GES": 1
     },
     "DQE": {
-     "SP": 3,
-     "GES": 5
+     "GES": 7,
+     "SP": 1
     },
     "GES": {
-     "GES": 4,
-     "SP": 3
+     "GES": 6,
+     "SP": 1
     }
    },
    "status": "eligible"
@@ -411,7 +413,7 @@
    "model": "llama3.2:3b",
    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
    "eligible": true,
-   "tested_at": "2026-10-01T14:40:41+00:00",
+   "tested_at": "2026-10-20T09:43:50+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
@@ -446,9 +448,9 @@
    "consistency": 0.9,
    "unanimous_rate": 0.7,
    "valid_rate": 1.0,
-   "latency_median_s": 19.5,
-   "latency_p90_s": 50.7,
-   "anomalies_per_hour": 42.9,
+   "latency_median_s": 20.4,
+   "latency_p90_s": 51.0,
+   "anomalies_per_hour": 42.2,
    "confusion": {
     "PDC": {
      "SP": 7,
@@ -473,7 +475,7 @@
    "model": "lfm2.5:8b-a1b-q4_K_M",
    "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
    "eligible": true,
-   "tested_at": "2026-10-01T14:16:59+00:00",
+   "tested_at": "2026-10-20T09:27:40+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
@@ -493,39 +495,40 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.389,
+   "macro_f1": 0.495,
    "macro_f1_ci95": [
-    0.261,
-    0.503
+    0.307,
+    0.66
    ],
-   "accuracy": 0.467,
+   "accuracy": 0.5,
    "recall": {
-    "PDC": 0.75,
-    "SP": 0.143,
-    "DQE": 0.0,
-    "GES": 1.0
+    "PDC": 0.625,
+    "SP": 0.429,
+    "DQE": 0.125,
+    "GES": 0.857
    },
-   "consistency": 0.778,
-   "unanimous_rate": 0.367,
+   "consistency": 0.733,
+   "unanimous_rate": 0.267,
    "valid_rate": 1.0,
-   "latency_median_s": 5.7,
-   "latency_p90_s": 25.8,
-   "anomalies_per_hour": 101.3,
+   "latency_median_s": 8.4,
+   "latency_p90_s": 38.7,
+   "anomalies_per_hour": 67.9,
    "confusion": {
     "PDC": {
-     "PDC": 6,
-     "GES": 2
+     "PDC": 5,
+     "GES": 3
     },
     "SP": {
-     "SP": 1,
-     "GES": 6
+     "SP": 3,
+     "GES": 4
     },
     "DQE": {
-     "GES": 5,
-     "SP": 3
+     "GES": 7,
+     "DQE": 1
     },
     "GES": {
-     "GES": 7
+     "GES": 6,
+     "SP": 1
     }
    },
    "status": "eligible"
@@ -536,7 +539,7 @@
    "model": "granite4:7b-a1b-h",
    "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
    "eligible": true,
-   "tested_at": "2026-10-01T14:23:38+00:00",
+   "tested_at": "2026-10-20T09:19:09+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
@@ -556,38 +559,40 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.156,
+   "macro_f1": 0.309,
    "macro_f1_ci95": [
-    0.061,
-    0.267
+    0.156,
+    0.44
    ],
-   "accuracy": 0.267,
+   "accuracy": 0.367,
    "recall": {
     "PDC": 0.0,
-    "SP": 0.143,
-    "DQE": 0.0,
-    "GES": 1.0
+    "SP": 0.571,
+    "DQE": 0.125,
+    "GES": 0.857
    },
-   "consistency": 0.844,
-   "unanimous_rate": 0.567,
+   "consistency": 0.8,
+   "unanimous_rate": 0.433,
    "valid_rate": 1.0,
-   "latency_median_s": 7.7,
-   "latency_p90_s": 36.2,
-   "anomalies_per_hour": 72.5,
+   "latency_median_s": 6.2,
+   "latency_p90_s": 25.2,
+   "anomalies_per_hour": 100.1,
    "confusion": {
     "PDC": {
      "GES": 7,
      "SP": 1
     },
     "SP": {
-     "SP": 1,
-     "GES": 6
+     "GES": 3,
+     "SP": 4
     },
     "DQE": {
-     "GES": 8
+     "GES": 7,
+     "DQE": 1
     },
     "GES": {
-     "GES": 7
+     "SP": 1,
+     "GES": 6
     }
    },
    "status": "eligible"
@@ -596,21 +601,21 @@
    "label": "qwen3.5:9b",
    "backend": "ollama",
    "model": "qwen3.5:9b",
-   "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+   "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
    "eligible": true,
-   "tested_at": "2026-10-01T15:33:50+00:00",
+   "tested_at": "2026-10-20T10:32:32+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
-    "size_bytes": 6594474711,
+    "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+    "size_bytes": 6550825550,
     "details": {
-     "parent_model": "",
+     "parent_model": "model.gguf",
      "format": "gguf",
      "family": "qwen35",
      "families": [
       "qwen35"
      ],
-     "parameter_size": "9.7B",
+     "parameter_size": "9.0B",
      "quantization_level": "Q4_K_M",
      "context_length": 262144,
      "embedding_length": 4096
@@ -618,24 +623,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.791,
+   "macro_f1": 0.739,
    "macro_f1_ci95": [
-    0.631,
-    0.928
+    0.597,
+    0.875
    ],
-   "accuracy": 0.8,
+   "accuracy": 0.767,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
-    "DQE": 0.625,
-    "GES": 0.571
+    "DQE": 0.75,
+    "GES": 0.286
    },
-   "consistency": 0.878,
-   "unanimous_rate": 0.7,
+   "consistency": 0.867,
+   "unanimous_rate": 0.667,
    "valid_rate": 1.0,
-   "latency_median_s": 52.5,
-   "latency_p90_s": 98.3,
-   "anomalies_per_hour": 19.0,
+   "latency_median_s": 32.7,
+   "latency_p90_s": 124.7,
+   "anomalies_per_hour": 19.8,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -644,13 +649,12 @@
      "SP": 7
     },
     "DQE": {
-     "DQE": 5,
-     "SP": 1,
+     "DQE": 6,
      "GES": 2
     },
     "GES": {
-     "GES": 4,
-     "SP": 3
+     "SP": 5,
+     "GES": 2
     }
    },
    "status": "eligible"
@@ -661,7 +665,7 @@
    "model": "gemma4:12b",
    "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
    "eligible": false,
-   "tested_at": "2026-10-01T17:45:20+00:00",
+   "tested_at": "2026-10-20T11:43:05+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
@@ -681,24 +685,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.927,
+   "macro_f1": 0.888,
    "macro_f1_ci95": [
-    0.808,
+    0.738,
     1.0
    ],
-   "accuracy": 0.933,
+   "accuracy": 0.9,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
     "DQE": 1.0,
-    "GES": 0.714
+    "GES": 0.571
    },
    "consistency": 0.989,
    "unanimous_rate": 0.967,
    "valid_rate": 1.0,
-   "latency_median_s": 79.0,
-   "latency_p90_s": 307.7,
-   "anomalies_per_hour": 8.0,
+   "latency_median_s": 61.8,
+   "latency_p90_s": 210.3,
+   "anomalies_per_hour": 11.2,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -710,11 +714,11 @@
      "DQE": 8
     },
     "GES": {
-     "GES": 5,
-     "SP": 2
+     "GES": 4,
+     "SP": 3
     }
    },
-   "status": "not eligible: p90 latency 308s"
+   "status": "not eligible: p90 latency 210s"
   },
   {
    "label": "ministral-3:8b",
@@ -722,7 +726,7 @@
    "model": "ministral-3:8b",
    "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
    "eligible": false,
-   "tested_at": "2026-10-01T16:06:33+00:00",
+   "tested_at": "2026-10-20T11:18:57+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
@@ -757,9 +761,9 @@
    "consistency": 0.9,
    "unanimous_rate": 0.767,
    "valid_rate": 1.0,
-   "latency_median_s": 50.5,
-   "latency_p90_s": 165.1,
-   "anomalies_per_hour": 14.1,
+   "latency_median_s": 60.2,
+   "latency_p90_s": 168.0,
+   "anomalies_per_hour": 13.0,
    "confusion": {
     "PDC": {
      "PDC": 7,
@@ -776,7 +780,7 @@
      "SP": 7
     }
    },
-   "status": "not eligible: p90 latency 165s"
+   "status": "not eligible: p90 latency 168s"
   },
   {
    "label": "granite4.2:8b",
@@ -784,7 +788,7 @@
    "model": "granite4.2:8b",
    "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
    "eligible": false,
-   "tested_at": "2026-10-01T17:09:20+00:00",
+   "tested_at": "2026-10-20T12:33:28+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
@@ -819,9 +823,9 @@
    "consistency": 0.789,
    "unanimous_rate": 0.533,
    "valid_rate": 0.422,
-   "latency_median_s": 92.6,
-   "latency_p90_s": 183.0,
-   "anomalies_per_hour": 10.5,
+   "latency_median_s": 108.6,
+   "latency_p90_s": 198.8,
+   "anomalies_per_hour": 9.3,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -840,7 +844,7 @@
      "SP": 2
     }
    },
-   "status": "not eligible: valid answers 42%; p90 latency 183s"
+   "status": "not eligible: valid answers 42%; p90 latency 199s"
   },
   {
    "label": "llama3.1:8b",
@@ -848,7 +852,7 @@
    "model": "llama3.1:8b",
    "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
    "eligible": true,
-   "tested_at": "2026-10-01T15:22:16+00:00",
+   "tested_at": "2026-10-20T10:46:07+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
@@ -868,35 +872,34 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.203,
+   "macro_f1": 0.153,
    "macro_f1_ci95": [
-    0.076,
-    0.312
+    0.059,
+    0.26
    ],
-   "accuracy": 0.3,
+   "accuracy": 0.267,
    "recall": {
-    "PDC": 0.25,
+    "PDC": 0.125,
     "SP": 1.0,
     "DQE": 0.0,
     "GES": 0.0
    },
-   "consistency": 0.9,
-   "unanimous_rate": 0.7,
+   "consistency": 0.867,
+   "unanimous_rate": 0.6,
    "valid_rate": 1.0,
-   "latency_median_s": 25.6,
-   "latency_p90_s": 72.6,
-   "anomalies_per_hour": 31.4,
+   "latency_median_s": 30.9,
+   "latency_p90_s": 103.1,
+   "anomalies_per_hour": 23.1,
    "confusion": {
     "PDC": {
-     "SP": 6,
-     "PDC": 2
+     "SP": 7,
+     "PDC": 1
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "SP": 7,
-     "GES": 1
+     "SP": 8
     },
     "GES": {
      "SP": 7
@@ -910,47 +913,48 @@
    "model": "gemma-3-4b-it-Q4_K_M",
    "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
    "eligible": true,
-   "tested_at": "2026-10-01T15:37:37+00:00",
+   "tested_at": "2026-10-20T10:33:12+00:00",
    "server": {
     "server_version": "b11284-25747b08e",
     "model_path": "/home/runner/models/model.gguf"
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.402,
+   "macro_f1": 0.564,
    "macro_f1_ci95": [
-    0.217,
-    0.563
+    0.384,
+    0.716
    ],
-   "accuracy": 0.433,
+   "accuracy": 0.6,
    "recall": {
-    "PDC": 0.25,
+    "PDC": 0.625,
     "SP": 1.0,
     "DQE": 0.125,
-    "GES": 0.429
+    "GES": 0.714
    },
-   "consistency": 0.833,
+   "consistency": 0.844,
    "unanimous_rate": 0.567,
    "valid_rate": 1.0,
-   "latency_median_s": 25.1,
-   "latency_p90_s": 81.6,
-   "anomalies_per_hour": 28.2,
+   "latency_median_s": 29.5,
+   "latency_p90_s": 74.9,
+   "anomalies_per_hour": 28.0,
    "confusion": {
     "PDC": {
-     "PDC": 2,
-     "GES": 4,
-     "SP": 2
+     "PDC": 5,
+     "GES": 2,
+     "SP": 1
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "GES": 7,
+     "SP": 2,
+     "GES": 5,
      "DQE": 1
     },
     "GES": {
-     "SP": 4,
-     "GES": 3
+     "GES": 5,
+     "SP": 2
     }
    },
    "status": "eligible"
@@ -961,7 +965,7 @@
    "model": "Qwen3-4B-Q4_K_M",
    "digest": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
    "eligible": true,
-   "tested_at": "2026-10-01T15:30:05+00:00",
+   "tested_at": "2026-10-20T10:34:42+00:00",
    "server": {
     "server_version": "b11284-25747b08e",
     "model_path": "/home/runner/models/model.gguf"
@@ -983,9 +987,9 @@
    "consistency": 0.867,
    "unanimous_rate": 0.633,
    "valid_rate": 1.0,
-   "latency_median_s": 21.2,
-   "latency_p90_s": 72.5,
-   "anomalies_per_hour": 32.6,
+   "latency_median_s": 22.9,
+   "latency_p90_s": 73.8,
+   "anomalies_per_hour": 31.4,
    "confusion": {
     "PDC": {
      "PDC": 7,
@@ -1011,51 +1015,51 @@
    "backend": "llamacpp-prism",
    "model": "Ternary-Bonsai-8B-PQ2_0",
    "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
-   "eligible": true,
-   "tested_at": "2026-10-01T16:21:26+00:00",
+   "eligible": false,
+   "tested_at": "2026-10-20T12:09:49+00:00",
    "server": {
     "server_version": "b1-88c4bc6",
     "model_path": "/home/runner/models/model.gguf"
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.337,
+   "macro_f1": 0.363,
    "macro_f1_ci95": [
-    0.192,
-    0.458
+    0.225,
+    0.49
    ],
-   "accuracy": 0.4,
+   "accuracy": 0.433,
    "recall": {
-    "PDC": 0.5,
+    "PDC": 0.625,
     "SP": 1.0,
     "DQE": 0.0,
     "GES": 0.143
    },
-   "consistency": 0.767,
-   "unanimous_rate": 0.3,
+   "consistency": 0.833,
+   "unanimous_rate": 0.5,
    "valid_rate": 1.0,
-   "latency_median_s": 38.9,
-   "latency_p90_s": 121.9,
-   "anomalies_per_hour": 19.0,
+   "latency_median_s": 64.5,
+   "latency_p90_s": 170.7,
+   "anomalies_per_hour": 12.7,
    "confusion": {
     "PDC": {
-     "PDC": 4,
-     "GES": 3,
-     "SP": 1
+     "PDC": 5,
+     "GES": 1,
+     "SP": 2
     },
     "SP": {
      "SP": 7
     },
     "DQE": {
-     "GES": 3,
-     "SP": 5
+     "SP": 6,
+     "GES": 2
     },
     "GES": {
      "SP": 6,
      "GES": 1
     }
    },
-   "status": "eligible"
+   "status": "not eligible: p90 latency 171s"
   },
   {
    "label": "Ternary-Bonsai-2-27B (PTQ1_0)",
@@ -1063,7 +1067,7 @@
    "model": "Ternary-Bonsai-2-27B-PTQ1_0",
    "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
    "eligible": false,
-   "tested_at": "2026-10-01T17:04:39+00:00",
+   "tested_at": "2026-10-20T12:26:07+00:00",
    "server": {
     "server_version": "b1-88c4bc6",
     "model_path": "/home/runner/models/model.gguf"
@@ -1085,8 +1089,8 @@
    "consistency": 1.0,
    "unanimous_rate": 1.0,
    "valid_rate": 1.0,
-   "latency_median_s": 1875.6,
-   "latency_p90_s": 2308.1,
+   "latency_median_s": 2016.8,
+   "latency_p90_s": 2493.4,
    "anomalies_per_hour": 0.6,
    "confusion": {
     "PDC": {
@@ -1102,27 +1106,28 @@
      "GES": 1
     }
    },
-   "status": "not eligible: covered 13% of the cases in the time budget; p90 latency 2308s; experiment"
+   "status": "not eligible: covered 13% of the cases in the time budget; p90 latency 2493s; experiment"
   },
   {
    "label": "gemma3:4b (prompt v1)",
    "backend": "ollama",
    "model": "gemma3:4b",
-   "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+   "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
    "eligible": false,
-   "tested_at": "2026-09-30T02:42:21+00:00",
+   "tested_at": "2026-10-20T11:07:42+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
-    "size_bytes": 3338801804,
+    "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+    "size_bytes": 3350272403,
     "details": {
-     "parent_model": "",
+     "parent_model": "dhiltgen/gemma3:4b-it-q4_K_M-llamacpp",
      "format": "gguf",
      "family": "gemma3",
      "families": [
-      "gemma3"
+      "gemma3",
+      "clip"
      ],
-     "parameter_size": "4.3B",
+     "parameter_size": "3.9B",
      "quantization_level": "Q4_K_M",
      "context_length": 131072,
      "embedding_length": 2560
@@ -1130,29 +1135,28 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.288,
+   "macro_f1": 0.339,
    "macro_f1_ci95": [
-    0.159,
-    0.38
+    0.242,
+    0.408
    ],
-   "accuracy": 0.4,
+   "accuracy": 0.467,
    "recall": {
-    "PDC": 0.5,
+    "PDC": 0.75,
     "SP": 0.0,
     "DQE": 1.0,
     "GES": 0.0
    },
-   "consistency": 0.922,
-   "unanimous_rate": 0.8,
+   "consistency": 0.933,
+   "unanimous_rate": 0.833,
    "valid_rate": 1.0,
-   "latency_median_s": 25.6,
-   "latency_p90_s": 43.4,
-   "anomalies_per_hour": 41.2,
+   "latency_median_s": 25.3,
+   "latency_p90_s": 82.2,
+   "anomalies_per_hour": 28.8,
    "confusion": {
     "PDC": {
-     "PDC": 4,
-     "GES": 1,
-     "DQE": 3
+     "PDC": 6,
+     "DQE": 2
     },
     "SP": {
      "DQE": 7
@@ -1170,21 +1174,22 @@
    "label": "gemma3:12b",
    "backend": "ollama",
    "model": "gemma3:12b",
-   "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+   "digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
    "eligible": false,
-   "tested_at": "2026-10-01T17:08:39+00:00",
+   "tested_at": "2026-10-20T13:41:57+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
-    "size_bytes": 8149190253,
+    "digest": "b92b218582c521ba287f38f1d6057dcd3c6cbff036f13cac97b5d861f5e58ec3",
+    "size_bytes": 8164039732,
     "details": {
-     "parent_model": "",
+     "parent_model": "dhiltgen/gemma3:12b-it-q4_K_M-llamacpp",
      "format": "gguf",
      "family": "gemma3",
      "families": [
-      "gemma3"
+      "gemma3",
+      "clip"
      ],
-     "parameter_size": "12.2B",
+     "parameter_size": "11.8B",
      "quantization_level": "Q4_K_M",
      "context_length": 131072,
      "embedding_length": 3840
@@ -1194,8 +1199,8 @@
    "cases_done": 30,
    "macro_f1": 0.354,
    "macro_f1_ci95": [
-    0.274,
-    0.417
+    0.273,
+    0.416
    ],
    "accuracy": 0.467,
    "recall": {
@@ -1204,12 +1209,12 @@
     "DQE": 0.0,
     "GES": 0.0
    },
-   "consistency": 0.978,
-   "unanimous_rate": 0.933,
+   "consistency": 0.967,
+   "unanimous_rate": 0.9,
    "valid_rate": 1.0,
-   "latency_median_s": 50.0,
-   "latency_p90_s": 188.1,
-   "anomalies_per_hour": 12.8,
+   "latency_median_s": 69.8,
+   "latency_p90_s": 294.9,
+   "anomalies_per_hour": 8.6,
    "confusion": {
     "PDC": {
      "PDC": 7,
@@ -1226,7 +1231,7 @@
      "SP": 7
     }
    },
-   "status": "not eligible: p90 latency 188s"
+   "status": "not eligible: p90 latency 295s"
   },
   {
    "label": "gemma4:e2b",
@@ -1234,7 +1239,7 @@
    "model": "gemma4:e2b",
    "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
    "eligible": true,
-   "tested_at": "2026-10-01T15:57:39+00:00",
+   "tested_at": "2026-10-20T11:04:28+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "b37049369adfe3d2b653af0ab301a062ca5cbe96ace6aa0d3f2559ee9b563fc2",
@@ -1270,7 +1275,7 @@
    "unanimous_rate": 0.9,
    "valid_rate": 1.0,
    "latency_median_s": 13.4,
-   "latency_p90_s": 60.8,
+   "latency_p90_s": 61.1,
    "anomalies_per_hour": 42.5,
    "confusion": {
     "PDC": {
@@ -1292,140 +1297,12 @@
   {
    "label": "gemma3n:e2b",
    "backend": "ollama",
-   "model": "gemma3n:e2b",
-   "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
-   "eligible": true,
-   "tested_at": "2026-10-01T15:59:04+00:00",
-   "server": {
-    "server_version": "0.35.0",
-    "digest": "719372f8c7deee188821a4dcbaf75efa13a342d7e88a79d4fc2412b24947f6fd",
-    "size_bytes": 5621616562,
-    "details": {
-     "parent_model": "",
-     "format": "gguf",
-     "family": "gemma3n",
-     "families": [
-      "gemma3n"
-     ],
-     "parameter_size": "4.5B",
-     "quantization_level": "Q4_K_M",
-     "context_length": 32768,
-     "embedding_length": 2048
-    }
-   },
-   "coverage": 1.0,
-   "cases_done": 30,
-   "macro_f1": 0.537,
-   "macro_f1_ci95": [
-    0.349,
-    0.7
-   ],
-   "accuracy": 0.533,
-   "recall": {
-    "PDC": 0.625,
-    "SP": 0.429,
-    "DQE": 0.25,
-    "GES": 0.857
-   },
-   "consistency": 0.7,
-   "unanimous_rate": 0.267,
-   "valid_rate": 1.0,
-   "latency_median_s": 14.5,
-   "latency_p90_s": 61.8,
-   "anomalies_per_hour": 41.1,
-   "confusion": {
-    "PDC": {
-     "GES": 3,
-     "PDC": 5
-    },
-    "SP": {
-     "DQE": 1,
-     "SP": 3,
-     "GES": 3
-    },
-    "DQE": {
-     "GES": 5,
-     "SP": 1,
-     "DQE": 2
-    },
-    "GES": {
-     "GES": 6,
-     "DQE": 1
-    }
-   },
-   "status": "eligible"
+   "status": "not run yet"
   },
   {
    "label": "gemma3n:e4b",
    "backend": "ollama",
-   "model": "gemma3n:e4b",
-   "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
-   "eligible": false,
-   "tested_at": "2026-10-01T16:58:57+00:00",
-   "server": {
-    "server_version": "0.35.0",
-    "digest": "15cb39fd9394fd2549f6df9081cfc84dd134ecf2c9c5be911e5629920489ac32",
-    "size_bytes": 7547589116,
-    "details": {
-     "parent_model": "",
-     "format": "gguf",
-     "family": "gemma3n",
-     "families": [
-      "gemma3n"
-     ],
-     "parameter_size": "6.9B",
-     "quantization_level": "Q4_K_M",
-     "context_length": 32768,
-     "embedding_length": 2048
-    }
-   },
-   "coverage": 1.0,
-   "cases_done": 30,
-   "macro_f1": 0.362,
-   "macro_f1_ci95": [
-    0.184,
-    0.522
-   ],
-   "accuracy": 0.333,
-   "recall": {
-    "PDC": 0.25,
-    "SP": 0.286,
-    "DQE": 0.625,
-    "GES": 0.143
-   },
-   "consistency": 0.5,
-   "unanimous_rate": 0.2,
-   "valid_rate": 0.389,
-   "latency_median_s": 74.8,
-   "latency_p90_s": 120.8,
-   "anomalies_per_hour": 18.2,
-   "confusion": {
-    "PDC": {
-     "GES": 2,
-     "PDC": 2,
-     "INVALID": 1,
-     "SP": 2,
-     "DQE": 1
-    },
-    "SP": {
-     "INVALID": 3,
-     "SP": 2,
-     "GES": 2
-    },
-    "DQE": {
-     "DQE": 5,
-     "PDC": 1,
-     "SP": 1,
-     "INVALID": 1
-    },
-    "GES": {
-     "SP": 4,
-     "INVALID": 1,
-     "GES": 1,
-     "DQE": 1
-    }
-   },
-   "status": "not eligible: valid answers 39%"
+   "status": "not run yet"
   },
   {
    "label": "qwen3:1.7b",
@@ -1433,7 +1310,7 @@
    "model": "qwen3:1.7b",
    "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
    "eligible": true,
-   "tested_at": "2026-10-01T15:57:01+00:00",
+   "tested_at": "2026-10-20T11:09:08+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
@@ -1453,40 +1330,41 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.391,
+   "macro_f1": 0.436,
    "macro_f1_ci95": [
-    0.23,
-    0.519
+    0.274,
+    0.567
    ],
-   "accuracy": 0.433,
+   "accuracy": 0.467,
    "recall": {
     "PDC": 0.5,
     "SP": 0.571,
     "DQE": 0.0,
-    "GES": 0.714
+    "GES": 0.857
    },
-   "consistency": 0.767,
-   "unanimous_rate": 0.3,
+   "consistency": 0.756,
+   "unanimous_rate": 0.333,
    "valid_rate": 1.0,
-   "latency_median_s": 13.5,
-   "latency_p90_s": 28.6,
-   "anomalies_per_hour": 69.0,
+   "latency_median_s": 16.3,
+   "latency_p90_s": 39.4,
+   "anomalies_per_hour": 52.2,
    "confusion": {
     "PDC": {
-     "GES": 4,
-     "PDC": 4
+     "PDC": 4,
+     "GES": 4
     },
     "SP": {
      "SP": 4,
-     "GES": 3
+     "DQE": 1,
+     "GES": 2
     },
     "DQE": {
-     "SP": 5,
-     "GES": 3
+     "SP": 1,
+     "GES": 7
     },
     "GES": {
-     "SP": 2,
-     "GES": 5
+     "GES": 6,
+     "SP": 1
     }
    },
    "status": "eligible"
@@ -1497,7 +1375,7 @@
    "model": "qwen3:4b-q4_K_M",
    "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
    "eligible": true,
-   "tested_at": "2026-10-01T16:39:59+00:00",
+   "tested_at": "2026-10-20T11:44:00+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "2bfd38a7daaf4b1037efe517ccb73d1a3bbd4822cf89f1a82be1569050a114e0",
@@ -1519,8 +1397,8 @@
    "cases_done": 30,
    "macro_f1": 0.576,
    "macro_f1_ci95": [
-    0.419,
-    0.715
+    0.409,
+    0.71
    ],
    "accuracy": 0.6,
    "recall": {
@@ -1532,9 +1410,9 @@
    "consistency": 0.8,
    "unanimous_rate": 0.467,
    "valid_rate": 1.0,
-   "latency_median_s": 23.5,
-   "latency_p90_s": 82.4,
-   "anomalies_per_hour": 28.5,
+   "latency_median_s": 28.7,
+   "latency_p90_s": 86.3,
+   "anomalies_per_hour": 26.0,
    "confusion": {
     "PDC": {
      "PDC": 6,
@@ -1562,7 +1440,7 @@
    "model": "qwen3:8b",
    "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
    "eligible": true,
-   "tested_at": "2026-10-01T17:23:24+00:00",
+   "tested_at": "2026-10-20T11:29:15+00:00",
    "server": {
     "server_version": "0.35.0",
     "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
@@ -1582,24 +1460,24 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.593,
+   "macro_f1": 0.438,
    "macro_f1_ci95": [
-    0.426,
-    0.744
+    0.348,
+    0.533
    ],
-   "accuracy": 0.633,
+   "accuracy": 0.533,
    "recall": {
     "PDC": 1.0,
     "SP": 1.0,
-    "DQE": 0.25,
-    "GES": 0.286
+    "DQE": 0.0,
+    "GES": 0.143
    },
    "consistency": 0.878,
    "unanimous_rate": 0.667,
    "valid_rate": 1.0,
-   "latency_median_s": 38.7,
-   "latency_p90_s": 139.8,
-   "anomalies_per_hour": 17.2,
+   "latency_median_s": 23.4,
+   "latency_p90_s": 64.0,
+   "anomalies_per_hour": 33.9,
    "confusion": {
     "PDC": {
      "PDC": 8
@@ -1609,12 +1487,11 @@
     },
     "DQE": {
      "SP": 4,
-     "GES": 2,
-     "DQE": 2
+     "GES": 4
     },
     "GES": {
-     "SP": 5,
-     "GES": 2
+     "SP": 6,
+     "GES": 1
     }
    },
    "status": "eligible"
@@ -1623,21 +1500,21 @@
    "label": "qwen3.5:0.8b",
    "backend": "ollama",
    "model": "qwen3.5:0.8b",
-   "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+   "digest": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c",
    "eligible": true,
-   "tested_at": "2026-10-01T16:13:05+00:00",
+   "tested_at": "2026-10-20T11:11:13+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
-    "size_bytes": 1036046583,
+    "digest": "de63045f29755d4721c09d54c9b45c2dadb644f4fd7d604d4cac90d96049971c",
+    "size_bytes": 1322069277,
     "details": {
-     "parent_model": "",
+     "parent_model": "qwen35-validation-20260930:0.8b-stock-q8_0-q8draft2",
      "format": "gguf",
      "family": "qwen35",
      "families": [
       "qwen35"
      ],
-     "parameter_size": "873.44M",
+     "parameter_size": "752.39M",
      "quantization_level": "Q8_0",
      "context_length": 262144,
      "embedding_length": 1024
@@ -1645,42 +1522,43 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.341,
+   "macro_f1": 0.364,
    "macro_f1_ci95": [
-    0.171,
-    0.477
+    0.165,
+    0.531
    ],
-   "accuracy": 0.4,
+   "accuracy": 0.367,
    "recall": {
-    "PDC": 0.375,
+    "PDC": 0.25,
     "SP": 0.286,
-    "DQE": 0.0,
-    "GES": 1.0
+    "DQE": 0.25,
+    "GES": 0.714
    },
-   "consistency": 0.678,
-   "unanimous_rate": 0.333,
+   "consistency": 0.689,
+   "unanimous_rate": 0.2,
    "valid_rate": 1.0,
-   "latency_median_s": 5.3,
-   "latency_p90_s": 20.4,
-   "anomalies_per_hour": 120.6,
+   "latency_median_s": 11.5,
+   "latency_p90_s": 28.2,
+   "anomalies_per_hour": 75.9,
    "confusion": {
     "PDC": {
-     "PDC": 3,
-     "GES": 4,
-     "SP": 1
+     "GES": 6,
+     "PDC": 2
     },
     "SP": {
      "SP": 2,
-     "DQE": 1,
      "GES": 3,
-     "PDC": 1
+     "DQE": 2
     },
     "DQE": {
-     "GES": 7,
-     "SP": 1
+     "GES": 5,
+     "SP": 1,
+     "DQE": 2
     },
     "GES": {
-     "GES": 7
+     "GES": 5,
+     "SP": 1,
+     "DQE": 1
     }
    },
    "status": "eligible"
@@ -1689,21 +1567,21 @@
    "label": "qwen3.5:2b",
    "backend": "ollama",
    "model": "qwen3.5:2b",
-   "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+   "digest": "0689d44085e06d165161a8a9a1731344278cfb5aade63a3c3dbdb48ab54b130a",
    "eligible": true,
-   "tested_at": "2026-10-01T16:33:06+00:00",
+   "tested_at": "2026-10-20T11:27:25+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
-    "size_bytes": 2741192820,
+    "digest": "0689d44085e06d165161a8a9a1731344278cfb5aade63a3c3dbdb48ab54b130a",
+    "size_bytes": 2683396812,
     "details": {
-     "parent_model": "",
+     "parent_model": "model.gguf",
      "format": "gguf",
      "family": "qwen35",
      "families": [
       "qwen35"
      ],
-     "parameter_size": "2.3B",
+     "parameter_size": "1.9B",
      "quantization_level": "Q8_0",
      "context_length": 262144,
      "embedding_length": 2048
@@ -1711,41 +1589,41 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.352,
+   "macro_f1": 0.357,
    "macro_f1_ci95": [
-    0.181,
-    0.496
+    0.174,
+    0.525
    ],
-   "accuracy": 0.367,
+   "accuracy": 0.4,
    "recall": {
-    "PDC": 0.375,
-    "SP": 0.857,
-    "DQE": 0.25,
-    "GES": 0.0
+    "PDC": 0.25,
+    "SP": 1.0,
+    "DQE": 0.125,
+    "GES": 0.286
    },
-   "consistency": 0.733,
-   "unanimous_rate": 0.333,
+   "consistency": 0.789,
+   "unanimous_rate": 0.4,
    "valid_rate": 1.0,
-   "latency_median_s": 12.2,
-   "latency_p90_s": 47.3,
-   "anomalies_per_hour": 52.6,
+   "latency_median_s": 9.8,
+   "latency_p90_s": 26.6,
+   "anomalies_per_hour": 82.9,
    "confusion": {
     "PDC": {
      "GES": 4,
-     "PDC": 3,
-     "SP": 1
+     "SP": 2,
+     "PDC": 2
     },
     "SP": {
-     "SP": 6,
-     "GES": 1
+     "SP": 7
     },
     "DQE": {
-     "SP": 5,
-     "DQE": 2,
-     "GES": 1
+     "SP": 6,
+     "GES": 1,
+     "DQE": 1
     },
     "GES": {
-     "SP": 7
+     "GES": 2,
+     "SP": 5
     }
    },
    "status": "eligible"
@@ -1754,21 +1632,21 @@
    "label": "qwen3.5:2b-q4_K_M",
    "backend": "ollama",
    "model": "qwen3.5:2b-q4_K_M",
-   "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
+   "digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
    "eligible": true,
-   "tested_at": "2026-10-01T16:27:10+00:00",
+   "tested_at": "2026-10-20T11:39:40+00:00",
    "server": {
     "server_version": "0.35.0",
-    "digest": "124a03c347777e8e4e5955c33610ae01d9d90d8c2a718bfba069c498d5c7f3c9",
-    "size_bytes": 1945323638,
+    "digest": "1e2d21a4f03ab9e4a9c1976a4b7e88f21de61d65f2c5485d8fde8942be73f1e7",
+    "size_bytes": 1945781358,
     "details": {
-     "parent_model": "",
+     "parent_model": "model.gguf",
      "format": "gguf",
      "family": "qwen35",
      "families": [
       "qwen35"
      ],
-     "parameter_size": "2.3B",
+     "parameter_size": "1.9B",
      "quantization_level": "Q4_K_M",
      "context_length": 262144,
      "embedding_length": 2048
@@ -1776,37 +1654,36 @@
    },
    "coverage": 1.0,
    "cases_done": 30,
-   "macro_f1": 0.431,
+   "macro_f1": 0.426,
    "macro_f1_ci95": [
-    0.275,
-    0.592
+    0.225,
+    0.593
    ],
-   "accuracy": 0.467,
+   "accuracy": 0.433,
    "recall": {
-    "PDC": 0.75,
+    "PDC": 0.5,
     "SP": 0.857,
-    "DQE": 0.125,
+    "DQE": 0.25,
     "GES": 0.143
    },
-   "consistency": 0.789,
-   "unanimous_rate": 0.433,
+   "consistency": 0.767,
+   "unanimous_rate": 0.367,
    "valid_rate": 1.0,
-   "latency_median_s": 9.4,
-   "latency_p90_s": 37.7,
-   "anomalies_per_hour": 67.1,
+   "latency_median_s": 10.5,
+   "latency_p90_s": 43.6,
+   "anomalies_per_hour": 57.7,
    "confusion": {
     "PDC": {
-     "PDC": 6,
-     "GES": 1,
-     "SP": 1
+     "PDC": 4,
+     "SP": 4
     },
     "SP": {
      "SP": 6,
      "GES": 1
     },
     "DQE": {
-     "SP": 7,
-     "DQE": 1
+     "DQE": 2,
+     "SP": 6
     },
     "GES": {
      "SP": 6,

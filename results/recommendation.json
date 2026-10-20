@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-01T18:30:42+00:00",
+ "generated_at": "2026-10-20T13:43:44+00:00",
  "benchmark": "https://github.com/lsp3cesarschool/5ltep-layer3-modeltest",
  "gold_cases": 30,
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
- "prompt_commit": "1554bc497d64e5d49eb3e6fa1ea775a6134713a8",
+ "prompt_commit": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
  "use": {
   "label": "qwen3:4b",
   "backend": "ollama",
@@ -19,9 +19,9 @@
   ],
   "consistency": 0.856,
   "valid_rate": 0.989,
-  "latency_p90_s": 92.6,
-  "anomalies_per_hour": 24.0,
-  "tested_at": "2026-10-01T15:14:08+00:00"
+  "latency_p90_s": 95.1,
+  "anomalies_per_hour": 22.5,
+  "tested_at": "2026-10-20T10:20:55+00:00"
  },
  "production": {
   "label": "qwen3:4b",
@@ -38,9 +38,9 @@
   ],
   "consistency": 0.856,
   "valid_rate": 0.989,
-  "latency_p90_s": 92.6,
-  "anomalies_per_hour": 24.0,
-  "tested_at": "2026-10-01T15:14:08+00:00"
+  "latency_p90_s": 95.1,
+  "anomalies_per_hour": 22.5,
+  "tested_at": "2026-10-20T10:20:55+00:00"
  },
  "recommended": {
   "label": "qwen3:4b",
@@ -57,9 +57,9 @@
   ],
   "consistency": 0.856,
   "valid_rate": 0.989,
-  "latency_p90_s": 92.6,
-  "anomalies_per_hour": 24.0,
-  "tested_at": "2026-10-01T15:14:08+00:00"
+  "latency_p90_s": 95.1,
+  "anomalies_per_hour": 22.5,
+  "tested_at": "2026-10-20T10:20:55+00:00"
  },
  "switch_recommended": false,
  "comparison": null,
