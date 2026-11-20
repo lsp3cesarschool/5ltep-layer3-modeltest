@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-20T13:43:44+00:00",
+ "generated_at": "2026-11-20T12:21:03+00:00",
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "gold_cases": 30,
  "prompt_refs": {
   "main": {
-   "commit": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "commit": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "fingerprint": "287ebc9540ba63a8bdc9d3d72c886d4c1744156106e0929176fb0a581020d8d9"
   },
   "7da22b7": {

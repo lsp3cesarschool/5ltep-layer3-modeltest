@@ -38,7 +38,7 @@ the pipeline actually runs on.
 ## Leaderboard
 
 <!-- LEADERBOARD:START -->
-*Updated 2026-10-20 13:43 UTC · 30 gold cases · 3 seeds each · production prompt at `6a6c9ce`*
+*Updated 2026-11-20 12:21 UTC · 30 gold cases · 3 seeds each · production prompt at `52fe9ea`*
 
 **Recommendation:** the production model is the best eligible candidate.
 

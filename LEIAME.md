@@ -39,7 +39,7 @@ em que o pipeline de fato roda.
 ## Classificação
 
 <!-- LEADERBOARD:START -->
-*Atualizado em 2026-10-20 13:43 UTC · 30 casos do gabarito · 3 sementes cada · prompt de produção em `6a6c9ce`*
+*Atualizado em 2026-11-20 12:21 UTC · 30 casos do gabarito · 3 sementes cada · prompt de produção em `52fe9ea`*
 
 **Recomendação:** o modelo de produção é o melhor candidato elegível.
 

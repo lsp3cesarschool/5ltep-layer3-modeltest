@@ -2,7 +2,7 @@
  "gold_hash": "90e95bfd0969a1a37ffb1db9a0045730d4383292e84386c02f62e03c948c2671",
  "prompt_refs": {
   "main": {
-   "commit": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "commit": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "fingerprint": "287ebc9540ba63a8bdc9d3d72c886d4c1744156106e0929176fb0a581020d8d9"
   },
   "7da22b7": {
@@ -40,7 +40,7 @@
    "experiment": false,
    "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "052af98b63ba381d",
    "slug": "gemma3_4b"
   },
@@ -55,7 +55,7 @@
    "experiment": false,
    "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "15252d3bd3d1fc9b",
    "slug": "qwen3.5_4b"
   },
@@ -70,7 +70,7 @@
    "experiment": false,
    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "5df36f97a0140c55",
    "slug": "qwen3_4b"
   },
@@ -83,7 +83,7 @@
    "experiment": false,
    "digest": "40577dc168a3a9ad34e9a1234e0c2570be86097fa75a236d4574ae985705d3c4",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "61d9df2dc7b254cc",
    "slug": "granite4.2_3b"
   },
@@ -96,7 +96,7 @@
    "experiment": false,
    "digest": "f04aa1c738f64e13c625b82ae92504fc0260fa6723b509ed1ece0fa188179b1d",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "88dd756897ef617c",
    "slug": "ministral-3_3b"
   },
@@ -109,7 +109,7 @@
    "experiment": false,
    "digest": "78fad5d182a7c33065e153a5f8ba210754207ba9d91973f57dffa7f487363753",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "73b4a179bb618eb2",
    "slug": "phi4-mini_3.8b"
   },
@@ -122,7 +122,7 @@
    "experiment": false,
    "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "cf15d82e6efa1223",
    "slug": "llama3.2_3b"
   },
@@ -135,7 +135,7 @@
    "experiment": false,
    "digest": "9cf756159fc2f3b9128c6a3f544ec90c5e9b8afdbb4179a57b8aea9de589cfb2",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "cecafbb9c7a3323d",
    "slug": "lfm2.5_8b-a1b"
   },
@@ -148,7 +148,7 @@
    "experiment": false,
    "digest": "566b725534ea0e9824f844abe6a78e1ab6f7357f1efb549be94908cb681513bb",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "0701acef556b9f00",
    "slug": "granite4_7b-a1b-h"
   },
@@ -163,7 +163,7 @@
    "experiment": false,
    "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "4faf82f0a5a69db1",
    "slug": "qwen3.5_9b"
   },
@@ -178,7 +178,7 @@
    "experiment": false,
    "digest": "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "6758a1db589f360f",
    "slug": "gemma4_12b"
   },
@@ -191,7 +191,7 @@
    "experiment": false,
    "digest": "1922accd5827ebe6829e536369195db25eaf664528dc66206d646ea3bb386b71",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "fbb436f955d59f4d",
    "slug": "ministral-3_8b"
   },
@@ -204,7 +204,7 @@
    "experiment": false,
    "digest": "f586c02fdecdf151b656207c339aa003997345774a41768bac1fd6d2fb85913b",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "ed680cdc0a93dae7",
    "slug": "granite4.2_8b"
   },
@@ -217,7 +217,7 @@
    "experiment": false,
    "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "476c2d87f4579fec",
    "slug": "llama3.1_8b"
   },
@@ -232,7 +232,7 @@
    "experiment": false,
    "digest": "882e8d2db44dc554fb0ea5077cb7e4bc49e7342a1f0da57901c0802ea21a0863",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "5e7b1a7952cc142c",
    "slug": "gemma3_4b_llama.cpp"
   },
@@ -251,7 +251,7 @@
    "experiment": false,
    "digest": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "6941ded24151e081",
    "slug": "qwen3_4b_llama.cpp"
   },
@@ -270,7 +270,7 @@
    "experiment": false,
    "digest": "1376f942aa90e60f7b570c1d81b3916fea1315ff85aa1c4d19006af68fb4b922",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "d577dd454af916e8",
    "slug": "Ternary-Bonsai-8B_PQ2_0"
   },
@@ -296,7 +296,7 @@
    "prompt_ref": "main",
    "digest": "53107f530aa52eb00912263ab1ee29bd199261c87cd7b4ad4ca1318c1fe33ee3",
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "30201fabace79558",
    "slug": "Ternary-Bonsai-2-27B_PTQ1_0"
   },
@@ -325,7 +325,7 @@
    "options": {},
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "557c27e5151229e5",
    "slug": "gemma3_12b"
   },
@@ -343,7 +343,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "e38c713603cc9905",
    "slug": "gemma4_e2b"
   },
@@ -359,7 +359,7 @@
    "options": {},
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "e5eca6f630fffe67",
    "slug": "gemma3n_e2b"
   },
@@ -375,7 +375,7 @@
    "options": {},
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "56bb08e72225a133",
    "slug": "gemma3n_e4b"
   },
@@ -393,7 +393,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "df08318932115430",
    "slug": "qwen3_1.7b"
   },
@@ -411,7 +411,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "96e76b6efb2b7245",
    "slug": "qwen3_4b-q4_K_M"
   },
@@ -429,7 +429,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-01T13:57:49+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "e1de6070280a827b",
    "slug": "qwen3_8b"
   },
@@ -447,7 +447,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "037d61cca46bf7be",
    "slug": "qwen3.5_0.8b"
   },
@@ -465,7 +465,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "42a706580368381b",
    "slug": "qwen3.5_2b"
   },
@@ -483,7 +483,7 @@
    "prompt_ref": "main",
    "experiment": false,
    "first_seen": "2026-10-20T08:59:51+00:00",
-   "prompt_sha": "6a6c9ce354722c1c3acd27a3f6d9b089e2f70a5c",
+   "prompt_sha": "52fe9ea6c2347da79d2a640e9faa8c146d8a40a1",
    "key": "b404f6cee5ed367a",
    "slug": "qwen3.5_2b-q4_K_M"
   }
